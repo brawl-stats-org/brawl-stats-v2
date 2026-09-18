@@ -37,6 +37,14 @@ class R2Client:
         )
         self._initialized = True
 
+    def get_client(self):
+        """Get the underlying boto3 client"""
+        return self.client
+
+    def get_bucket(self):
+        """Get the R2 bucket name"""
+        return self.bucket
+
     def file_exists(self, r2_key: str) -> bool:
         """Check if a file exists in R2 bucket
 
