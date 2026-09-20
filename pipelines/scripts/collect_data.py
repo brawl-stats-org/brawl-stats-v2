@@ -8,14 +8,14 @@ import time
 import argparse
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from pipelines.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
-from pipelines.src import (
+from config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
+from src import (
     R2Client,
     PipelineMonitor,
     write_gzip_json,
     read_gzip_json,
 )
-from pipelines.src.api import (
+from src.api import (
     fetch_player_data,
     fetch_battlelog,
     fetch_club_data,
