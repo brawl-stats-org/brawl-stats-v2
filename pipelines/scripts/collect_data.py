@@ -333,8 +333,23 @@ def main():
 
     except Exception as e:
         print(f"\nError during collection: {e}")
+
+        # Error notification (only if enabled)
         if args.notify_errors:
-            monitor.notify_failure("Data Collection", e)
+            modes = []
+            if args.battlelogs:
+                modes.append("battlelogs")
+            if args.snapshots:
+                modes.append("snapshots")
+
+            context = f"Script: collect_data.py\nOperation: {', '.join(modes)}\nError: {str(e)}"
+            monitor.send_ntfy(
+                title="Data Collection Failed",
+                message=context,
+                priority="high",
+                tags=["warning", "x"]
+            )
+
         return 1
 
 
