@@ -70,6 +70,51 @@ Include:
 - Summary of changes (what and why)
 - Related issues/links
 
+## Pipeline Scripts
+
+### Error Handling & Logging Pattern
+
+Pipeline scripts (data collection, uploads, artifact generation) follow a consistent pattern:
+
+**Pattern:**
+- Functions: Log errors when encountered, raise exceptions
+- Main/orchestrator: Catches exceptions, sends notifications (no re-logging)
+
+**Example:**
+```python
+def process_data(data, monitor=None):
+    if not data:
+        error_msg = "No data to process"
+        if monitor:
+            monitor.log_error(error_msg)
+        raise ValueError(error_msg)
+    # ... process
+
+def main():
+    monitor = PipelineMonitor(ntfy_topic=...)
+    try:
+        process_data(data, monitor)
+    except Exception as e:
+        # Send notification only - error already logged
+        if args.notify_errors:
+            monitor.send_ntfy("Task Failed", str(e), ...)
+```
+
+**Notifications:**
+
+Use `--notify-errors` and `--notify-success` flags (optional).
+
+Error notifications must include:
+- Script name
+- Operation/context
+- Clear error message
+
+Success notifications should include relevant stats.
+
+**Logging:**
+
+All pipeline operations log to `data/pipeline.log` via PipelineMonitor.
+
 ## Tooling
 
 ### Python
