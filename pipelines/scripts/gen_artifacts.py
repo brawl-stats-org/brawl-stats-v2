@@ -389,8 +389,17 @@ def main():
 
     except Exception as e:
         print(f"\nError during artifact generation: {e}")
+
+        # Error notification (only if enabled)
         if args.notify_errors:
-            monitor.notify_failure("Artifact Generation", e)
+            context = f"Script: gen_artifacts.py\nError: {str(e)}"
+            monitor.send_ntfy(
+                title="Artifact Generation Failed",
+                message=context,
+                priority="high",
+                tags=["warning", "x"]
+            )
+
         return 1
 
 if __name__ == "__main__":

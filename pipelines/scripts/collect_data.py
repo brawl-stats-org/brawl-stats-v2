@@ -8,14 +8,14 @@ import time
 import argparse
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from pipelines.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
-from pipelines.src import (
+from config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
+from src import (
     R2Client,
     PipelineMonitor,
     write_gzip_json,
     read_gzip_json,
 )
-from pipelines.src.api import (
+from src.api import (
     fetch_player_data,
     fetch_battlelog,
     fetch_club_data,
@@ -333,8 +333,23 @@ def main():
 
     except Exception as e:
         print(f"\nError during collection: {e}")
+
+        # Error notification (only if enabled)
         if args.notify_errors:
-            monitor.notify_failure("Data Collection", e)
+            modes = []
+            if args.battlelogs:
+                modes.append("battlelogs")
+            if args.snapshots:
+                modes.append("snapshots")
+
+            context = f"Script: collect_data.py\nOperation: {', '.join(modes)}\nError: {str(e)}"
+            monitor.send_ntfy(
+                title="Data Collection Failed",
+                message=context,
+                priority="high",
+                tags=["warning", "x"]
+            )
+
         return 1
 
 
