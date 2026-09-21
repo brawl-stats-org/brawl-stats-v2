@@ -8,8 +8,6 @@
 
 ```
 <type>[optional scope]: <description>
-
-[optional body]
 ```
 
 **Types**:
@@ -22,13 +20,6 @@
 - `perf`: Performance improvement
 
 **Scope**: Use when helpful for clarity. Examples: `feat(api):`, `fix(auth):`, `chore(deps):`
-
-**Examples**:
-```
-feat: add user metrics tracking
-fix(api): correct token expiry validation
-chore: update dependencies
-```
 
 **Rules**:
 - Single-line descriptions only (no multi-line commit messages)
@@ -47,6 +38,16 @@ Examples:
 - `fix/auth-token-validation`
 - `chore/update-deps`
 
+### Pushes to Main
+
+Direct pushes to `main` should be either:
+- **Very small hotfixes**: Urgent, minimal changes
+- **Squashed PRs** (or stacks of PRs)
+
+PRs merged to main should almost always have:
+- A milestone
+- Implement or close an associated issue
+
 ## GitHub Workflow
 
 Use `gh` CLI for all issue and PR operations.
@@ -54,6 +55,7 @@ Use `gh` CLI for all issue and PR operations.
 ### Issues
 
 Treat issues as tasks/tickets.
+They should amost always have labels.
 
 **Bug reports**:
 - Expected behavior
@@ -79,26 +81,6 @@ Pipeline scripts (data collection, uploads, artifact generation) follow a consis
 **Pattern:**
 - Functions: Log errors when encountered, raise exceptions
 - Main/orchestrator: Catches exceptions, sends notifications (no re-logging)
-
-**Example:**
-```python
-def process_data(data, monitor=None):
-    if not data:
-        error_msg = "No data to process"
-        if monitor:
-            monitor.log_error(error_msg)
-        raise ValueError(error_msg)
-    # ... process
-
-def main():
-    monitor = PipelineMonitor(ntfy_topic=...)
-    try:
-        process_data(data, monitor)
-    except Exception as e:
-        # Send notification only - error already logged
-        if args.notify_errors:
-            monitor.send_ntfy("Task Failed", str(e), ...)
-```
 
 **Notifications:**
 
