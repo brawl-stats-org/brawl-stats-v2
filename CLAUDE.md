@@ -44,9 +44,7 @@ Direct pushes to `main` should be either:
 - **Very small hotfixes**: Urgent, minimal changes
 - **Squashed PRs** (or stacks of PRs)
 
-PRs merged to main should almost always have:
-- A milestone
-- Implement or close an associated issue
+PRs merged to main should almost always have an related issue.
 
 ## GitHub Workflow
 
@@ -55,7 +53,12 @@ Use `gh` CLI for all issue and PR operations.
 ### Issues
 
 Treat issues as tasks/tickets.
-They should amost always have labels.
+
+**Creation**:
+- Add appropriate labels
+- Add appropriate milestone
+- Add assignee
+- Ask what to do those for all of the above if unclear
 
 **Bug reports**:
 - Expected behavior
@@ -71,6 +74,7 @@ They should amost always have labels.
 Include:
 - Summary of changes (what and why)
 - Related issues/links
+- Closes/Implements #n (almost always)
 
 ## Pipeline Scripts
 
