@@ -11,3 +11,19 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "requests>=2.32.3",
 ]
+
+[tool.basedpyright]
+typeCheckingMode = "standard"
+pythonVersion = "3.12"
+venvPath = "."
+venv = ".venv"
+extraPaths = ["pipelines"]
+strictParameterNoneValue = false
+reportOptionalMemberAccess = "warning"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "B"]
+ignore = ["E402", "E501"]
