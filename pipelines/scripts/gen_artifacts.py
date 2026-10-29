@@ -170,7 +170,7 @@ def gen_battlelogs_artifacts(tracked_tags: list[str], verbose: bool = False, mon
         monitor.log_info("Starting battlelog duels detail generation")
 
     t1 = time.perf_counter()
-    duels_details = BattleLogDuelsDetail.from_battlelog(duels_battlelog, tracked_tags)
+    duels_details = BattleLogDuelsDetail.from_battlelog(duels_battlelog, tracked_tags_set)
 
     # Validate (aborts on failure if monitor enabled)
     if monitor:
