@@ -78,7 +78,7 @@ def get_all_tracked_tags(verbose: bool = False, monitor: PipelineMonitor = None)
     return list(all_tags)
 
 
-def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, monitor: PipelineMonitor = None):
+def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, monitor: PipelineMonitor = None, use_r2: bool = True):
     """
     Collect battlelogs from Brawl Stars API and write to local storage.
 
@@ -86,10 +86,11 @@ def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, mon
         all_tags: List of player tags to collect
         verbose: Verbose output
         monitor: Pipeline monitor for logging/notifications
+        use_r2: Fall back to R2 for today's existing file when missing locally
 
     Flow:
     1. Fetch battlelogs from API (all tracked players)
-    2. Load existing today's file (local or R2)
+    2. Load existing today's file (local, then R2 if use_r2)
     3. Merge + dedup by battleTime
     4. Write to local
 
@@ -114,6 +115,12 @@ def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, mon
         if verbose:
             print(f"[BATTLELOGS] Loading existing from local: {local_path}")
         existing = read_gzip_json(local_path)
+    elif not use_r2:
+        # TODO: if R2 has today's file, the next upload overwrites it with this partial one
+        msg = f"R2 disabled and no local {local_path}, starting empty"
+        print(f"{BATTLELOGS} Warning: {msg}")
+        if monitor:
+            monitor.log_warning(msg)
     else:
         r2_client = R2Client()
         if r2_client.file_exists(r2_key):
@@ -282,6 +289,7 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true", help="Verbose output")
     parser.add_argument("--notify-errors", action="store_true", help="Send ntfy notifications on errors")
     parser.add_argument("--notify-success", action="store_true", help="Send ntfy notifications on success")
+    parser.add_argument("--no-r2", action="store_true", help="Don't fall back to R2 for existing data (used when R2 is down)")
     args = parser.parse_args()
 
     if not args.battlelogs and not args.snapshots:
@@ -301,7 +309,7 @@ def main():
         all_tags = get_all_tracked_tags(verbose=args.verbose, monitor=monitor)
 
         if args.battlelogs:
-            collect_battlelogs_with_tags(all_tags, verbose=args.verbose, monitor=monitor)
+            collect_battlelogs_with_tags(all_tags, verbose=args.verbose, monitor=monitor, use_r2=not args.no_r2)
 
         if args.snapshots:
             collect_snapshots_with_tags(all_tags, verbose=args.verbose, monitor=monitor)
