@@ -313,6 +313,7 @@ def main():
     monitor = PipelineMonitor(ntfy_topic=ntfy_topic)
 
     client = R2Client()
+    raw_files = []
 
     try:
         t0 = time.perf_counter()
