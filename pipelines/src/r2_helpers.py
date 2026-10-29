@@ -8,6 +8,7 @@ import gzip
 import json
 from pathlib import Path
 import boto3
+from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -57,8 +58,10 @@ class R2Client:
         try:
             self.client.head_object(Bucket=self.bucket, Key=r2_key)
             return True
-        except:
-            return False
+        except ClientError as e:
+            if e.response.get("Error", {}).get("Code") in ("404", "NoSuchKey", "NotFound"):
+                return False
+            raise
 
     def download_file(self, r2_key: str, local_path: str, verbose: bool = False) -> bool:
         """Download a single file from R2 to local path
