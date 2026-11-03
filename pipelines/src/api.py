@@ -31,12 +31,17 @@ class ApiMaintenanceError(Exception):
     pass
 
 
+class NotFoundError(Exception):
+    """Raised when the API returns 404. Never retried."""
+    pass
+
+
 # Cache for brawlers data to avoid repeated API calls
 _BRAWLERS_CACHE = None
 
 _RETRY_COUNT = 3
 _RETRY_BACKOFF = 2  # sleeps: 2s, 4s, 8s (backoff_factor * 2^attempt)
-_RETRY_STATUS = {429, 502, 503, 504}
+_RETRY_STATUS = {429, 500, 502, 503, 504}
 
 
 def api_call(endpoint, monitor=None):
@@ -50,26 +55,29 @@ def api_call(endpoint, monitor=None):
     last_exc = None
 
     for attempt in range(1, _RETRY_COUNT + 1):
+        # Only network errors and _RETRY_STATUS codes are retried; everything else raises immediately
         try:
             response = requests.get(url, headers=headers)
+        except requests.RequestException as e:
+            last_exc = e
+        else:
             if response.ok:
                 return response
 
-            # Check for maintenance before deciding to retry
             try:
-                if response.json().get("reason") == "inMaintenance":
-                    raise ApiMaintenanceError(f"Brawl API in maintenance (endpoint: {endpoint})")
+                in_maintenance = response.json().get("reason") == "inMaintenance"
             except (ValueError, AttributeError):
-                pass
+                in_maintenance = False
+            if in_maintenance:
+                raise ApiMaintenanceError(f"Brawl API in maintenance (endpoint: {endpoint})")
 
+            error_msg = f"API call failed for endpoint {endpoint}: {response.status_code} - {response.text}"
+            if response.status_code == 404:
+                raise NotFoundError(error_msg)
             if response.status_code not in _RETRY_STATUS:
-                raise Exception(f"API call failed for endpoint {endpoint}: {response.status_code} - {response.text}")
+                raise Exception(error_msg)
 
-            last_exc = Exception(f"API call failed for endpoint {endpoint}: {response.status_code} - {response.text}")
-        except ApiMaintenanceError:
-            raise  # never retry, propagate immediately
-        except Exception as e:
-            last_exc = e
+            last_exc = Exception(error_msg)
 
         if attempt < _RETRY_COUNT:
             delay = _RETRY_BACKOFF * (2 ** (attempt - 1))
@@ -115,7 +123,15 @@ def fetch_player_data(tag, monitor=None):
 def fetch_battlelog(tag, monitor=None):
     """Fetch player battlelog from API"""
     encoded_tag = quote(tag)
-    response = api_call(f"players/{encoded_tag}/battlelog", monitor=monitor)
+    try:
+        response = api_call(f"players/{encoded_tag}/battlelog", monitor=monitor)
+    except NotFoundError:
+        # Battlelog 404s for existing players with no battles since the last reset (e.g. after a game update)
+        msg = f"Battlelog not found for {tag} (no battles since reset), treating as empty"
+        print(msg)
+        if monitor:
+            monitor.log_warning(msg)
+        return {"items": []}
     return response.json()
 
 
