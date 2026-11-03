@@ -13,6 +13,7 @@ from .api import (
     fetch_club_data,
     get_club_members_tags,
     ApiMaintenanceError,
+    NotFoundError,
 )
 
 __all__ = [
@@ -33,4 +34,5 @@ __all__ = [
     "fetch_club_data",
     "get_club_members_tags",
     "ApiMaintenanceError",
+    "NotFoundError",
 ]
