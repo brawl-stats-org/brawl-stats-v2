@@ -1,0 +1,67 @@
+name: Project board automation
+
+# Moves issues from Ready to In progress when a branch linked to them (via the
+# issue's Development sidebar) is created or pushed to. "In review" and "Done"
+# are handled by the project's built-in workflows.
+on:
+  create:
+  push:
+    branches-ignore: [main]
+
+env:
+  PROJECT_ID: PVT_kwDOFQ7XNs4Bqfix
+  STATUS_FIELD_ID: PVTSSF_lADOFQ7XNs4Bqfixzho2cco
+  IN_PROGRESS_OPTION_ID: 7fdf173c
+
+jobs:
+  move-to-in-progress:
+    if: github.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Move linked Ready issues to In progress
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          items=$(gh api graphql \
+            -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" \
+            -f query='
+              query($owner: String!, $repo: String!) {
+                repository(owner: $owner, name: $repo) {
+                  issues(states: OPEN, first: 100) {
+                    nodes {
+                      number
+                      linkedBranches(first: 10) { nodes { ref { name } } }
+                      projectItems(first: 10) {
+                        nodes {
+                          id
+                          project { id }
+                          fieldValueByName(name: "Status") {
+                            ... on ProjectV2ItemFieldSingleSelectValue { name }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }' \
+            | jq -r --arg b "$BRANCH" --arg p "$PROJECT_ID" '
+                .data.repository.issues.nodes[]
+                | select(any(.linkedBranches.nodes[]; .ref.name == $b))
+                | .projectItems.nodes[]
+                | select(.project.id == $p and .fieldValueByName.name == "Ready")
+                | .id')
+
+          for item in $items; do
+            gh api graphql \
+              -f project="$PROJECT_ID" -f item="$item" \
+              -f field="$STATUS_FIELD_ID" -f option="$IN_PROGRESS_OPTION_ID" \
+              -f query='
+                mutation($project: ID!, $item: ID!, $field: ID!, $option: String!) {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: $project, itemId: $item, fieldId: $field,
+                    value: { singleSelectOptionId: $option }
+                  }) { projectV2Item { id } }
+                }' > /dev/null
+            echo "Moved item $item to In progress"
+          done
