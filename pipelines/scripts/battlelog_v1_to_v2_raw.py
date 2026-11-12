@@ -1,12 +1,11 @@
 import sys
 from pathlib import Path
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import argparse
 from collections import defaultdict
 from datetime import datetime
-from src import read_gzip_json, write_gzip_json
+from brawl_stats import read_gzip_json, write_gzip_json
 
 
 def extract_date_from_battletime(battle_time: str) -> str:

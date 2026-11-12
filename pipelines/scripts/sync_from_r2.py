@@ -1,7 +1,5 @@
-import sys
 from pathlib import Path
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 """
 Compare local data/ with R2 and optionally sync missing/different files.
@@ -20,7 +18,7 @@ from typing import NamedTuple
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
-from src import R2Client
+from brawl_stats import R2Client
 
 
 class FileType(Enum):

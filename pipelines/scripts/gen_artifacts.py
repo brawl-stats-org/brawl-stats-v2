@@ -1,12 +1,10 @@
 import sys
-from pathlib import Path
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src import BattleLog, BattleLogColumnar, BattleLogDuelsDetail
-from src import BrawlAccount, BrawlAccountColumnar, PlayerSnapshotDetail
-from src import PipelineMonitor, StageProfiler
-from config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ARTIFACTS, PATH_ARTIFACTS_SNAPSHOT_DETAIL
+from brawl_stats import BattleLog, BattleLogColumnar, BattleLogDuelsDetail
+from brawl_stats import BrawlAccount, BrawlAccountColumnar, PlayerSnapshotDetail
+from brawl_stats import PipelineMonitor, StageProfiler
+from brawl_stats.config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ARTIFACTS, PATH_ARTIFACTS_SNAPSHOT_DETAIL
 import os
 import json
 import time

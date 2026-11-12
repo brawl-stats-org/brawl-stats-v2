@@ -11,12 +11,21 @@ dependencies = [
     "requests>=2.32.3",
 ]
 
+[build-system]
+requires = ["uv_build>=0.8,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "brawl_stats"
+module-root = "pipelines/src"
+
 [tool.basedpyright]
 typeCheckingMode = "standard"
 pythonVersion = "3.12"
 venvPath = "."
 venv = ".venv"
-extraPaths = ["pipelines"]
+# verify_determinism.py imports gen_artifacts.py as a module.
+extraPaths = ["pipelines/scripts"]
 strictParameterNoneValue = false
 reportOptionalMemberAccess = "warning"
 

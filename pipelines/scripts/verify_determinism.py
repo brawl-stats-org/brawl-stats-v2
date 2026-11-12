@@ -17,13 +17,12 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS_DIR = Path(__file__).resolve().parent
-PIPELINES_DIR = SCRIPTS_DIR.parent
 HASH_SEEDS = ("1", "2")
 
 
 def worker(out_dir: str) -> int:
     """Run gen_artifacts.main() with its output paths redirected to out_dir."""
-    sys.path[:0] = [str(PIPELINES_DIR), str(SCRIPTS_DIR)]
+    sys.path.insert(0, str(SCRIPTS_DIR))
     import gen_artifacts
 
     # Functions read these module globals at call time, so patching them redirects all writes

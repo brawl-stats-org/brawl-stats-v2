@@ -1,10 +1,9 @@
 import sys
 from pathlib import Path
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import argparse
-from src import read_gzip_json, write_gzip_json
+from brawl_stats import read_gzip_json, write_gzip_json
 
 
 def convert_v1_to_v2(v1_data: dict) -> dict:
