@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from src import BrawlAccount
+from .brawl_account import BrawlAccount
 
 
 class BrawlAccountColumnar(BaseModel):

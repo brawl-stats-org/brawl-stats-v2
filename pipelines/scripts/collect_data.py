@@ -1,21 +1,19 @@
 import sys
-from pathlib import Path
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import os
 import time
 import argparse
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
-from src import (
+from brawl_stats.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
+from brawl_stats import (
     R2Client,
     PipelineMonitor,
     write_gzip_json,
     read_gzip_json,
 )
-from src.api import (
+from brawl_stats.api import (
     fetch_player_data,
     fetch_battlelog,
     fetch_club_data,

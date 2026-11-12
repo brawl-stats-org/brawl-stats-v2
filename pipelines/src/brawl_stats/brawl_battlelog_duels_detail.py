@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from src import BattleLog, BattleLogEntry
+from .brawl_battlelog import BattleLog, BattleLogEntry
 
 
 class BattleLogDuelsDetail(BaseModel):

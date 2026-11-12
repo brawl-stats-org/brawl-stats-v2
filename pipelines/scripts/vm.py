@@ -1,6 +1,4 @@
 import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import os
 import time
@@ -8,7 +6,7 @@ import argparse
 import subprocess
 from datetime import datetime
 from dotenv import load_dotenv
-from src import PipelineMonitor, R2Client
+from brawl_stats import PipelineMonitor, R2Client
 
 load_dotenv()
 

@@ -1,15 +1,14 @@
 import sys
 from pathlib import Path
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import os
 import time
 import argparse
 from datetime import datetime
 from dotenv import load_dotenv
-from config import PATH_ARTIFACTS
-from src import R2Client, PipelineMonitor
+from brawl_stats.config import PATH_ARTIFACTS
+from brawl_stats import R2Client, PipelineMonitor
 
 load_dotenv()
 
