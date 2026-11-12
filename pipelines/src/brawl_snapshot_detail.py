@@ -3,7 +3,7 @@ from typing import Optional, TYPE_CHECKING
 from datetime import datetime
 
 if TYPE_CHECKING:
-    from src.brawl_account import Brawler
+    from src.brawl_account import BrawlAccount, Brawler
 
 # Lightweight models for memory-efficient detail generation
 class GadgetListLight(BaseModel):

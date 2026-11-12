@@ -8,6 +8,8 @@ import gzip
 import json
 from pathlib import Path
 import boto3
+from botocore.config import Config
+from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -33,7 +35,13 @@ class R2Client:
             's3',
             endpoint_url=os.getenv('R2_ENDPOINT'),
             aws_access_key_id=os.getenv('R2_ACCESS_KEY_ID'),
-            aws_secret_access_key=os.getenv('R2_SECRET_ACCESS_KEY')
+            aws_secret_access_key=os.getenv('R2_SECRET_ACCESS_KEY'),
+            # Fail fast when R2 is unreachable (boto defaults: 60s timeouts + legacy retries)
+            config=Config(
+                connect_timeout=5,
+                read_timeout=30,
+                retries={"max_attempts": 3, "mode": "standard"},
+            ),
         )
         self._initialized = True
 
@@ -44,6 +52,17 @@ class R2Client:
     def get_bucket(self):
         """Get the R2 bucket name"""
         return self.bucket
+
+    def check_connection(self):
+        """Verify R2 is reachable and credentials work
+
+        Uses list_objects_v2 rather than head_bucket: bucket-scoped tokens
+        are known to allow listing, head_bucket isn't guaranteed.
+
+        Raises:
+            ClientError / BotoCoreError if R2 is unreachable or auth fails
+        """
+        self.client.list_objects_v2(Bucket=self.bucket, MaxKeys=1)
 
     def file_exists(self, r2_key: str) -> bool:
         """Check if a file exists in R2 bucket
@@ -57,8 +76,10 @@ class R2Client:
         try:
             self.client.head_object(Bucket=self.bucket, Key=r2_key)
             return True
-        except:
-            return False
+        except ClientError as e:
+            if e.response.get("Error", {}).get("Code") in ("404", "NoSuchKey", "NotFound"):
+                return False
+            raise
 
     def download_file(self, r2_key: str, local_path: str, verbose: bool = False) -> bool:
         """Download a single file from R2 to local path

@@ -28,6 +28,19 @@ vm.py (orchestrator)
 3. Generate artifacts from all local data
 4. Upload artifacts to R2 (optional, via `--upload-r2`)
 
+### R2 Preflight & Degraded Mode
+
+Before collecting, `vm.py` checks R2 with `R2Client.check_connection()` (a 1-key `list_objects_v2`). It runs every time, even without `--upload-r2`, because battlelog collection falls back to R2 when today's local file is missing.
+
+If R2 is unreachable (network, credentials, missing env), the run degrades to **local-only** instead of aborting. The API only returns recent battles, so a skipped run would lose data for good.
+- Collection runs with `--no-r2`: no R2 fallback; starts empty if no local file for today
+- All uploads are skipped
+- One `R2 Unreachable` warning notification (with `--notify-errors`), otherwise logged
+
+The boto client fails fast (5s connect / 30s read timeout, 3 attempts), so an unreachable R2 costs ~25s once per run.
+
+**Known gap:** if R2 is down on the first run of the day *and* R2 already has today's file, local starts empty. The next upload then overwrites R2's file with a partial one. That only happens if the local file was lost, so it's accepted for now.
+
 ---
 
 ## Cron Schedule

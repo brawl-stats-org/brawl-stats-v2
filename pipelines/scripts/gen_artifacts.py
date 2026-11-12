@@ -5,21 +5,16 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src import BattleLog, BattleLogColumnar, BattleLogDuelsDetail
 from src import BrawlAccount, BrawlAccountColumnar, PlayerSnapshotDetail
-from src import PipelineMonitor
+from src import PipelineMonitor, StageProfiler
 from config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ARTIFACTS, PATH_ARTIFACTS_SNAPSHOT_DETAIL
 import os
 import json
 import time
 import argparse
-import psutil
 
 
 BATTLELOGS = "[BATTLELOGS]"
 SNAPSHOTS = "[SNAPSHOTS]"
-
-def get_memory_mb() -> float:
-    """Get current process memory usage in MB"""
-    return psutil.Process().memory_info().rss / 1024 / 1024
 
 def create_artfacts_dirs_if_not_exists(verbose: bool = False):
     """Create the artifacts directory if it does not exist"""
@@ -50,6 +45,14 @@ def read_gzip_json_file(file_path: str) -> dict:
     with gzip.open(file_path, 'rt', encoding='utf-8') as f:
         return json.load(f)
 
+def warn_stage_skipped(monitor: PipelineMonitor | None, stage: str, reason: str):
+    """Report a skipped stage without failing the run (existing artifacts are left as-is)"""
+    message = f"Script: gen_artifacts.py\n{stage} skipped: {reason}"
+    if monitor:
+        monitor.notify_warning("Artifact Stage Skipped", message)
+    else:
+        print(f"WARNING: {message}")
+
 def load_and_merge_battlelogs(file_paths: list[str], verbose: bool = False) -> BattleLog:
     """Load multiple battlelog files and merge them into a single BattleLog object
 
@@ -60,7 +63,7 @@ def load_and_merge_battlelogs(file_paths: list[str], verbose: bool = False) -> B
     if not file_paths or len(file_paths) == 0:
         raise ValueError(BATTLELOGS + "No file paths provided")
 
-    result = None
+    result = BattleLog()
     raw_entries_count = 0
 
     for file_path in file_paths:
@@ -72,11 +75,7 @@ def load_and_merge_battlelogs(file_paths: list[str], verbose: bool = False) -> B
             print(f"{BATTLELOGS} Loaded {file_path}: {len(battlelog.entries)} entries")
 
         # Merge incrementally to avoid keeping all BattleLogs in memory
-        if result is None:
-            result = battlelog
-        else:
-            result.merge(battlelog)
-            # battlelog goes out of scope and can be GC'd
+        result.merge(battlelog)
 
     if verbose:
         print(f"{BATTLELOGS} Merged {len(file_paths)} files with {raw_entries_count} (raw) entries")
@@ -84,17 +83,19 @@ def load_and_merge_battlelogs(file_paths: list[str], verbose: bool = False) -> B
 
     return result
 
-def gen_battlelogs_artifacts(tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor = None):
-    """Generate battlelog artifacts by loading and merging all available battlelog files
+def gen_battlelog_core_artifact(tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None) -> BattleLog | None:
+    """Generate battlelog core artifact by loading and merging all available battlelog files
 
     Memory optimized: loads files in batches, converts to columnar, merges columnar chunks
+
+    Returns:
+        BattleLog of duels battles only (input for gen_battlelog_duels_detail_artifact),
+        or None if the stage was skipped (no raw battlelogs)
     """
     if monitor:
         monitor.log_info("Starting battlelog artifact generation")
 
     t0 = time.perf_counter()
-    mem_start = get_memory_mb()
-    peak_mem = mem_start
 
     file_paths = sorted([ # Discover all .json.gz files in battlelogs directory
         os.path.join(PATH_RAW_BATTLELOGS, f)
@@ -105,7 +106,7 @@ def gen_battlelogs_artifacts(tracked_tags: list[str], verbose: bool = False, mon
     # Process in batches to reduce peak memory
     BATCH_SIZE = 20
     bl_columnar = None
-    duels_battlelog = None  # Keep only duels battles for duels detail generation
+    duels_battlelog = BattleLog()  # Keep only duels battles for duels detail generation (may stay empty)
     tracked_tags_set = set(tracked_tags)
 
     for batch_idx in range(0, len(file_paths), BATCH_SIZE):
@@ -117,11 +118,7 @@ def gen_battlelogs_artifacts(tracked_tags: list[str], verbose: bool = False, mon
         # Extract duels battles only for duels detail
         duels_entries = [e for e in batch_battlelog.entries if e.mode == "duels"]
         if duels_entries:
-            batch_duels = BattleLog(entries=duels_entries)
-            if duels_battlelog is None:
-                duels_battlelog = batch_duels
-            else:
-                duels_battlelog.merge(batch_duels)
+            duels_battlelog.merge(BattleLog(entries=duels_entries))
 
         # Convert batch to columnar
         batch_columnar = BattleLogColumnar.from_battlelog(batch_battlelog, tracked_tags_set)
@@ -132,16 +129,14 @@ def gen_battlelogs_artifacts(tracked_tags: list[str], verbose: bool = False, mon
         else:
             bl_columnar.merge(batch_columnar)
 
-        # Track memory
-        peak_mem = max(peak_mem, get_memory_mb())
-
         if verbose:
             batch_num = batch_idx // BATCH_SIZE + 1
             total_batches = (len(file_paths) + BATCH_SIZE - 1) // BATCH_SIZE
-            print(f"{BATTLELOGS} Processed batch {batch_num}/{total_batches}: {get_memory_mb():.1f} MB (peak: {peak_mem:.1f} MB)")
+            print(f"{BATTLELOGS} Processed batch {batch_num}/{total_batches}")
 
-    if verbose:
-        print(f"{BATTLELOGS} Final memory: {get_memory_mb():.1f} MB (peak: {peak_mem:.1f} MB)")
+    if bl_columnar is None:
+        warn_stage_skipped(monitor, "Battlelog core", f"no battlelog files found in {PATH_RAW_BATTLELOGS}")
+        return None
 
     # Validate (aborts on failure if monitor enabled)
     if monitor:
@@ -165,12 +160,22 @@ def gen_battlelogs_artifacts(tracked_tags: list[str], verbose: bool = False, mon
     if verbose:
         print(f"{BATTLELOGS} Columnar BattleLog artifact written to {battlelog_artifact_path}")
 
-    # Battlelog duels detail
+    return duels_battlelog
+
+def gen_battlelog_duels_detail_artifact(duels_battlelog: BattleLog | None, tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None):
+    """Generate battlelog duels detail artifact from the duels battles collected by gen_battlelog_core_artifact
+
+    Skipped when duels_battlelog is None (battlelog core was skipped), keeping it consistent with core.
+    """
+    if duels_battlelog is None:
+        warn_stage_skipped(monitor, "Battlelog duels detail", "battlelog core was skipped")
+        return
+
     if monitor:
         monitor.log_info("Starting battlelog duels detail generation")
 
     t1 = time.perf_counter()
-    duels_details = BattleLogDuelsDetail.from_battlelog(duels_battlelog, tracked_tags)
+    duels_details = BattleLogDuelsDetail.from_battlelog(duels_battlelog, set(tracked_tags))
 
     # Validate (aborts on failure if monitor enabled)
     if monitor:
@@ -202,8 +207,6 @@ def gen_snapshots_core_artifact(verbose: bool = False, monitor: PipelineMonitor 
         monitor.log_info("Starting snapshot core artifact generation")
 
     t0 = time.perf_counter()
-    mem_start = get_memory_mb()
-    peak_mem = mem_start
 
     file_paths = sorted([
         os.path.join(PATH_RAW_SNAPSHOTS, f)
@@ -233,16 +236,14 @@ def gen_snapshots_core_artifact(verbose: bool = False, monitor: PipelineMonitor 
         else:
             snapshot_columnar.merge(batch_columnar)
 
-        # Track memory
-        peak_mem = max(peak_mem, get_memory_mb())
-
         if verbose:
             batch_num = batch_idx // BATCH_SIZE + 1
             total_batches = (len(file_paths) + BATCH_SIZE - 1) // BATCH_SIZE
-            print(f"{SNAPSHOTS} Processed batch {batch_num}/{total_batches}: {get_memory_mb():.1f} MB (peak: {peak_mem:.1f} MB)")
+            print(f"{SNAPSHOTS} Processed batch {batch_num}/{total_batches}")
 
-    if verbose:
-        print(f"{SNAPSHOTS} Final memory: {get_memory_mb():.1f} MB (peak: {peak_mem:.1f} MB)")
+    if snapshot_columnar is None:
+        warn_stage_skipped(monitor, "Snapshots core", f"no snapshot files found in {PATH_RAW_SNAPSHOTS}")
+        return
 
     # Validate (aborts on failure if monitor enabled)
     if monitor:
@@ -275,8 +276,6 @@ def gen_snapshots_detail_artifacts(tracked_tags: list[str], verbose: bool = Fals
         monitor.log_info("Starting snapshot detail generation")
 
     t0 = time.perf_counter()
-    mem_start = get_memory_mb()
-    peak_mem = mem_start
 
     file_paths = sorted([
         os.path.join(PATH_RAW_SNAPSHOTS, f)
@@ -323,14 +322,12 @@ def gen_snapshots_detail_artifacts(tracked_tags: list[str], verbose: bool = Fals
             f.write(detail.to_json())
 
         player_count += 1
-        peak_mem = max(peak_mem, get_memory_mb())
 
         if verbose and player_count % 5 == 0:
-            print(f"{SNAPSHOTS} Processed {player_count}/{len(all_player_tags)} players: {get_memory_mb():.1f} MB")
+            print(f"{SNAPSHOTS} Processed {player_count}/{len(all_player_tags)} players")
 
     if verbose:
         print(f"{SNAPSHOTS} Generated {player_count} player detail artifacts")
-        print(f"{SNAPSHOTS} Peak memory: {peak_mem:.1f} MB (delta: +{peak_mem - mem_start:.1f} MB)")
 
     print(f"{SNAPSHOTS} Snapshot detail artifacts generated in {time.perf_counter() - t0:.2f} seconds")
     if verbose:
@@ -346,6 +343,7 @@ def main():
     # Initialize monitor (only if notifications enabled)
     ntfy_topic = os.getenv("NTFY_TOPIC") if args.notify_errors else None
     monitor = PipelineMonitor(ntfy_topic=ntfy_topic)
+    profiler = StageProfiler(monitor)
 
     t0 = time.perf_counter()
 
@@ -368,21 +366,28 @@ def main():
         ]
 
         create_artfacts_dirs_if_not_exists(verbose=args.verbose)
-        gen_battlelogs_artifacts(tracked_tags, verbose=args.verbose, monitor=monitor)
-        gen_snapshots_core_artifact(verbose=args.verbose, monitor=monitor)
-        gen_snapshots_detail_artifacts(tracked_tags, verbose=args.verbose, monitor=monitor)
+        with profiler.stage("battlelog_core"):
+            duels_battlelog = gen_battlelog_core_artifact(tracked_tags, verbose=args.verbose, monitor=monitor)
+        with profiler.stage("battlelog_duels_detail"):
+            gen_battlelog_duels_detail_artifact(duels_battlelog, tracked_tags, verbose=args.verbose, monitor=monitor)
+        del duels_battlelog  # Don't carry it into the snapshot stages
+        with profiler.stage("snapshots_core"):
+            gen_snapshots_core_artifact(verbose=args.verbose, monitor=monitor)
+        with profiler.stage("snapshots_detail"):
+            gen_snapshots_detail_artifacts(tracked_tags, verbose=args.verbose, monitor=monitor)
 
         t1 = time.perf_counter()
         duration = t1 - t0
 
         print(f"\n=> Artifacts generation complete in {duration:.2f}s")
+        profiler.report()
 
         # Success notification (only if enabled)
         if args.notify_success:
-            monitor.notify_success({
-                "Duration": f"{duration:.2f}s",
-                "Status": "Success"
-            })
+            stats: dict[str, str | int | float] = {"Duration": f"{duration:.2f}s", "Status": "Success"}
+            if profiler.peak_mb is not None:
+                stats["Peak RAM"] = f"{profiler.peak_mb:.1f} MB"
+            monitor.notify_success(stats)
 
         monitor.log_info(f"Artifact generation complete: {duration:.2f}s")
         return 0

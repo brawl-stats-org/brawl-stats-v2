@@ -201,7 +201,6 @@ def _parse_team_battle(battle: dict, event: dict, battle_time: datetime, mode: s
 
 def _parse_showdown_battle(battle: dict, event: dict, battle_time: datetime, mode: str, battle_type: str, map_name: str, owner_tag: str = None) -> BattleLogEntry:
     """Parse showdown battle (solo/duo/trio)."""
-    rank = battle.get('rank')
     trophy_change = battle.get('trophyChange')
 
     # Showdown can have 'teams' (duo/trio) or 'players' (solo)

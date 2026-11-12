@@ -8,7 +8,7 @@ import argparse
 import subprocess
 from datetime import datetime
 from dotenv import load_dotenv
-from src import PipelineMonitor
+from src import PipelineMonitor, R2Client
 
 load_dotenv()
 
@@ -93,12 +93,32 @@ def main():
         # Track what was collected
         collected = []
 
+        # --- R2 preflight ---
+        # R2 down must not block collection (API only returns recent battles, a skipped run loses data),
+        # so degrade to local-only: no R2 fallback in collection, no uploads
+        r2_available = True
+        try:
+            R2Client().check_connection()
+        except Exception as e:
+            r2_available = False
+            msg = f"R2 unreachable, running local-only (no R2 fallback, no uploads): {e}"
+            print(f"Warning: {msg}")
+            if args.notify_errors:
+                monitor.notify_warning("R2 Unreachable", f"Script: vm.py\n{msg}")
+            else:
+                monitor.log_warning(msg)
+
+        upload_r2 = args.upload_r2 and r2_available
+        skip_upload_msg = "\n(Skipping R2 upload — pass --upload-r2 to enable)" if r2_available else "\n(Skipping R2 upload — R2 unreachable)"
+
         # --- Collect battlelogs ---
         if args.battlelogs:
             print("=== Collecting battlelogs ===")
 
             # 1. Collect data
             cmd = ["uv", "run", "pipelines/scripts/collect_data.py", "--battlelogs"]
+            if not r2_available:
+                cmd.append("--no-r2")
             if args.notify_errors:
                 cmd.append("--notify-errors")
             if args.verbose:
@@ -109,7 +129,7 @@ def main():
                 return 1
 
             # 2. Upload raw battlelog
-            if args.upload_r2:
+            if upload_r2:
                 print("\n=== Uploading raw battlelogs ===")
                 battlelog_file = f"data/raw/battlelogs/{today}.json.gz"
                 cmd = ["uv", "run", "pipelines/scripts/upload_to_r2.py", "--raw", battlelog_file, "--execute"]
@@ -123,7 +143,7 @@ def main():
                     if monitor:
                         monitor.log_error("Battlelog upload failed, continuing with local data")
             else:
-                print("\n(Skipping R2 upload — pass --upload-r2 to enable)")
+                print(skip_upload_msg)
 
             collected.append("battlelogs")
 
@@ -133,6 +153,8 @@ def main():
 
             # 1. Collect data
             cmd = ["uv", "run", "pipelines/scripts/collect_data.py", "--snapshots"]
+            if not r2_available:
+                cmd.append("--no-r2")
             if args.notify_errors:
                 cmd.append("--notify-errors")
             if args.verbose:
@@ -143,7 +165,7 @@ def main():
                 return 1
 
             # 2. Upload raw snapshot
-            if args.upload_r2:
+            if upload_r2:
                 print("\n=== Uploading raw snapshots ===")
                 snapshot_file = f"data/raw/snapshots/{today}.json.gz"
                 cmd = ["uv", "run", "pipelines/scripts/upload_to_r2.py", "--raw", snapshot_file, "--execute"]
@@ -157,7 +179,7 @@ def main():
                     if monitor:
                         monitor.log_error("Snapshot upload failed, continuing with local data")
             else:
-                print("\n(Skipping R2 upload — pass --upload-r2 to enable)")
+                print(skip_upload_msg)
 
             collected.append("snapshots")
 
@@ -176,7 +198,7 @@ def main():
                 return 1
 
             # --- Upload artifacts ---
-            if args.upload_r2:
+            if upload_r2:
                 print("\n=== Uploading artifacts ===")
                 cmd = ["uv", "run", "pipelines/scripts/upload_to_r2.py", "--artifacts", "--execute"]
                 if args.notify_errors:
@@ -189,7 +211,7 @@ def main():
                     if monitor:
                         monitor.log_error("Artifact upload failed, continuing with local artifacts")
             else:
-                print("\n(Skipping R2 upload — pass --upload-r2 to enable)")
+                print(skip_upload_msg)
 
         duration = time.perf_counter() - t0
         print(f"\n=> VM pipeline complete in {duration:.2f}s\n")
