@@ -52,40 +52,10 @@ def warn_stage_skipped(monitor: PipelineMonitor | None, stage: str, reason: str)
     else:
         print(f"WARNING: {message}")
 
-def load_and_merge_battlelogs(file_paths: list[str], verbose: bool = False) -> BattleLog:
-    """Load multiple battlelog files and merge them into a single BattleLog object
-
-    v2 format: Each file is {TAG: {items: [...]}, TAG2: {items: [...]}}
-
-    Memory optimized: merges incrementally instead of loading all into list first
-    """
-    if not file_paths or len(file_paths) == 0:
-        raise ValueError(BATTLELOGS + "No file paths provided")
-
-    result = BattleLog()
-    raw_entries_count = 0
-
-    for file_path in file_paths:
-        daily_data = read_gzip_json_file(file_path)
-        battlelog = BattleLog.from_raw_battlelog(daily_data)
-        raw_entries_count += len(battlelog.entries)
-
-        if verbose:
-            print(f"{BATTLELOGS} Loaded {file_path}: {len(battlelog.entries)} entries")
-
-        # Merge incrementally to avoid keeping all BattleLogs in memory
-        result.merge(battlelog)
-
-    if verbose:
-        print(f"{BATTLELOGS} Merged {len(file_paths)} files with {raw_entries_count} (raw) entries")
-        print(f"{BATTLELOGS} Merged BattleLog has {len(result.entries)} (deduped) entries")
-
-    return result
-
 def gen_battlelog_core_artifact(tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None) -> BattleLog | None:
     """Generate battlelog core artifact by loading and merging all available battlelog files
 
-    Memory optimized: loads files in batches, converts to columnar, merges columnar chunks
+    Memory optimized: converts one file at a time to columnar, merges columnar chunks
 
     Returns:
         BattleLog of duels battles only (input for gen_battlelog_duels_detail_artifact),
@@ -102,36 +72,29 @@ def gen_battlelog_core_artifact(tracked_tags: list[str], verbose: bool = False, 
         if f.endswith('.json.gz')
     ])
 
-    # Process in batches to reduce peak memory
-    BATCH_SIZE = 20
     bl_columnar = None
     duels_battlelog = BattleLog()  # Keep only duels battles for duels detail generation (may stay empty)
     tracked_tags_set = set(tracked_tags)
 
-    for batch_idx in range(0, len(file_paths), BATCH_SIZE):
-        batch = file_paths[batch_idx:batch_idx+BATCH_SIZE]
+    # One file at a time: BattleLog objects are the memory hog (~1.5x raw size), so only one
+    # file's worth is alive at once. Cross-file duplicates (a battle collected on two days) are
+    # deduped by BattleLogColumnar.merge, which must agree with BattleLog.merge so the output
+    # doesn't depend on how files are grouped.
+    for file_idx, file_path in enumerate(file_paths, start=1):
+        file_battlelog = BattleLog.from_raw_battlelog(read_gzip_json_file(file_path))
 
-        # Load and merge this batch
-        batch_battlelog = load_and_merge_battlelogs(batch, verbose=False)
-
-        # Extract duels battles only for duels detail
-        duels_entries = [e for e in batch_battlelog.entries if e.mode == "duels"]
+        duels_entries = [e for e in file_battlelog.entries if e.mode == "duels"]
         if duels_entries:
             duels_battlelog.merge(BattleLog(entries=duels_entries))
 
-        # Convert batch to columnar
-        batch_columnar = BattleLogColumnar.from_battlelog(batch_battlelog, tracked_tags_set)
-
-        # Merge into main columnar (or initialize)
+        file_columnar = BattleLogColumnar.from_battlelog(file_battlelog, tracked_tags_set)
         if bl_columnar is None:
-            bl_columnar = batch_columnar
+            bl_columnar = file_columnar
         else:
-            bl_columnar.merge(batch_columnar)
+            bl_columnar.merge(file_columnar)
 
-        if verbose:
-            batch_num = batch_idx // BATCH_SIZE + 1
-            total_batches = (len(file_paths) + BATCH_SIZE - 1) // BATCH_SIZE
-            print(f"{BATTLELOGS} Processed batch {batch_num}/{total_batches}")
+        if verbose and file_idx % 20 == 0:
+            print(f"{BATTLELOGS} Processed {file_idx}/{len(file_paths)} files")
 
     if bl_columnar is None:
         warn_stage_skipped(monitor, "Battlelog core", f"no battlelog files found in {PATH_RAW_BATTLELOGS}")
