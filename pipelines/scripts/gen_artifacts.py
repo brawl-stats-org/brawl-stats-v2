@@ -2,7 +2,7 @@ import sys
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
 
 from brawl_stats import BattleLog, BattleLogColumnar, BattleLogDuelsDetail
-from brawl_stats import BrawlAccount, BrawlAccountColumnar, PlayerSnapshotDetail
+from brawl_stats import BrawlAccountColumnar, PlayerSnapshotDetail
 from brawl_stats import PipelineMonitor, StageProfiler
 from brawl_stats.config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ARTIFACTS, PATH_ARTIFACTS_SNAPSHOT_DETAIL
 import os
@@ -199,7 +199,7 @@ def gen_battlelog_duels_detail_artifact(duels_battlelog: BattleLog | None, track
 def gen_snapshots_core_artifact(verbose: bool = False, monitor: PipelineMonitor = None):
     """Generate snapshot core artifact (columnar format)
 
-    Memory optimized: loads files in batches, converts to columnar, merges columnar chunks
+    Memory optimized: converts each raw file directly to columnar rows, no BrawlAccount objects
     """
     if monitor:
         monitor.log_info("Starting snapshot core artifact generation")
@@ -212,36 +212,17 @@ def gen_snapshots_core_artifact(verbose: bool = False, monitor: PipelineMonitor 
         if f.endswith('.json.gz')
     ])
 
-    # Process in batches to reduce peak memory
-    BATCH_SIZE = 20
-    snapshot_columnar = None
-
-    for batch_idx in range(0, len(file_paths), BATCH_SIZE):
-        batch = file_paths[batch_idx:batch_idx+BATCH_SIZE]
-
-        # Load batch
-        batch_snapshots = []
-        for file_path in batch:
-            snapshots = BrawlAccount.from_raw_snapshot(read_gzip_json_file(file_path))
-            batch_snapshots.extend(snapshots)
-
-        # Convert batch to columnar
-        batch_columnar = BrawlAccountColumnar.from_brawl_accounts(batch_snapshots)
-
-        # Merge into main columnar (or initialize)
-        if snapshot_columnar is None:
-            snapshot_columnar = batch_columnar
-        else:
-            snapshot_columnar.merge(batch_columnar)
-
-        if verbose:
-            batch_num = batch_idx // BATCH_SIZE + 1
-            total_batches = (len(file_paths) + BATCH_SIZE - 1) // BATCH_SIZE
-            print(f"{SNAPSHOTS} Processed batch {batch_num}/{total_batches}")
-
-    if snapshot_columnar is None:
+    if not file_paths:
         warn_stage_skipped(monitor, "Snapshots core", f"no snapshot files found in {PATH_RAW_SNAPSHOTS}")
         return
+
+    # One raw file in memory at a time, rows appended straight into the columnar
+    snapshot_columnar = BrawlAccountColumnar()
+    for file_idx, file_path in enumerate(file_paths, start=1):
+        snapshot_columnar.add_raw_snapshot(read_gzip_json_file(file_path))
+
+        if verbose and file_idx % 20 == 0:
+            print(f"{SNAPSHOTS} Processed {file_idx}/{len(file_paths)} files")
 
     # Validate (aborts on failure if monitor enabled)
     if monitor:

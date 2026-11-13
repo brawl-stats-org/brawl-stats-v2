@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
+from datetime import datetime
 from .brawl_account import BrawlAccount
 
 
@@ -86,6 +87,49 @@ class BrawlAccountColumnar(BaseModel):
 
         result.n = len(result.timestamp)
         return result
+
+    def add_raw_snapshot(self, snapshot_file: dict) -> None:
+        """Append one row per player from a raw snapshot file (v2 storage format).
+
+        Reads the raw API dicts directly, skipping BrawlAccount parsing. Field mapping
+        and fallbacks must stay in sync with brawl_account._parse_player_data.
+
+        Args:
+            snapshot_file: v2 format {"timestamp": "...Z", "players": [raw player, ...]}
+
+        Raises:
+            ValueError: If the file is not v2 format or a player is missing required fields
+        """
+        if not isinstance(snapshot_file, dict) or 'players' not in snapshot_file or 'timestamp' not in snapshot_file:
+            raise ValueError("Snapshot file is not v2 format (expected 'timestamp' and 'players' keys)")
+
+        timestamp = int(datetime.fromisoformat(snapshot_file['timestamp']).timestamp())
+
+        for raw in snapshot_file['players']:
+            try:
+                trophies = raw['trophies']
+                brawlers = raw.get('brawlers', [])
+                ranked = raw.get('ranked') or {}
+
+                self.timestamp.append(timestamp)
+                self.player.append(self._get_or_add_index(self.player_dict, raw['tag']))
+                self.trophies.append(trophies)
+                self.highest_trophies.append(raw.get('highestTrophies', trophies))
+                self.win_solo.append(raw.get('soloVictories', 0))
+                self.win_duo.append(raw.get('duoVictories', 0))
+                self.win_3v3.append(raw.get('3vs3Victories', 0))
+                self.prestiges.append(sum(b['trophies'] // 1000 for b in brawlers))
+                self.brawler_count.append(len(brawlers))
+                self.ranked_current_rank.append(ranked.get('rank'))
+                self.ranked_current_elo.append(ranked.get('elo'))
+                self.ranked_highest_season_rank.append(ranked.get('bestSeasonRank'))
+                self.ranked_highest_season_elo.append(ranked.get('bestSeasonElo'))
+                self.ranked_highest_OAT_rank.append(ranked.get('bestRank'))
+                self.ranked_highest_OAT_elo.append(ranked.get('bestElo'))
+            except KeyError as e:
+                raise ValueError(f"Failed to parse player {raw.get('tag', 'unknown')}: missing {e}") from e
+
+            self.n += 1
 
     def validate(self) -> bool:
         """Validate all column arrays have length = n"""
