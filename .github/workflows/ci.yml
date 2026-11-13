@@ -1,0 +1,35 @@
+name: CI and deploy
+
+# Lint and test every PR and every push to main. On main, once green, move the
+# `deploy` branch to the tested commit: the VM fast-forwards to it (vm_deploy.sh).
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run pytest -q
+
+  deploy:
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Move deploy to the tested commit
+        run: git push origin "${GITHUB_SHA}:refs/heads/deploy"

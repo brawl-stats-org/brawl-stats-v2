@@ -48,18 +48,38 @@ The boto client fails fast (5s connect / 30s read timeout, 3 attempts), so an un
 
 ### Production Schedule (UTC)
 
-```bash
-# Battlelog collection every 30 minutes (skip 21:00 to avoid collision)
-*/30 0-20,22-23 * * * cd /home/ubuntu/brawl-stats-v2 && /home/ubuntu/.local/bin/uv run pipelines/scripts/vm.py --battlelogs --upload-r2 --notify-errors >> /home/ubuntu/cron.log 2>&1
+The checkout is `/home/ubuntu/brawl-stats-v2-git` (a git clone of `main`; the crontab sets
+`PATH` so `uv` resolves). Output goes to `/home/ubuntu/cron-v2.log`.
 
-# Daily snapshot + battlelog at 21:00 UTC
-0 21 * * * cd /home/ubuntu/brawl-stats-v2 && /home/ubuntu/.local/bin/uv run pipelines/scripts/vm.py --battlelogs --snapshots --upload-r2 --notify-errors >> /home/ubuntu/cron.log 2>&1
+```bash
+# Battlelogs every 30 minutes, except 21:xx (the daily run covers it)
+*/30 * * * * [ $(date +\%H) -ne 21 ] && cd /home/ubuntu/brawl-stats-v2-git && uv run pipelines/scripts/vm.py --battlelogs --upload-r2 --notify-errors >> /home/ubuntu/cron-v2.log 2>&1
+
+# Daily battlelogs + snapshots + Brawlify reference data at 21:00 UTC
+0 21 * * * cd /home/ubuntu/brawl-stats-v2-git && uv run pipelines/scripts/vm.py --battlelogs --snapshots --brawlify --upload-r2 --notify-errors >> /home/ubuntu/cron-v2.log 2>&1
+
+# Deploy: fast-forward to origin/deploy between collection runs
+25,55 * * * * /home/ubuntu/brawl-stats-v2-git/pipelines/scripts/vm_deploy.sh >> /home/ubuntu/cron-v2.log 2>&1
 ```
 
-**Why 21:00 UTC?**
-- 22:00/23:00 in France (CET/CEST)
-- Fixed UTC hour avoids daylight saving issues
-- Collision avoided by skipping 21:00 in the 30-minute cron
+The v1 collection (`collect-battlelogs.sh`, `collect-snapshots.sh`) runs from the same
+crontab and is unrelated.
+
+### Deployment
+
+Every push to `main` runs `.github/workflows/ci.yml` (`ruff check`, `pytest`). When it is
+green, CI moves the `deploy` branch to the tested commit. At `:25` and `:55`,
+`vm_deploy.sh` fast-forwards the VM checkout to `origin/deploy`, unless a `vm.py` run is in
+progress. The next `:00`/`:30` run uses the new code; `uv run` syncs dependencies from
+`uv.lock`.
+
+- A red CI run does not move `deploy`, so the VM keeps the last green commit.
+- Rollback: revert on `main`. CI moves `deploy` to the revert, the VM follows.
+- Each deploy logs `deploy: <commit> (was <commit>)` to `cron-v2.log`. A failed
+  fast-forward (a local commit on the VM) logs git's error and changes nothing.
+- The repo is public: the VM pulls over HTTPS with no credentials.
+- The gate only covers what `pytest` covers: today that is brawlify (golden tests skip
+  in CI, the dump is not versioned), not collection or artifact generation.
 
 ### Viewing Current Schedule
 
