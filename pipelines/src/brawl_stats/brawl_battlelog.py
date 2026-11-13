@@ -38,8 +38,20 @@ class BattleLogEntry(BaseModel):
     winning_team: Optional[TeamBattleLogEntry] = None  # winner or rank 1
     other_teams: Optional[list[TeamBattleLogEntry]] = None  # ordered by rank (showdown) or just loser (team/duels)
 
+    @property
+    def battle_key(self) -> tuple[datetime, frozenset[str]]:
+        """Identity of the battle across perspectives (each participant's battlelog has a copy).
+
+        battle_time alone is not unique: distinct battles can start in the same second.
+        The participant set tells them apart, and is the same from every perspective.
+        """
+        return (self.battle_time, frozenset(player.tag.upper() for player in self.get_all_players()))
+
     def merge(self, other: 'BattleLogEntry') -> 'BattleLogEntry':
         """Merge trophy changes from another battle entry (same battle, different perspective).
+
+        Trophy changes are matched per (player, brawler): duels players have 3 brawlers,
+        each with its own trophy change. Other's non-null values overwrite self's.
 
         Args:
             other: Another BattleLogEntry for the same battle
@@ -48,43 +60,22 @@ class BattleLogEntry(BaseModel):
             Self for method chaining
 
         Raises:
-            ValueError: If battle_time doesn't match (not the same battle)
+            ValueError: If battle_key doesn't match (not the same battle)
         """
-        if self.battle_time != other.battle_time:
-            raise ValueError(
-                f"Cannot merge battles with different times: "
-                f"{self.battle_time.isoformat()} != {other.battle_time.isoformat()}"
-            )
+        if self.battle_key != other.battle_key:
+            raise ValueError(f"Cannot merge different battles at {self.battle_time.isoformat()}")
 
-        # Collect trophy changes from other
-        tc_map: dict[str, int] = {}
+        tc_map: dict[tuple[str, str], int] = {
+            (player.tag, brawler.name): brawler.trophy_change
+            for player in other.get_all_players()
+            for brawler in player.brawlers
+            if brawler.trophy_change is not None
+        }
 
-        if other.winning_team:
-            for player in other.winning_team.players:
-                for brawler in player.brawlers:
-                    if brawler.trophy_change is not None:
-                        tc_map[player.tag] = brawler.trophy_change
-
-        if other.other_teams:
-            for team in other.other_teams:
-                for player in team.players:
-                    for brawler in player.brawlers:
-                        if brawler.trophy_change is not None:
-                            tc_map[player.tag] = brawler.trophy_change
-
-        # Apply to self
-        if self.winning_team:
-            for player in self.winning_team.players:
-                if player.tag in tc_map:
-                    for brawler in player.brawlers:
-                        brawler.trophy_change = tc_map[player.tag]
-
-        if self.other_teams:
-            for team in self.other_teams:
-                for player in team.players:
-                    if player.tag in tc_map:
-                        for brawler in player.brawlers:
-                            brawler.trophy_change = tc_map[player.tag]
+        for player in self.get_all_players():
+            for brawler in player.brawlers:
+                if (player.tag, brawler.name) in tc_map:
+                    brawler.trophy_change = tc_map[(player.tag, brawler.name)]
 
         return self
 
@@ -162,8 +153,13 @@ def _parse_team(team_raw: list, trophy_change: int, owner_tag: str = None, owner
     return TeamBattleLogEntry(players=players)
 
 
-def _parse_team_battle(battle: dict, event: dict, battle_time: datetime, mode: str, battle_type: str, map_name: str) -> BattleLogEntry:
-    """Parse standard team battle (3v3, 5v5)."""
+def _parse_team_battle(battle: dict, event: dict, battle_time: datetime, mode: str, battle_type: str, map_name: str, owner_tag: str = None) -> BattleLogEntry:
+    """Parse standard team battle (3v3, 5v5).
+
+    battle.trophyChange is the owner's own change, not the team's: teammates' changes differ
+    (they depend on each brawler's trophies). Only the owner gets it; other players get theirs
+    when their own copy of the battle is merged in (BattleLogEntry.merge).
+    """
     teams_raw = battle.get('teams', [])
     result = battle.get('result')
 
@@ -177,7 +173,8 @@ def _parse_team_battle(battle: dict, event: dict, battle_time: datetime, mode: s
         losing_idx = 0
 
     # Parse teams
-    all_teams = [_parse_team(team_raw, battle.get('trophyChange', 0)) for team_raw in teams_raw]
+    owner_tc = battle.get('trophyChange', 0)
+    all_teams = [_parse_team(team_raw, trophy_change=None, owner_tag=owner_tag, owner_tc=owner_tc) for team_raw in teams_raw]
 
     winning_team = all_teams[winning_idx] if len(all_teams) > winning_idx else None
     other_teams = [all_teams[losing_idx]] if len(all_teams) > losing_idx else None
@@ -285,7 +282,7 @@ def _parse_battle_item(item: dict, owner_tag: str = None) -> BattleLogEntry:
         return _parse_duels_battle(battle, event, battle_time, mode, battle_type, map_name)
     else:
         # Team modes (3v3, 5v5)
-        return _parse_team_battle(battle, event, battle_time, mode, battle_type, map_name)
+        return _parse_team_battle(battle, event, battle_time, mode, battle_type, map_name, owner_tag)
 
 
 class BattleLog(BaseModel):
@@ -393,7 +390,7 @@ class BattleLog(BaseModel):
         return cls(entries=entries)
 
     def merge(self, other: 'BattleLog') -> 'BattleLog':
-        """Merge another BattleLog into this one, matching entries by battle_time.
+        """Merge another BattleLog into this one, matching entries by battle_key.
 
         Args:
             other: Another BattleLog to merge
@@ -401,17 +398,17 @@ class BattleLog(BaseModel):
         Returns:
             Self for method chaining
         """
-        # Create a map of battle_time to entry for quick lookup
-        entry_map = {entry.battle_time: entry for entry in self.entries}
+        entry_map = {entry.battle_key: entry for entry in self.entries}
 
         for other_entry in other.entries:
-            if other_entry.battle_time in entry_map:
+            key = other_entry.battle_key
+            if key in entry_map:
                 # Merge trophy changes if the battle already exists
-                entry_map[other_entry.battle_time].merge(other_entry)
+                entry_map[key].merge(other_entry)
             else:
                 # Add new battle entry
                 self.entries.append(other_entry)
-                entry_map[other_entry.battle_time] = other_entry
+                entry_map[key] = other_entry
 
         return self
 
