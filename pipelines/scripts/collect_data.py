@@ -4,7 +4,7 @@ import sys
 import os
 import time
 import argparse
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 from brawl_stats.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
 from brawl_stats import (
@@ -51,7 +51,7 @@ def get_all_tracked_tags(verbose: bool = False, monitor: PipelineMonitor = None)
             all_tags.update(member_tags)
             if verbose:
                 print(f"  Added {len(member_tags)} members")
-        except ApiMaintenanceError as e:
+        except ApiMaintenanceError:
             raise  # propagate immediately — all endpoints affected
         except Exception as e:
             club_failures += 1
@@ -103,7 +103,7 @@ def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, mon
         print("[BATTLELOGS] Collection started")
 
     # Get today's date
-    today = datetime.now().strftime('%Y-%m-%d')
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     local_path = os.path.join(PATH_RAW_BATTLELOGS, f"{today}.json.gz")
     r2_key = f"raw/battlelogs/{today}.json.gz"
 
@@ -133,7 +133,7 @@ def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, mon
         print(f"[BATTLELOGS] Starting with {len(battlelog_data)} existing players")
 
     # Filter cutoff: only keep battles from last 48 hours
-    cutoff_time = datetime.now() - timedelta(hours=48)
+    cutoff_time = datetime.now(timezone.utc) - timedelta(hours=48)
 
     # Fetch and merge battlelogs for each player
     fetch_failures = 0
@@ -151,7 +151,7 @@ def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, mon
             for item in new_items:
                 try:
                     battle_time_str = item.get("battleTime", "")[:15]
-                    battle_time = datetime.strptime(battle_time_str, "%Y%m%dT%H%M%S")
+                    battle_time = datetime.strptime(battle_time_str, "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc)
                     if battle_time >= cutoff_time:
                         filtered_items.append(item)
                 except Exception:
@@ -260,11 +260,12 @@ def collect_snapshots_with_tags(all_tags: list[str], verbose: bool = False, moni
         print(f"{SNAPSHOTS} Collected {len(snapshots)}/{len(all_tags)} snapshots")
 
     # Write to local (v2 format with timestamp)
-    today = datetime.now().strftime('%Y-%m-%d')
+    now = datetime.now(timezone.utc)
+    today = now.strftime('%Y-%m-%d')
     local_path = os.path.join(PATH_RAW_SNAPSHOTS, f"{today}.json.gz")
 
     snapshot_data = {
-        "timestamp": datetime.now().isoformat() + "Z",
+        "timestamp": now.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
         "players": snapshots
     }
 
@@ -330,7 +331,7 @@ def main():
 
         return 0
 
-    except ApiMaintenanceError as e:
+    except ApiMaintenanceError:
         msg = "Brawl API in maintenance — skipping data collection"
         print(f"\n{msg}")
         if monitor:

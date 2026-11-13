@@ -4,7 +4,7 @@ import os
 import time
 import argparse
 import subprocess
-from datetime import datetime
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 from brawl_stats import PipelineMonitor, R2Client
 
@@ -68,7 +68,7 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
         t0 = time.perf_counter()
 
         # Get today's date for file paths
-        today = datetime.now().strftime('%Y-%m-%d')
+        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
         # Track what was collected
         collected = []

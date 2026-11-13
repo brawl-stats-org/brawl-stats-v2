@@ -269,7 +269,7 @@ def _parse_battle_item(item: dict, owner_tag: str = None) -> BattleLogEntry:
     event = item['event']
 
     # Parse battle time
-    battle_time = datetime.strptime(item['battleTime'], "%Y%m%dT%H%M%S.%fZ")
+    battle_time = datetime.strptime(item['battleTime'], "%Y%m%dT%H%M%S.%f%z")
 
     # Common fields
     mode = battle['mode']
