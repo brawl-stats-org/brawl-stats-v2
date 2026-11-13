@@ -13,8 +13,6 @@ Output: Grouped by type (battlelogs → snapshots → artifacts), then status (M
 
 import argparse
 import hashlib
-import os
-from typing import NamedTuple
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
@@ -116,7 +114,8 @@ def list_local_files(verbose: bool = False) -> dict[str, FileInfo]:
             etag = compute_local_etag(path)
             results[rel_path] = FileInfo(path=rel_path, size=size, etag=etag, mtime=mtime)
 
-    if verbose: print(f"Found {len(results)} local files.")
+    if verbose:
+        print(f"Found {len(results)} local files.")
     return results
 
 
@@ -137,7 +136,8 @@ def list_r2_files(client: R2Client, verbose: bool = False) -> dict[str, FileInfo
         mtime = obj['LastModified'].isoformat()
         results[rel_path] = FileInfo(path=rel_path, size=size, etag=etag, mtime=mtime)
 
-    if verbose: print(f"Found {len(results)} R2 files.")
+    if verbose:
+        print(f"Found {len(results)} R2 files.")
     return results
 
 
@@ -293,13 +293,16 @@ def main():
 
     client = R2Client()
 
-    if verbose: print("Listing local files...")
+    if verbose:
+        print("Listing local files...")
     local_files = list_local_files(verbose=verbose)
 
-    if verbose: print("Listing R2 files...")
+    if verbose:
+        print("Listing R2 files...")
     r2_files = list_r2_files(client, verbose=verbose)
 
-    if verbose: print("Comparing files...")
+    if verbose:
+        print("Comparing files...")
     results = compare_files(local_files, r2_files)
 
     print_results(results, verbose=verbose)
