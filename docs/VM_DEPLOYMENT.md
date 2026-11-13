@@ -19,7 +19,8 @@ vm.py (orchestrator)
   ├─> collect_data.py      # Fetch from Brawl Stars API
   ├─> upload_to_r2.py      # Upload raw data
   ├─> gen_artifacts.py     # Generate columnar artifacts
-  └─> upload_to_r2.py      # Upload artifacts (with backup recovery)
+  ├─> upload_to_r2.py      # Upload artifacts (with backup recovery)
+  └─> brawlify fetch/derive  # Reference data (--brawlify), runs even if collection failed
 ```
 
 **Data flow:**
@@ -117,6 +118,7 @@ uv run pipelines/scripts/vm.py [FLAGS]
 Required (at least one):
   --battlelogs         Collect battlelogs
   --snapshots          Collect snapshots
+  --brawlify           Fetch and derive the Brawlify reference data (last, even if collection failed)
 
 Optional:
   --upload-r2          Upload to R2 (off by default)

@@ -68,8 +68,13 @@ def artifact_row(name: str, entries: int, size: int, elapsed: float | None = Non
     return row if elapsed is None else row + f"  {elapsed:5.2f}s"
 
 
-def run(locales: list[str], derived: Path = paths.DERIVED, build: Path = paths.BUILD) -> None:
-    """Builds and writes every artifact, one row each. A step's time sits on its first row."""
+def run(
+    locales: list[str], derived: Path = paths.DERIVED, build: Path = paths.BUILD
+) -> dict[str, str | int]:
+    """Builds and writes every artifact, one row each. A step's time sits on its first row.
+
+    Returns the stats for the success notification.
+    """
     log.header("derive", " ".join(locales))
     total_size = 0
     total_time = 0.0
@@ -86,3 +91,9 @@ def run(locales: list[str], derived: Path = paths.DERIVED, build: Path = paths.B
                 artifact_row(name, len(payload), len(data), elapsed if position == 0 else None)
             )
     log.done(f"{count} steps  {log.human_size(total_size)}  {total_time:.2f}s")
+    return {
+        "Locales": " ".join(locales),
+        "Steps": count,
+        "Size": log.human_size(total_size),
+        "Duration": f"{total_time:.2f}s",
+    }

@@ -137,7 +137,8 @@ class FetchRun:
         write_atomic(paths.ETAGS, json.dumps(self.etags, indent=2, sort_keys=True).encode("utf-8"))
 
 
-def run(full: bool = False) -> None:
+def run(full: bool = False) -> dict[str, str | int]:
+    """Fetches the dump and prints the report. Returns the stats for the success notification."""
     log.header("fetch", BASE_URL)
     start = time.perf_counter()
     fetch = FetchRun(full)
@@ -158,4 +159,12 @@ def run(full: bool = False) -> None:
 
     files = sum(group.files for group in fetch.groups.values())
     size = sum(group.size for group in fetch.groups.values())
-    log.done(f"{files} files  {log.human_size(size)}  {time.perf_counter() - start:.1f}s")
+    duration = time.perf_counter() - start
+    log.done(f"{files} files  {log.human_size(size)}  {duration:.1f}s")
+    return {
+        "Files": files,
+        "New": sum(group.new for group in fetch.groups.values()),
+        "Changed": sum(group.changed for group in fetch.groups.values()),
+        "Schema changes": ", ".join(path for path, _ in fetch.schema_changes) or "none",
+        "Duration": f"{duration:.1f}s",
+    }

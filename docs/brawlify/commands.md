@@ -17,6 +17,12 @@ Everything goes through one CLI: `uv run brawlify <command>`.
 
 `TOKEN` is a path without its `<! >` wrapper, or `VALUE1`.
 
+`fetch` and `derive` are the pipeline commands. They follow the repo pattern for pipeline
+scripts: they log to `data/pipeline.log`, take `--notify-errors` / `--notify-success`
+(ntfy topic from `NTFY_TOPIC`), and exit with `1` on failure, so an orchestrator reads the
+result from the exit code. The other commands are interactive tools: their exceptions
+surface as plain tracebacks.
+
 `uv run pytest` runs the tests. The golden tests need `data/raw/brawlify/` (they skip without it).
 
 ## Where the numbers stand (2026-11-12)
