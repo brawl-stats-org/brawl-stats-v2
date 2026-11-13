@@ -1,0 +1,11 @@
+# janet
+
+--- JetpackGirl_DamageTower | gadget | TID_ACCESSORY_JETPACK_GIRL_GADGET_1_DESC
+raw  Janet deploys a speaker that deals <VALUE1> damage per second to all enemies in the area until it gets destroyed.
+now  Janet deploys a speaker that deals <VALUE1> damage per second to all enemies in the area until it gets destroyed.
+  VALUE1  -  -> 220
+
+--- JetpackGirl_unique_2 | star power | TID_SPEC_ABI_JETPACK_GIRL_2_DESC
+raw  Janet's attack focuses <VALUE1>% faster.
+now  Janet's attack focuses 30% faster.
+  VALUE1  30  -> 30

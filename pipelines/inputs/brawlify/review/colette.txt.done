@@ -1,0 +1,53 @@
+# colette
+
+--- Percenter_Lifesteal | gadget | TID_ACCESSORY_PERCENTER_LIFESTEAL_DESC
+raw  Colette fires a projectile that heals for  <!card.accessory.skill.projectile.lifestealpercent>% of damage dealt. Uses ammo and can be fired 3 times before cooldown.
+now  Colette fires a projectile that heals for  80% of damage dealt. Uses ammo and can be fired 3 times before cooldown.
+  card.accessory.skill.projectile.lifestealpercent  80  -> 80
+
+--- Percenter_Lifesteal | gadget | TID_PERCENTER_BUDDY_GADGET_2_DESC
+raw  Colette fires a projectile that heals for  <!card.accessory.skill.projectile.lifestealpercent>% of damage dealt. Can overheal, creating a shield of <!buddy.trait.value2> maximum health. Uses ammo and can be fired 3 times before cooldown.
+now  Colette fires a projectile that heals for  80% of damage dealt. Can overheal, creating a shield of <!buddy.trait.value2> maximum health. Uses ammo and can be fired 3 times before cooldown.
+  card.accessory.skill.projectile.lifestealpercent  80  -> 80
+  buddy.trait.value2  -  -> 1000
+
+--- Percenter_Lifesteal | gadget | TID_PERCENTER_BUDDY_GADGET_2_DIFF
+raw  Can overheal, creating a shield of <!buddy.trait.value2> maximum health.
+now  Can overheal, creating a shield of <!buddy.trait.value2> maximum health.
+  buddy.trait.value2  -  -> 1000
+
+--- Percenter_StaticDamage | gadget | TID_ACCESSORY_PERCENTER_STATIC_DAMAGE_DESC
+raw  Colette fires a projectile that charms a Brawler for <!card.accessory.skill.projectile.statuseffectenemy.duration.ticksasseconds> sec. Uses ammo.
+now  Colette fires a projectile that charms a Brawler for 0.5 sec. Uses ammo.
+  card.accessory.skill.projectile.statuseffectenemy.duration.ticksasseconds  0.5  -> 0.5
+
+--- Percenter_StaticDamage | gadget | TID_PERCENTER_BUDDY_GADGET_1_DESC
+raw  Colette fires a projectile that charms a Brawler for <!card.accessory.skill.projectile.statuseffectenemy.duration.ticksasseconds> sec. The projectile pierces environments and Brawlers. Uses ammo.
+now  Colette fires a projectile that charms a Brawler for 0.5 sec. The projectile pierces environments and Brawlers. Uses ammo.
+  card.accessory.skill.projectile.statuseffectenemy.duration.ticksasseconds  0.5  -> 0.5
+
+--- Percenter_unique | star power | TID_SPEC_ABI_PERCENTER_1_DESC
+raw  All enemy Brawlers hit by Colette's charge are carried to the farthest point of the attack! At max distance, they are stunned for <!card.value2.ticksAsSeconds> sec.
+now  All enemy Brawlers hit by Colette's charge are carried to the farthest point of the attack! At max distance, they are stunned for 0.2 sec.
+  card.value2.ticksAsSeconds  0.2  -> 0.2
+
+--- Percenter_unique | star power | TID_PERCENTER_BUDDY_STARPOWER_1_DESC
+raw  All enemy Brawlers hit by Colette's Super are carried to the farthest point of the attack. At max distance, they are stunned for <!card.value2.ticksAsSeconds> sec. Her Super dash speed is very fast!
+now  All enemy Brawlers hit by Colette's Super are carried to the farthest point of the attack. At max distance, they are stunned for 0.2 sec. Her Super dash speed is very fast!
+  card.value2.ticksAsSeconds  0.2  -> 0.2
+
+--- Percenter_unique_2 | star power | TID_SPEC_ABI_PERCENTER_2_DESC
+raw  Colette takes <!card.trait.statuseffect.shieldpercent>% less damage during her Super and gains 30% shield for 3 sec if she hits a Brawler.
+now  Colette takes 60% less damage during her Super and gains 30% shield for 3 sec if she hits a Brawler.
+  card.trait.statuseffect.shieldpercent  60  -> 60
+
+--- Percenter_unique_2 | star power | TID_PERCENTER_BUDDY_STARPOWER_2_DESC
+raw  Colette takes <!card.trait.statuseffect.shieldpercent>% less damage during her Super. She gains 30% shield for 3 sec and steals <!buddy.trait.value>% ammo if she hits a Brawler.
+now  Colette takes 60% less damage during her Super. She gains 30% shield for 3 sec and steals 33;100% ammo if she hits a Brawler.
+  card.trait.statuseffect.shieldpercent  60  -> 60
+  buddy.trait.value  33;100  -> 33
+
+--- Percenter_unique_2 | star power | TID_PERCENTER_BUDDY_STARPOWER_2_DIFF
+raw  Colette steals <!buddy.trait.value>% ammo of any Brawlers she hits.
+now  Colette steals 33;100% ammo of any Brawlers she hits.
+  buddy.trait.value  33;100  -> 33

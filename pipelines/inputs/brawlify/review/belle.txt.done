@@ -1,0 +1,17 @@
+# belle
+
+--- ElectroSniper_Trap | gadget | TID_ACCESSORY_ELECTRO_SNIPER_TRAP_DESC
+raw  Belle places a trap on the ground that will explode when triggered by an opponent. The trap deals <!card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue1> damage, and slows down anyone within its blast radius for <!card.accessory.customobjectitem.triggerareaeffect.statuseffectenemy.duration.ticksAsSeconds> seconds.
+now  Belle places a trap on the ground that will explode when triggered by an opponent. The trap deals <!card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue1> damage, and slows down anyone within its blast radius for <!card.accessory.customobjectitem.triggerareaeffect.statuseffectenemy.duration.ticksAsSeconds> seconds.
+  card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue1  -  -> 684
+  card.accessory.customobjectitem.triggerareaeffect.statuseffectenemy.duration.ticksAsSeconds  -  -> 3
+
+--- ElectroSniper_unique | star power | TID_SPEC_ABI_ELECTRO_SNIPER_1_DESC
+raw  Belle gains a <VALUE1>% shield whenever her Electro-Bolts hit a target.
+now  Belle gains a 20% shield whenever her Electro-Bolts hit a target.
+  VALUE1  20  -> 20
+
+--- ElectroSniper_unique_2 | star power | TID_SPEC_ABI_ELECTRO_SNIPER_2_DESC
+raw  Getting marked by Belle's Super prevents the opponent from reloading their attack for <VALUE2> seconds.
+now  Getting marked by Belle's Super prevents the opponent from reloading their attack for 100 seconds.
+  VALUE2  100  -> 5

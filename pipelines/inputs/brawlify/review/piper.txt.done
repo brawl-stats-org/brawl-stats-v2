@@ -1,0 +1,16 @@
+# piper
+
+--- Sniper_HandGun | gadget | TID_ACCESSORY_SNIPER_HANDGUN_DESC
+raw  Piper pops a defensive shot at the closest enemy, dealing <VALUE2> damage, while also pushing them back.
+now  Piper pops a defensive shot at the closest enemy, dealing <VALUE2> damage, while also pushing them back.
+  VALUE2  -  -> 180
+
+--- Sniper_unique | star power | TID_SPEC_ABI_AMBUSH_DESC
+raw  Piper's attack deals +<VALUE1> extra damage (at max range) when she's hidden in a bush.
+now  Piper's attack deals +35 extra damage (at max range) when she's hidden in a bush.
+  VALUE1  35  -> 1260
+
+--- Sniper_unique_2 | star power | TID_SPEC_ABI_RELOAD_ON_HIT_DESC
+raw  When Piper hits an opponent with her attack, she reloads <VALUE1> ammo instantly.
+now  When Piper hits an opponent with her attack, she reloads 40 ammo instantly.
+  VALUE1  40  -> 0.4

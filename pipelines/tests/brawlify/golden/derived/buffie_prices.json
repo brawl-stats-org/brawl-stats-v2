@@ -1,0 +1,974 @@
+[
+  {
+    "brawlerId": 16000000,
+    "kind": "gadget",
+    "cardId": 23001193,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000000,
+    "kind": "starPower",
+    "cardId": 23001194,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000000,
+    "kind": "hypercharge",
+    "cardId": 23001195,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "gadget",
+    "cardId": 23001196,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "starPower",
+    "cardId": 23001197,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "hypercharge",
+    "cardId": 23001198,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "gadget",
+    "cardId": 23001199,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "starPower",
+    "cardId": 23001200,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "hypercharge",
+    "cardId": 23001201,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "gadget",
+    "cardId": 23001233,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "starPower",
+    "cardId": 23001238,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "hypercharge",
+    "cardId": 23001239,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "gadget",
+    "cardId": 23001225,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "starPower",
+    "cardId": 23001226,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "hypercharge",
+    "cardId": 23001227,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "gadget",
+    "cardId": 23001228,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "starPower",
+    "cardId": 23001229,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "hypercharge",
+    "cardId": 23001230,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "gadget",
+    "cardId": 23001202,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "starPower",
+    "cardId": 23001203,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "hypercharge",
+    "cardId": 23001204,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "gadget",
+    "cardId": 23001205,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "starPower",
+    "cardId": 23001206,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "hypercharge",
+    "cardId": 23001207,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "gadget",
+    "cardId": 23001208,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "starPower",
+    "cardId": 23001209,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "hypercharge",
+    "cardId": 23001210,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "gadget",
+    "cardId": 23001232,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "starPower",
+    "cardId": 23001240,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "hypercharge",
+    "cardId": 23001236,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "gadget",
+    "cardId": 23001222,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "starPower",
+    "cardId": 23001223,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "hypercharge",
+    "cardId": 23001224,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "gadget",
+    "cardId": 23001234,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "starPower",
+    "cardId": 23001237,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "hypercharge",
+    "cardId": 23001235,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "gadget",
+    "cardId": 23001260,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "starPower",
+    "cardId": 23001261,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "hypercharge",
+    "cardId": 23001262,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "gadget",
+    "cardId": 23001266,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "starPower",
+    "cardId": 23001267,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "hypercharge",
+    "cardId": 23001268,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "gadget",
+    "cardId": 23001257,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "starPower",
+    "cardId": 23001258,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "hypercharge",
+    "cardId": 23001259,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "gadget",
+    "cardId": 23001263,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "starPower",
+    "cardId": 23001264,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "hypercharge",
+    "cardId": 23001265,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "gadget",
+    "cardId": 23001269,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "starPower",
+    "cardId": 23001270,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "hypercharge",
+    "cardId": 23001271,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "gadget",
+    "cardId": 23001272,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "starPower",
+    "cardId": 23001273,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "hypercharge",
+    "cardId": 23001274,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "gadget",
+    "cardId": 23001428,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "starPower",
+    "cardId": 23001429,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "hypercharge",
+    "cardId": 23001430,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "gadget",
+    "cardId": 23001432,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "starPower",
+    "cardId": 23001433,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "hypercharge",
+    "cardId": 23001434,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "gadget",
+    "cardId": 23001435,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "starPower",
+    "cardId": 23001436,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "hypercharge",
+    "cardId": 23001437,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "gadget",
+    "cardId": 23001454,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "starPower",
+    "cardId": 23001455,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "hypercharge",
+    "cardId": 23001456,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "gadget",
+    "cardId": 23001457,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "starPower",
+    "cardId": 23001458,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "hypercharge",
+    "cardId": 23001459,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "gadget",
+    "cardId": 23001469,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "starPower",
+    "cardId": 23001470,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "hypercharge",
+    "cardId": 23001471,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "gadget",
+    "cardId": 23001460,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "starPower",
+    "cardId": 23001461,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "hypercharge",
+    "cardId": 23001462,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "gadget",
+    "cardId": 23001463,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "starPower",
+    "cardId": 23001464,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "hypercharge",
+    "cardId": 23001465,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "gadget",
+    "cardId": 23001466,
+    "price": {
+      "gems": 149
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "starPower",
+    "cardId": 23001467,
+    "price": {
+      "gems": 179
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "hypercharge",
+    "cardId": 23001468,
+    "price": {
+      "gems": 199
+    },
+    "clawPull": {
+      "powerPoints": 2000,
+      "coins": 1000
+    }
+  }
+]

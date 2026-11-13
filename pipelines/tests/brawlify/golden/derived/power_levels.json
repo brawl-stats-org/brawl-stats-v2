@@ -1,0 +1,72 @@
+[
+  {
+    "level": 2,
+    "powerPoints": 20,
+    "coins": 20,
+    "totalPowerPoints": 20,
+    "totalCoins": 20
+  },
+  {
+    "level": 3,
+    "powerPoints": 30,
+    "coins": 35,
+    "totalPowerPoints": 50,
+    "totalCoins": 55
+  },
+  {
+    "level": 4,
+    "powerPoints": 50,
+    "coins": 75,
+    "totalPowerPoints": 100,
+    "totalCoins": 130
+  },
+  {
+    "level": 5,
+    "powerPoints": 80,
+    "coins": 140,
+    "totalPowerPoints": 180,
+    "totalCoins": 270
+  },
+  {
+    "level": 6,
+    "powerPoints": 130,
+    "coins": 290,
+    "totalPowerPoints": 310,
+    "totalCoins": 560
+  },
+  {
+    "level": 7,
+    "powerPoints": 210,
+    "coins": 480,
+    "totalPowerPoints": 520,
+    "totalCoins": 1040
+  },
+  {
+    "level": 8,
+    "powerPoints": 340,
+    "coins": 800,
+    "totalPowerPoints": 860,
+    "totalCoins": 1840
+  },
+  {
+    "level": 9,
+    "powerPoints": 550,
+    "coins": 1250,
+    "totalPowerPoints": 1410,
+    "totalCoins": 3090
+  },
+  {
+    "level": 10,
+    "powerPoints": 890,
+    "coins": 1875,
+    "totalPowerPoints": 2300,
+    "totalCoins": 4965
+  },
+  {
+    "level": 11,
+    "powerPoints": 1440,
+    "coins": 2800,
+    "totalPowerPoints": 3740,
+    "totalCoins": 7765
+  }
+]

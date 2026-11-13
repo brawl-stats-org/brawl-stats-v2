@@ -1,0 +1,11 @@
+# artie
+
+--- Splitter_unique | star power | TID_SPEC_ABI_SPLITTER_1_DESC
+raw  Marks created last <VALUE1> seconds longer.
+now  Marks created last 3 seconds longer.
+  VALUE1  3  -> 3
+
+--- Splitter_unique_2 | star power | TID_SPEC_ABI_SPLITTER_2_DESC
+raw  R-T and his legs take <VALUE1>% less damage when split.
+now  R-T and his legs take 20% less damage when split.
+  VALUE1  20  -> 25

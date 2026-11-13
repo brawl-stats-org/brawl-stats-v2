@@ -1,0 +1,58 @@
+# shade
+
+--- Ghost_gadget | gadget | TID_GHOST_GADGET_1_DESC
+raw  The next main attack has <!card.accessory.customValue1>% longer range.
+now  The next main attack has 50% longer range.
+  card.accessory.customValue1  50  -> 50
+
+--- Ghost_gadget | gadget | TID_GHOST_BUDDY_GADGET_1_DESC
+raw  The next main attack has <!card.accessory.customValue1>% longer range and hit enemies are pulled to the center of the hug.
+now  The next main attack has 50% longer range and hit enemies are pulled to the center of the hug.
+  card.accessory.customValue1  50  -> 50
+
+--- Ghost_gadget_2 | gadget | TID_GHOST_GADGET_2_DESC
+raw  Shade jumps a short distance, fearing enemies for <!card.accessory.skill.areaEffectObject2.statusEffectEnemy.duration.ticksAsSeconds> sec when landing.
+now  Shade jumps a short distance, fearing enemies for 1 sec when landing.
+  card.accessory.skill.areaEffectObject2.statusEffectEnemy.duration.ticksAsSeconds  1  -> 1
+
+--- Ghost_gadget_2 | gadget | TID_GHOST_BUDDY_GADGET_2_DESC
+raw  Shade jumps a short distance, fearing enemies for <!buddy.accessory.skill.areaEffectObject2.statusEffectEnemy.duration.ticksAsSeconds> sec when landing and gains a <!buddy.accessory.skill.consumableShieldValue.scaleStatToLevel> shield when jumping.
+now  Shade jumps a short distance, fearing enemies for 1 sec when landing and gains a 2000 shield when jumping.
+  buddy.accessory.skill.areaEffectObject2.statusEffectEnemy.duration.ticksAsSeconds  1  -> 1
+  buddy.accessory.skill.consumableShieldValue.scaleStatToLevel  2000  -> 2000
+
+--- Ghost_gadget_2 | gadget | TID_GHOST_BUDDY_GADGET_2_DIFF
+raw  Shade gains a <!buddy.accessory.skill.consumableShieldValue.scaleStatToLevel>  shield when jumping.
+now  Shade gains a 2000  shield when jumping.
+  buddy.accessory.skill.consumableShieldValue.scaleStatToLevel  2000  -> 2000
+
+--- Ghost_overcharge | hypercharge | TID_GHOST_OVERCHARGE_DESC
+raw  Shade heals <!card.character.ultiSkill.activationSelfStatusEffectOvercharged.component.value.scaleStatToLevel> for every sec spent inside a wall.
+now  Shade heals <!card.character.ultiSkill.activationSelfStatusEffectOvercharged.component.value.scaleStatToLevel> for every sec spent inside a wall.
+  card.character.ultiSkill.activationSelfStatusEffectOvercharged.component.value.scaleStatToLevel  -  -> 1000
+
+--- Ghost_unique | star power | TID_GHOST_BUDDY_STARPOWER_1_DESC
+raw  Hitting opponents with the center of Shade's main attack gives a short movement speed boost and also reduces Gadget cooldown by <!buddy.trait.value>%.
+now  Hitting opponents with the center of Shade's main attack gives a short movement speed boost and also reduces Gadget cooldown by 15%.
+  buddy.trait.value  15  -> 15
+
+--- Ghost_unique | star power | TID_GHOST_BUDDY_STARPOWER_1_DIFF
+raw  Hitting opponents also reduces Gadget cooldown by <!buddy.trait.value>%.
+now  Hitting opponents also reduces Gadget cooldown by 15%.
+  buddy.trait.value  15  -> 15
+
+--- Ghost_unique_2 | star power | TID_GHOST_SP_2_DESC
+raw  Shade gets <!card.statuseffect.shieldpercent>% damage reduction while in its Incorporeal Form.
+now  Shade gets 30% damage reduction while in its Incorporeal Form.
+  card.statuseffect.shieldpercent  30  -> 30
+
+--- Ghost_unique_2 | star power | TID_GHOST_BUDDY_STARPOWER_2_DESC
+raw  Shade gets <!card.statuseffect.shieldpercent>% damage reduction while in its Incorporeal Form and lasts an extra <!buddy.trait.value.ticksAsSeconds> sec.
+now  Shade gets 30% damage reduction while in its Incorporeal Form and lasts an extra 1 sec.
+  card.statuseffect.shieldpercent  30  -> 30
+  buddy.trait.value.ticksAsSeconds  1  -> 1
+
+--- Ghost_unique_2 | star power | TID_GHOST_BUDDY_STARPOWER_2_DIFF
+raw  Shade's stays in its incorporeal form lasts for an extra <!buddy.trait.value.ticksAsSeconds> sec.
+now  Shade's stays in its incorporeal form lasts for an extra 1 sec.
+  buddy.trait.value.ticksAsSeconds  1  -> 1

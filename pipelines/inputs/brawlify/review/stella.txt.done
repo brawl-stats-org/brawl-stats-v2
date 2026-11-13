@@ -1,0 +1,22 @@
+# stella
+
+--- MagicalGirl_gadget_2 | gadget | TID_MAGICAL_GIRL_GADGET_2_DESC
+raw  Starr Nova fires an energy ball that damages enemies and heals teammates for <!card.accessory.skill.damage.scaleStatToLevel>. This energy ball can also be teleported to before it hits a target!
+now  Starr Nova fires an energy ball that damages enemies and heals teammates for 1600. This energy ball can also be teleported to before it hits a target!
+  card.accessory.skill.damage.scaleStatToLevel  1600  -> 1600
+
+--- MagicalGirl_unique_1 | star power | TID_MAGICAL_GIRL_SP_1_DESC
+raw  Hitting an enemy Brawler while transformed increases your damage by <!card.statuseffect.damageboostpercent>% to a maximum of <!card.statuseffect.damageboostpercent.scalecardvalue2>%.
+now  Hitting an enemy Brawler while transformed increases your damage by 4% to a maximum of 20%.
+  card.statuseffect.damageboostpercent  4  -> 4
+  card.statuseffect.damageboostpercent.scalecardvalue2  20  -> 20
+
+--- MagicalGirl_unique_2 | star power | TID_MAGICAL_GIRL_SP_2_DESC
+raw  Starr Nova's main attack also heals teammates for <!card.character.weaponSkill.damage.scaleStatToLevel.scaleByCardProjectileHealOwnPercent>, charging her Super based on healing.
+now  Starr Nova's main attack also heals teammates for <!card.character.weaponSkill.damage.scaleStatToLevel.scaleByCardProjectileHealOwnPercent>, charging her Super based on healing.
+  card.character.weaponSkill.damage.scaleStatToLevel.scaleByCardProjectileHealOwnPercent  -  -> 384
+
+--- MagicalGirl_ulti | super | TID_MAGICAL_GIRL_ULTI_DESC
+raw  Starr Nova dashes and transforms into her ultimate form, conjuring her Nova sword! She gains movement speed, converts dealt damage to health, and her main attack changes shape. Transformation lasts <!card.skill.customValue.ticksAsSeconds> sec.
+now  Starr Nova dashes and transforms into her ultimate form, conjuring her Nova sword! She gains movement speed, converts dealt damage to health, and her main attack changes shape. Transformation lasts 7 sec.
+  card.skill.customValue.ticksAsSeconds  7  -> 7

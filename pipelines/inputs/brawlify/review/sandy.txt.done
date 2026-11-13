@@ -1,0 +1,27 @@
+# sandy
+
+--- Sandstorm_Sleep | gadget | TID_ACCESSORY_SANDY_SLEEP_DESC
+raw  Sandy falls asleep for <VALUE1> seconds and his health is fully restored.
+now  Sandy falls asleep for <VALUE1> seconds and his health is fully restored.
+  VALUE1  -  -> 1.5
+
+--- Sandstorm_StunSleep | gadget | TID_ACCESSORY_SANDSTORM_STUN_SLEEP_DESC
+raw  Sandy's next attack lulls opponents to sleep for <VALUE1> seconds. They will, however, wake up from any damage.
+now  Sandy's next attack lulls opponents to sleep for <VALUE1> seconds. They will, however, wake up from any damage.
+  VALUE1  -  -> 1
+
+--- Sandstorm_overcharge | hypercharge | TID_SANDSTORM_OVERCHARGE_DESC
+raw  Sandy grants himself and his allies <VALUE1>% increased movement speed while inside of Sandstorm. His Super will also silence enemies for <VALUE2> seconds when it lands.
+now  Sandy grants himself and his allies 6% increased movement speed while inside of Sandstorm. His Super will also silence enemies for <VALUE2> seconds when it lands.
+  VALUE1  6  -> 20
+  VALUE2  -  -> 0.5
+
+--- Sandstorm_unique | star power | TID_SPEC_ABI_SANDSTORM_DOT_DESC
+raw  Sandstorm now also damages enemies for <VALUE1> damage per second.
+now  Sandstorm now also damages enemies for 12 damage per second.
+  VALUE1  12  -> 216
+
+--- Sandstorm_unique_2 | star power | TID_SPEC_ABI_SANDSTORM_HOT_DESC
+raw  Sandstorm now also heals friendly Brawlers for <VALUE1> health per second.
+now  Sandstorm now also heals friendly Brawlers for -5 health per second.
+  VALUE1  -5  -> 410

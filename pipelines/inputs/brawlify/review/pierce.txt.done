@@ -1,0 +1,26 @@
+# pierce
+
+--- Bulletstorm_gadget_1 | gadget | TID_BULLETSTORM_GADGET_1_DESC
+raw  Reload <VALUE1> ammo and drop a shell next to Pierce.
+now  Reload <VALUE1> ammo and drop a shell next to Pierce.
+  VALUE1  -  -> 1
+
+--- Bulletstorm_gadget_2 | gadget | TID_BULLETSTORM_GADGET_2_DESC
+raw  Pierce will absorb all shells and gain <VALUE1> shield for each one, while also pushing back nearby enemies.
+now  Pierce will absorb all shells and gain <VALUE1> shield for each one, while also pushing back nearby enemies.
+  VALUE1  -  -> 1200
+
+--- Bulletstorm_overcharge | hypercharge | TID_BULLETSTORM_OVERCHARGE_DESC
+raw  Super fires 2 waves of projectiles, 2nd wave deals <VALUE1>% less damage. Projectiles pierce Brawlers.
+now  Super fires 2 waves of projectiles, 2nd wave deals 1% less damage. Projectiles pierce Brawlers.
+  VALUE1  1  -> 50
+
+--- Bulletstorm_unique_1 | star power | TID_BULLETSTORM_SP_1_DESC
+raw  Pierce's last ammo also slows enemies by <VALUE1>%.
+now  Pierce's last ammo also slows enemies by 1%.
+  VALUE1  1  -> 25
+
+--- Bulletstorm_unique_2 | star power | TID_BULLETSTORM_SP_2_DESC
+raw  When collecting a shell, Pierce gains a short burst (<!card.statusEffect.baseSpeedIncreasePercent>%) of movement speed.
+now  When collecting a shell, Pierce gains a short burst (15%) of movement speed.
+  card.statusEffect.baseSpeedIncreasePercent  15  -> 15

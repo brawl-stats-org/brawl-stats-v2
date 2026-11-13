@@ -1,0 +1,12 @@
+# digger
+
+--- Digger_gadget | gadget | TID_DIGGER_GADGET_1_DESC
+raw  Moe digs up some \qborrowed\q goods, increasing his Super charge rate by <VALUE1>% for <VALUE2> seconds.
+now  Moe digs up some \qborrowed\q goods, increasing his Super charge rate by <VALUE1>% for <VALUE2> seconds.
+  VALUE1  -  -> 50
+  VALUE2  -  -> 5
+
+--- Digger_unique_2 | star power | TID_DIGGER_SP_2_DESC
+raw  Moe's Driller has <!card.statuseffect.basespeedincreasepercent>% increased travel speed.
+now  Moe's Driller has 25% increased travel speed.
+  card.statuseffect.basespeedincreasepercent  25  -> 25

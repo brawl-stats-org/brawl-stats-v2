@@ -1,0 +1,11 @@
+# chester
+
+--- Jester_RandomBuff | gadget | TID_ACCESSORY_JESTER_GADGET_2_DESC
+raw  Chester eats a mystery flavored candy bean from his cap, gaining a random buff for <VALUE1> seconds.
+now  Chester eats a mystery flavored candy bean from his cap, gaining a random buff for <VALUE1> seconds.
+  VALUE1  -  -> 5
+
+--- Jester_unique | star power | TID_SPEC_ABI_JESTER_1_DESC
+raw  The first bell of Chester's attack sequence does <VALUE1>% damage.
+now  The first bell of Chester's attack sequence does 150% damage.
+  VALUE1  150  -> 150

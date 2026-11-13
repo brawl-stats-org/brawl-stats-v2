@@ -1,0 +1,18 @@
+# draco
+
+--- DragonRider_gatget_2 | gadget | TID_DRAGON_RIDER_GADGET_2_DESC
+raw  Draco can not fall under one health for <VALUE1> seconds.
+now  Draco can not fall under one health for <VALUE1> seconds.
+  VALUE1  -  -> 2
+
+--- DragonRider_unique | star power | TID_DRAGON_RIDER_SP_1_DESC
+raw  Every <VALUE1> seconds, the next Lance Stab exposes enemies on hit. Exposed enemies take <VALUE2>% increased damage for <VALUE3> seconds.
+now  Every 100 seconds, the next Lance Stab exposes enemies on hit. Exposed enemies take <VALUE2>% increased damage for <VALUE3> seconds.
+  VALUE1  100  -> 5
+  VALUE2  -  -> 35
+  VALUE3  -  -> 5
+
+--- DragonRider_unique_2 | star power | TID_DRAGON_RIDER_SP_2_DESC
+raw  Dragon Solo now also heals for <VALUE1> when activated.
+now  Dragon Solo now also heals for 25 when activated.
+  VALUE1  25  -> 2800

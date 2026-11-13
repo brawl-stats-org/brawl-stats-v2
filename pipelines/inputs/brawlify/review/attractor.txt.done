@@ -1,0 +1,21 @@
+# attractor
+
+--- Attractor_abi | attack | TID_ATTRACTOR_WEAPON_DESC
+raw  Cosmo fires <!card.skill.projectile.component[0].values[0]> projectiles that orbit in a circle. The projectiles get further apart as they travel, while growing in size and damage.
+now  Cosmo fires <!card.skill.projectile.component[0].values[0]> projectiles that orbit in a circle. The projectiles get further apart as they travel, while growing in size and damage.
+  card.skill.projectile.component[0].values[0]  -  -> 3
+
+--- Attractor_gadget_2 | gadget | TID_ATTRACTOR_GADGET_2_DESC
+raw  Cosmo uses his telescope to reveal an area for <!card.accessory.skill.projectile.spawnareaeffectobject.timems.msasseconds>s sec, including invisible enemies. Enemy Brawlers inside this area cannot use movement abilities (dashes, jumps, teleports, etc.).
+now  Cosmo uses his telescope to reveal an area for 6s sec, including invisible enemies. Enemy Brawlers inside this area cannot use movement abilities (dashes, jumps, teleports, etc.).
+  card.accessory.skill.projectile.spawnareaeffectobject.timems.msasseconds  6  -> 6
+
+--- Attractor_unique_1 | star power | TID_ATTRACTOR_SP_1_DESC
+raw  Increases the orbit speed of Cosmo's main attack by <!card.character.component[0].trait[0].value>%.
+now  Increases the orbit speed of Cosmo's main attack by 25%.
+  card.character.component[0].trait[0].value  25  -> 25
+
+--- Attractor_unique_2 | star power | TID_ATTRACTOR_SP_2_DESC
+raw  Hitting an enemy with Cosmo's Super reloads <!card.value1> ammo.
+now  Hitting an enemy with Cosmo's Super reloads 2 ammo.
+  card.value1  2  -> 2

@@ -1,0 +1,16 @@
+# barley
+
+--- Barkeep_HealPotion | gadget | TID_ACCESSORY_BARKEEP_HEAL_POTION_DESC
+raw  Barley throws a healing potion at nearby allies that creates an area that heals for <VALUE1> health per second.
+now  Barley throws a healing potion at nearby allies that creates an area that heals for <VALUE1> health per second.
+  VALUE1  -  -> 810
+
+--- Barkeep_unique | star power | TID_SPEC_ABI_HEAL_SELF_MAIN_ATTACK_DESC
+raw  Barley regains <VALUE1> health from each attack.
+now  Barley regains 10 health from each attack.
+  VALUE1  10  -> 540
+
+--- Barkeep_unique_2 | star power | TID_SPEC_ABI_DAMAGE_MAIN_ATTACK_DESC
+raw  Adds +<VALUE1> damage per second to Barley's attack.
+now  Adds +200 damage per second to Barley's attack.
+  VALUE1  200  -> 200

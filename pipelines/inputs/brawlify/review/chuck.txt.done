@@ -1,0 +1,88 @@
+# chuck
+
+--- Conductor_PassWalls | gadget | TID_ACCESSORY_CONDUCTOR_GADGET_2_DESC
+raw  Chuck's Supers can go through walls for <!card.accessory.activeTicks.ticksAsSeconds> seconds!
+now  Chuck's Supers can go through walls for 8 seconds!
+  card.accessory.activeTicks.ticksAsSeconds  8  -> 8
+
+--- Conductor_PassWalls | gadget | TID_CONDUCTOR_BUDDY_GADGET_2_DESC
+raw  Supers can go through walls for <!card.accessory.activeTicks.ticksAsSeconds> sec and leave a trail of fire dealing <!buddy.accessory.areaEffect.damage.scaleStatToLevel> damage, which burns <!buddy.accessory.areaEffect.timeMs.msAsSeconds> sec!
+now  Supers can go through walls for 8 sec and leave a trail of fire dealing 1200 damage, which burns 3 sec!
+  card.accessory.activeTicks.ticksAsSeconds  8  -> 8
+  buddy.accessory.areaEffect.damage.scaleStatToLevel  1200  -> 1200
+  buddy.accessory.areaEffect.timeMs.msAsSeconds  3  -> 3
+
+--- Conductor_PassWalls | gadget | TID_CONDUCTOR_BUDDY_GADGET_2_DIFF
+raw  Super leaves a trail of fire, dealing <!buddy.accessory.areaEffect.damage.scaleStatToLevel> damage, which burns for <!buddy.accessory.areaEffect.timeMs.msAsSeconds> sec!
+now  Super leaves a trail of fire, dealing 1200 damage, which burns for 3 sec!
+  buddy.accessory.areaEffect.damage.scaleStatToLevel  1200  -> 1200
+  buddy.accessory.areaEffect.timeMs.msAsSeconds  3  -> 3
+
+--- Conductor_RemoveSign | gadget | TID_ACCESSORY_CONDUCTOR_GADGET_1_DESC
+raw  Chuck removes the nearest Post and charges <!card.accessory.customValue1>% of his Super.
+now  Chuck removes the nearest Post and charges 50% of his Super.
+  card.accessory.customValue1  50  -> 50
+
+--- Conductor_RemoveSign | gadget | TID_CONDUCTOR_BUDDY_GADGET_1_DESC
+raw  Chuck removes the nearest Post, recharges <!card.accessory.customValue1>% of his Super, and gains <!buddy.accessory.statusEffectSelf.shieldPercent>% shield for <!buddy.accessory.statusEffectSelf.durationTicks.ticksAsSeconds> sec.
+now  Chuck removes the nearest Post, recharges 50% of his Super, and gains 20% shield for 5 sec.
+  card.accessory.customValue1  50  -> 50
+  buddy.accessory.statusEffectSelf.shieldPercent  20  -> 20
+  buddy.accessory.statusEffectSelf.durationTicks.ticksAsSeconds  5  -> 5
+
+--- Conductor_RemoveSign | gadget | TID_CONDUCTOR_BUDDY_GADGET_1_DIFF
+raw  Gain <!buddy.accessory.statusEffectSelf.shieldPercent>% shield for <!buddy.accessory.statusEffectSelf.durationTicks.ticksAsSeconds> sec.
+now  Gain 20% shield for 5 sec.
+  buddy.accessory.statusEffectSelf.shieldPercent  20  -> 20
+  buddy.accessory.statusEffectSelf.durationTicks.ticksAsSeconds  5  -> 5
+
+--- Conductor_overcharge | hypercharge | TID_CONDUCTOR_OVERCHARGE_DESC
+raw  Each pole that hits an enemy deals <!card.areaEffect.damage.scaleStatToLevel> area damage.
+now  Each pole that hits an enemy deals 1600 area damage.
+  card.areaEffect.damage.scaleStatToLevel  1600  -> 1600
+
+--- Conductor_overcharge | hypercharge | TID_CONDUCTOR_BUDDY_OVERCHARGE_DESC
+raw  Chuck has unlimited range on his next dash and leaves clouds of damaging steam behind him! Main attacks shoot <!card.character.weaponSkill.overchargedVersion.numBulletsInOneAttack> clouds of steam in a cone.
+now  Chuck has unlimited range on his next dash and leaves clouds of damaging steam behind him! Main attacks shoot <!card.character.weaponSkill.overchargedVersion.numBulletsInOneAttack> clouds of steam in a cone.
+  card.character.weaponSkill.overchargedVersion.numBulletsInOneAttack  -  -> 3
+
+--- Conductor_overcharge | hypercharge | TID_CONDUCTOR_BUDDY_OVERCHARGE_DIFF
+raw  Chuck's main attack shoots <!card.character.weaponSkill.overchargedVersion.numBulletsInOneAttack> clouds of steam in a cone.
+now  Chuck's main attack shoots <!card.character.weaponSkill.overchargedVersion.numBulletsInOneAttack> clouds of steam in a cone.
+  card.character.weaponSkill.overchargedVersion.numBulletsInOneAttack  -  -> 3
+
+--- Conductor_unique | star power | TID_SPEC_ABI_CONDUCTOR_1_DESC
+raw  Placing a Pole slows <!card.trait.action.statusEffect.speedReducePercent>% any hit enemy for <!card.trait.action.statusEffect.durationTicks.ticksAsSeconds> sec.
+now  Placing a Pole slows <!card.trait.action.statusEffect.speedReducePercent>% any hit enemy for <!card.trait.action.statusEffect.durationTicks.ticksAsSeconds> sec.
+  card.trait.action.statusEffect.speedReducePercent  -  -> 30
+  card.trait.action.statusEffect.durationTicks.ticksAsSeconds  -  -> 2
+
+--- Conductor_unique | star power | TID_CONDUCTOR_BUDDY_STARPOWER_1_DESC
+raw  Placing a Pole slows <!card.trait.action.statusEffect.speedReducePercent>% any hit enemy for <!card.trait.action.statusEffect.durationTicks.ticksAsSeconds> sec and leaves an area which deals <!buddy.trait.areaEffect.damage.scaleByUltiDamage.scaleStatToLevel> damage over <!buddy.trait.areaEffect.timeMs.msAsSeconds> sec.
+now  Placing a Pole slows <!card.trait.action.statusEffect.speedReducePercent>% any hit enemy for <!card.trait.action.statusEffect.durationTicks.ticksAsSeconds> sec and leaves an area which deals <!buddy.trait.areaEffect.damage.scaleByUltiDamage.scaleStatToLevel> damage over 4 sec.
+  card.trait.action.statusEffect.speedReducePercent  -  -> 30
+  card.trait.action.statusEffect.durationTicks.ticksAsSeconds  -  -> 2
+  buddy.trait.areaEffect.damage.scaleByUltiDamage.scaleStatToLevel  -  -> 800
+  buddy.trait.areaEffect.timeMs.msAsSeconds  4  -> 4
+
+--- Conductor_unique | star power | TID_CONDUCTOR_BUDDY_STARPOWER_1_DIFF
+raw  Leaves an area which deals <!buddy.trait.areaEffect.damage.scaleByUltiDamage.scaleStatToLevel> damage over <!buddy.trait.areaEffect.timeMs.msAsSeconds> sec.
+now  Leaves an area which deals <!buddy.trait.areaEffect.damage.scaleByUltiDamage.scaleStatToLevel> damage over 4 sec.
+  buddy.trait.areaEffect.damage.scaleByUltiDamage.scaleStatToLevel  -  -> 800
+  buddy.trait.areaEffect.timeMs.msAsSeconds  4  -> 4
+
+--- Conductor_unique_2 | star power | TID_SPEC_ABI_CONDUCTOR_2_DESC
+raw  Dashing through enemies with his Super will also steal <!card.trait.value>% of their ammo.
+now  Dashing through enemies with his Super will also steal 33;100% of their ammo.
+  card.trait.value  33;100  -> 33
+
+--- Conductor_unique_2 | star power | TID_CONDUCTOR_BUDDY_STARPOWER_2_DESC
+raw  Dashing through enemies with his Super will also steal <!card.trait.value>% of their ammo, and dash speed is increased by <!buddy.trait.value>%.
+now  Dashing through enemies with his Super will also steal 33;100% of their ammo, and dash speed is increased by 25%.
+  card.trait.value  33;100  -> 33
+  buddy.trait.value  25  -> 25
+
+--- Conductor_unique_2 | star power | TID_CONDUCTOR_BUDDY_STARPOWER_2_DIFF
+raw  Dash speed is increased by <!buddy.trait.value>%.
+now  Dash speed is increased by 25%.
+  buddy.trait.value  25  -> 25

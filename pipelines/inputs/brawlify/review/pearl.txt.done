@@ -1,0 +1,27 @@
+# pearl
+
+--- Cooker_Healing | gadget | TID_ACCESSORY_COOKER_GADGET_2_DESC
+raw  Next basic attack shoots perfectly baked cookies ignoring enemies and healing allies for <VALUE1> over time instead.
+now  Next basic attack shoots perfectly baked cookies ignoring enemies and healing allies for <VALUE1> over time instead.
+  VALUE1  -  -> 2800
+
+--- Cooker_Poison | gadget | TID_ACCESSORY_COOKER_GADGET_1_DESC
+raw  Next basic attack shoots burning cookies, dealing <VALUE1> extra damage over time.
+now  Next basic attack shoots burning cookies, dealing <VALUE1> extra damage over time.
+  VALUE1  -  -> 1040
+
+--- Cooker_overcharge | hypercharge | TID_COOKER_OVERCHARGE_DESC
+raw  Let Out Some Steam leaves a burning area behind for <VALUE1> seconds.
+now  Let Out Some Steam leaves a burning area behind for <VALUE1> seconds.
+  VALUE1  -  -> 4.5
+
+--- Cooker_unique | star power | TID_SPEC_ABI_COOKER_1_DESC
+raw  Super will consume <VALUE1>% less Heat when used.
+now  Super will consume 50% less Heat when used.
+  VALUE1  50  -> 50
+
+--- Cooker_unique_2 | star power | TID_SPEC_ABI_COOKER_2_DESC
+raw  While the Heat is over <VALUE1>%, reduce damage taken by <VALUE2>%.
+now  While the Heat is over 80%, reduce damage taken by 20%.
+  VALUE1  80  -> 80
+  VALUE2  20  -> 20

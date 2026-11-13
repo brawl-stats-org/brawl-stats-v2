@@ -1,0 +1,22 @@
+# pam
+
+--- MinigunDude_AmmoSink | gadget | TID_ACCESSORY_MINIGUN_DUDE_AMMO_SINK_DESC
+raw  Each hit from Pam's next attack removes <VALUE1>% of opposing Brawlers' maximum ammo. Pam reclaims <VALUE2>% of the ammo for herself.
+now  Each hit from Pam's next attack removes <VALUE1>% of opposing Brawlers' maximum ammo. Pam reclaims <VALUE2>% of the ammo for herself.
+  VALUE1  -  -> 25
+  VALUE2  -  -> 50
+
+--- MinigunDude_BurstHeal | gadget | TID_ACCESSORY_TOWER_BURST_HEAL_DESC
+raw  Pam triggers her turret to emit a pulse that heals allies inside the turret's range, including herself, for <VALUE1> health.
+now  Pam triggers her turret to emit a pulse that heals allies inside the turret's range, including herself, for <VALUE1> health.
+  VALUE1  -  -> 2000
+
+--- MinigunDude_unique | star power | TID_SPEC_ABI_HEAL_OTHERS_MAIN_ATTACK_DESC
+raw  Whenever Pam hits enemy Brawlers with Scrapstorm, she heals herself and nearby friendly Brawlers for <VALUE1> health.
+now  Whenever Pam hits enemy Brawlers with Scrapstorm, she heals herself and nearby friendly Brawlers for 1 health.
+  VALUE1  1  -> 100
+
+--- MinigunDude_unique_2 | star power | TID_SPEC_ABI_TURRET_AOE_DESC
+raw  Healing turret now also damages enemies for <VALUE1> damage per second.
+now  Healing turret now also damages enemies for 10 damage per second.
+  VALUE1  10  -> 1000

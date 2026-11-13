@@ -1,0 +1,58 @@
+# brock
+
+--- RocketGirl_Jump | gadget | TID_ROCKETGIRL_BUDDY_GADGET_1_DESC
+raw  Brock rocket jumps, knocking back enemies and dealing <!buddy.accessory.skill.areaeffect.damage.scaleStatToLevel> damage on takeoff and landing. Hitting an enemy Brawler gives +<!buddy.component.statuseffect.duration.ticksasseconds> sec movement speed.
+now  Brock rocket jumps, knocking back enemies and dealing <!buddy.accessory.skill.areaeffect.damage.scaleStatToLevel> damage on takeoff and landing. Hitting an enemy Brawler gives +2 sec movement speed.
+  buddy.accessory.skill.areaeffect.damage.scaleStatToLevel  -  -> 1000
+  buddy.component.statuseffect.duration.ticksasseconds  2  -> 2
+
+--- RocketGirl_Jump | gadget | TID_ROCKETGIRL_BUDDY_GADGET_1_DIFF
+raw  Hitting an enemy Brawler gives +<!buddy.component.statuseffect.duration.ticksasseconds> sec movement speed.
+now  Hitting an enemy Brawler gives +2 sec movement speed.
+  buddy.component.statuseffect.duration.ticksasseconds  2  -> 2
+
+--- RocketGirl_MegaRocket | gadget | TID_ROCKETGIRL_BUDDY_GADGET_2_DESC
+raw  Brock fires a large rocket, destroying terrain and dealing <!buddy.accessory.skill.damage.scaletolevel> damage. The rocket breaks into smaller rockets after exploding, which also do damage.
+now  Brock fires a large rocket, destroying terrain and dealing 2000 damage. The rocket breaks into smaller rockets after exploding, which also do damage.
+  buddy.accessory.skill.damage.scaletolevel  2000  -> 2000
+
+--- RocketGirl_MegaRocket | gadget | TID_ROCKETGIRL_BUDDY_GADGET_2_DIFF
+raw  The rocket breaks into <!buddy.accessory.skill.projectile.chainbullets> smaller rockets after exploding that also do damage.
+now  The rocket breaks into 4 smaller rockets after exploding that also do damage.
+  buddy.accessory.skill.projectile.chainbullets  4  -> 4
+
+--- RocketGirl_overcharge | hypercharge | TID_ROCKETGIRL_BUDDY_OVERCHARGE_DESC
+raw  Rocket Rain fires cluster bombs. Rockin' Rockets fires an additional two small rockets dealing \n<!card.character.weaponskill.overchargedversion.customvalue2>% damage of the main rocket.
+now  Rocket Rain fires cluster bombs. Rockin' Rockets fires an additional two small rockets dealing \n<!card.character.weaponskill.overchargedversion.customvalue2>% damage of the main rocket.
+  card.character.weaponskill.overchargedversion.customvalue2  -  -> 40
+
+--- RocketGirl_overcharge | hypercharge | TID_ROCKETGIRL_BUDDY_OVERCHARGE_DIFF
+raw  Rockin' Rockets fires an additional two small rockets, each dealing \n<!card.character.weaponskill.overchargedversion.customvalue2>% damage of the main rocket.
+now  Rockin' Rockets fires an additional two small rockets, each dealing \n<!card.character.weaponskill.overchargedversion.customvalue2>% damage of the main rocket.
+  card.character.weaponskill.overchargedversion.customvalue2  -  -> 40
+
+--- RocketGirl_unique | star power | TID_SPEC_BURN_DESC
+raw  Rocket Rain now rains down <VALUE1>% more rockets.
+now  Rocket Rain now rains down 2050% more rockets.
+  VALUE1  2050  -> 44
+
+--- RocketGirl_unique | star power | TID_ROCKETGIRL_BUDDY_STARPOWER_1_DESC
+raw  Adds an extra salvo of rockets to Brock's super, and +<!buddy.trait.statuseffect.speedboostpercent>% movement speed while firing his Super.
+now  Adds an extra salvo of rockets to Brock's super, and +30% movement speed while firing his Super.
+  buddy.trait.statuseffect.speedboostpercent  30  -> 30
+
+--- RocketGirl_unique | star power | TID_ROCKETGIRL_BUDDY_STARPOWER_1_DIFF
+raw  Brock gains <!buddy.trait.statuseffect.speedboostpercent>% movement speed while firing his Super.
+now  Brock gains 30% movement speed while firing his Super.
+  buddy.trait.statuseffect.speedboostpercent  30  -> 30
+
+--- RocketGirl_unique_2 | star power | TID_ROCKETGIRL_BUDDY_STARPOWER_2_DESC
+raw  Increase Brock's ammo by (<!card.value1>). Every <!buddy.trait[1].value.msasseconds> sec Brock's next attack has increased range.
+now  Increase Brock's ammo by (1). Every 6 sec Brock's next attack has increased range.
+  card.value1  1  -> 1
+  buddy.trait[1].value.msasseconds  6  -> 6
+
+--- RocketGirl_unique_2 | star power | TID_ROCKETGIRL_BUDDY_STARPOWER_2_DIFF
+raw  Every <!buddy.trait[1].value.msasseconds> sec Brock's next attack has increased range.
+now  Every 6 sec Brock's next attack has increased range.
+  buddy.trait[1].value.msasseconds  6  -> 6

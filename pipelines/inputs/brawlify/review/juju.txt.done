@@ -1,0 +1,13 @@
+# juju
+
+--- Voodoo_overcharge | hypercharge | TID_VOODOO_OVERCHARGE_DESC
+raw  Juju summons a Hypercharged Gris-Gris giving him bigger needles, <VALUE3>% more speed, <VALUE1>% more health, and <VALUE2>% more damage.
+now  Juju summons a Hypercharged Gris-Gris giving him bigger needles, 250% more speed, 20% more health, and 20% more damage.
+  VALUE3  250  -> 25
+  VALUE1  20  -> 20
+  VALUE2  20  -> 20
+
+--- Voodoo_unique_2 | star power | TID_VOODOO_SP_2_DESC
+raw  Gris-Gris' attack now also slows the enemy for <!card.projectile.statuseffectenemy.duration.ticksasseconds> sec
+now  Gris-Gris' attack now also slows the enemy for 1 sec
+  card.projectile.statuseffectenemy.duration.ticksasseconds  1  -> 1

@@ -1,0 +1,39 @@
+# griff
+
+--- AssaultShotgun_Bomb | gadget | TID_ACCESSORY_ASSAULT_SHOTGUN_BOMB_DESC
+raw  Griff throws a firecracker-filled piggy bank that explodes after a short delay, destroying obstacles and dealing <!card.accessory.skill.damage.scaletolevel> damage to opponents within range.
+now  Griff throws a firecracker-filled piggy bank that explodes after a short delay, destroying obstacles and dealing 1600 damage to opponents within range.
+  card.accessory.skill.damage.scaletolevel  1600  -> 1600
+
+--- AssaultShotgun_Bomb | gadget | TID_ASSAULT_SHOTGUN_BUDDY_GADGET_1_DESC
+raw  Griff throws a firecracker-filled piggy bank that explodes after a short delay, destroying obstacles and dealing <!card.accessory.skill.damage.scaletolevel> damage to opponents within range. \nGriff can shoot the piggy bank to charge up and increase its explosion radius and damage! The piggy bank will explode instantly when it's fully charged.
+now  Griff throws a firecracker-filled piggy bank that explodes after a short delay, destroying obstacles and dealing 1600 damage to opponents within range. \nGriff can shoot the piggy bank to charge up and increase its explosion radius and damage! The piggy bank will explode instantly when it's fully charged.
+  card.accessory.skill.damage.scaletolevel  1600  -> 1600
+
+--- AssaultShotgun_Projectiles | gadget | TID_ACCESSORY_ASSAULT_SHOTGUN_PROJECTILES_DESC
+raw  Griff throws a shower of coins at target area, dealing <!card.accessory.skill.damage.scaletolevel> damage per sec to opponents inside.
+now  Griff throws a shower of coins at target area, dealing 600 damage per sec to opponents inside.
+  card.accessory.skill.damage.scaletolevel  600  -> 600
+
+--- AssaultShotgun_Projectiles | gadget | TID_ASSAULT_SHOTGUN_BUDDY_GADGET_2_DESC
+raw  Griff throws a shower of coins at the target area, dealing <!card.accessory.skill.damage.scaletolevel> damage per second to opponents inside. The coin shower grows in size throughout its duration.
+now  Griff throws a shower of coins at the target area, dealing 600 damage per second to opponents inside. The coin shower grows in size throughout its duration.
+  card.accessory.skill.damage.scaletolevel  600  -> 600
+
+--- AssaultShotgun_unique_2 | star power | TID_SPEC_ABI_ASSAULT_SHOTGUN_2_DESC
+raw  Every <!card.value2.ticksasseconds> seconds, Griff regains up to <!card.value1>% of his missing health.
+now  Every 2 seconds, Griff regains up to 15% of his missing health.
+  card.value2.ticksasseconds  2  -> 2
+  card.value1  15  -> 15
+
+--- AssaultShotgun_unique_2 | star power | TID_ASSAULT_SHOTGUN_BUDDY_STARPOWER_2_DESC
+raw  Every <!card.value2.ticksasseconds> seconds, Griff regains up to <!card.value1>% of his missing health. When Griff's Super projectiles return, they heal Griff for <!buddy.trait.value>% of his missing health.
+now  Every 2 seconds, Griff regains up to 15% of his missing health. When Griff's Super projectiles return, they heal Griff for 5% of his missing health.
+  card.value2.ticksasseconds  2  -> 2
+  card.value1  15  -> 15
+  buddy.trait.value  5  -> 5
+
+--- AssaultShotgun_unique_2 | star power | TID_ASSAULT_SHOTGUN_BUDDY_STARPOWER_2_DIFF
+raw  When Griff's Super projectiles return, they heal Griff for <!buddy.trait.value>% of his missing health.
+now  When Griff's Super projectiles return, they heal Griff for 5% of his missing health.
+  buddy.trait.value  5  -> 5

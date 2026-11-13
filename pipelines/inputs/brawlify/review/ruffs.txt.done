@@ -1,0 +1,27 @@
+# ruffs
+
+--- Ruffs_AirStrike | gadget | TID_ACCESSORY_RUFFS_AIR_STRIKE_DESC
+raw  Ruffs calls a barrage around the nearest opponent, dealing <VALUE1> damage with each hit.
+now  Ruffs calls a barrage around the nearest opponent, dealing 1200 damage with each hit.
+  VALUE1  1200  -> 1200
+
+--- Ruffs_Cover | gadget | TID_ACCESSORY_RUFFS_COVER_DESC
+raw  Ruffs throws down <VALUE1> sandbags as cover. Each one has <VALUE2>% of Ruffs' max health.
+now  Ruffs throws down 3 sandbags as cover. Each one has 40% of Ruffs' max health.
+  VALUE1  3  -> 3
+  VALUE2  40  -> 40
+
+--- Ruffs_overcharge | hypercharge | TID_RUFFS_OVERCHARGE_DESC
+raw  Ruffs' Super deals <VALUE1>% more damage and his power-up fully charges a Hypercharge.
+now  Ruffs' Super deals 25% more damage and his power-up fully charges a Hypercharge.
+  VALUE1  25  -> 25
+
+--- Ruffs_unique | star power | TID_SPEC_ABI_RUFFS_1_DESC
+raw  Supply Drop now includes a bomb that adds <VALUE1>% more damage to the drop and also allows it to destroy walls.
+now  Supply Drop now includes a bomb that adds 72% more damage to the drop and also allows it to destroy walls.
+  VALUE1  72  -> 72
+
+--- Ruffs_unique_2 | star power | TID_SPEC_ABI_RUFFS_2_DESC
+raw  Friendly Brawlers have their maximum health increased by <VALUE1> every second that they are in range of this ability while it's active.
+now  Friendly Brawlers have their maximum health increased by 40 every second that they are in range of this ability while it's active.
+  VALUE1  40  -> 40

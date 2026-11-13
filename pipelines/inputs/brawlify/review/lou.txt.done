@@ -1,0 +1,21 @@
+# lou
+
+--- IceDude_AreaFreeze | gadget | TID_ACCESSORY_ICE_DUDE_AREA_FREEZE_DESC
+raw  Instantly adds <VALUE1>% freeze meter to opponents inside Lou's Super.
+now  Instantly adds <VALUE1>% freeze meter to opponents inside Lou's Super.
+  VALUE1  -  -> 50
+
+--- IceDude_Freeze | gadget | TID_ACCESSORY_ICE_DUDE_GADGET_DESC
+raw  Lou shields himself with ice, becoming invulnerable for <VALUE1> seconds.
+now  Lou shields himself with ice, becoming invulnerable for <VALUE1> seconds.
+  VALUE1  -  -> 1
+
+--- IceDude_unique | star power | TID_SPEC_ABI_ICE_DUDE_1_DESC
+raw  Opponents standing on Lou's Super area get frozen <VALUE1>% faster.
+now  Opponents standing on Lou's Super area get frozen 8% faster.
+  VALUE1  8  -> 14
+
+--- IceDude_unique_2 | star power | TID_SPEC_ABI_ICE_DUDE_2_DESC
+raw  Opponents lose up to <VALUE1>% of their damage based on how frozen they are from Lou's attacks.
+now  Opponents lose up to <VALUE1>% of their damage based on how frozen they are from Lou's attacks.
+  VALUE1  -  -> 50

@@ -1,0 +1,17 @@
+# trunk
+
+--- Domain_abi | attack | TID_DOMAIN_WEAPON_DESC
+raw  Trunk spins in a circle after a short delay, dealing damage to enemies and dropping ants. Standing near ants gives Trunk a <VALUE1>% movement speed boost and <VALUE2>% damage boost. The edge of the attack deals more damage to enemies.
+now  Trunk spins in a circle after a short delay, dealing damage to enemies and dropping ants. Standing near ants gives Trunk a <VALUE1>% movement speed boost and <VALUE2>% damage boost. The edge of the attack deals more damage to enemies.
+  VALUE1  -  -> 30
+  VALUE2  -  -> 30
+
+--- Domain_gadget_2 | gadget | TID_DOMAIN_GADGET_2_DESC
+raw  Trunk heals from the first source of damage taken for the next <VALUE1> secs.
+now  Trunk heals from the first source of damage taken for the next <VALUE1> secs.
+  VALUE1  -  -> 2
+
+--- Domain_unique_1 | star power | TID_DOMAIN_SP_1_DESC
+raw  Ants also reduce the damage of enemies by <VALUE1>%
+now  Ants also reduce the damage of enemies by 1%
+  VALUE1  1  -> 15

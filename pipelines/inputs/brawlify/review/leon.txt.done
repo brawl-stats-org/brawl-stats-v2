@@ -1,0 +1,54 @@
+# leon
+
+--- Ninja_InvisibleArea | gadget | TID_NINJA_BUDDY_GADGET_2_DESC
+raw  Leon throws a stealthy area for his team to hide in. The lollipop slowly loses its health over time. Leon and teammates gain <!buddy.accessory.skill.summonedCharacter.areaEffect.statusEffectAlly.speedBoostPercent>% movement speed inside the area.
+now  Leon throws a stealthy area for his team to hide in. The lollipop slowly loses its health over time. Leon and teammates gain 15% movement speed inside the area.
+  buddy.accessory.skill.summonedCharacter.areaEffect.statusEffectAlly.speedBoostPercent  15  -> 15
+
+--- Ninja_InvisibleArea | gadget | TID_NINJA_BUDDY_GADGET_2_DIFF
+raw  Leon and teammates gain <!buddy.accessory.skill.summonedCharacter.areaEffect.statusEffectAlly.speedBoostPercent>% movement speed inside the area.
+now  Leon and teammates gain 15% movement speed inside the area.
+  buddy.accessory.skill.summonedCharacter.areaEffect.statusEffectAlly.speedBoostPercent  15  -> 15
+
+--- Ninja_overcharge | hypercharge | TID_NINJA_BUDDY_OVERCHARGE_DESC
+raw  Leon's main attacks do at least <!card.character.weaponSkill.overchargedVersion.projectile.damagePercentEnd>% damage regardless of distance.
+now  Leon's main attacks do at least 75% damage regardless of distance.
+  card.character.weaponSkill.overchargedVersion.projectile.damagePercentEnd  75  -> 75
+
+--- Ninja_overcharge | hypercharge | TID_NINJA_BUDDY_OVERCHARGE_DIFF
+raw  Leon's main attacks do at least <!card.character.weaponSkill.overchargedVersion.projectile.damagePercentEnd>% damage regardless of distance.
+now  Leon's main attacks do at least 75% damage regardless of distance.
+  card.character.weaponSkill.overchargedVersion.projectile.damagePercentEnd  75  -> 75
+
+--- Ninja_unique | star power | TID_SPEC_ABI_SPEED_INVISIBLE_DESC
+raw  When Leon is not visible, he gains a <!card.statuseffect.speedboostpercent>% movement speed for the duration of his invisibility.
+now  When Leon is not visible, he gains a 30% movement speed for the duration of his invisibility.
+  card.statuseffect.speedboostpercent  30  -> 30
+
+--- Ninja_unique | star power | TID_NINJA_BUDDY_STARPOWER_1_DESC
+raw  When Leon is not visible, he gains <!card.statuseffect.speedboostpercent>% movement speed for the duration of his invisibility. Projectiles deal +<!buddy.trait.statusEffect.DamageBoostPercent>% damage for <!buddy.trait.statuseffect.duration.ticksasseconds> seconds after breaking invisibility.
+now  When Leon is not visible, he gains 30% movement speed for the duration of his invisibility. Projectiles deal +15% damage for 0.5 seconds after breaking invisibility.
+  card.statuseffect.speedboostpercent  30  -> 30
+  buddy.trait.statusEffect.DamageBoostPercent  15  -> 15
+  buddy.trait.statuseffect.duration.ticksasseconds  0.5  -> 0.5
+
+--- Ninja_unique | star power | TID_NINJA_BUDDY_STARPOWER_1_DIFF
+raw  The first attack after breaking invisibility deals +<!buddy.trait.statusEffect.DamageBoostPercent>% damage.
+now  The first attack after breaking invisibility deals +15% damage.
+  buddy.trait.statusEffect.DamageBoostPercent  15  -> 15
+
+--- Ninja_unique_2 | star power | TID_SPEC_ABI_HOT_INVISIBLE_DESC
+raw  Leon recovers <!card.character.maxHealth.scaleToLevel.scaleCardValue1> health per second while his Super is active.
+now  Leon recovers 1320 health per second while his Super is active.
+  card.character.maxHealth.scaleToLevel.scaleCardValue1  1320  -> 1320
+
+--- Ninja_unique_2 | star power | TID_NINJA_BUDDY_STARPOWER_2_DESC
+raw  Leon recovers <!card.character.maxHealth.scaleToLevel.scaleCardValue1> health per second while his Super is active and his Super duration is +<!buddy.trait.value.AddActiveTimeUltiAttackPercentage> sec longer.
+now  Leon recovers 1320 health per second while his Super is active and his Super duration is +<!buddy.trait.value.AddActiveTimeUltiAttackPercentage> sec longer.
+  card.character.maxHealth.scaleToLevel.scaleCardValue1  1320  -> 1320
+  buddy.trait.value.AddActiveTimeUltiAttackPercentage  -  -> 1
+
+--- Ninja_unique_2 | star power | TID_NINJA_BUDDY_STARPOWER_2_DIFF
+raw  Leon's Super duration is +<!buddy.trait.value.AddActiveTimeUltiAttackPercentage> sec longer.
+now  Leon's Super duration is +<!buddy.trait.value.AddActiveTimeUltiAttackPercentage> sec longer.
+  buddy.trait.value.AddActiveTimeUltiAttackPercentage  -  -> 1

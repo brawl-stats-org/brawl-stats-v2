@@ -1,0 +1,22 @@
+# angelo
+
+--- InsectMan_gadget | gadget | TID_INSECTMAN_GADGET_1_DESC
+raw  Fly into the air for <VALUE1> seconds. Drains <VALUE2> health from nearby enemies on takeoff.
+now  Fly into the air for <VALUE1> seconds. Drains <VALUE2> health from nearby enemies on takeoff.
+  VALUE1  -  -> 1
+  VALUE2  -  -> 660
+
+--- InsectMan_unique | star power | TID_INSECTMAN_SP_1_DESC
+raw  Staying inside the Super will heal Angelo for <VALUE1> per second.
+now  Staying inside the Super will heal Angelo for 10 per second.
+  VALUE1  10  -> 620
+
+--- InsectMan_unique_2 | star power | TID_INSECTMAN_SP_2_DESC
+raw  Angelo gains <!card.statuseffect.baseSpeedIncreasePercent>% increased movement speed after entering water.
+now  Angelo gains 25% increased movement speed after entering water.
+  card.statuseffect.baseSpeedIncreasePercent  25  -> 25
+
+--- InsectMan_ulti | super | TID_INSECTMAN_ULTI_DESC
+raw  Angelo creates a poison cloud that lasts for <VALUE1> seconds and damages enemies. While in the cloud, Angelo's arrows become poisoned, dealing extra damage over time.
+now  Angelo creates a poison cloud that lasts for <VALUE1> seconds and damages enemies. While in the cloud, Angelo's arrows become poisoned, dealing extra damage over time.
+  VALUE1  -  -> 8

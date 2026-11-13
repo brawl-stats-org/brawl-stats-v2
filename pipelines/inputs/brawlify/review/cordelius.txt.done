@@ -1,0 +1,24 @@
+# cordelius
+
+--- Duelist_Silence | gadget | TID_ACCESSORY_DUELIST_GADGET_2_DESC
+raw  Cordelius's next main attack shoots a poison mushroom that prevents the enemy from attacking for <VALUE1> seconds.
+now  Cordelius's next main attack shoots a poison mushroom that prevents the enemy from attacking for <VALUE1> seconds.
+  VALUE1  -  -> 1
+
+--- Duelist_unique | star power | TID_SPEC_ABI_DUELIST_1_DESC
+raw  Hitting the second mushroom to the same target as the first, deals <VALUE1>% extra damage.
+now  Hitting the second mushroom to the same target as the first, deals 20% extra damage.
+  VALUE1  20  -> 20
+
+--- Duelist_unique_2 | star power | TID_SPEC_ABI_DUELIST_2_DESC
+raw  Cordelius spawns <VALUE1> mushrooms to the Shadow Realm after using his Super, healing allies and damaging enemies for <VALUE2> health on pickup.
+now  Cordelius spawns 3 mushrooms to the Shadow Realm after using his Super, healing allies and damaging enemies for <VALUE2> health on pickup.
+  VALUE1  3  -> 3
+  VALUE2  -  -> 1410
+
+--- Duelist_ulti | super | TID_DUELIST_ULTI_DESC
+raw  Cordelius shoots a Shadow Mushroom that passes through walls and on hit transfers the target and him to the Shadow Realm for <!card.character.ultiskill.projectile.customuniquepropertyvalue.ticksasseconds> seconds. Cordelius has <!card.character.statuseffect.speedboostpercent>% higher movement speed and <!card.character.statuseffect.decreasereloadtimepercent>% faster reload speed in the Shadow Realm.
+now  Cordelius shoots a Shadow Mushroom that passes through walls and on hit transfers the target and him to the Shadow Realm for 8 seconds. Cordelius has 10% higher movement speed and 20% faster reload speed in the Shadow Realm.
+  card.character.ultiskill.projectile.customuniquepropertyvalue.ticksasseconds  8  -> 8
+  card.character.statuseffect.speedboostpercent  10  -> 10
+  card.character.statuseffect.decreasereloadtimepercent  20  -> 20

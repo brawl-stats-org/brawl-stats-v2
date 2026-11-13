@@ -1,0 +1,16 @@
+# gray
+
+--- DoorMan_overcharge | hypercharge | TID_DOOR_MAN_OVERCHARGE_DESC
+raw  Gray opens a new pair of portals that shields him and allies for <VALUE2> when they pass through.
+now  Gray opens a new pair of portals that shields him and allies for 1000 when they pass through.
+  VALUE2  1000  -> 1000
+
+--- DoorMan_unique | star power | TID_SPEC_ABI_DOORMAN_1_DESC
+raw  When Gray has full health, the next damage taken is reduced by <VALUE>%.
+now  When Gray has full health, the next damage taken is reduced by 50%.
+  VALUE  50  -> 50
+
+--- DoorMan_unique_2 | star power | TID_SPEC_ABI_DOORMAN_2_DESC
+raw  When Gray or his Allies use Doors, they recover <VALUE>% of their max hit points.
+now  When Gray or his Allies use Doors, they recover 20% of their max hit points.
+  VALUE  20  -> 20

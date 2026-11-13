@@ -1,0 +1,51 @@
+# gus
+
+--- SoulCollector_ExplodeSouls | gadget | TID_ACCESSORY_SOUL_COLLECTOR_GADGET_1_DESC
+raw  Explode all uncollected spirits, dealing <VALUE1> damage to nearby enemies.
+now  Explode all uncollected spirits, dealing <VALUE1> damage to nearby enemies.
+  VALUE1  -  -> 2160
+
+--- SoulCollector_ExplodeSouls | gadget | TID_SOUL_COLLECTOR_BUDDY_GADGET_1_DESC
+raw  Explode all uncollected spirits, dealing <!card.accessory.areaeffect.damage.scaleweapondamagelevel.scaletolevel> damage to nearby enemies and making them lose 1 ammo.
+now  Explode all uncollected spirits, dealing 2160 damage to nearby enemies and making them lose 1 ammo.
+  card.accessory.areaeffect.damage.scaleweapondamagelevel.scaletolevel  2160  -> 2160
+
+--- SoulCollector_KnockbackSoul | gadget | TID_ACCESSORY_SOUL_COLLECTOR_GADGET_2_DESC
+raw  Gus throws a spirit, knocking back enemies and dealing <!card.accessory.skill.damage.scaleToLevel> damage.
+now  Gus throws a spirit, knocking back enemies and dealing 1080 damage.
+  card.accessory.skill.damage.scaleToLevel  1080  -> 1080
+
+--- SoulCollector_KnockbackSoul | gadget | TID_SOUL_COLLECTOR_BUDDY_GADGET_2_DESC
+raw  Gus throws a spirit, knocking enemies back and dealing <!card.accessory.skill.damage.scaleToLevel> damage, creating a spirit for each enemy hit.
+now  Gus throws a spirit, knocking enemies back and dealing 1080 damage, creating a spirit for each enemy hit.
+  card.accessory.skill.damage.scaleToLevel  1080  -> 1080
+
+--- SoulCollector_unique | star power | TID_SPEC_ABI_SOUL_COLLECTOR_1_DESC
+raw  Healing gained from spirits is increased by <VALUE1>%.
+now  Healing gained from spirits is increased by 100%.
+  VALUE1  100  -> 75
+
+--- SoulCollector_unique | star power | TID_SOUL_COLLECTOR_BUDDY_STARPOWER_1_DESC
+raw  Healing gained from spirits is increased by <!card.value1>%, and spirits move toward the nearest ally.
+now  Healing gained from spirits is increased by 100%, and spirits move toward the nearest ally.
+  card.value1  100  -> 75
+
+--- SoulCollector_unique_2 | star power | TID_SPEC_ABI_SOUL_COLLECTOR_2_DESC
+raw  Spooky increases the damage of a teammate by <!card.trait.statuseffect.damageboostpercent>% for <!card.trait.statuseffect.duration.ticksasseconds> seconds.
+now  Spooky increases the damage of a teammate by 25% for 5 seconds.
+  card.trait.statuseffect.damageboostpercent  25  -> 25
+  card.trait.statuseffect.duration.ticksasseconds  5  -> 5
+
+--- SoulCollector_unique_2 | star power | TID_SOUL_COLLECTOR_BUDDY_STARPOWER_2_DESC
+raw  Spooky increases the damage of a teammate by <!buddy.trait.statuseffect.damageboostpercent>% for <!buddy.trait.statuseffect.duration.ticksasseconds> sec, and gives them a <!buddy.trait.statuseffect.speedboostpercent>% speed boost for <!buddy.trait.statuseffect.duration.ticksasseconds> sec.
+now  Spooky increases the damage of a teammate by 25% for 5 sec, and gives them a 15% speed boost for 5 sec.
+  buddy.trait.statuseffect.damageboostpercent  25  -> 25
+  buddy.trait.statuseffect.duration.ticksasseconds  5  -> 5
+  buddy.trait.statuseffect.speedboostpercent  15  -> 15
+  buddy.trait.statuseffect.duration.ticksasseconds  5  -> 5
+
+--- SoulCollector_unique_2 | star power | TID_SOUL_COLLECTOR_BUDDY_STARPOWER_2_DIFF
+raw  Spooky also gives a teammate a <!buddy.trait.statuseffect.speedboostpercent>% speed boost for <!buddy.trait.statuseffect.duration.ticksasseconds> sec.
+now  Spooky also gives a teammate a 15% speed boost for 5 sec.
+  buddy.trait.statuseffect.speedboostpercent  15  -> 15
+  buddy.trait.statuseffect.duration.ticksasseconds  5  -> 5

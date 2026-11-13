@@ -1,0 +1,30 @@
+# katanakid
+
+--- KatanaKid_Gadget_1 | gadget | TID_KATANA_KID_GADGET_1_DESC
+raw  Nori eats up to <!card.accessory.value2> fish to heal himself for <!card.accessory.value1> per fish.
+now  Nori eats up to 3 fish to heal himself for 1000 per fish.
+  card.accessory.value2  3  -> 3
+  card.accessory.value1  1000  -> 1000
+
+--- KatanaKid_Gadget_2 | gadget | TID_KATANA_KID_GADGET_2_DESC
+raw  Aim a fishing net that roots the first Brawler hit for <!card.character.component[0].statuseffect[0].duration.ticksasseconds> sec and deals <!card.accessory.skill.damage.scaleToLevel> damage.
+now  Aim a fishing net that roots the first Brawler hit for 1.25 sec and deals 800 damage.
+  card.character.component[0].statuseffect[0].duration.ticksasseconds  1.25  -> 1.25
+  card.accessory.skill.damage.scaleToLevel  800  -> 800
+
+--- KatanaKid_unique_1 | star power | TID_KATANA_KID_SP_1_DESC
+raw  Nori catches <!card.value1> fish when his Super hits enemy Brawlers.
+now  Nori catches 3 fish when his Super hits enemy Brawlers.
+  card.value1  3  -> 3
+
+--- KatanaKid_unique_2 | star power | TID_KATANA_KID_SP_2_DESC
+raw  Nori gains +<!card.statuseffect.baseSpeedIncreasePercent>% speed for <!card.statuseffect.duration.ticksasseconds> sec whenever he hits an enemy with his Main Attack.
+now  Nori gains +20% speed for 1 sec whenever he hits an enemy with his Main Attack.
+  card.statuseffect.baseSpeedIncreasePercent  20  -> 20
+  card.statuseffect.duration.ticksasseconds  1  -> 1
+
+--- KatanaKid_ulti | super | TID_KATANA_KID_ULTI_DESC
+raw  Nori dives into water then emerges, dealing area damage after a short delay. His Super consumes all fish, increasing its size by <!card.character.component[0].trait[0].value>% and damage by <!card.character.component[0].values[1]>% per fish.
+now  Nori dives into water then emerges, dealing area damage after a short delay. His Super consumes all fish, increasing its size by 5% and damage by 4% per fish.
+  card.character.component[0].trait[0].value  5  -> 5
+  card.character.component[0].values[1]  4  -> 4

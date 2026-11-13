@@ -1,0 +1,53 @@
+# mortis
+
+--- Undertaker_Reload | gadget | TID_UNDERTAKER_BUDDY_GADGET_2_DESC
+raw  Mortis turns into a flock of bats and travels to a target location, dealing <!buddy.accessory.skill.damage.scaleToLevel> damage when passing through targets and healing for the amount of damage dealt.
+now  Mortis turns into a flock of bats and travels to a target location, dealing 1520 damage when passing through targets and healing for the amount of damage dealt.
+  buddy.accessory.skill.damage.scaleToLevel  1520  -> 1520
+
+--- Undertaker_Reload | gadget | TID_UNDERTAKER_BUDDY_GADGET_2_DIFF
+raw  Deals <!buddy.accessory.skill.damage.scaleToLevel> damage when passing through enemies and heals for the damage dealt.
+now  Deals 1520 damage when passing through enemies and heals for the damage dealt.
+  buddy.accessory.skill.damage.scaleToLevel  1520  -> 1520
+
+--- Undertaker_Swing | gadget | TID_ACCESSORY_MORTIS_SWING_DESC
+raw  Mortis spins his shovel dealing <!card.accessory.skill.damage.scaleToLevel> damage. Can also be aimed for a short-distance bat attack.
+now  Mortis spins his shovel dealing 2000 damage. Can also be aimed for a short-distance bat attack.
+  card.accessory.skill.damage.scaleToLevel  2000  -> 2000
+
+--- Undertaker_Swing | gadget | TID_UNDERTAKER_BUDDY_GADGET_1_DESC
+raw  Mortis spins his shovel dealing <!card.accessory.skill.damage.scaleToLevel> damage. Can be aimed for a short distance bat attack. Deals increased damage to low health targets.
+now  Mortis spins his shovel dealing 2000 damage. Can be aimed for a short distance bat attack. Deals increased damage to low health targets.
+  card.accessory.skill.damage.scaleToLevel  2000  -> 2000
+
+--- Undertaker_unique | star power | TID_SPEC_ABI_STEAL_SOULS_DESC
+raw  Mortis reaps the life essence of Brawlers he defeats, restoring <VALUE1>% of his max health.
+now  Mortis reaps the life essence of Brawlers he defeats, restoring 20% of his max health.
+  VALUE1  20  -> 20
+
+--- Undertaker_unique | star power | TID_UNDERTAKER_BUDDY_STARPOWER_1_DESC
+raw  Mortis reaps the life essence of Brawlers he defeats, restoring  <!card.value1>% of his max health and gaining <!buddy.trait.value.scaleToLevel> additional max health until defeated (this stacks).
+now  Mortis reaps the life essence of Brawlers he defeats, restoring  20% of his max health and gaining 500 additional max health until defeated (this stacks).
+  card.value1  20  -> 20
+  buddy.trait.value.scaleToLevel  500  -> 500
+
+--- Undertaker_unique | star power | TID_UNDERTAKER_BUDDY_STARPOWER_1_DIFF
+raw  Gains <!buddy.trait.value.scaleToLevel> additional max health until defeated (this stacks).
+now  Gains 500 additional max health until defeated (this stacks).
+  buddy.trait.value.scaleToLevel  500  -> 500
+
+--- Undertaker_unique_2 | star power | TID_SPEC_ABI_LONGER_DASH_DESC
+raw  Mortis gains his longer dash <VALUE1> seconds faster.
+now  Mortis gains his longer dash 40 seconds faster.
+  VALUE1  40  -> 2
+
+--- Undertaker_unique_2 | star power | TID_UNDERTAKER_BUDDY_STARPOWER_2_DESC
+raw  Mortis gains his longer dash <!card.value1.ticksAsSeconds> sec faster and gets <!buddy.trait.statusEffect.shieldPercent>% damage reduction during the long dash!
+now  Mortis gains his longer dash 2 sec faster and gets 35% damage reduction during the long dash!
+  card.value1.ticksAsSeconds  2  -> 2
+  buddy.trait.statusEffect.shieldPercent  35  -> 35
+
+--- Undertaker_unique_2 | star power | TID_UNDERTAKER_BUDDY_STARPOWER_2_DIFF
+raw  Gains <!buddy.trait.statusEffect.shieldPercent>% damage reduction during his long dash.
+now  Gains 35% damage reduction during his long dash.
+  buddy.trait.statusEffect.shieldPercent  35  -> 35

@@ -1,0 +1,22 @@
+# kit
+
+--- Attacher_gadget | gadget | TID_ATTACHER_GADGET_1_DESC
+raw  Hide in a cardboard box becoming invisible for <VALUE1> seconds. Charges the Super <VALUE2> faster while stationary.
+now  Hide in a cardboard box becoming invisible for <VALUE1> seconds. Charges the Super <VALUE2> faster while stationary.
+  VALUE1  -  -> 3
+  VALUE2  -  -> 100
+
+--- Attacher_gadget_1 | gadget | TID_ATTACHER_GADGET_2_DESC
+raw  Heals himself and the friendly Brawler he is attached to for <VALUE1>.
+now  Heals himself and the friendly Brawler he is attached to for <VALUE1>.
+  VALUE1  -  -> 30
+
+--- Attacher_unique | star power | TID_ATTACHER_SP_1_DESC
+raw  Kit gains <VALUE1>% power from each Power Cube.
+now  Kit gains 1% power from each Power Cube.
+  VALUE1  1  -> 150
+
+--- Attacher_unique_2 | star power | TID_ATTACHER_SP_2_DESC
+raw  Kit attaches to friendly Brawlers for <VALUE1> seconds longer.
+now  Kit attaches to friendly Brawlers for 100 seconds longer.
+  VALUE1  100  -> 5

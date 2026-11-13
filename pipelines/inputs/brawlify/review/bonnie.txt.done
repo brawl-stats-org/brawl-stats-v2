@@ -1,0 +1,27 @@
+# bonnie
+
+--- CannonGirl_Dash | gadget | TID_ACCESSORY_CANNON_GIRL_DASH_DESC
+raw  Bonnie dashes forward, knocking back enemies and dealing <VALUE1> damage on hit.
+now  Bonnie dashes forward, knocking back enemies and dealing <VALUE1> damage on hit.
+  VALUE1  -  -> 2320
+
+--- CannonGirl_Speed | gadget | TID_ACCESSORY_CANNON_GIRL_SPEED_DESC
+raw  Clyde's movement and reload speed are increased by <!card.accessory.statuseffectself.speedboostpercent>% for <!card.accessory.statuseffectself.duration.ticksasseconds> seconds.
+now  Clyde's movement and reload speed are increased by 30% for 5 seconds.
+  card.accessory.statuseffectself.speedboostpercent  30  -> 30
+  card.accessory.statuseffectself.duration.ticksasseconds  5  -> 5
+
+--- CannonGirl_overcharge | hypercharge | TID_CANNON_GIRL_OVERCHARGE_DESC
+raw  Bonnie stuns enemies for <VALUE1> secs when firing and landing from Clyde, plus she spits damage dealing teeth around her.
+now  Bonnie stuns enemies for 10 secs when firing and landing from Clyde, plus she spits damage dealing teeth around her.
+  VALUE1  10  -> 1
+
+--- CannonGirl_unique | star power | TID_SPEC_ABI_CANNON_GIRL_1_DESC
+raw  The range of Bonnie's Star Launcher is increased by <VALUE1>%.
+now  The range of Bonnie's Star Launcher is increased by 8%.
+  VALUE1  8  -> 36
+
+--- CannonGirl_unique_2 | star power | TID_SPEC_ABI_CANNON_GIRL_2_DESC
+raw  Loose Tooth shatters on hit, dealing <VALUE1>% extra damage to nearby enemies.
+now  Loose Tooth shatters on hit, dealing 4% extra damage to nearby enemies.
+  VALUE1  4  -> 25

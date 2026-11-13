@@ -1,0 +1,61 @@
+# bibi
+
+--- Baseball_Heal | gadget | TID_ACCESSORY_BASEBALL_HEAL_DESC
+raw  Bibi heals <!card.value1> health per second for <!card.value2> seconds.
+now  Bibi heals 1000 health per second for 4 seconds.
+  card.value1  1000  -> 1000
+  card.value2  4  -> 4
+
+--- Baseball_Heal | gadget | TID_BASEBALL_BUDDY_GADGET_1_DESC
+raw  Bibi heals for <!buddy.accessory.value1.fromMaxHealthPercentage> over <!buddy.accessory.value2.ticksAsSeconds>sec, instantly charges her Home run bar, and her next attack restores  <!buddy.accessory.value3>% damage as health.
+now  Bibi heals for <!buddy.accessory.value1.fromMaxHealthPercentage> over 4sec, instantly charges her Home run bar, and her next attack restores  50% damage as health.
+  buddy.accessory.value1.fromMaxHealthPercentage  -  -> 1000
+  buddy.accessory.value2.ticksAsSeconds  4  -> 4
+  buddy.accessory.value3  50  -> 50
+
+--- Baseball_Heal | gadget | TID_BASEBALL_BUDDY_GADGET_1_DIFF
+raw  Instantly charges Bibi's Home run bar and her next attack restores  <!buddy.accessory.value3>% damage as health.
+now  Instantly charges Bibi's Home run bar and her next attack restores  50% damage as health.
+  buddy.accessory.value3  50  -> 50
+
+--- Baseball_Sticky | gadget | TID_ACCESSORY_BASEBALL_STICKY_DESC
+raw  Bibi throws bubble gum that slows all enemies in it by <!card.accessory.skill.projectile.spawnareaeffectobject.statuseffectenemy.speedreducepercent>%
+now  Bibi throws bubble gum that slows all enemies in it by <!card.accessory.skill.projectile.spawnareaeffectobject.statuseffectenemy.speedreducepercent>%
+  card.accessory.skill.projectile.spawnareaeffectobject.statuseffectenemy.speedreducepercent  -  -> 20
+
+--- Baseball_Sticky | gadget | TID_BASEBALL_BUDDY_GADGET_2_DESC
+raw  Bibi throws bubble gum that slows all enemies in it by <!card.accessory.skill.projectile.spawnareaeffectobject.statuseffectenemy.speedreducepercent>% with the slowing effect increasing the longer the gum is on the ground.
+now  Bibi throws bubble gum that slows all enemies in it by <!card.accessory.skill.projectile.spawnareaeffectobject.statuseffectenemy.speedreducepercent>% with the slowing effect increasing the longer the gum is on the ground.
+  card.accessory.skill.projectile.spawnareaeffectobject.statuseffectenemy.speedreducepercent  -  -> 20
+
+--- Baseball_unique | star power | TID_SPEC_ABI_SPED_FULL_AMMO_DESC
+raw  Bibi's movement speed is increased by <!card.statuseffect.baseSpeedIncreasePercent>% when her Home Run bar is fully charged.
+now  Bibi's movement speed is increased by 12% when her Home Run bar is fully charged.
+  card.statuseffect.baseSpeedIncreasePercent  12  -> 12
+
+--- Baseball_unique | star power | TID_BASEBALL_BUDDY_STARPOWER_1_DESC
+raw  Bibi's movement speed is increased by <!card.statuseffect.baseSpeedIncreasePercent>% when her Home Run bar is fully charged and her Home run attack deals +<!buddy.value>% damage.
+now  Bibi's movement speed is increased by 12% when her Home Run bar is fully charged and her Home run attack deals +15% damage.
+  card.statuseffect.baseSpeedIncreasePercent  12  -> 12
+  buddy.value  15  -> 15
+
+--- Baseball_unique | star power | TID_BASEBALL_BUDDY_STARPOWER_1_DIFF
+raw  Home run attack deals +<!buddy.value>% damage.
+now  Home run attack deals +15% damage.
+  buddy.value  15  -> 15
+
+--- Baseball_unique_2 | star power | TID_SPEC_ABI_SHIELD_HOMERUN_DESC
+raw  When Bibi's Home run bar is fully charged, she shields herself from all damage by <VALUE1>%.
+now  When Bibi's Home run bar is fully charged, she shields herself from all damage by 20%.
+  VALUE1  20  -> 20
+
+--- Baseball_unique_2 | star power | TID_BASEBALL_BUDDY_STARPOWER_2_DESC
+raw  When Bibi's Home run bar is fully charged, she shields herself from all damage by <!card.value1>% and gains a shield for <!card.character.component.value.ticksAsSeconds> sec when her Super hits an enemy Brawler .
+now  When Bibi's Home run bar is fully charged, she shields herself from all damage by 20% and gains a shield for 5 sec when her Super hits an enemy Brawler .
+  card.value1  20  -> 20
+  card.character.component.value.ticksAsSeconds  5  -> 5
+
+--- Baseball_unique_2 | star power | TID_BASEBALL_BUDDY_STARPOWER_2_DIFF
+raw  Bibi gains a shield for <!card.character.component.value.ticksAsSeconds> sec when her Super hits an enemy Brawler.
+now  Bibi gains a shield for 5 sec when her Super hits an enemy Brawler.
+  card.character.component.value.ticksAsSeconds  5  -> 5

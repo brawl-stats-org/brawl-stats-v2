@@ -1,0 +1,21 @@
+# meeple
+
+--- Meeple_gadget | gadget | TID_MEEPLE_GADGET_1_DESC
+raw  Meeple's next attack creates dice towers around the impact area and deals <VALUE1> damage.
+now  Meeple's next attack creates dice towers around the impact area and deals <VALUE1> damage.
+  VALUE1  -  -> 1000
+
+--- Meeple_unique | star power | TID_MEEPLE_SP_1_DESC
+raw  When you shoot through environment deal <VALUE1> more damage.
+now  When you shoot through environment deal 300 more damage.
+  VALUE1  300  -> 600
+
+--- Meeple_unique_2 | star power | TID_MEEPLE_SP_2_DESC
+raw  Critical success also increases allies reload speed within the area by <VALUE>%.
+now  Critical success also increases allies reload speed within the area by 20%.
+  VALUE  20  -> 20
+
+--- Meeple_ulti | super | TID_MEEPLE_ULTI_DESC
+raw  Meeple cheats, somehow rolling a NAT21 on a d20, allowing all team projectiles in the Super area to pierce through environment for <VALUE1> seconds.
+now  Meeple cheats, somehow rolling a NAT21 on a d20, allowing all team projectiles in the Super area to pierce through environment for <VALUE1> seconds.
+  VALUE1  -  -> 10

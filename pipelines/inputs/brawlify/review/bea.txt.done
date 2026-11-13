@@ -1,0 +1,12 @@
+# bea
+
+--- BeeSniper_ExtraBee | gadget | TID_ACCESSORY_EXTRA_BEE_DESC
+raw  Bea unleashes <VALUE1> angry bees that circle away from her, dealing more damage the further they go (up to <VALUE2> damage).
+now  Bea unleashes <VALUE1> angry bees that circle away from her, dealing more damage the further they go (up to <VALUE2> damage).
+  VALUE1  -  -> 4
+  VALUE2  -  -> 1200
+
+--- BeeSniper_unique_2 | star power | TID_SPEC_ABI_BEE_SNIPER_2_DESC
+raw  Bea receives a <VALUE1>% shield while Big Sting is Supercharged.
+now  Bea receives a 30% shield while Big Sting is Supercharged.
+  VALUE1  30  -> 30

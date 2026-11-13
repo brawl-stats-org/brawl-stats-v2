@@ -1,0 +1,6 @@
+# SplitterLegs
+
+--- SplitterLegs_ulti | super | TID_SPLITTER_ULTI_SPLIT_DESC
+raw  R-T instantly teleports to his legs and becomes whole again, healing for <VALUE1>.
+now  R-T instantly teleports to his legs and becomes whole again, healing for <VALUE1>.
+  VALUE1  -  -> 1000

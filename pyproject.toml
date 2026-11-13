@@ -6,9 +6,19 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "boto3>=1.28.0",
+    "httpx>=0.28.1",
     "pydantic>=2.13.5",
     "python-dotenv>=1.2.2",
     "requests>=2.32.3",
+]
+
+[project.scripts]
+brawlify = "brawlify.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.6",
 ]
 
 [build-system]
@@ -16,7 +26,7 @@ requires = ["uv_build>=0.8,<0.14"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = "brawl_stats"
+module-name = ["brawl_stats", "brawlify"]
 module-root = "pipelines/src"
 
 [tool.basedpyright]
@@ -24,8 +34,8 @@ typeCheckingMode = "standard"
 pythonVersion = "3.12"
 venvPath = "."
 venv = ".venv"
-# verify_determinism.py imports gen_artifacts.py as a module.
-extraPaths = ["pipelines/scripts"]
+# verify_determinism.py imports gen_artifacts.py, regenerate_golden.py imports test_golden.py.
+extraPaths = ["pipelines/scripts", "pipelines/tests/brawlify"]
 strictParameterNoneValue = false
 reportOptionalMemberAccess = "warning"
 
@@ -35,3 +45,8 @@ line-length = 100
 [tool.ruff.lint]
 select = ["E", "F", "B"]
 ignore = ["E402", "E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["pipelines/tests"]
+# regenerate_golden.py imports test_golden.py.
+pythonpath = ["pipelines/tests/brawlify"]

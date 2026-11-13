@@ -1,0 +1,23 @@
+# gigi
+
+--- Daredevil_gadget_2 | gadget | TID_DAREDEVIL_GADGET_2_DESC
+raw  Gigi creates an area that makes herself and allies invisible while inside. Lasts <VALUE1> secs.
+now  Gigi creates an area that makes herself and allies invisible while inside. Lasts <VALUE1> secs.
+  VALUE1  -  -> 3
+
+--- Daredevil_unique_1 | star power | TID_DAREDEVIL_SP_1_DESC
+raw  Increases Super charge rate by <VALUE1>% if no damage has been received for <VALUE2> secs
+now  Increases Super charge rate by 40% if no damage has been received for <VALUE2> secs
+  VALUE1  40  -> 30
+  VALUE2  -  -> 2
+
+--- Daredevil_unique_2 | star power | TID_DAREDEVIL_SP_2_DESC
+raw  SHADOW PUPPET now heals for <VALUE1> after charging up.
+now  SHADOW PUPPET now heals for 1200 after charging up.
+  VALUE1  1200  -> 2400
+
+--- Daredevil_ulti | super | TID_DAREDEVIL_ULTI_DESC
+raw  Gigi charges up for <VALUE1> sec, then appears at the targeted area. Gigi can charge up again for <VALUE2> sec to return to her starting position, dealing damage when she leaves.
+now  Gigi charges up for <VALUE1> sec, then appears at the targeted area. Gigi can charge up again for <VALUE2> sec to return to her starting position, dealing damage when she leaves.
+  VALUE1  -  -> 0.8
+  VALUE2  -  -> 3

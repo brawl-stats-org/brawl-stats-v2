@@ -1,0 +1,22 @@
+# gladiator
+
+--- Gladiator_gadget | gadget | TID_GLADIATOR_GADGET_1_DESC
+raw  Damian throws his microphone to a target location. The first teammate to pick it up is healed for <!card.accessory.skill.spawneditem.statuseffectally.healing.scaletolevel> health.
+now  Damian throws his microphone to a target location. The first teammate to pick it up is healed for <!card.accessory.skill.spawneditem.statuseffectally.healing.scaletolevel> health.
+  card.accessory.skill.spawneditem.statuseffectally.healing.scaletolevel  -  -> 3200
+
+--- Gladiator_overcharge | hypercharge | TID_GLADIATOR_OVERCHARGE_DESC
+raw  Damian's Super also sets the ground on fire when he lands, dealing <!card.character.component.areaeffect[1].damage.scaletolevel> damage per sec to enemies caught in his mosh pit!
+now  Damian's Super also sets the ground on fire when he lands, dealing 1200 damage per sec to enemies caught in his mosh pit!
+  card.character.component.areaeffect[1].damage.scaletolevel  1200  -> 1200
+
+--- Gladiator_unique | star power | TID_GLADIATOR_SP_1_DESC
+raw  Knocking a target into a wall stuns them for <!card.value1.ticksasseconds> sec.
+now  Knocking a target into a wall stuns them for 0.5 sec.
+  card.value1.ticksasseconds  0.5  -> 0.5
+
+--- Gladiator_ulti | super | TID_GLADIATOR_ULTI_DESC
+raw  Damian leaps and creates a personal Mosh Pit lasting <!card.character.ultiskill.areaeffectobject2.timems.msasseconds> seconds. Inside the pit, enemies are knocked back when hitting speakers, dealing <!card.character.component[0].value[2]> Damage.
+now  Damian leaps and creates a personal Mosh Pit lasting <!card.character.ultiskill.areaeffectobject2.timems.msasseconds> seconds. Inside the pit, enemies are knocked back when hitting speakers, dealing 1000 Damage.
+  card.character.ultiskill.areaeffectobject2.timems.msasseconds  -  -> 5
+  card.character.component[0].value[2]  1000  -> 1000

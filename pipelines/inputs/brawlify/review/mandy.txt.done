@@ -1,0 +1,16 @@
+# mandy
+
+--- Beamer_Slow | gadget | TID_ACCESSORY_BEAMER_GADGET_1_DESC
+raw  Mandy's next candy from her Candy Dispenser slows down enemies on hit for <!card.accessory.statuseffectenemy.duration.ticksasseconds> seconds.
+now  Mandy's next candy from her Candy Dispenser slows down enemies on hit for 2.5 seconds.
+  card.accessory.statuseffectenemy.duration.ticksasseconds  2.5  -> 2.5
+
+--- Beamer_unique | star power | TID_SPEC_ABI_BEAMER_1_DESC
+raw  Mandy shoots her candies with <VALUE1>% more speed while Focused.
+now  Mandy shoots her candies with 600% more speed while Focused.
+  VALUE1  600  -> 15
+
+--- Beamer_unique_2 | star power | TID_SPEC_ABI_BEAMER_2_DESC
+raw  Mandy receives <VALUE1>% shield while Focused.
+now  Mandy receives 50% shield while Focused.
+  VALUE1  50  -> 50

@@ -1,0 +1,66 @@
+# elprimo
+
+--- Luchador_Grab | gadget | TID_LUCHADOR_BUDDY_GADGET_1_DESC
+raw  El Primo dashes, grabbing any enemies hit and suplexing them behind him. El Primo slams enemies into the ground, dealing  <!areaeffect[LuchadorThrowLandingDamageAreaEffect].damage.scaleStatToLevel> area damage.
+now  El Primo dashes, grabbing any enemies hit and suplexing them behind him. El Primo slams enemies into the ground, dealing  <!areaeffect[LuchadorThrowLandingDamageAreaEffect].damage.scaleStatToLevel> area damage.
+  areaeffect[LuchadorThrowLandingDamageAreaEffect].damage.scaleStatToLevel  -  -> 1000
+
+--- Luchador_Grab | gadget | TID_LUCHADOR_BUDDY_GADGET_1_DIFF
+raw  El Primo slams enemies into the ground dealing <!areaeffect[LuchadorThrowLandingDamageAreaEffect].damage.scaleStatToLevel> area damage.
+now  El Primo slams enemies into the ground dealing <!areaeffect[LuchadorThrowLandingDamageAreaEffect].damage.scaleStatToLevel> area damage.
+  areaeffect[LuchadorThrowLandingDamageAreaEffect].damage.scaleStatToLevel  -  -> 1000
+
+--- Luchador_Meteor | gadget | TID_ACCESSORY_LUCHADOR_METEOR_DESC
+raw  El primo flexes his pecs and destroys any incoming projectiles for <!card.accessory.areaeffect.timems.msasseconds> sec.
+now  El primo flexes his pecs and destroys any incoming projectiles for 1 sec.
+  card.accessory.areaeffect.timems.msasseconds  1  -> 1
+
+--- Luchador_Meteor | gadget | TID_LUCHADOR_BUDDY_GADGET_2_DESC
+raw  El primo flexes his pecs and destroys any incoming projectiles for <!buddy.accessory.areaeffect.timems.msasseconds> sec. Any projectiles destroyed also charge El Primo's Super!
+now  El primo flexes his pecs and destroys any incoming projectiles for 1 sec. Any projectiles destroyed also charge El Primo's Super!
+  buddy.accessory.areaeffect.timems.msasseconds  1  -> 1
+
+--- Luchador_overcharge | hypercharge | TID_LUCHADOR_BUDDY_OVERCHARGE_DESC
+raw  Leaping high, El Primo drops an Intergalactic Elbow that brings enemies to the Epicenter. Main attacks are bigger and light enemies on fire for <!card.character.weaponskill.overchargedversion.projectile.statuseffectenemy.duration.ticksasseconds> sec.
+now  Leaping high, El Primo drops an Intergalactic Elbow that brings enemies to the Epicenter. Main attacks are bigger and light enemies on fire for <!card.character.weaponskill.overchargedversion.projectile.statuseffectenemy.duration.ticksasseconds> sec.
+  card.character.weaponskill.overchargedversion.projectile.statuseffectenemy.duration.ticksasseconds  -  -> 2
+
+--- Luchador_overcharge | hypercharge | TID_LUCHADOR_BUDDY_OVERCHARGE_DIFF
+raw  El Primo's main attacks are bigger and light enemies on fire for <!card.character.weaponskill.overchargedversion.projectile.statuseffectenemy.duration.ticksasseconds> sec.
+now  El Primo's main attacks are bigger and light enemies on fire for <!card.character.weaponskill.overchargedversion.projectile.statuseffectenemy.duration.ticksasseconds> sec.
+  card.character.weaponskill.overchargedversion.projectile.statuseffectenemy.duration.ticksasseconds  -  -> 2
+
+--- Luchador_unique | star power | TID_SPEC_ABI_FIRE_DOT_ULTI_DESC
+raw  Enemies caught in El Primo's Super will burn for <VALUE1> damage over 4 seconds.
+now  Enemies caught in El Primo's Super will burn for <VALUE1> damage over 4 seconds.
+  VALUE1  -  -> 450
+
+--- Luchador_unique | star power | TID_LUCHADOR_BUDDY_STARPOWER_1_DESC
+raw  Enemies caught in El Primo's Super will burn for <!card.statusEffect.damage.scaleStatToLevel> damage over <!card.statusEffect.duration.ticksAsSeconds> sec. Punching a burning enemy extends the burn for <!buddy.component[0].values[0].ticksAsSeconds> sec.
+now  Enemies caught in El Primo's Super will burn for 450 damage over 4 sec. Punching a burning enemy extends the burn for 4 sec.
+  card.statusEffect.damage.scaleStatToLevel  450  -> 450
+  card.statusEffect.duration.ticksAsSeconds  4  -> 4
+  buddy.component[0].values[0].ticksAsSeconds  4  -> 4
+
+--- Luchador_unique | star power | TID_LUCHADOR_BUDDY_STARPOWER_1_DIFF
+raw  Punching a burning enemy extends the burn for <!buddy.component[0].values[0].ticksAsSeconds> sec.
+now  Punching a burning enemy extends the burn for 4 sec.
+  buddy.component[0].values[0].ticksAsSeconds  4  -> 4
+
+--- Luchador_unique_2 | star power | TID_SPEC_ABI_SPEED_AFTER_ULTI_DESC
+raw  El Primo gains a <!card.statuseffect.baseSpeedIncreasePercent>% speed boost for <!card.statuseffect.duration.ticksasseconds> seconds after using his Super.
+now  El Primo gains a 25% speed boost for 4 seconds after using his Super.
+  card.statuseffect.baseSpeedIncreasePercent  25  -> 25
+  card.statuseffect.duration.ticksasseconds  4  -> 3
+
+--- Luchador_unique_2 | star power | TID_LUCHADOR_BUDDY_STARPOWER_2_DESC
+raw  El Primo gains a <!card.character.component[0].statuseffect[0].baseSpeedIncreasePercent>% speed boost for <!card.character.component[0].statuseffect[0].duration.ticksasseconds> sec after using his Super.\nHe also gets a <!card.character.component[0].statuseffect[1].shieldpercent>% shield.
+now  El Primo gains a 25% speed boost for 4 sec after using his Super.\nHe also gets a 20% shield.
+  card.character.component[0].statuseffect[0].baseSpeedIncreasePercent  25  -> 25
+  card.character.component[0].statuseffect[0].duration.ticksasseconds  4  -> 3
+  card.character.component[0].statuseffect[1].shieldpercent  20  -> 15
+
+--- Luchador_unique_2 | star power | TID_LUCHADOR_BUDDY_STARPOWER_2_DIFF
+raw  The speed boost also grants a <!card.character.component[0].statuseffect[1].shieldpercent>% shield!
+now  The speed boost also grants a 20% shield!
+  card.character.component[0].statuseffect[1].shieldpercent  20  -> 15

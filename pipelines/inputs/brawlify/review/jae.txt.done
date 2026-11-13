@@ -1,0 +1,21 @@
+# jae
+
+--- Alternator_gadget_1 | gadget | TID_ALTERNATOR_GADGET_1_DESC
+raw  Deals area damage and increases main attack damage for <VALUE1> sec.
+now  Deals area damage and increases main attack damage for <VALUE1> sec.
+  VALUE1  -  -> 5
+
+--- Alternator_gadget_2 | gadget | TID_ALTERNATOR_GADGET_2_DESC
+raw  Jae-yong slows enemies around him and his attacks will leave trails of slowing paperwork for <VALUE1> sec.
+now  Jae-yong slows enemies around him and his attacks will leave trails of slowing paperwork for <VALUE1> sec.
+  VALUE1  -  -> 5
+
+--- Alternator_unique_1 | star power | TID_ALTERNATOR_SP_1_DESC
+raw  Being near teammates gives Jae-yong a <!card.statuseffect.baseSpeedIncreasePercent>% speed boost per teammate in range.
+now  Being near teammates gives Jae-yong a 15% speed boost per teammate in range.
+  card.statuseffect.baseSpeedIncreasePercent  15  -> 15
+
+--- Alternator_unique_2 | star power | TID_ALTERNATOR_SP_2_DESC
+raw  Main Attacks now deal an additional <VALUE1>% Damage per target pierced.
+now  Main Attacks now deal an additional 20% Damage per target pierced.
+  VALUE1  20  -> 20

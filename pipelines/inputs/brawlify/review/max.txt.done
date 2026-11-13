@@ -1,0 +1,47 @@
+# max
+
+--- Speedy_Dash | gadget | TID_SPEEDY_BUDDY_GADGET_1_DESC
+raw  Max dashes forward, becomes immune to all damage while dashing, and can dash again <!buddy.accessory.skill.activationSelfStatusEffect[1].duration.ticksAsSeconds> sec after the first dash.
+now  Max dashes forward, becomes immune to all damage while dashing, and can dash again 2 sec after the first dash.
+  buddy.accessory.skill.activationSelfStatusEffect[1].duration.ticksAsSeconds  2  -> 2
+
+--- Speedy_Dash | gadget | TID_SPEEDY_BUDDY_GADGET_1_DIFF
+raw  Max can dash a second time <!buddy.accessory.skill.activationSelfStatusEffect[1].duration.ticksAsSeconds> sec after the first dash.
+now  Max can dash a second time 2 sec after the first dash.
+  buddy.accessory.skill.activationSelfStatusEffect[1].duration.ticksAsSeconds  2  -> 2
+
+--- Speedy_Rewind | gadget | TID_ACCESSORY_REWIND_DESC
+raw  Max throws a lightning bolt. If she reactivates the Gadget, or after <!card.accessory.skill.projectile.spawnAreaEffectObject.timems.msasseconds> seconds, she blinks back to the lightning bolt and heals any damage taken since.
+now  Max throws a lightning bolt. If she reactivates the Gadget, or after 3 seconds, she blinks back to the lightning bolt and heals any damage taken since.
+  card.accessory.skill.projectile.spawnAreaEffectObject.timems.msasseconds  3  -> 3
+
+--- Speedy_Rewind | gadget | TID_SPEEDY_BUDDY_GADGET_2_DESC
+raw  Max throws a lightning bolt; if she reactivates the Gadget, or after <!buddy.accessory.skill.projectile.spawnAreaEffectObject.timeMs.msAsSeconds> seconds, she blinks back to the bolt, recovering any damage taken since it was placed. When blinking back, Max fully refills her ammo and heals teammates near the lightning bolt for the same amount that she healed.
+now  Max throws a lightning bolt; if she reactivates the Gadget, or after 3 seconds, she blinks back to the bolt, recovering any damage taken since it was placed. When blinking back, Max fully refills her ammo and heals teammates near the lightning bolt for the same amount that she healed.
+  buddy.accessory.skill.projectile.spawnAreaEffectObject.timeMs.msAsSeconds  3  -> 3
+
+--- Speedy_overcharge | hypercharge | TID_SPEEDY_BUDDY_OVERCHARGE_DESC
+raw  Max throws an energy drink to each team member, increasing their movement speed and granting them 25% Super charge. Whenever she hits with her main attack, she grants <!card.character.weaponSkill.overchargedVersion.projectile.onEnemyHitAction.areaEffect.damage.ultiChargeAsPercent>% Super charge.
+now  Max throws an energy drink to each team member, increasing their movement speed and granting them 25% Super charge. Whenever she hits with her main attack, she grants <!card.character.weaponSkill.overchargedVersion.projectile.onEnemyHitAction.areaEffect.damage.ultiChargeAsPercent>% Super charge.
+  card.character.weaponSkill.overchargedVersion.projectile.onEnemyHitAction.areaEffect.damage.ultiChargeAsPercent  -  -> 6
+
+--- Speedy_overcharge | hypercharge | TID_SPEEDY_BUDDY_OVERCHARGE_DIFF
+raw  Max grants herself and nearby teammates <!card.character.weaponSkill.overchargedVersion.projectile.onEnemyHitAction.areaEffect.damage.ultiChargeAsPercent>% Super charge whenever she hits with her main attack.
+now  Max grants herself and nearby teammates <!card.character.weaponSkill.overchargedVersion.projectile.onEnemyHitAction.areaEffect.damage.ultiChargeAsPercent>% Super charge whenever she hits with her main attack.
+  card.character.weaponSkill.overchargedVersion.projectile.onEnemyHitAction.areaEffect.damage.ultiChargeAsPercent  -  -> 6
+
+--- Speedy_unique | star power | TID_SPEC_ABI_SPEEDY_1_DESC
+raw  Hitting an enemy with Max's Main Attack extends the duration of her Super by <!card.component.value.ticksAsSeconds> sec.
+now  Hitting an enemy with Max's Main Attack extends the duration of her Super by 0.25 sec.
+  card.component.value.ticksAsSeconds  0.25  -> 0.25
+
+--- Speedy_unique | star power | TID_SPEEDY_BUDDY_STARPOWER_1_DESC
+raw  Hitting an enemy with her Main Attack extends the duration of her Super by <!card.component.value.ticksAsSeconds> sec and  teammates affected by her Super gain a shield for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Hitting an enemy with her Main Attack extends the duration of her Super by 0.25 sec and  teammates affected by her Super gain a shield for 4 sec.
+  card.component.value.ticksAsSeconds  0.25  -> 0.25
+  buddy.trait.statusEffect.duration.ticksAsSeconds  4  -> 4
+
+--- Speedy_unique | star power | TID_SPEEDY_BUDDY_STARPOWER_1_DIFF
+raw  Teammates affected by Max's Super gain a shield for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Teammates affected by Max's Super gain a shield for 4 sec.
+  buddy.trait.statusEffect.duration.ticksAsSeconds  4  -> 4

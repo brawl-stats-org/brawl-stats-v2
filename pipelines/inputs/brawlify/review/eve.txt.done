@@ -1,0 +1,6 @@
+# eve
+
+--- Flea_unique_2 | star power | TID_SPEC_ABI_FLEA_2_DESC
+raw  Every <VALUE1> seconds, the next largest egg hitting an enemy of her Egg Shooter will spawn a hatchling.
+now  Every 100 seconds, the next largest egg hitting an enemy of her Egg Shooter will spawn a hatchling.
+  VALUE1  100  -> 5

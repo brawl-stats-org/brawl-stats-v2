@@ -1,0 +1,12 @@
+# bolt
+
+--- Rock_gadget | gadget | TID_ROCK_GADGET_1_DESC
+raw  Bolt gains a <VALUE1> - <VALUE2> health shield based on his current speed.
+now  Bolt gains a <VALUE1> - <VALUE2> health shield based on his current speed.
+  VALUE1  -  -> 2000
+  VALUE2  -  -> 4000
+
+--- Rock_unique_2 | star power | TID_ROCK_SP_2_DESC
+raw  Bolt is immune to crowd control for <!card.statusEffect.duration.ticksAsSeconds> seconds after activating his Super.
+now  Bolt is immune to crowd control for 1 seconds after activating his Super.
+  card.statusEffect.duration.ticksAsSeconds  1  -> 1

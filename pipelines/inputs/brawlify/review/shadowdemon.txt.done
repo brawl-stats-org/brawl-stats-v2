@@ -1,0 +1,17 @@
+# shadowdemon
+
+--- Shadowdemon_gadget | gadget | TID_SHADOWDEMON_GADGET_1_DESC
+raw  Sirius fires a projectile that summons a Shadow on hit, also slowing the hit target by <!card.accessory.skill.projectile.statusEffectEnemy.speedReducePercent>% for <!card.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec.
+now  Sirius fires a projectile that summons a Shadow on hit, also slowing the hit target by 20% for 2 sec.
+  card.accessory.skill.projectile.statusEffectEnemy.speedReducePercent  20  -> 20
+  card.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  2  -> 2
+
+--- Shadowdemon_gadget_1 | gadget | TID_SHADOWDEMON_GADGET_2_DESC
+raw  Summoned Shadows return to Sirius, who heals them for <!card.accessory.customValue1>% of their health.
+now  Summoned Shadows return to Sirius, who heals them for 25% of their health.
+  card.accessory.customValue1  25  -> 25
+
+--- Shadowdemon_unique | star power | TID_SHADOWDEMON_SP_1_DESC
+raw  Shadows have +<!card.statusEffect.baseSpeedIncreasePercent>% movement speed.
+now  Shadows have +15% movement speed.
+  card.statusEffect.baseSpeedIncreasePercent  15  -> 15

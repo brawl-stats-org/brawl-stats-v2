@@ -1,0 +1,28 @@
+# willow
+
+--- Puppeteer_Dive | gadget | TID_ACCESSORY_PUPPETEER_GADGET_2_DESC
+raw  Willow dives for <VALUE1> seconds, becoming untargetable but unable to take any action for the duration.
+now  Willow dives for <VALUE1> seconds, becoming untargetable but unable to take any action for the duration.
+  VALUE1  -  -> 2
+
+--- Puppeteer_MoreDamage | gadget | TID_ACCESSORY_PUPPETEER_GADGET_1_DESC
+raw  Willow's next Lantern's Curse deals <VALUE1> more damage and applies the entire damage instantly rather than over time.
+now  Willow's next Lantern's Curse deals <VALUE1> more damage and applies the entire damage instantly rather than over time.
+  VALUE1  -  -> 600
+
+--- Puppeteer_unique | star power | TID_SPEC_ABI_PUPPETEER_1_DESC
+raw  Lantern's Curse also reduces reload speed of affected Brawlers by <!card.value>% for <!card.value2.ticksAsSeconds> seconds.
+now  Lantern's Curse also reduces reload speed of affected Brawlers by 30% for 3 seconds.
+  card.value  30  -> 30
+  card.value2.ticksAsSeconds  3  -> 3
+
+--- Puppeteer_unique_2 | star power | TID_SPEC_ABI_PUPPETEER_2_DESC
+raw  Hexed enemies gain <!card.statuseffect.baseSpeedIncreasePercent>% movement speed while mind controlled.
+now  Hexed enemies gain 33% movement speed while mind controlled.
+  card.statuseffect.baseSpeedIncreasePercent  33  -> 33
+
+--- Puppeteer_ulti | super | TID_PUPPETEER_ULTI_DESC
+raw  Willow fires a single tadpole towards an enemy Brawler, fully healing them and taking control over their mind, if it hits. Willow can use the basic attack of the enemy Brawler and move them as she pleases. Mind control breaks after <VALUE1> seconds or when the Brawler reaches <VALUE2>% HP.
+now  Willow fires a single tadpole towards an enemy Brawler, fully healing them and taking control over their mind, if it hits. Willow can use the basic attack of the enemy Brawler and move them as she pleases. Mind control breaks after <VALUE1> seconds or when the Brawler reaches <VALUE2>% HP.
+  VALUE1  -  -> 4
+  VALUE2  -  -> 30

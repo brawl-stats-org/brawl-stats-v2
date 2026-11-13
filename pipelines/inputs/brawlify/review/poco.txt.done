@@ -1,0 +1,79 @@
+# poco
+
+--- DeadMariachi_Cleanse | gadget | TID_ACCESSORY_POCO_CLEANSE_DESC
+raw  Poco creates a large AoE lasting <!card.accessory.skill.projectile.spawnAreaEffectObject.timeMs.msAsSeconds> seconds that removes all adverse effects and grants them immunity while inside.
+now  Poco creates a large AoE lasting 4 seconds that removes all adverse effects and grants them immunity while inside.
+  card.accessory.skill.projectile.spawnAreaEffectObject.timeMs.msAsSeconds  4  -> 4
+
+--- DeadMariachi_Cleanse | gadget | TID_DEAD_MARIACHI_BUDDY_GADGET_2_DESC
+raw  Poco creates a very large area lasting <!buddy.accessory.skill.projectile.spawnareaeffectobject.timems.msasseconds> sec that removes all negative effects from teammates and gives them immunity while inside.
+now  Poco creates a very large area lasting 6 sec that removes all negative effects from teammates and gives them immunity while inside.
+  buddy.accessory.skill.projectile.spawnareaeffectobject.timems.msasseconds  6  -> 6
+
+--- DeadMariachi_Regen | gadget | TID_ACCESSORY_POCO_REGEN_DESC
+raw  Poco and all nearby allies heal for <!card.accessory.areaeffect.damage.scaleStatToLevel.negate> health <!card.accessory.repeatAreaEffectiveCount> times.
+now  Poco and all nearby allies heal for <!card.accessory.areaeffect.damage.scaleStatToLevel.negate> health <!card.accessory.repeatAreaEffectiveCount> times.
+  card.accessory.areaeffect.damage.scaleStatToLevel.negate  -  -> 1400
+  card.accessory.repeatAreaEffectiveCount  -  -> 3
+
+--- DeadMariachi_Regen | gadget | TID_DEAD_MARIACHI_BUDDY_GADGET_1_DESC
+raw  Poco and all nearby teammates heal for <!card.accessory.areaeffect.damage.scaleStatToLevel.negate> health <!card.accessory.repeatAreaEffectiveCount> times.\nTeammates inside the healing circle also gain <!buddy.accessory.areaeffect.statuseffectally.decreasereloadtimepercent>% reload speed.
+now  Poco and all nearby teammates heal for <!card.accessory.areaeffect.damage.scaleStatToLevel.negate> health <!card.accessory.repeatAreaEffectiveCount> times.\nTeammates inside the healing circle also gain 25% reload speed.
+  card.accessory.areaeffect.damage.scaleStatToLevel.negate  -  -> 1400
+  card.accessory.repeatAreaEffectiveCount  -  -> 3
+  buddy.accessory.areaeffect.statuseffectally.decreasereloadtimepercent  25  -> 25
+
+--- DeadMariachi_Regen | gadget | TID_DEAD_MARIACHI_BUDDY_GADGET_1_DIFF
+raw  Teammates inside the healing circle also gain <!buddy.accessory.areaeffect.statuseffectally.decreasereloadtimepercent>% reload speed.
+now  Teammates inside the healing circle also gain 25% reload speed.
+  buddy.accessory.areaeffect.statuseffectally.decreasereloadtimepercent  25  -> 25
+
+--- DeadMariachi_overcharge | hypercharge | TID_DEAD_MARIACHI_OVERCHARGE_DESC
+raw  Encore now overheals, adding a decaying shield for the amount overhealed. Shield lasts for <!card.value.ticksAsSeconds> seconds.
+now  Encore now overheals, adding a decaying shield for the amount overhealed. Shield lasts for 5 seconds.
+  card.value.ticksAsSeconds  5  -> 5
+
+--- DeadMariachi_overcharge | hypercharge | TID_DEAD_MARIACHI_BUDDY_OVERCHARGE_DESC
+raw  Encore now overheals, adding a decaying shield for the amount over healed. Shield lasts for <!card.value.ticksAsSeconds> seconds. Main attacks fire in a <!card.character.weaponSkill.overchargedVersion.spread> degree cone.
+now  Encore now overheals, adding a decaying shield for the amount over healed. Shield lasts for 5 seconds. Main attacks fire in a 180 degree cone.
+  card.value.ticksAsSeconds  5  -> 5
+  card.character.weaponSkill.overchargedVersion.spread  180  -> 180
+
+--- DeadMariachi_overcharge | hypercharge | TID_DEAD_MARIACHI_BUDDY_OVERCHARGE_DIFF
+raw  Main attacks fire in a <!card.character.weaponSkill.overchargedVersion.spread> degree cone.
+now  Main attacks fire in a 180 degree cone.
+  card.character.weaponSkill.overchargedVersion.spread  180  -> 180
+
+--- DeadMariachi_unique | star power | TID_SPEC_HEAL_MAIN_ATTACK_DESC
+raw  When Poco's attack hits friendly Brawlers they heal for additional <VALUE1> health.
+now  When Poco's attack hits friendly Brawlers they heal for additional 8 health.
+  VALUE1  8  -> 800
+
+--- DeadMariachi_unique | star power | TID_DEAD_MARIACHI_BUDDY_STARPOWER_1_DESC
+raw  Increase the healing of Power Chord by <!card.value1.frommaxhealthpercentage>. When hitting teammates at full health, main attacks give <!buddy.trait.statuseffect.ultichargeboostpercent>% Super Charge Rate for <!buddy.trait.statuseffect.duration.ticksasseconds> sec.
+now  Increase the healing of Power Chord by 640. When hitting teammates at full health, main attacks give 10% Super Charge Rate for 3 sec.
+  card.value1.frommaxhealthpercentage  640  -> 800
+  buddy.trait.statuseffect.ultichargeboostpercent  10  -> 10
+  buddy.trait.statuseffect.duration.ticksasseconds  3  -> 3
+
+--- DeadMariachi_unique | star power | TID_DEAD_MARIACHI_BUDDY_STARPOWER_1_DIFF
+raw  When hitting teammates at full health, main attacks give <!buddy.trait.statuseffect.ultichargeboostpercent>% Super Charge Rate for <!buddy.trait.statuseffect.duration.ticksasseconds> sec.
+now  When hitting teammates at full health, main attacks give 10% Super Charge Rate for 3 sec.
+  buddy.trait.statuseffect.ultichargeboostpercent  10  -> 10
+  buddy.trait.statuseffect.duration.ticksasseconds  3  -> 3
+
+--- DeadMariachi_unique_2 | star power | TID_SPEC_DAMAGE_SUPER_DESC
+raw  Poco's Super now also hits enemies, dealing <!card.value1.scaleWeaponDamageLevel.scaleStatToLevel> damage.
+now  Poco's Super now also hits enemies, dealing 1520 damage.
+  card.value1.scaleWeaponDamageLevel.scaleStatToLevel  1520  -> 1520
+
+--- DeadMariachi_unique_2 | star power | TID_DEAD_MARIACHI_BUDDY_STARPOWER_2_DESC
+raw  Poco's Super now also hits enemies, dealing <!card.value1.scaleWeaponDamageLevel.scaleStatToLevel> damage. Enemies hit by his Super are silenced for <!buddy.trait.statuseffect.duration.ticksasseconds> sec.
+now  Poco's Super now also hits enemies, dealing 1520 damage. Enemies hit by his Super are silenced for 0.5 sec.
+  card.value1.scaleWeaponDamageLevel.scaleStatToLevel  1520  -> 1520
+  buddy.trait.statuseffect.duration.ticksasseconds  0.5  -> 0.5
+
+--- DeadMariachi_unique_2 | star power | TID_DEAD_MARIACHI_BUDDY_STARPOWER_2_DIFF
+raw  Enemies hit by his Super are silenced for <!buddy.trait.statuseffect.duration.ticksasseconds> sec.
+now  Enemies hit by his Super are silenced for 0.5 sec.
+  buddy.trait.statuseffect.duration.ticksasseconds  0.5  -> 0.5

@@ -1,0 +1,39 @@
+# surge
+
+--- PowerLeveler_ExtraLevels | gadget | TID_ACCESSORY_POWER_LEVELER_EXTRA_LEVELS_DESC
+raw  Surge's power surges! Increase Super charge rate by <!card.accessory.statusEffectAlly.ultiChargeBoostPercent>% for <!card.accessory.statusEffectAlly.duration.ticksAsSeconds> sec.
+now  Surge's power surges! Increase Super charge rate by 30% for 5 sec.
+  card.accessory.statusEffectAlly.ultiChargeBoostPercent  30  -> 30
+  card.accessory.statusEffectAlly.duration.ticksAsSeconds  5  -> 5
+
+--- PowerLeveler_ExtraLevels | gadget | TID_POWER_LEVELER_BUDDY_GADGET_1_DESC
+raw  Surge's power surges! Increase Super charge rate by <!buddy.accessory.statusEffectAlly.ultiChargeBoostPercent>% for <!buddy.accessory.statusEffectAlly.duration.ticksAsSeconds> sec. Power Surge also grants <!buddy.accessory.statusEffectAlly.decreaseReloadTimePercent>% Reload Speed.
+now  Surge's power surges! Increase Super charge rate by 30% for 5 sec. Power Surge also grants 30% Reload Speed.
+  buddy.accessory.statusEffectAlly.ultiChargeBoostPercent  30  -> 30
+  buddy.accessory.statusEffectAlly.duration.ticksAsSeconds  5  -> 5
+  buddy.accessory.statusEffectAlly.decreaseReloadTimePercent  30  -> 30
+
+--- PowerLeveler_ExtraLevels | gadget | TID_POWER_LEVELER_BUDDY_GADGET_1_DIFF
+raw  Power Surge also grants <!buddy.accessory.statusEffectAlly.decreaseReloadTimePercent>% Reload Speed.
+now  Power Surge also grants 30% Reload Speed.
+  buddy.accessory.statusEffectAlly.decreaseReloadTimePercent  30  -> 30
+
+--- PowerLeveler_Shield | gadget | TID_ACCESSORY_POWER_LEVELER_SHIELD_DESC
+raw  Within the next <!card.accessory.statusEffectAlly.duration.ticksAsSeconds> seconds, Surge consumes <!card.accessory.statusEffectAlly.shieldPercent>% of the damage of the next incoming hit and uses the energy to reload <!card.accessory.statusEffectAlly.actionsOnCancelOnDamage.values> ammo.
+now  Within the next 2 seconds, Surge consumes 50% of the damage of the next incoming hit and uses the energy to reload <!card.accessory.statusEffectAlly.actionsOnCancelOnDamage.values> ammo.
+  card.accessory.statusEffectAlly.duration.ticksAsSeconds  2  -> 2
+  card.accessory.statusEffectAlly.shieldPercent  50  -> 50
+  card.accessory.statusEffectAlly.actionsOnCancelOnDamage.values  -  -> 1
+
+--- PowerLeveler_Shield | gadget | TID_POWER_LEVELER_BUDDY_GADGET_2_DESC
+raw  Within the next <!buddy.accessory.statusEffectAlly.duration.ticksAsSeconds> sec, Surge absorbs <!buddy.accessory.statusEffectAlly.shieldPercent>% damage of the next hit and uses the energy to reload <!buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage.values> ammo. If Surge is hit during Power Shield, Gadget cooldown is decreased <!buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage[1].values>%.
+now  Within the next 2 sec, Surge absorbs 50% damage of the next hit and uses the energy to reload <!buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage.values> ammo. If Surge is hit during Power Shield, Gadget cooldown is decreased <!buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage[1].values>%.
+  buddy.accessory.statusEffectAlly.duration.ticksAsSeconds  2  -> 2
+  buddy.accessory.statusEffectAlly.shieldPercent  50  -> 50
+  buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage.values  -  -> 1
+  buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage[1].values  -  -> 50
+
+--- PowerLeveler_Shield | gadget | TID_POWER_LEVELER_BUDDY_GADGET_2_DIFF
+raw  If Surge is hit during Power Shield, Gadget cooldown is decreased <!buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage[1].values>%.
+now  If Surge is hit during Power Shield, Gadget cooldown is decreased <!buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage[1].values>%.
+  buddy.accessory.statusEffectAlly.actionsOnCancelOnDamage[1].values  -  -> 50

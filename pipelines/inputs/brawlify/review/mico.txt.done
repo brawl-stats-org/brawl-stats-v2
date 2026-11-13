@@ -1,0 +1,27 @@
+# mico
+
+--- Leaper_gatget | gadget | TID_LEAPER_GADGET_1_DESC
+raw  Mico lets out a deafening scream towards the nearest enemy, dealing <!card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue2> damage and slowing down enemies for <!card.accessory.customobjectprojectile.statuseffectenemy.duration.ticksasseconds> seconds on hit.
+now  Mico lets out a deafening scream towards the nearest enemy, dealing 570 damage and slowing down enemies for 2 seconds on hit.
+  card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue2  570  -> 570
+  card.accessory.customobjectprojectile.statuseffectenemy.duration.ticksasseconds  2  -> 2
+
+--- Leaper_gatget_1 | gadget | TID_LEAPER_GADGET_2_DESC
+raw  Mico's next jump has <VALUE1>% longer range.
+now  Mico's next jump has <VALUE1>% longer range.
+  VALUE1  -  -> 34
+
+--- Leaper_overcharge | hypercharge | TID_LEAPER_OVERCHARGE_DESC
+raw  Mico's Super also stuns nearby enemies after landing for <VALUE1> seconds.
+now  Mico's Super also stuns nearby enemies after landing for <VALUE1> seconds.
+  VALUE1  -  -> 1.5
+
+--- Leaper_unique | star power | TID_LEAPER_SP_1_DESC
+raw  Every <VALUE1> seconds, Mico's basic attack steals ammo from his enemies after hitting them.
+now  Every 100 seconds, Mico's basic attack steals ammo from his enemies after hitting them.
+  VALUE1  100  -> 5
+
+--- Leaper_unique_2 | star power | TID_LEAPER_SP_2_DESC
+raw  Mico deals <VALUE1>% extra damage against non Brawlers.
+now  Mico deals 100% extra damage against non Brawlers.
+  VALUE1  100  -> 100

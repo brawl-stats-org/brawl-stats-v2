@@ -1,0 +1,29 @@
+# ollie
+
+--- Skater_gatget | gadget | TID_SKATER_GADGET_1_DESC
+raw  Ollie jumps and does a rad kickflip, hypnotizing all enemies where he lands for <VALUE1> seconds.
+now  Ollie jumps and does a rad kickflip, hypnotizing all enemies where he lands for <VALUE1> seconds.
+  VALUE1  -  -> 1
+
+--- Skater_gatget_2 | gadget | TID_SKATER_GADGET_2_DESC
+raw  Ollie's next attack will hypnotize any enemies hit for <VALUE1> seconds.
+now  Ollie's next attack will hypnotize any enemies hit for <VALUE1> seconds.
+  VALUE1  -  -> 1
+
+--- Skater_unique | star power | TID_SKATER_SP_1_DESC
+raw  While near walls, Ollie kicks off his hoverboard and gains <!card.statuseffect.baseSpeedIncreasePercent>% extra movement speed.
+now  While near walls, Ollie kicks off his hoverboard and gains 20% extra movement speed.
+  card.statuseffect.baseSpeedIncreasePercent  20  -> 20
+
+--- Skater_unique_2 | star power | TID_SKATER_SP_2_DESC
+raw  After dashing forward with his Super, Ollie gains a <!card.value1> decaying shield over <!card.value2.ticksasseconds> seconds.
+now  After dashing forward with his Super, Ollie gains a 3000 decaying shield over 4 seconds.
+  card.value1  3000  -> 3000
+  card.value2.ticksasseconds  4  -> 4
+
+--- Skater_ulti | super | TID_SKATER_ULTI_DESC
+raw  Ollie dashes forward with a gnarly hoverboard trick and starts charging a music blast, dealing <VALUE1> damage and hypnotizing all enemies around him for <VALUE2> seconds. While charging his music blast, Ollie will use up to <VALUE3>% of his max ammo. Enemies will move towards Ollie and cannot be controlled while being hypnotized.
+now  Ollie dashes forward with a gnarly hoverboard trick and starts charging a music blast, dealing <VALUE1> damage and hypnotizing all enemies around him for <VALUE2> seconds. While charging his music blast, Ollie will use up to <VALUE3>% of his max ammo. Enemies will move towards Ollie and cannot be controlled while being hypnotized.
+  VALUE1  -  -> 1600
+  VALUE2  -  -> 2.5
+  VALUE3  -  -> 50

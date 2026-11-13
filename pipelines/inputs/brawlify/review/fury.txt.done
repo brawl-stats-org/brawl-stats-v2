@@ -1,0 +1,17 @@
+# fury
+
+--- Fury_gadget_1 | gadget | TID_FURY_GADGET_1_DESC
+raw  Ziggy hits the nearest enemy with lightning strikes every second for <VALUE1> sec. These attacks cost no ammo.
+now  Ziggy hits the nearest enemy with lightning strikes every second for <VALUE1> sec. These attacks cost no ammo.
+  VALUE1  -  -> 5
+
+--- Fury_unique_1 | star power | TID_FURY_SP_1_DESC
+raw  Brawlers damaged by Ziggy's Super are slowed by <VALUE3>% for <VALUE2> sec.
+now  Brawlers damaged by Ziggy's Super are slowed by <VALUE3>% for <VALUE2> sec.
+  VALUE3  -  -> 20
+  VALUE2  -  -> 1
+
+--- Fury_unique_2 | star power | TID_FURY_SP_2_DESC
+raw  Hitting with a lightning strike increases the damage of the next main attack by <VALUE1>%.
+now  Hitting with a lightning strike increases the damage of the next main attack by 40%.
+  VALUE1  40  -> 18

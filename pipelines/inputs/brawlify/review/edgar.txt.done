@@ -1,0 +1,73 @@
+# edgar
+
+--- Enrager_Protection | gadget | TID_ACCESSORY_ENRAGER_PROTECTION_DESC
+raw  Edgar gets a shield that protects him from the next <!card.character.maxhealth.scaletolevel.scaleaccessoryvalue1> damage. The shield gets weaker over time.
+now  Edgar gets a shield that protects him from the next <!card.character.maxhealth.scaletolevel.scaleaccessoryvalue1> damage. The shield gets weaker over time.
+  card.character.maxhealth.scaletolevel.scaleaccessoryvalue1  -  -> 3700
+
+--- Enrager_Protection | gadget | TID_ENRAGER_BUDDY_GADGET_2_DESC
+raw  Edgar gets a shield that protects him from the next <!card.character.maxhealth.scaletolevel.scaleaccessoryvalue1> damage. The shield gets weaker over time.  He also gets immunity to Crowd Control for <!buddy.accessory.statuseffectally.duration.ticksasseconds> sec.
+now  Edgar gets a shield that protects him from the next <!card.character.maxhealth.scaletolevel.scaleaccessoryvalue1> damage. The shield gets weaker over time.  He also gets immunity to Crowd Control for 1 sec.
+  card.character.maxhealth.scaletolevel.scaleaccessoryvalue1  -  -> 3700
+  buddy.accessory.statuseffectally.duration.ticksasseconds  1  -> 1
+
+--- Enrager_Protection | gadget | TID_ENRAGER_BUDDY_GADGET_2_DIFF
+raw  Edgar also gains immunity to Crowd Control for <!buddy.accessory.statuseffectally.duration.ticksasseconds> sec.
+now  Edgar also gains immunity to Crowd Control for 1 sec.
+  buddy.accessory.statuseffectally.duration.ticksasseconds  1  -> 1
+
+--- Enrager_SuperBoost | gadget | TID_ENRAGER_BUDDY_GADGET_1_DESC
+raw  Edgar's scarf grabs the closest Brawler and he jumps behind them. His scarf can also pull him towards walls. He also gets +<!buddy.accessory.skill.onchargehitselfstatuseffect.speedboostpercent>% speed for <!buddy.accessory.skill.onchargehitselfstatuseffect.duration.ticksasseconds> sec when grabbing a Brawler or wall.
+now  Edgar's scarf grabs the closest Brawler and he jumps behind them. His scarf can also pull him towards walls. He also gets +<!buddy.accessory.skill.onchargehitselfstatuseffect.speedboostpercent>% speed for <!buddy.accessory.skill.onchargehitselfstatuseffect.duration.ticksasseconds> sec when grabbing a Brawler or wall.
+  buddy.accessory.skill.onchargehitselfstatuseffect.speedboostpercent  -  -> 25
+  buddy.accessory.skill.onchargehitselfstatuseffect.duration.ticksasseconds  -  -> 2.5
+
+--- Enrager_SuperBoost | gadget | TID_ENRAGER_BUDDY_GADGET_1_DIFF
+raw  Edgar also gets +<!buddy.accessory.skill.onchargehitselfstatuseffect.speedboostpercent>% speed for <!buddy.accessory.skill.onchargehitselfstatuseffect.duration.ticksasseconds> sec when grabbing a Brawler or wall.
+now  Edgar also gets +<!buddy.accessory.skill.onchargehitselfstatuseffect.speedboostpercent>% speed for <!buddy.accessory.skill.onchargehitselfstatuseffect.duration.ticksasseconds> sec when grabbing a Brawler or wall.
+  buddy.accessory.skill.onchargehitselfstatuseffect.speedboostpercent  -  -> 25
+  buddy.accessory.skill.onchargehitselfstatuseffect.duration.ticksasseconds  -  -> 2.5
+
+--- Enrager_overcharge | hypercharge | TID_ENRAGER_BUDDY_OVERCHARGE_DESC
+raw  After using Edgar's Super, gain charging speed and reload speed for few seconds. His main attack has two extra scarf punches with longer range, but -<!card.character.weaponSkill.overchargedversion.damagemodifier.abs>% less damage.
+now  After using Edgar's Super, gain charging speed and reload speed for few seconds. His main attack has two extra scarf punches with longer range, but -<!card.character.weaponSkill.overchargedversion.damagemodifier.abs>% less damage.
+  card.character.weaponSkill.overchargedversion.damagemodifier.abs  -  -> 50
+
+--- Enrager_overcharge | hypercharge | TID_ENRAGER_BUDDY_OVERCHARGE_DIFF
+raw  Edgar's main attack has two extra scarf punches with longer range, but -<!card.character.weaponSkill.overchargedversion.damagemodifier.abs>% damage.
+now  Edgar's main attack has two extra scarf punches with longer range, but -<!card.character.weaponSkill.overchargedversion.damagemodifier.abs>% damage.
+  card.character.weaponSkill.overchargedversion.damagemodifier.abs  -  -> 50
+
+--- Enrager_unique | star power | TID_SPEC_ABI_ENRAGER_1_DESC
+raw  Edgar's Super and Let's Fly Gadget will also deal <!card.areaeffect.damage.scaleweapondamagelevel.scaletolevel> damage to nearby enemies upon landing, or <!card.areaeffect.innerradiusdamage.scaleweapondamagelevel.scaletolevel> damage on a direct hit.
+now  Edgar's Super and Let's Fly Gadget will also deal 276 damage to nearby enemies upon landing, or <!card.areaeffect.innerradiusdamage.scaleweapondamagelevel.scaletolevel> damage on a direct hit.
+  card.areaeffect.damage.scaleweapondamagelevel.scaletolevel  276  -> 1490
+  card.areaeffect.innerradiusdamage.scaleweapondamagelevel.scaletolevel  -  -> 2980
+
+--- Enrager_unique | star power | TID_ENRAGER_BUDDY_STARPOWER_1_DESC
+raw  Edgar's Super and Let's Fly Gadget will also deal <!card.areaeffect.damage.scaleweapondamagelevel.scaletolevel> damage to nearby enemies upon landing, or <!card.areaeffect.innerradiusdamage.scaleweapondamagelevel.scaletolevel> damage on a direct hit. A direct hit also charges his Super by <!buddy.trait.value.ultichargeaspercent>%.
+now  Edgar's Super and Let's Fly Gadget will also deal 276 damage to nearby enemies upon landing, or <!card.areaeffect.innerradiusdamage.scaleweapondamagelevel.scaletolevel> damage on a direct hit. A direct hit also charges his Super by <!buddy.trait.value.ultichargeaspercent>%.
+  card.areaeffect.damage.scaleweapondamagelevel.scaletolevel  276  -> 1490
+  card.areaeffect.innerradiusdamage.scaleweapondamagelevel.scaletolevel  -  -> 2980
+  buddy.trait.value.ultichargeaspercent  -  -> 25
+
+--- Enrager_unique | star power | TID_ENRAGER_BUDDY_STARPOWER_1_DIFF
+raw  A direct hit also charges his Super by <!buddy.trait.value.ultichargeaspercent>%.
+now  A direct hit also charges his Super by <!buddy.trait.value.ultichargeaspercent>%.
+  buddy.trait.value.ultichargeaspercent  -  -> 25
+
+--- Enrager_unique_2 | star power | TID_SPEC_ABI_ENRAGER_2_DESC
+raw  Edgar receives <!card.value1>% more healing from damage he deals.
+now  Edgar receives 30% more healing from damage he deals.
+  card.value1  30  -> 30
+
+--- Enrager_unique_2 | star power | TID_ENRAGER_BUDDY_STARPOWER_2_DESC
+raw  Edgar receives <!card.value1>% more healing from damage he deals.Taking down a Brawler instantly heals Edgar for <!buddy.trait.value>% of his max health.
+now  Edgar receives 30% more healing from damage he deals.Taking down a Brawler instantly heals Edgar for 20% of his max health.
+  card.value1  30  -> 30
+  buddy.trait.value  20  -> 20
+
+--- Enrager_unique_2 | star power | TID_ENRAGER_BUDDY_STARPOWER_2_DIFF
+raw  Taking down a Brawler instantly heals Edgar for <!buddy.trait.value>% of his max health.
+now  Taking down a Brawler instantly heals Edgar for 20% of his max health.
+  buddy.trait.value  20  -> 20

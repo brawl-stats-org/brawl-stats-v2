@@ -1,0 +1,26 @@
+# charlie
+
+--- Cocooner_CocoonSelf | gadget | TID_COCOONER_GADGET_2_DESC
+raw  Charlie cocoons herself, healing <VALUE1>% of her total health.
+now  Charlie cocoons herself, healing <VALUE1>% of her total health.
+  VALUE1  -  -> 50
+
+--- Cocooner_SpawnPets | gadget | TID_COCOONER_GADGET_1_DESC
+raw  Charlie releases <VALUE1> spiders that seek and attack the nearest enemies.
+now  Charlie releases <VALUE1> spiders that seek and attack the nearest enemies.
+  VALUE1  -  -> 3
+
+--- Cocooner_overcharge | hypercharge | TID_COCOONER_OVERCHARGE_DESC
+raw  Cocoon spawns <VALUE1> spiders that seek and attack the nearest enemies.
+now  Cocoon spawns 3 spiders that seek and attack the nearest enemies.
+  VALUE1  3  -> 3
+
+--- Cocooner_unique | star power | TID_COCOONER_SP_1_DESC
+raw  Cocooned enemies lose <VALUE1>% of their health while cocooned.
+now  Cocooned enemies lose 25% of their health while cocooned.
+  VALUE1  25  -> 25
+
+--- Cocooner_unique_2 | star power | TID_COCOONER_SP_2_DESC
+raw  Cocoon leaves a slimy trail behind it for <VALUE1> seconds that slows down enemies walking over it.
+now  Cocoon leaves a slimy trail behind it for 300 seconds that slows down enemies walking over it.
+  VALUE1  300  -> 5

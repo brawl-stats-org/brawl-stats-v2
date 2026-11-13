@@ -1,0 +1,16 @@
+# grom
+
+--- CrossBomber_Burst | gadget | TID_ACCESSORY_CROSS_BOMBER_BURST_DESC
+raw  Grom's next attack throws <VALUE1> Buds in rapid succession.
+now  Grom's next attack throws <VALUE1> Buds in rapid succession.
+  VALUE1  -  -> 3
+
+--- CrossBomber_unique | star power | TID_SPEC_ABI_CROSS_BOMBER_1_DESC
+raw  When Grom's Super is fully charged, he gains +<!card.statuseffect.baseSpeedIncreasePercent>% faster movement speed!
+now  When Grom's Super is fully charged, he gains +15% faster movement speed!
+  card.statuseffect.baseSpeedIncreasePercent  15  -> 15
+
+--- CrossBomber_unique_2 | star power | TID_SPEC_ABI_CROSS_BOMBER_2_DESC
+raw  The split from Grom's main attack deals up to +<VALUE1>% extra damage at max distance.
+now  The split from Grom's main attack deals up to +35% extra damage at max distance.
+  VALUE1  35  -> 35

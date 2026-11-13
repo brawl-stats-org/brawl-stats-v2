@@ -1,0 +1,25 @@
+# byron
+
+--- SnakeOil_Heal | gadget | TID_ACCESSORY_SNAKE_OIL_HEAL_DESC
+raw  Byron uses one of his shots to heal himself <VALUE1> per second for <VALUE2> seconds.
+now  Byron uses one of his shots to heal himself <VALUE1> per second for <VALUE2> seconds.
+  VALUE1  -  -> 1300
+  VALUE2  -  -> 3
+
+--- SnakeOil_Spread | gadget | TID_ACCESSORY_SNAKE_OIL_SPREAD_DESC
+raw  Byron's next attack shoots <VALUE1> darts instead of one, each dealing <VALUE2>% less damage and <VALUE3>% less healing.
+now  Byron's next attack shoots <VALUE1> darts instead of one, each dealing <VALUE2>% less damage and <VALUE3>% less healing.
+  VALUE1  -  -> 3
+  VALUE2  -  -> 20
+  VALUE3  -  -> 40
+
+--- SnakeOil_unique | star power | TID_SPEC_ABI_SNAKE_OIL_1_DESC
+raw  Byron's Super will also cause opponents to receive <VALUE1>% less healing from any source for <VALUE2> seconds.
+now  Byron's Super will also cause opponents to receive 75% less healing from any source for 180 seconds.
+  VALUE1  75  -> 75
+  VALUE2  180  -> 9
+
+--- SnakeOil_unique_2 | star power | TID_SPEC_ABI_SNAKE_OIL_2_DESC
+raw  Every <VALUE1> seconds the next basic attack will pierce through targets.
+now  Every 70 seconds the next basic attack will pierce through targets.
+  VALUE1  70  -> 3.5

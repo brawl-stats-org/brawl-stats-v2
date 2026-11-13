@@ -1,0 +1,22 @@
+# jacky
+
+--- Driller_SpeedBoost | gadget | TID_ACCESSORY_DRILLER_SPEED_BOOST_DESC
+raw  Jacky gets a burst of energy and moves <!card.accessory.statuseffectself.speedboostpercent>% faster for <!card.accessory.statuseffectself.duration.ticksasseconds> seconds.
+now  Jacky gets a burst of energy and moves 25% faster for 4 seconds.
+  card.accessory.statuseffectself.speedboostpercent  25  -> 25
+  card.accessory.statuseffectself.duration.ticksasseconds  4  -> 4
+
+--- Driller_overcharge | hypercharge | TID_DRILLER_OVERCHARGE_DESC
+raw  Holey Moley slows down enemies around Jacky for <VALUE1> seconds.
+now  Holey Moley slows down enemies around Jacky for 30 seconds.
+  VALUE1  30  -> 1.5
+
+--- Driller_unique | star power | TID_SPEC_ABI_DRILLER_1_DESC
+raw  When receiving damage, Jacky returns the favor by converting <VALUE1>% of the damage into a Groundbreaker counterattack.
+now  When receiving damage, Jacky returns the favor by converting 30% of the damage into a Groundbreaker counterattack.
+  VALUE1  30  -> 30
+
+--- Driller_unique_2 | star power | TID_SPEC_ABI_DRILLER_2_DESC
+raw  Jacky's Hard Hat protects her by reducing any damage she takes by <VALUE1>%.
+now  Jacky's Hard Hat protects her by reducing any damage she takes by 25%.
+  VALUE1  25  -> 25

@@ -1,0 +1,41 @@
+# bo
+
+--- BowDude_MineTrigger | gadget | TID_ACCESSORY_BO_MINE_TRIGGER_DESC
+raw  Bo triggers all of his mines after <VALUE1> seconds. During the delay the mines are completely undetectable to opponents.
+now  Bo triggers all of his mines after <VALUE1> seconds. During the delay the mines are completely undetectable to opponents.
+  VALUE1  -  -> 1.5
+
+--- BowDude_MineTrigger | gadget | TID_BOWDUDE_BUDDY_GADGET_2_DESC
+raw  Bo fires tripwires at his mines, detonating them and causing <!buddy.accessory.customobjectprojectile.customuniquepropertyvalue.scaletolevel> to anyone hit by a tripwire. Detonated mines have a bigger blast radius!
+now  Bo fires tripwires at his mines, detonating them and causing <!buddy.accessory.customobjectprojectile.customuniquepropertyvalue.scaletolevel> to anyone hit by a tripwire. Detonated mines have a bigger blast radius!
+  buddy.accessory.customobjectprojectile.customuniquepropertyvalue.scaletolevel  -  -> 1440
+
+--- BowDude_Totem | gadget | TID_ACCESSORY_BOW_TOTEM_DESC
+raw  Bo places a totem that increases allies' Super charging rate by <!card.accessory.skill.summonedCharacter.areaEffect.customValue1>%. The totem slowly loses its health over time.
+now  Bo places a totem that increases allies' Super charging rate by <!card.accessory.skill.summonedCharacter.areaEffect.customValue1>%. The totem slowly loses its health over time.
+  card.accessory.skill.summonedCharacter.areaEffect.customValue1  -  -> 50
+
+--- BowDude_Totem | gadget | TID_BOWDUDE_BUDDY_GADGET_1_DESC
+raw  Bo places a totem that increases allies' Super charging rate by <!card.accessory.skill.summonedCharacter.areaEffect.customValue1>%. The totem slowly loses its health over time. The totem has a significantly increased radius!
+now  Bo places a totem that increases allies' Super charging rate by <!card.accessory.skill.summonedCharacter.areaEffect.customValue1>%. The totem slowly loses its health over time. The totem has a significantly increased radius!
+  card.accessory.skill.summonedCharacter.areaEffect.customValue1  -  -> 50
+
+--- BowDude_unique | star power | TID_SPEC_ABI_SPOT_DESC
+raw  Bo spots enemies hidden in bushes from <VALUE1>% longer distance than normally.
+now  Bo spots enemies hidden in bushes from 5% longer distance than normally.
+  VALUE1  5  -> 150
+
+--- BowDude_unique | star power | TID_BOWDUDE_BUDDY_STARPOWER_1_DESC
+raw  Bo spots enemies hidden in bushes from +<!card.value1_legacy_spot>% further away. Bo is no longer revealed when attacking from bushes.
+now  Bo spots enemies hidden in bushes from +<!card.value1_legacy_spot>% further away. Bo is no longer revealed when attacking from bushes.
+  card.value1_legacy_spot  -  -> 150
+
+--- BowDude_unique_2 | star power | TID_SPEC_ABI_STUN_TRAP_DESC
+raw  Instead of a knockback, Bo's traps now stun the enemy for <VALUE1> seconds!
+now  Instead of a knockback, Bo's traps now stun the enemy for 40 seconds!
+  VALUE1  40  -> 2
+
+--- BowDude_unique_2 | star power | TID_BOWDUDE_BUDDY_STARPOWER_2_DESC
+raw  Instead of a knockback, Bo's traps now stun the enemy for <!card.value1.ticksAsSeconds> sec and trap placement speed is significantly increased.
+now  Instead of a knockback, Bo's traps now stun the enemy for 2 sec and trap placement speed is significantly increased.
+  card.value1.ticksAsSeconds  2  -> 2

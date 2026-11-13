@@ -1,0 +1,27 @@
+# ash
+
+--- Knight_Heal | gadget | TID_ACCESSORY_KNIGHT_HEAL_DESC
+raw  Though furious, Ash has to collect himself. A full Rage meter will recover <VALUE1> health when this Gadget is popped - less Rage, less recovery.
+now  Though furious, Ash has to collect himself. A full Rage meter will recover <VALUE1> health when this Gadget is popped - less Rage, less recovery.
+  VALUE1  -  -> 3540
+
+--- Knight_Rage | gadget | TID_ACCESSORY_KNIGHT_RAGE_DESC
+raw  Ash loses <VALUE1>% health and instantly gains <VALUE2>% rage.
+now  Ash loses <VALUE1>% health and instantly gains <VALUE2>% rage.
+  VALUE1  -  -> 5
+  VALUE2  -  -> 40
+
+--- Knight_overcharge | hypercharge | TID_KNIGHT_OVERCHARGE_DESC
+raw  Little Helper spawns <VALUE1> more rats!
+now  Little Helper spawns 5 more rats!
+  VALUE1  5  -> 5
+
+--- Knight_unique | star power | TID_SPEC_ABI_KNIGHT_1_DESC
+raw  When hitting an opponent with his attack charges full, Ash gets even more angry. His Rage goes up by <VALUE1>%.
+now  When hitting an opponent with his attack charges full, Ash gets even more angry. His Rage goes up by 200%.
+  VALUE1  200  -> 200
+
+--- Knight_unique_2 | star power | TID_SPEC_ABI_KNIGHT_2_DESC
+raw  Ash progressively gains up to <VALUE1>% faster reload speed, equal to how enraged he's become.
+now  Ash progressively gains up to 40% faster reload speed, equal to how enraged he's become.
+  VALUE1  40  -> 40
