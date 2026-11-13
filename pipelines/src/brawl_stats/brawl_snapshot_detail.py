@@ -85,7 +85,7 @@ class BrawlerDetail(BaseModel):
     def from_brawler_snapshots(cls, timestamps: list[datetime], brawlers: list['Brawler']) -> 'BrawlerDetail':
         """Build detail from brawler snapshots"""
         result = cls()
-        for brawler, timestamp in zip(brawlers, timestamps):
+        for brawler, timestamp in zip(brawlers, timestamps, strict=True):
             result.n += 1
             result.timestamp.append(int(timestamp.timestamp()))
             result.trophies.append(brawler.trophies)
@@ -162,7 +162,7 @@ class PlayerSnapshotDetail(BaseModel):
 
         for snapshot in raw_snapshots:
             timestamp_iso = snapshot['timestamp']
-            timestamp = datetime.fromisoformat(timestamp_iso.rstrip('Z'))
+            timestamp = datetime.fromisoformat(timestamp_iso)
 
             for brawler_raw in snapshot['brawlers']:
                 name = brawler_raw['name']
