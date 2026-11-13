@@ -153,8 +153,13 @@ def _parse_team(team_raw: list, trophy_change: int, owner_tag: str = None, owner
     return TeamBattleLogEntry(players=players)
 
 
-def _parse_team_battle(battle: dict, event: dict, battle_time: datetime, mode: str, battle_type: str, map_name: str) -> BattleLogEntry:
-    """Parse standard team battle (3v3, 5v5)."""
+def _parse_team_battle(battle: dict, event: dict, battle_time: datetime, mode: str, battle_type: str, map_name: str, owner_tag: str = None) -> BattleLogEntry:
+    """Parse standard team battle (3v3, 5v5).
+
+    battle.trophyChange is the owner's own change, not the team's: teammates' changes differ
+    (they depend on each brawler's trophies). Only the owner gets it; other players get theirs
+    when their own copy of the battle is merged in (BattleLogEntry.merge).
+    """
     teams_raw = battle.get('teams', [])
     result = battle.get('result')
 
@@ -168,7 +173,8 @@ def _parse_team_battle(battle: dict, event: dict, battle_time: datetime, mode: s
         losing_idx = 0
 
     # Parse teams
-    all_teams = [_parse_team(team_raw, battle.get('trophyChange', 0)) for team_raw in teams_raw]
+    owner_tc = battle.get('trophyChange', 0)
+    all_teams = [_parse_team(team_raw, trophy_change=None, owner_tag=owner_tag, owner_tc=owner_tc) for team_raw in teams_raw]
 
     winning_team = all_teams[winning_idx] if len(all_teams) > winning_idx else None
     other_teams = [all_teams[losing_idx]] if len(all_teams) > losing_idx else None
@@ -276,7 +282,7 @@ def _parse_battle_item(item: dict, owner_tag: str = None) -> BattleLogEntry:
         return _parse_duels_battle(battle, event, battle_time, mode, battle_type, map_name)
     else:
         # Team modes (3v3, 5v5)
-        return _parse_team_battle(battle, event, battle_time, mode, battle_type, map_name)
+        return _parse_team_battle(battle, event, battle_time, mode, battle_type, map_name, owner_tag)
 
 
 class BattleLog(BaseModel):
