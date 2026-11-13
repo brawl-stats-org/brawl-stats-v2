@@ -1,0 +1,16 @@
+# doug
+
+--- Reviver_unique | star power | TID_SPEC_ABI_REVIVER_1_DESC
+raw  When Doug revives an ally successfully, he will heal for <VALUE1>% of his max health.
+now  When Doug revives an ally successfully, he will heal for 100% of his max health.
+  VALUE1  100  -> 100
+
+--- Reviver_unique_2 | star power | TID_SPEC_ABI_REVIVER_2_DESC
+raw  Snack Attack also heals Doug by <VALUE1>.
+now  Snack Attack also heals Doug by 20.
+  VALUE1  20  -> 480
+
+--- Reviver_ulti | super | TID_REVIVER_ULTI_DESC
+raw  A special spiced up hot dog for a target ally or Doug himself. When a buffed Brawler is defeated they will come back with <VALUE1>% health after a short delay.
+now  A special spiced up hot dog for a target ally or Doug himself. When a buffed Brawler is defeated they will come back with <VALUE1>% health after a short delay.
+  VALUE1  -  -> 100

@@ -1,0 +1,28 @@
+# darryl
+
+--- BarrelBot_Slow | gadget | TID_ACCESSORY_BARREL_SLOW_DESC
+raw  Darryl creates a slowing area around himself for <VALUE1> seconds.
+now  Darryl creates a slowing area around himself for <VALUE1> seconds.
+  VALUE1  -  -> 5
+
+--- BarrelBot_Spin | gadget | TID_ACCESSORY_BARREL_SPIN_DESC
+raw  Darryl spins around and sprays a barrage of shots in all directions. Each shot deals <VALUE1> damage and recharges his Super by <VALUE2>% if it hits enemies!
+now  Darryl spins around and sprays a barrage of shots in all directions. Each shot deals <VALUE1> damage and recharges his Super by <VALUE2>% if it hits enemies!
+  VALUE1  -  -> 600
+  VALUE2  -  -> 25
+
+--- BarrelBot_overcharge | hypercharge | TID_BARRELBOT_OVERCHARGE_DESC
+raw  Shoots his shotguns around himself during a Barrel Roll. Each shot does <VALUE1> damage.
+now  Shoots his shotguns around himself during a Barrel Roll. Each shot does 4000 damage.
+  VALUE1  4000  -> 600
+
+--- BarrelBot_unique | star power | TID_SPEC_ABI_BARREL_DEFENSE_DESC
+raw  After Barrel Roll all damage Darryl takes is reduced by <VALUE2>% for <VALUE1> seconds.
+now  After Barrel Roll all damage Darryl takes is reduced by <VALUE2>% for 1 seconds.
+  VALUE2  -  -> 25
+  VALUE1  1  -> 2
+
+--- BarrelBot_unique_2 | star power | TID_SPEC_ABI_SUPER_RELOAD_DESC
+raw  When Darryl uses his Super, he doubles his reload speed for <VALUE1> seconds.
+now  When Darryl uses his Super, he doubles his reload speed for 100 seconds.
+  VALUE1  100  -> 5

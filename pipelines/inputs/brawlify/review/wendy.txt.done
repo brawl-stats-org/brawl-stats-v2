@@ -1,0 +1,16 @@
+# wendy
+
+--- FutureGirl_overcharge | hypercharge | TID_FUTURE_GIRL_OVERCHARGE_DESC
+raw  Increased Shield Generator health and absorb <VALUE>% of damage taken by Wendy or her teammates.
+now  Increased Shield Generator health and absorb 1% of damage taken by Wendy or her teammates.
+  VALUE  1  -> 90
+
+--- FutureGirl_unique_2 | star power | TID_FUTURE_GIRL_SP_2_DESC
+raw  Wendy's shield generator gains an additional <!card.value.scaleToLevel> health.
+now  Wendy's shield generator gains an additional 2000 health.
+  card.value.scaleToLevel  2000  -> 1200
+
+--- FutureGirl_ulti | super | TID_FUTURE_GIRL_ULTI_DESC
+raw  Wendy deploys a shield generator that absorbs <VALUE>% of damage taken by Wendy and her teammates within its range.
+now  Wendy deploys a shield generator that absorbs <VALUE>% of damage taken by Wendy and her teammates within its range.
+  VALUE  -  -> 60

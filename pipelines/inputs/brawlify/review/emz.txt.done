@@ -1,0 +1,61 @@
+# emz
+
+--- Mummy_Acid | gadget | TID_ACCESSORY_MUMMY_ACID_DESC
+raw  Emz squirts out hairspray that goes through walls! Deals <!card.accessory.skill.damage.scaleToLevel> damage.
+now  Emz squirts out hairspray that goes through walls! Deals 1120 damage.
+  card.accessory.skill.damage.scaleToLevel  1120  -> 1120
+
+--- Mummy_Acid | gadget | TID_MUMMY_BUDDY_GADGET_2_DESC
+raw  Emz squirts out hairspray that goes through walls! Deals <!card.accessory.skill.damage.scaleToLevel> damage and slows enemies.
+now  Emz squirts out hairspray that goes through walls! Deals 1120 damage and slows enemies.
+  card.accessory.skill.damage.scaleToLevel  1120  -> 1120
+
+--- Mummy_Push | gadget | TID_ACCESSORY_MUMMY_PUSH_DESC
+raw  Emz fires off some hairspray that pushes enemies back. Deals <!card.accessory.skill.damage.scaleToLevel> damage.
+now  Emz fires off some hairspray that pushes enemies back. Deals 500 damage.
+  card.accessory.skill.damage.scaleToLevel  500  -> 500
+
+--- Mummy_Push | gadget | TID_MUMMY_BUDDY_GADGET_1_DESC
+raw  Emz fires off some hairspray that strongly pushes enemies back. Deals <!card.accessory.skill.damage.scaleToLevel> damage. Stuns the enemy for <!buddy.accessory.skill.projectile.customUniquePropertyValue.ticksAsSeconds> seconds if knocked into a wall.
+now  Emz fires off some hairspray that strongly pushes enemies back. Deals 500 damage. Stuns the enemy for 1 seconds if knocked into a wall.
+  card.accessory.skill.damage.scaleToLevel  500  -> 500
+  buddy.accessory.skill.projectile.customUniquePropertyValue.ticksAsSeconds  1  -> 1
+
+--- Mummy_Push | gadget | TID_MUMMY_BUDDY_GADGET_1_DIFF
+raw  Knocks enemies back farther and stuns them for <!buddy.accessory.skill.projectile.customUniquePropertyValue.ticksAsSeconds> sec if knocked into a wall.
+now  Knocks enemies back farther and stuns them for 1 sec if knocked into a wall.
+  buddy.accessory.skill.projectile.customUniquePropertyValue.ticksAsSeconds  1  -> 1
+
+--- Mummy_unique | star power | TID_SPEC_ABI_TICK_DMG_GROW_DESC
+raw  Enemies that stay within the cloud of Emz's toxic hair spray suffer increasing damage, <VALUE1>% per hit.
+now  Enemies that stay within the cloud of Emz's toxic hair spray suffer increasing damage, 25% per hit.
+  VALUE1  25  -> 25
+
+--- Mummy_unique | star power | TID_MUMMY_BUDDY_STARPOWER_1_DESC
+raw  Enemies that stay within the cloud of Emz's toxic hair spray suffer increasing damage, <!card.value1>% per hit. Reduce damage dealt by enemies hit by Emz's main attack by <!buddy.trait.statusEffect.damageReducePercent>% for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Enemies that stay within the cloud of Emz's toxic hair spray suffer increasing damage, 25% per hit. Reduce damage dealt by enemies hit by Emz's main attack by 15% for 4 sec.
+  card.value1  25  -> 25
+  buddy.trait.statusEffect.damageReducePercent  15  -> 15
+  buddy.trait.statusEffect.duration.ticksAsSeconds  4  -> 4
+
+--- Mummy_unique | star power | TID_MUMMY_BUDDY_STARPOWER_1_DIFF
+raw  Reduce damage dealt by enemies hit by Emz's main attack by <!buddy.trait.statusEffect.damageReducePercent>% for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Reduce damage dealt by enemies hit by Emz's main attack by 15% for 4 sec.
+  buddy.trait.statusEffect.damageReducePercent  15  -> 15
+  buddy.trait.statusEffect.duration.ticksAsSeconds  4  -> 4
+
+--- Mummy_unique_2 | star power | TID_SPEC_ABI_HEAL_SUPER_DMG_DESC
+raw  Emz recovers <VALUE1> health per second for each enemy Brawler inside her Super's area of effect.
+now  Emz recovers 8 health per second for each enemy Brawler inside her Super's area of effect.
+  VALUE1  8  -> 624
+
+--- Mummy_unique_2 | star power | TID_MUMMY_BUDDY_STARPOWER_2_DESC
+raw  Emz heals <!card.character.maxHealth.scaleToLevel.scaleCardValue1> health for each enemy inside her Super. Emz also takes no damage for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec when activating her Super.
+now  Emz heals <!card.character.maxHealth.scaleToLevel.scaleCardValue1> health for each enemy inside her Super. Emz also takes no damage for 0.5 sec when activating her Super.
+  card.character.maxHealth.scaleToLevel.scaleCardValue1  -  -> 624
+  buddy.trait.statusEffect.duration.ticksAsSeconds  0.5  -> 0.5
+
+--- Mummy_unique_2 | star power | TID_MUMMY_BUDDY_STARPOWER_2_DIFF
+raw  Emz takes no damage for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec when activating her Super.
+now  Emz takes no damage for 0.5 sec when activating her Super.
+  buddy.trait.statusEffect.duration.ticksAsSeconds  0.5  -> 0.5

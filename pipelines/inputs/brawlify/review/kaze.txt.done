@@ -1,0 +1,23 @@
+# kaze
+
+--- Geisha_abi | attack | TID_GEISHA_WEAPON_DESC
+raw  Kaze dashes a short distance and strikes the nearest target. Kaze has a 'Strike Spot' at a fixed angle around herself.\nHitting an enemy in a Strike Spot deals <VALUE1>% damage and resets the Strike Spot to a new position.
+now  Kaze dashes a short distance and strikes the nearest target. Kaze has a 'Strike Spot' at a fixed angle around herself.\nHitting an enemy in a Strike Spot deals <VALUE1>% damage and resets the Strike Spot to a new position.
+  VALUE1  -  -> 200
+
+--- Geisha_gadget_1 | gadget | TID_GEISHA_GADGET_1_DESC
+raw  Switch to Ninja Aspect and gain <VALUE1>% Movement Speed for <VALUE2> sec
+now  Switch to Ninja Aspect and gain <VALUE1>% Movement Speed for <VALUE2> sec
+  VALUE1  -  -> 30
+  VALUE2  -  -> 2.5
+
+--- Geisha_unique_1 | star power | TID_GEISHA_SP_1_DESC
+raw  Hitting an enemy in a Strike Spot also slows them by <VALUE1>% for <VALUE2> sec
+now  Hitting an enemy in a Strike Spot also slows them by 1% for <VALUE2> sec
+  VALUE1  1  -> 30
+  VALUE2  -  -> 2.5
+
+--- Geisha_unique_2 | star power | TID_GEISHA_SP_2_DESC
+raw  Removes <VALUE1>% ammo from Brawlers initially caught in the Fan Storm
+now  Removes 150% ammo from Brawlers initially caught in the Fan Storm
+  VALUE1  150  -> 34

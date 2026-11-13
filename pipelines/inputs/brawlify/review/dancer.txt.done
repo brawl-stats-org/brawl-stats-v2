@@ -1,0 +1,11 @@
+# dancer
+
+--- Dancer_gadget_1 | gadget | TID_DANCER_GADGET_1_DESC
+raw  Creates a wall of wind that blocks projectiles for <VALUE1> sec.
+now  Creates a wall of wind that blocks projectiles for <VALUE1> sec.
+  VALUE1  -  -> 1
+
+--- Dancer_unique_1 | star power | TID_DANCER_SP_1_DESC
+raw  Mina's combo Attack 3 also heals for <VALUE1>% of damage done.
+now  Mina's combo Attack 3 also heals for 50% of damage done.
+  VALUE1  50  -> 50

@@ -1,0 +1,16 @@
+# stu
+
+--- Roller_MegaStunt | gadget | TID_ACCESSORY_ROLLER_MEGA_STUNT_DESC
+raw  Stu's next Super can bash through obstacles, making debris fly forward. Each piece of debris deals <VALUE1> damage to any opponent it hits.
+now  Stu's next Super can bash through obstacles, making debris fly forward. Each piece of debris deals <VALUE1> damage to any opponent it hits.
+  VALUE1  -  -> 216
+
+--- Roller_unique | star power | TID_SPEC_ABI_ROLLER_1_DESC
+raw  Stu's Nitro Boost Super dash distance increases by <VALUE1>%.
+now  Stu's Nitro Boost Super dash distance increases by 5%.
+  VALUE1  5  -> 71
+
+--- Roller_unique_2 | star power | TID_SPEC_ABI_ROLLER_2_DESC
+raw  Using his Nitro Boost Super restores <VALUE1> of Stu's health.
+now  Using his Nitro Boost Super restores 8 of Stu's health.
+  VALUE1  8  -> 560

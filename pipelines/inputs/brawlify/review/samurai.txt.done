@@ -1,0 +1,23 @@
+# samurai
+
+--- Samurai_gadget | gadget | TID_SAMURAI_GADGET_1_DESC
+raw  Kenji's basic attack only uses Dash for the next <VALUE1> seconds.
+now  Kenji's basic attack only uses Dash for the next <VALUE1> seconds.
+  VALUE1  -  -> 3
+
+--- Samurai_gadget_2 | gadget | TID_SAMURAI_GADGET_2_DESC
+raw  Kenji instantly heals <VALUE1>% of damage taken over the last <VALUE2> seconds.
+now  Kenji instantly heals 50% of damage taken over the last 3 seconds.
+  VALUE1  50  -> 50
+  VALUE2  3  -> 3
+
+--- Samurai_unique | star power | TID_SAMURAI_SP_1_DESC
+raw  Slashimi's slices have <VALUE1>% longer range
+now  Slashimi's slices have 30% longer range
+  VALUE1  30  -> 30
+
+--- Samurai_unique_2 | star power | TID_SAMURAI_SP_2_DESC
+raw  After avoiding damage for <VALUE1> seconds, gets <VALUE2>% damage reduction from the next enemy attack.
+now  After avoiding damage for 5 seconds, gets <VALUE2>% damage reduction from the next enemy attack.
+  VALUE1  5  -> 5
+  VALUE2  -  -> 60

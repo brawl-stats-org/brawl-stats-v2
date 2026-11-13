@@ -1,0 +1,11 @@
+# gale
+
+--- Blower_unique | star power | TID_SPEC_ABI_BLOWER_1_DESC
+raw  Gale's Super now stuns enemies for <VALUE1> seconds if they are pushed against obstacles.
+now  Gale's Super now stuns enemies for 25 seconds if they are pushed against obstacles.
+  VALUE1  25  -> 1.25
+
+--- Blower_unique_2 | star power | TID_SPEC_ABI_BLOWER_2_DESC
+raw  Gale's snow balls now also slow down opponents for <!card.statuseffect.duration.ticksasseconds> seconds.
+now  Gale's snow balls now also slow down opponents for 0.5 seconds.
+  card.statuseffect.duration.ticksasseconds  0.5  -> 0.5

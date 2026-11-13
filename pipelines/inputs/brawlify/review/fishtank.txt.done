@@ -1,0 +1,23 @@
+# fishtank
+
+--- FishTank_Shield | gadget | TID_ACCESSORY_FISHTANK_GADGET_2_DESC
+raw  Hank takes <VALUE1>% reduced damage for <VALUE2> seconds.
+now  Hank takes <VALUE1>% reduced damage for <VALUE2> seconds.
+  VALUE1  -  -> 40
+  VALUE2  -  -> 3
+
+--- FishTank_Slow | gadget | TID_ACCESSORY_FISHTANK_GADGET_1_DESC
+raw  The next Balloon Blast also slows down enemies for <VALUE1> seconds.
+now  The next Balloon Blast also slows down enemies for <VALUE1> seconds.
+  VALUE1  -  -> 3
+
+--- FishTank_unique | star power | TID_SPEC_ABI_FISHTANK_1_DESC
+raw  When Balloon Blast is charged over <!card.value1>%, Hank gains <!card.statuseffect.baseSpeedIncreasePercent>% extra movement speed.
+now  When Balloon Blast is charged over 80%, Hank gains 10% extra movement speed.
+  card.value1  80  -> 80
+  card.statuseffect.baseSpeedIncreasePercent  10  -> 10
+
+--- FishTank_unique_2 | star power | TID_SPEC_ABI_FISHTANK_2_DESC
+raw  Hank takes <VALUE1>% less damage when near a wall.
+now  Hank takes 20% less damage when near a wall.
+  VALUE1  20  -> 20

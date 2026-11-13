@@ -1,0 +1,18 @@
+# fang
+
+--- KickerDude_Mines | gadget | TID_ACCESSORY_KICKER_DUDE_GADGET_DESC
+raw  Fang tosses a handful of corn kernels into the air, making it rain popcorn! Each kernel pop deals <VALUE1> damage.
+now  Fang tosses a handful of corn kernels into the air, making it rain popcorn! Each kernel pop deals <VALUE1> damage.
+  VALUE1  -  -> 1088
+
+--- KickerDude_Sweep | gadget | TID_ACCESSORY_KICKER_DUDE_SWEEP_DESC
+raw  Fang spins and hits all enemies around him, stunning them for <VALUE1> seconds.
+now  Fang spins and hits all enemies around him, stunning them for <VALUE1> seconds.
+  VALUE1  -  -> 0.5
+
+--- KickerDude_unique_2 | star power | TID_SPEC_ABI_KICKER_DUDE_2_DESC
+raw  Reduce <VALUE2> damage from incoming hits once every <VALUE1> seconds. Maximum reduction is <VALUE3>% of the incoming damage.
+now  Reduce 10 damage from incoming hits once every 60 seconds. Maximum reduction is 90% of the incoming damage.
+  VALUE2  10  -> 960
+  VALUE1  60  -> 3
+  VALUE3  90  -> 90

@@ -1,0 +1,28 @@
+# tick
+
+--- ClusterBombDude_Explosion | gadget | TID_ACCESSORY_TICK_EXPLOSION_DESC
+raw  Tick gains a <VALUE3>% shield for <VALUE1> seconds. After that, it bursts out for <VALUE2> damage.
+now  Tick gains a <VALUE3>% shield for <VALUE1> seconds. After that, it bursts out for <VALUE2> damage.
+  VALUE3  -  -> 50
+  VALUE1  -  -> 1
+  VALUE2  -  -> 1360
+
+--- ClusterBombDude_ExtraMines | gadget | TID_ACCESSORY_TICK_EXTRA_MINES_DESC
+raw  Tick's next attack fires <VALUE1> mines.
+now  Tick's next attack fires <VALUE1> mines.
+  VALUE1  -  -> 6
+
+--- ClusterBombDude_overcharge | hypercharge | TID_CLUSTERBOMBDUDE_OVERCHARGE_DESC
+raw  Tick quickly deploys his head, charging enemies faster and leaving behind <VALUE1> of his minimines on explosion.
+now  Tick quickly deploys his head, charging enemies faster and leaving behind <VALUE1> of his minimines on explosion.
+  VALUE1  -  -> 6
+
+--- ClusterBombDude_unique | star power | TID_SPEC_ABI_REPAIR_SELF_DESC
+raw  When Tick takes no damage and doesn't attack, he starts recovering health <VALUE1> seconds sooner than normal.
+now  When Tick takes no damage and doesn't attack, he starts recovering health 40 seconds sooner than normal.
+  VALUE1  40  -> 2
+
+--- ClusterBombDude_unique_2 | star power | TID_SPEC_ABI_RECHARGE_DESC
+raw  Tick's reload time is <VALUE1>% shorter.
+now  Tick's reload time is 220% shorter.
+  VALUE1  220  -> 9

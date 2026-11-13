@@ -1,0 +1,11 @@
+# sprout
+
+--- Wally_Heal | gadget | TID_ACCESSORY_WALLY_HEAL_DESC
+raw  Sprout consumes a bush to restore <VALUE1> health.
+now  Sprout consumes a bush to restore <VALUE1> health.
+  VALUE1  -  -> 1920
+
+--- Wally_unique | star power | TID_SPEC_ABI_WALLY_1_DESC
+raw  Every <VALUE1> seconds, the next Seed Bomb will explode with a larger explosion radius.
+now  Every 5000 seconds, the next Seed Bomb will explode with a larger explosion radius.
+  VALUE1  5000  -> 5

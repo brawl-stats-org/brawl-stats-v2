@@ -1,0 +1,42 @@
+{
+  "Bulletstorm_overcharge.VALUE1": {
+    "value": 50,
+    "unit": "percent",
+    "verified": "2026-09-25",
+    "dump": "2026-09-01T14:57:21.186Z",
+    "why": "second Super wave deals 50% less damage; neither ulti projectile carries a DamagePercent",
+    "searched": "BulletstormUlti + both ulti projectiles for any Damage/DamePercent pair; only hit for 50 is characters.Bulletstorm.ArenaOverrideReloadBuff, a game-mode modifier"
+  },
+  "Duelist_unique_2.VALUE2": {
+    "value": 1410,
+    "unit": "health",
+    "verified": "2026-09-25",
+    "dump": "2026-09-01T14:57:21.186Z",
+    "why": "mushroom pickup heal, measured in game as 470 x3. The client PRINTS 1440, which is not what it deals",
+    "searched": "every table for 1410, 470, 1440, 480 and 90 across all Duelist rows; no mushroom row exists at all"
+  },
+  "AxeJuggler_overcharge.VALUE2": {
+    "value": 504,
+    "unit": "damage",
+    "verified": "2026-09-25",
+    "dump": "2026-09-01T14:57:21.186Z",
+    "why": "Hypercharge note damage. Card holds Value2=120 but 504/1.2 = 420, which appears nowhere",
+    "searched": "504 is 54.78% of her power-11 attack (920) and 6.3% of her health, neither clean; her notes have no damage row, only AxeJugglerProjectile2.DamagePercentStart=200"
+  },
+  "Cactus_unique.VALUE1": {
+    "value": 75,
+    "unit": "percent",
+    "verified": "2026-09-25",
+    "dump": "2026-09-01T14:57:21.186Z",
+    "why": "Super lifesteal. His card holds Value=0, which this csv spells as 'unset'",
+    "searched": "the only 75 in Spike's data is on Cactus_unique_2, an unrelated curveball star power"
+  },
+  "Cactus_Cover.card.accessory.skill.cactusMinionHealing.scaleToLevel": {
+    "value": 1800,
+    "unit": "health",
+    "verified": "2026-09-25",
+    "dump": "2026-09-01T14:57:21.186Z",
+    "why": "the path names cactusMinionHealing, a column that exists in NO table",
+    "searched": "1800 and 900 across every Cactus row; CactusCover has 1750 hp and CactusBonusSkillCover 800 damage, neither of which lands on it"
+  }
+}

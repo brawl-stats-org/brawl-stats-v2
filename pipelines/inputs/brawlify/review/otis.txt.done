@@ -1,0 +1,22 @@
+# otis
+
+--- Silencer_BigProjectiles | gadget | TID_ACCESSORY_SILENCER_GADGET_2_DESC
+raw  Otis's next attack shoots a giant ink ball that leaves a puddle, dealing <VALUE1> damage over time for <VALUE2> seconds.
+now  Otis's next attack shoots a giant ink ball that leaves a puddle, dealing <VALUE1> damage over time for <VALUE2> seconds.
+  VALUE1  -  -> 1250
+  VALUE2  -  -> 3.8
+
+--- Silencer_overcharge | hypercharge | TID_SILENCER_OVERCHARGE_DESC
+raw  Otis' Super now also stuns for <VALUE1> seconds on impact.
+now  Otis' Super now also stuns for 1 seconds on impact.
+  VALUE1  1  -> 1.5
+
+--- Silencer_unique | star power | TID_SPEC_ABI_SILENCER_1_DESC
+raw  Cil mightily squeezes the enemy with all his might. Preventing them from attacking for <VALUE1>% longer.
+now  Cil mightily squeezes the enemy with all his might. Preventing them from attacking for 80% longer.
+  VALUE1  80  -> 33
+
+--- Silencer_unique_2 | star power | TID_SPEC_ABI_SILENCER_2_DESC
+raw  Otis now shoots <VALUE1>% more ink drops.
+now  Otis now shoots 500% more ink drops.
+  VALUE1  500  -> 33

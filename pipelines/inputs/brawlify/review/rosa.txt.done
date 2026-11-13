@@ -1,0 +1,17 @@
+# rosa
+
+--- Rosa_BushControl | gadget | TID_ACCESSORY_ROSA_BUSH_CONTROL_DESC
+raw  All opponents hiding in bushes take <!card.character.weaponskill.damage.scaleaccessoryvalue3.scaletolevel> damage and get slowed down for <!card.accessory.statuseffectenemy.duration.ticksasseconds> seconds.
+now  All opponents hiding in bushes take 300 damage and get slowed down for 3 seconds.
+  card.character.weaponskill.damage.scaleaccessoryvalue3.scaletolevel  300  -> 300
+  card.accessory.statuseffectenemy.duration.ticksasseconds  3  -> 3
+
+--- Rosa_unique | star power | TID_SPEC_ABI_HEAL_FOREST_DESC
+raw  Rosa recovers <VALUE1> health per second when inside a bush.
+now  Rosa recovers 4 health per second when inside a bush.
+  VALUE1  4  -> 540
+
+--- Rosa_unique_2 | star power | TID_SPEC_ABI_DAMAGE_BUFF_SUPER_DESC
+raw  Rosa's punches gain +<VALUE1> damage during her Super.
+now  Rosa's punches gain +30 damage during her Super.
+  VALUE1  30  -> 300

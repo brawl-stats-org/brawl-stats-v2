@@ -1,0 +1,23 @@
+# lumi
+
+--- Morningstar_gadget_1 | gadget | TID_MORNINGSTAR_GADGET_1_DESC
+raw  Lumi ignites her morning stars on the ground, producing flames which damage nearby enemies for <VALUE1> seconds. Damage per second: <VALUE2>
+now  Lumi ignites her morning stars on the ground, producing flames which damage nearby enemies for 3.9 seconds. Damage per second: 360
+  VALUE1  3.9  -> 3.9
+  VALUE2  360  -> 360
+
+--- Morningstar_gadget_2 | gadget | TID_MORNINGSTAR_GADGET_2_DESC
+raw  Lumi creates freezing winds around her morning stars on the ground, creating a slippery surface for <VALUE1> secs.
+now  Lumi creates freezing winds around her morning stars on the ground, creating a slippery surface for <VALUE1> secs.
+  VALUE1  -  -> 3
+
+--- Morningstar_unique_1 | star power | TID_MORNINGSTAR_SP_1_DESC
+raw  The explosions from Lumi's Blast Beat also set the area alight for <VALUE1> seconds. Fire damage also scales with explosion damage. Damage per second for the biggest explosion: <VALUE2>
+now  The explosions from Lumi's Blast Beat also set the area alight for 1 seconds. Fire damage also scales with explosion damage. Damage per second for the biggest explosion: <VALUE2>
+  VALUE1  1  -> 4
+  VALUE2  -  -> 560
+
+--- Morningstar_unique_2 | star power | TID_MORNINGSTAR_SP_2_DESC
+raw  Lumi slows enemies hit by her recalled morning stars for <VALUE1> seconds.
+now  Lumi slows enemies hit by her recalled morning stars for 1 seconds.
+  VALUE1  1  -> 1

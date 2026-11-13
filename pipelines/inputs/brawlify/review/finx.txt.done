@@ -1,0 +1,22 @@
+# finx
+
+--- Chronomancer_gadget_1 | gadget | TID_CHRONOMANCER_GADGET_1_DESC
+raw  Finx steps back in time, returning to the position and ammo he had <VALUE1> seconds ago.
+now  Finx steps back in time, returning to the position and ammo he had <VALUE1> seconds ago.
+  VALUE1  -  -> 3
+
+--- Chronomancer_gadget_2 | gadget | TID_CHRONOMANCER_GADGET_2_DESC
+raw  Finx's next projectiles from his main attack freeze the enemies in time for <VALUE1> seconds, making them unable to take actions for the duration, but also making them immune to any damage.
+now  Finx's next projectiles from his main attack freeze the enemies in time for <VALUE1> seconds, making them unable to take actions for the duration, but also making them immune to any damage.
+  VALUE1  -  -> 2
+
+--- Chronomancer_unique_1 | star power | TID_CHRONOMANCER_SP_1_DESC
+raw  Finx reduces the reload speed of any enemy Brawlers hit by his main attack by <!card.value1>% for <!card.value2.ticksasseconds> seconds.
+now  Finx reduces the reload speed of any enemy Brawlers hit by his main attack by 25% for 3 seconds.
+  card.value1  25  -> 25
+  card.value2.ticksasseconds  3  -> 3
+
+--- Chronomancer_unique_2 | star power | TID_CHRONOMANCER_SP_2_DESC
+raw  Damage dealt only from Finx's projectiles that are sped up by Time Warp, will increase the Super duration by <VALUE1> seconds each.
+now  Damage dealt only from Finx's projectiles that are sped up by Time Warp, will increase the Super duration by 5 seconds each.
+  VALUE1  5  -> 0.25

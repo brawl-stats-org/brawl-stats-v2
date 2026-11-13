@@ -1,0 +1,345 @@
+[
+  {
+    "id": 62000000,
+    "rarity": "RareGear",
+    "tid": "TID_GEAR_FOREST_SPEED_TITLE",
+    "infoTid": "TID_GEAR_FOREST_SPEED_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000000.png",
+    "coinPrice": 1000,
+    "allBrawlers": true,
+    "brawlers": []
+  },
+  {
+    "id": 62000001,
+    "rarity": "RareGear",
+    "tid": "TID_GEAR_STANDING_HEAL_TITLE",
+    "infoTid": "TID_GEAR_STANDING_HEAL_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000001.png",
+    "coinPrice": 1000,
+    "allBrawlers": true,
+    "brawlers": []
+  },
+  {
+    "id": 62000002,
+    "rarity": "RareGear",
+    "tid": "TID_GEAR_LOW_HEALTH_DAMAGE_TITLE",
+    "infoTid": "TID_GEAR_LOW_HEALTH_DAMAGE_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000002.png",
+    "coinPrice": 1000,
+    "allBrawlers": true,
+    "brawlers": []
+  },
+  {
+    "id": 62000003,
+    "rarity": "RareGear",
+    "tid": "TID_GEAR_VISION_TITLE",
+    "infoTid": "TID_GEAR_VISION_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000003.png",
+    "coinPrice": 1000,
+    "allBrawlers": true,
+    "brawlers": []
+  },
+  {
+    "id": 62000004,
+    "rarity": "RareGear",
+    "tid": "TID_GEAR_SHIELD_TITLE",
+    "infoTid": "TID_GEAR_SHIELD_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000004.png",
+    "coinPrice": 1000,
+    "allBrawlers": true,
+    "brawlers": []
+  },
+  {
+    "id": 62000005,
+    "rarity": "SuperRareGear",
+    "tid": "TID_GEAR_RELOAD_SPEED_TITLE",
+    "infoTid": "TID_GEAR_RELOAD_SPEED_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000005.png",
+    "coinPrice": 1500,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000046,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000056,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000053,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000014,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000003,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000001,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000027,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000050,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000040,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000004,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000006,
+    "rarity": "SuperRareGear",
+    "tid": "TID_GEAR_SUPER_CHARGE_TITLE",
+    "infoTid": "TID_GEAR_SUPER_CHARGE_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000006.png",
+    "coinPrice": 1500,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000051,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000041,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000059,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000002,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000036,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000058,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000043,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000037,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000010,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000034,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000007,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_SUPER_HEALTH_TITLE",
+    "infoTid": "TID_GEAR_SUPER_HEALTH_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000007.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000022,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000008,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_SUPER_RANGE_TITLE",
+    "infoTid": "TID_GEAR_SUPER_RANGE_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000008.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000021,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000009,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_POISON_DURATION_TITLE",
+    "infoTid": "TID_GEAR_POISON_DURATION_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000009.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000012,
+        "deprecated": true
+      }
+    ]
+  },
+  {
+    "id": 62000010,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_SLOW_INCREASE_TITLE",
+    "infoTid": "TID_GEAR_SLOW_INCREASE_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000010.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000005,
+        "deprecated": true
+      }
+    ]
+  },
+  {
+    "id": 62000011,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_SMOKE_DURATION_TITLE",
+    "infoTid": "TID_GEAR_SMOKE_DURATION_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000011.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000023,
+        "deprecated": true
+      }
+    ]
+  },
+  {
+    "id": 62000012,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_SUPER_SHIELD_TITLE",
+    "infoTid": "TID_GEAR_SUPER_SHIELD_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000012.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000028,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000013,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_PETROL_SLOWS_TITLE",
+    "infoTid": "TID_GEAR_PETROL_SLOWS_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000013.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000040,
+        "deprecated": true
+      }
+    ]
+  },
+  {
+    "id": 62000014,
+    "rarity": "SuperRareGear",
+    "tid": "TID_GEAR_PET_DAMAGE_TITLE",
+    "infoTid": "TID_GEAR_PET_DAMAGE_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000014.png",
+    "coinPrice": 1500,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000007,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000008,
+        "deprecated": true
+      },
+      {
+        "brawlerId": 16000031,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000017,
+        "deprecated": false
+      },
+      {
+        "brawlerId": 16000019,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000015,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_EXTRA_SPAWNLING_TITLE",
+    "infoTid": "TID_GEAR_EXTRA_SPAWNLING_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000015.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000056,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000016,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_SUPER_TURRET_TITLE",
+    "infoTid": "TID_GEAR_SUPER_TURRET_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000016.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000016,
+        "deprecated": false
+      }
+    ]
+  },
+  {
+    "id": 62000017,
+    "rarity": "RareGear",
+    "tid": "TID_GEAR_GADGET_COOLDOWN_TITLE",
+    "infoTid": "TID_GEAR_GADGET_COOLDOWN_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000017.png",
+    "coinPrice": 1000,
+    "allBrawlers": true,
+    "brawlers": []
+  },
+  {
+    "id": 62000018,
+    "rarity": "EpicGear",
+    "tid": "TID_GEAR_SUPER_BULLET_SPEED_TITLE",
+    "infoTid": "TID_GEAR_SUPER_BULLET_SPEED_INFO",
+    "imageUrl": "https://cdn.brawlify.com/gears/regular/62000018.png",
+    "coinPrice": 2000,
+    "allBrawlers": false,
+    "brawlers": [
+      {
+        "brawlerId": 16000011,
+        "deprecated": true
+      }
+    ]
+  }
+]

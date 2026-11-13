@@ -1,0 +1,17 @@
+# nani
+
+--- Controller_BounceBack | gadget | TID_ACCESSORY_CONTROLLER_BOUNCE_BACK_DESC
+raw  For the next <VALUE2> seconds, the first time Nani takes damage from an enemy, <VALUE1>% of the damage is returned to the enemy.
+now  For the next <VALUE2> seconds, the first time Nani takes damage from an enemy, <VALUE1>% of the damage is returned to the enemy.
+  VALUE2  -  -> 2
+  VALUE1  -  -> 80
+
+--- Controller_unique | star power | TID_SPEC_ABI_CONTROLLER_1_DESC
+raw  Peep deals up to <VALUE1> extra damage based on his travel distance.
+now  Peep deals up to 125 extra damage based on his travel distance.
+  VALUE1  125  -> 2000
+
+--- Controller_unique_2 | star power | TID_SPEC_ABI_CONTROLLER_2_DESC
+raw  Nani takes <VALUE1>% less damage while her Super is active.
+now  Nani takes 80% less damage while her Super is active.
+  VALUE1  80  -> 80

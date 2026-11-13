@@ -1,0 +1,44 @@
+[
+  {
+    "rarity": "common",
+    "gemPrice": 0,
+    "recruitTokenPrice": 0,
+    "firstRecruitDiscountPercent": 0
+  },
+  {
+    "rarity": "rare",
+    "gemPrice": 29,
+    "recruitTokenPrice": 160,
+    "firstRecruitDiscountPercent": 0
+  },
+  {
+    "rarity": "super_rare",
+    "gemPrice": 79,
+    "recruitTokenPrice": 430,
+    "firstRecruitDiscountPercent": 0
+  },
+  {
+    "rarity": "epic",
+    "gemPrice": 169,
+    "recruitTokenPrice": 925,
+    "firstRecruitDiscountPercent": 0
+  },
+  {
+    "rarity": "mega_epic",
+    "gemPrice": 349,
+    "recruitTokenPrice": 1900,
+    "firstRecruitDiscountPercent": 50
+  },
+  {
+    "rarity": "legendary",
+    "gemPrice": 699,
+    "recruitTokenPrice": 3800,
+    "firstRecruitDiscountPercent": 50
+  },
+  {
+    "rarity": "ultra_legendary",
+    "gemPrice": 999,
+    "recruitTokenPrice": 5500,
+    "firstRecruitDiscountPercent": 0
+  }
+]

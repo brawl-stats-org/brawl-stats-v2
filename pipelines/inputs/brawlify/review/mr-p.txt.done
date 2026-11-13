@@ -1,0 +1,19 @@
+# mr.p
+
+--- SpawnerDude_Promote | gadget | TID_ACCESSORY_SPAWNER_DUDE_PROMOTE_DESC
+raw  Mr. P buffs his current porter by increasing its damage by <VALUE1> and health by <VALUE2>.
+now  Mr. P buffs his current porter by increasing its damage by <VALUE1> and health by <VALUE2>.
+  VALUE1  -  -> 228
+  VALUE2  -  -> 1480
+
+--- SpawnerDude_unique | star power | TID_SPEC_ABI_SPAWNER_DUDE_1_DESC
+raw  Every <VALUE1> seconds, the explosion damage of Mr. P's next overstuffed suitcase is increased by <VALUE2>%.
+now  Every 4000 seconds, the explosion damage of Mr. P's next overstuffed suitcase is increased by 40%.
+  VALUE1  4000  -> 4
+  VALUE2  40  -> 40
+
+--- SpawnerDude_unique_2 | star power | TID_SPEC_ABI_SPAWNER_DUDE_2_DESC
+raw  All robo-porters from the home base now have <VALUE1>% more health and <VALUE2>% higher damage.
+now  All robo-porters from the home base now have 20% more health and 30% higher damage.
+  VALUE1  20  -> 20
+  VALUE2  30  -> 30

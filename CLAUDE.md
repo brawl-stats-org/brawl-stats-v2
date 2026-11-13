@@ -101,6 +101,11 @@ Success notifications should include relevant stats.
 
 All pipeline operations log to `data/pipeline.log` via PipelineMonitor.
 
+### Brawlify (reference data)
+
+`pipelines/src/brawlify/` has its own rules: `pipelines/src/brawlify/CLAUDE.md`.
+Docs: `docs/brawlify/`.
+
 ## Tooling
 
 ### Python

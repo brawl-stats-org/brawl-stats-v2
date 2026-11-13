@@ -1,0 +1,29 @@
+# melody
+
+--- AxeJuggler_gatget | gadget | TID_AXE_JUGGLER_GADGET_1_DESC
+raw  Melodie's notes get <VALUE1>% increased movement speed and <VALUE2>% wider orbit for <VALUE3> seconds.
+now  Melodie's notes get <VALUE1>% increased movement speed and <VALUE2>% wider orbit for <VALUE3> seconds.
+  VALUE1  -  -> 35
+  VALUE2  -  -> 70
+  VALUE3  -  -> 5
+
+--- AxeJuggler_gatget_1 | gadget | TID_AXE_JUGGLER_GADGET_2_DESC
+raw  Melodie gains <VALUE1>% Shield from each note orbiting her.
+now  Melodie gains <VALUE1>% Shield from each note orbiting her.
+  VALUE1  -  -> 10
+
+--- AxeJuggler_overcharge | hypercharge | TID_AXE_JUGGLER_OVERCHARGE_DESC
+raw  Melodie adds up to <VALUE1> Hypercharge notes using Catchy Chorus. Hypercharge notes do <VALUE2> damage.
+now  Melodie adds up to 3 Hypercharge notes using Catchy Chorus. Hypercharge notes do 120 damage.
+  VALUE1  3  -> 3
+  VALUE2  120  -> 504
+
+--- AxeJuggler_unique | star power | TID_AXE_JUGGLER_SP_1_DESC
+raw  Melodie gains <!card.statuseffect.baseSpeedIncreasePercent>% increased movement speed from each note orbiting her.
+now  Melodie gains 6% increased movement speed from each note orbiting her.
+  card.statuseffect.baseSpeedIncreasePercent  6  -> 6
+
+--- AxeJuggler_unique_2 | star power | TID_AXE_JUGGLER_SP_2_DESC
+raw  Melodie's notes last for <VALUE1>% longer before vanishing.
+now  Melodie's notes last for 25% longer before vanishing.
+  VALUE1  25  -> 25

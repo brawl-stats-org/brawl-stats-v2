@@ -1,0 +1,52 @@
+# colt
+
+--- Gunslinger_BigBullet | gadget | TID_ACCESSORY_GUNSLINGER_BIG_BULLET_DESC
+raw  Colt fires a bullet that destroys the environment and pierces Brawlers. Deals <!card.accessory.skill.damage.scaleToLevel> damage. Consumes ammo.
+now  Colt fires a bullet that destroys the environment and pierces Brawlers. Deals 1200 damage. Consumes ammo.
+  card.accessory.skill.damage.scaleToLevel  1200  -> 1200
+
+--- Gunslinger_BigBullet | gadget | TID_GUNSLINGER_BUDDY_GADGET_2_DESC
+raw  Colt fires a BIG bullet that destroys the environment and pierces Brawlers. Deals <!buddy.accessory.skill.damage.scaleToLevel> damage. Consumes ammo.
+now  Colt fires a BIG bullet that destroys the environment and pierces Brawlers. Deals 2000 damage. Consumes ammo.
+  buddy.accessory.skill.damage.scaleToLevel  2000  -> 2000
+
+--- Gunslinger_Reload | gadget | TID_ACCESSORY_GUNSLINGER_RELOAD_DESC
+raw  Colt fires two quick shots that slow targets. Deals <!card.accessory.skill.damage.scaleToLevel> damage.
+now  Colt fires two quick shots that slow targets. Deals 640 damage.
+  card.accessory.skill.damage.scaleToLevel  640  -> 
+
+--- Gunslinger_Reload | gadget | TID_GUNSLINGER_BUDDY_GADGET_1_DESC
+raw  Colt fires two quick shots that slow targets. Deals <!card.accessory.skill.damage.scaleToLevel> damage. Each hit steals 0.5 ammo.
+now  Colt fires two quick shots that slow targets. Deals 640 damage. Each hit steals 0.5 ammo.
+  card.accessory.skill.damage.scaleToLevel  640  -> 640
+
+--- Gunslinger_overcharge | hypercharge | TID_GUNSLINGER_OVERCHARGE_DESC
+raw  Bullet Storm is <VALUE1>% wider.
+now  Bullet Storm is 120% wider.
+  VALUE1  120  -> 120
+
+--- Gunslinger_overcharge | hypercharge | TID_GUNSLINGER_BUDDY_OVERCHARGE_DESC
+raw  Bullet Storm is <!card.value1>% wider and main attack bullets are fired much quicker.
+now  Bullet Storm is 120% wider and main attack bullets are fired much quicker.
+  card.value1  120  -> 120
+
+--- Gunslinger_unique | star power | TID_SPEC_ABI_SPEED_DESC
+raw  Colt's movement speed is increased by <!card.trait.statuseffect.basespeedincreasepercent>%.
+now  Colt's movement speed is increased by 13%.
+  card.trait.statuseffect.basespeedincreasepercent  13  -> 13
+
+--- Gunslinger_unique | star power | TID_GUNSLINGER_BUDDY_STARPOWER_1_DESC
+raw  Colt's movement speed is increased by <!card.trait.statuseffect.baseSpeedIncreasePercent>% and he gains <!buddy.trait.statuseffect.speedboostpercent>% movement speed when attacking.
+now  Colt's movement speed is increased by 13% and he gains 20% movement speed when attacking.
+  card.trait.statuseffect.baseSpeedIncreasePercent  13  -> 13
+  buddy.trait.statuseffect.speedboostpercent  20  -> 20
+
+--- Gunslinger_unique_2 | star power | TID_SPEC_ABI_ATTACK_RANGE_DESC
+raw  Colt's attack range and bullet speed are increased by <VALUE1>%.
+now  Colt's attack range and bullet speed are increased by 3%.
+  VALUE1  3  -> 11
+
+--- Gunslinger_unique_2 | star power | TID_GUNSLINGER_BUDDY_STARPOWER_2_DESC
+raw  Colt's attack range and bullet speed are increased by <!card.value1.attackRangeIncreasePercent>% and deal extra damage to distant targets.
+now  Colt's attack range and bullet speed are increased by <!card.value1.attackRangeIncreasePercent>% and deal extra damage to distant targets.
+  card.value1.attackRangeIncreasePercent  -  -> 11

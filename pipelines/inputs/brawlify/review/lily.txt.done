@@ -1,0 +1,21 @@
+# lily
+
+--- Ambusher_gadget | gadget | TID_AMBUSHER_GADGET_1_DESC
+raw  Lily enters the Shadow Realm for <VALUE1> seconds
+now  Lily enters the Shadow Realm for <VALUE1> seconds
+  VALUE1  -  -> 3
+
+--- Ambusher_overcharge | hypercharge | TID_AMBUSHER_OVERCHARGE_DESC
+raw  Lily's Flourish now bounces off walls, and transports the enemy and Lily to the Shadow Realm for <VALUE1> seconds.
+now  Lily's Flourish now bounces off walls, and transports the enemy and Lily to the Shadow Realm for 100 seconds.
+  VALUE1  100  -> 5
+
+--- Ambusher_unique | star power | TID_AMBUSHER_SP_1_DESC
+raw  After teleporting to an enemy, Lily's next attack deals <VALUE1> more damage
+now  After teleporting to an enemy, Lily's next attack deals 50 more damage
+  VALUE1  50  -> 1060
+
+--- Ambusher_unique_2 | star power | TID_AMBUSHER_SP_2_DESC
+raw  Gain <!card.statuseffect.baseSpeedIncreasePercent>% movement speed while an enemy is in her Super charge radius.
+now  Gain 15% movement speed while an enemy is in her Super charge radius.
+  card.statuseffect.baseSpeedIncreasePercent  15  -> 15

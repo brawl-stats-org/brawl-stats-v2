@@ -1,0 +1,16 @@
+# penny
+
+--- ArtilleryDude_overcharge | hypercharge | TID_ARTILLERYDUDE_OVERCHARGE_DESC
+raw  Penny deploys a bigger cannon that shoots <VALUE1> cannonballs at a time instead of 1
+now  Penny deploys a bigger cannon that shoots <VALUE1> cannonballs at a time instead of 1
+  VALUE1  -  -> 2
+
+--- ArtilleryDude_unique | star power | TID_SPEC_ABI_ARTILLERY_DUDE_1_DESC
+raw  Penny's gold pouches burst with a <VALUE1>% wider cone after each hit.
+now  Penny's gold pouches burst with a 40% wider cone after each hit.
+  VALUE1  40  -> 100
+
+--- ArtilleryDude_unique_2 | star power | TID_SPEC_ABI_ARTILLERY_DUDE_2_DESC
+raw  Penny's cannon deals <VALUE1> damage and knocks back nearby enemies on landing.
+now  Penny's cannon deals 70 damage and knocks back nearby enemies on landing.
+  VALUE1  70  -> 1372

@@ -1,0 +1,4844 @@
+[
+  {
+    "brawlerId": 16000000,
+    "kind": "starPower",
+    "id": 23000076,
+    "tid": "TID_SPEC_ABI_FREEZE",
+    "descTid": "TID_SPEC_ABI_FREEZE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000076.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000000,
+    "kind": "starPower",
+    "id": 23000135,
+    "tid": "TID_SPEC_ABI_MEDIKIT",
+    "descTid": "TID_SPEC_ABI_MEDIKIT_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000135.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000000,
+    "kind": "gadget",
+    "id": 23000255,
+    "tid": "TID_ACCESSORY_SHELLY_DASH",
+    "descTid": "TID_ACCESSORY_SHELLY_DASH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000255.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000000,
+    "kind": "gadget",
+    "id": 23000288,
+    "tid": "TID_ACCESSORY_SHELLY_FOCUS",
+    "descTid": "TID_ACCESSORY_SHELLY_FOCUS_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000288.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000000,
+    "kind": "hypercharge",
+    "id": 23000613,
+    "tid": "TID_SHOTGUNGIRL_OVERCHARGE",
+    "descTid": "TID_SHOTGUNGIRL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "starPower",
+    "id": 23000077,
+    "tid": "TID_SPEC_ABI_SPEED",
+    "descTid": "TID_SPEC_ABI_SPEED_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000077.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "starPower",
+    "id": 23000138,
+    "tid": "TID_SPEC_ABI_ATTACK_RANGE",
+    "descTid": "TID_SPEC_ABI_ATTACK_RANGE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000138.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "gadget",
+    "id": 23000273,
+    "tid": "TID_ACCESSORY_GUNSLINGER_RELOAD",
+    "descTid": "TID_ACCESSORY_GUNSLINGER_RELOAD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000273.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "gadget",
+    "id": 23000319,
+    "tid": "TID_ACCESSORY_GUNSLINGER_BIG_BULLET",
+    "descTid": "TID_ACCESSORY_GUNSLINGER_BIG_BULLET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000319.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000001,
+    "kind": "hypercharge",
+    "id": 23000614,
+    "tid": "TID_GUNSLINGER_OVERCHARGE",
+    "descTid": "TID_GUNSLINGER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "starPower",
+    "id": 23000078,
+    "tid": "TID_SPEC_ABI_BERSERKER",
+    "descTid": "TID_SPEC_ABI_BERSERKER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000078.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "starPower",
+    "id": 23000137,
+    "tid": "TID_SPEC_ABI_LOW_HEALTH_SHIELD",
+    "descTid": "TID_SPEC_ABI_LOW_HEALTH_SHIELD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000137.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "gadget",
+    "id": 23000272,
+    "tid": "TID_ACCESSORY_BULL_HEAL",
+    "descTid": "TID_ACCESSORY_BULL_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000272.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "gadget",
+    "id": 23000310,
+    "tid": "TID_ACCESSORY_BULL_STOMP",
+    "descTid": "TID_ACCESSORY_BULL_STOMP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000310.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000002,
+    "kind": "hypercharge",
+    "id": 23000616,
+    "tid": "TID_BULLDUDE_OVERCHARGE",
+    "descTid": "TID_BULLDUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "starPower",
+    "id": 23000079,
+    "tid": "TID_SPEC_BURN",
+    "descTid": "TID_SPEC_BURN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000079.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "starPower",
+    "id": 23000150,
+    "tid": "TID_SPEC_EXTRA_BULLET",
+    "descTid": "TID_SPEC_EXTRA_BULLET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000150.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "gadget",
+    "id": 23000245,
+    "tid": "TID_ACCESSORY_ROCKET_JUMP",
+    "descTid": "TID_ACCESSORY_ROCKET_JUMP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000245.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "gadget",
+    "id": 23000316,
+    "tid": "TID_ACCESSORY_MEGA_ROCKET",
+    "descTid": "TID_ACCESSORY_MEGA_ROCKET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000316.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000003,
+    "kind": "hypercharge",
+    "id": 23000688,
+    "tid": "TID_ROCKETGIRL_OVERCHARGE",
+    "descTid": "TID_ROCKETGIRL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "starPower",
+    "id": 23000080,
+    "tid": "TID_SPEC_BOUNCED_BULLETS_STRONGER",
+    "descTid": "TID_SPEC_BOUNCED_BULLETS_STRONGER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000080.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "starPower",
+    "id": 23000156,
+    "tid": "TID_SPEC_ABI_SPEED_LOW_HEALTH",
+    "descTid": "TID_SPEC_ABI_SPEED_LOW_HEALTH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000156.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "gadget",
+    "id": 23000246,
+    "tid": "TID_ACCESSORY_RICO_SHOOT_AROUND",
+    "descTid": "TID_ACCESSORY_RICO_SHOOT_AROUND_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000246.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "gadget",
+    "id": 23000409,
+    "tid": "TID_ACCESSORY_TRICKSHOT_DUDE_BOUNCE_HEAL",
+    "descTid": "TID_ACCESSORY_TRICKSHOT_DUDE_BOUNCE_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000409.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000004,
+    "kind": "hypercharge",
+    "id": 23000776,
+    "tid": "TID_TRICKSHOTDUDE_OVERCHARGE",
+    "descTid": "TID_TRICKSHOTDUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "starPower",
+    "id": 23000081,
+    "tid": "TID_SPEC_ABI_CACTUS_HEAL",
+    "descTid": "TID_SPEC_ABI_CACTUS_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000081.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "starPower",
+    "id": 23000151,
+    "tid": "TID_SPEC_ABI_CURVEBALL",
+    "descTid": "TID_SPEC_ABI_CURVEBALL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000151.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "gadget",
+    "id": 23000247,
+    "tid": "TID_ACCESSORY_CACTUS_SHOOT_AROUND",
+    "descTid": "TID_ACCESSORY_CACTUS_SHOOT_AROUND_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000247.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "gadget",
+    "id": 23000406,
+    "tid": "TID_ACCESSORY_CACTUS_COVER",
+    "descTid": "TID_ACCESSORY_CACTUS_COVER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000406.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000005,
+    "kind": "hypercharge",
+    "id": 23000615,
+    "tid": "TID_CACTUS_OVERCHARGE",
+    "descTid": "TID_CACTUS_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000006,
+    "kind": "starPower",
+    "id": 23000082,
+    "tid": "TID_SPEC_ABI_HEAL_SELF_MAIN_ATTACK",
+    "descTid": "TID_SPEC_ABI_HEAL_SELF_MAIN_ATTACK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000082.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000006,
+    "kind": "starPower",
+    "id": 23000158,
+    "tid": "TID_SPEC_ABI_DAMAGE_MAIN_ATTACK",
+    "descTid": "TID_SPEC_ABI_DAMAGE_MAIN_ATTACK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000158.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000006,
+    "kind": "gadget",
+    "id": 23000250,
+    "tid": "TID_ACCESSORY_BARKEEP_SLOW",
+    "descTid": "TID_ACCESSORY_BARKEEP_SLOW_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000250.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000006,
+    "kind": "gadget",
+    "id": 23000293,
+    "tid": "TID_ACCESSORY_BARKEEP_HEAL_POTION",
+    "descTid": "TID_ACCESSORY_BARKEEP_HEAL_POTION_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000293.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000006,
+    "kind": "hypercharge",
+    "id": 23000757,
+    "tid": "TID_BARKEEP_OVERCHARGE",
+    "descTid": "TID_BARKEEP_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000007,
+    "kind": "starPower",
+    "id": 23000083,
+    "tid": "TID_SPEC_ABI_REPAIR_TURRET",
+    "descTid": "TID_SPEC_ABI_REPAIR_TURRET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000083.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000007,
+    "kind": "starPower",
+    "id": 23000149,
+    "tid": "TID_SPEC_ABI_TURRET_ELECTRICITY",
+    "descTid": "TID_SPEC_ABI_TURRET_ELECTRICITY_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000149.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000007,
+    "kind": "gadget",
+    "id": 23000251,
+    "tid": "TID_ACCESSORY_JESSIE_SLOW",
+    "descTid": "TID_ACCESSORY_JESSIE_SLOW_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000251.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000007,
+    "kind": "gadget",
+    "id": 23000295,
+    "tid": "TID_ACCESSORY_MECHANIC_TURRET_BUFF",
+    "descTid": "TID_ACCESSORY_MECHANIC_TURRET_BUFF_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000295.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000007,
+    "kind": "hypercharge",
+    "id": 23000630,
+    "tid": "TID_MECHANIC_OVERCHARGE",
+    "descTid": "TID_MECHANIC_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "starPower",
+    "id": 23000084,
+    "tid": "TID_SPEC_ABI_PET_LIFESTEAL",
+    "descTid": "TID_SPEC_ABI_PET_LIFESTEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000084.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "starPower",
+    "id": 23000136,
+    "tid": "TID_SPEC_ABI_PET_ATTACK_SPEED",
+    "descTid": "TID_SPEC_ABI_PET_ATTACK_SPEED_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000136.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "gadget",
+    "id": 23000249,
+    "tid": "TID_ACCESSORY_PET_SLAM",
+    "descTid": "TID_ACCESSORY_PET_SLAM_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000249.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "gadget",
+    "id": 23000314,
+    "tid": "TID_ACCESSORY_SHAMAN_SHIELD",
+    "descTid": "TID_ACCESSORY_SHAMAN_SHIELD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000314.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000008,
+    "kind": "hypercharge",
+    "id": 23000686,
+    "tid": "TID_SHAMAN_OVERCHARGE",
+    "descTid": "TID_SHAMAN_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000009,
+    "kind": "starPower",
+    "id": 23000085,
+    "tid": "TID_SPEC_ABI_PUSHBACK_SELF",
+    "descTid": "TID_SPEC_ABI_PUSHBACK_SELF_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000085.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000009,
+    "kind": "starPower",
+    "id": 23000155,
+    "tid": "TID_SPEC_ABI_SUPER_DAMAGE",
+    "descTid": "TID_SPEC_ABI_SUPER_DAMAGE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000155.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000009,
+    "kind": "gadget",
+    "id": 23000258,
+    "tid": "TID_ACCESSORY_TNT_SPIN",
+    "descTid": "TID_ACCESSORY_TNT_SPIN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000258.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000009,
+    "kind": "gadget",
+    "id": 23000294,
+    "tid": "TID_ACCESSORY_TNT_STUN",
+    "descTid": "TID_ACCESSORY_TNT_STUN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000294.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000009,
+    "kind": "hypercharge",
+    "id": 23000652,
+    "tid": "TID_TNT_DUDE_OVERCHARGE",
+    "descTid": "TID_TNT_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "starPower",
+    "id": 23000086,
+    "tid": "TID_SPEC_ABI_FIRE_DOT_ULTI",
+    "descTid": "TID_SPEC_ABI_FIRE_DOT_ULTI_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000086.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "starPower",
+    "id": 23000140,
+    "tid": "TID_SPEC_ABI_SPEED_AFTER_ULTI",
+    "descTid": "TID_SPEC_ABI_SPEED_AFTER_ULTI_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000140.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "gadget",
+    "id": 23000264,
+    "tid": "TID_ACCESSORY_PRIMO_GRAB",
+    "descTid": "TID_ACCESSORY_PRIMO_GRAB_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000264.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "gadget",
+    "id": 23000292,
+    "tid": "TID_ACCESSORY_LUCHADOR_METEOR",
+    "descTid": "TID_ACCESSORY_LUCHADOR_METEOR_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000292.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000010,
+    "kind": "hypercharge",
+    "id": 23000679,
+    "tid": "TID_LUCHADOR_OVERCHARGE",
+    "descTid": "TID_LUCHADOR_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "starPower",
+    "id": 23000087,
+    "tid": "TID_SPEC_ABI_STEAL_SOULS",
+    "descTid": "TID_SPEC_ABI_STEAL_SOULS_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000087.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "starPower",
+    "id": 23000154,
+    "tid": "TID_SPEC_ABI_LONGER_DASH",
+    "descTid": "TID_SPEC_ABI_LONGER_DASH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000154.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "gadget",
+    "id": 23000265,
+    "tid": "TID_ACCESSORY_MORTIS_SWING",
+    "descTid": "TID_ACCESSORY_MORTIS_SWING_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000265.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "gadget",
+    "id": 23000290,
+    "tid": "TID_ACCESSORY_UNDERTAKER_RELOAD",
+    "descTid": "TID_ACCESSORY_UNDERTAKER_RELOAD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000290.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000011,
+    "kind": "hypercharge",
+    "id": 23000819,
+    "tid": "TID_UNDERTAKER_OVERCHARGE",
+    "descTid": "TID_UNDERTAKER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "starPower",
+    "id": 23000088,
+    "tid": "TID_SPEC_CRIPPLE",
+    "descTid": "TID_SPEC_CRIPPLE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000088.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "starPower",
+    "id": 23000143,
+    "tid": "TID_SPEC_ABI_PREY_ON_THE_WEAK",
+    "descTid": "TID_SPEC_ABI_PREY_ON_THE_WEAK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000143.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "gadget",
+    "id": 23000243,
+    "tid": "TID_ACCESSORY_CROW_INSTADOT",
+    "descTid": "TID_ACCESSORY_CROW_INSTADOT_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000243.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "gadget",
+    "id": 23000286,
+    "tid": "TID_ACCESSORY_CROW_POISON_DAGGER",
+    "descTid": "TID_ACCESSORY_CROW_POISON_DAGGER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000286.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000012,
+    "kind": "hypercharge",
+    "id": 23000650,
+    "tid": "TID_CROW_OVERCHARGE",
+    "descTid": "TID_CROW_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "starPower",
+    "id": 23000089,
+    "tid": "TID_SPEC_HEAL_MAIN_ATTACK",
+    "descTid": "TID_SPEC_HEAL_MAIN_ATTACK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000089.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "starPower",
+    "id": 23000144,
+    "tid": "TID_SPEC_DAMAGE_SUPER",
+    "descTid": "TID_SPEC_DAMAGE_SUPER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000144.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "gadget",
+    "id": 23000267,
+    "tid": "TID_ACCESSORY_POCO_REGEN",
+    "descTid": "TID_ACCESSORY_POCO_REGEN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000267.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "gadget",
+    "id": 23000350,
+    "tid": "TID_ACCESSORY_POCO_CLEANSE",
+    "descTid": "TID_ACCESSORY_POCO_CLEANSE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000350.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000013,
+    "kind": "hypercharge",
+    "id": 23000822,
+    "tid": "TID_DEAD_MARIACHI_OVERCHARGE",
+    "descTid": "TID_DEAD_MARIACHI_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "starPower",
+    "id": 23000090,
+    "tid": "TID_SPEC_ABI_SPOT",
+    "descTid": "TID_SPEC_ABI_SPOT_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000090.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "starPower",
+    "id": 23000148,
+    "tid": "TID_SPEC_ABI_STUN_TRAP",
+    "descTid": "TID_SPEC_ABI_STUN_TRAP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000148.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "gadget",
+    "id": 23000263,
+    "tid": "TID_ACCESSORY_BOW_TOTEM",
+    "descTid": "TID_ACCESSORY_BOW_TOTEM_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000263.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "gadget",
+    "id": 23000289,
+    "tid": "TID_ACCESSORY_BO_MINE_TRIGGER",
+    "descTid": "TID_ACCESSORY_BO_MINE_TRIGGER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000289.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000014,
+    "kind": "hypercharge",
+    "id": 23000896,
+    "tid": "TID_BOW_DUDE_OVERCHARGE",
+    "descTid": "TID_BOW_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000015,
+    "kind": "starPower",
+    "id": 23000091,
+    "tid": "TID_SPEC_ABI_AMBUSH",
+    "descTid": "TID_SPEC_ABI_AMBUSH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000091.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000015,
+    "kind": "starPower",
+    "id": 23000152,
+    "tid": "TID_SPEC_ABI_RELOAD_ON_HIT",
+    "descTid": "TID_SPEC_ABI_RELOAD_ON_HIT_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000152.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000015,
+    "kind": "gadget",
+    "id": 23000268,
+    "tid": "TID_ACCESSORY_SNIPER_HANDGUN",
+    "descTid": "TID_ACCESSORY_SNIPER_HANDGUN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000268.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000015,
+    "kind": "gadget",
+    "id": 23000291,
+    "tid": "TID_ACCESSORY_SNIPER_SEEKER",
+    "descTid": "TID_ACCESSORY_SNIPER_SEEKER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000291.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000015,
+    "kind": "hypercharge",
+    "id": 23000777,
+    "tid": "TID_SNIPER_OVERCHARGE",
+    "descTid": "TID_SNIPER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000016,
+    "kind": "starPower",
+    "id": 23000092,
+    "tid": "TID_SPEC_ABI_HEAL_OTHERS_MAIN_ATTACK",
+    "descTid": "TID_SPEC_ABI_HEAL_OTHERS_MAIN_ATTACK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000092.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000016,
+    "kind": "starPower",
+    "id": 23000139,
+    "tid": "TID_SPEC_ABI_TURRET_AOE",
+    "descTid": "TID_SPEC_ABI_TURRET_AOE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000139.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000016,
+    "kind": "gadget",
+    "id": 23000257,
+    "tid": "TID_ACCESSORY_TOWER_BURST_HEAL",
+    "descTid": "TID_ACCESSORY_TOWER_BURST_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000257.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000016,
+    "kind": "gadget",
+    "id": 23000404,
+    "tid": "TID_ACCESSORY_MINIGUN_DUDE_AMMO_SINK",
+    "descTid": "TID_ACCESSORY_MINIGUN_DUDE_AMMO_SINK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000404.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000016,
+    "kind": "hypercharge",
+    "id": 23000898,
+    "tid": "TID_MINIGUN_DUDE_OVERCHARGE",
+    "descTid": "TID_MINIGUN_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000017,
+    "kind": "starPower",
+    "id": 23000093,
+    "tid": "TID_SPEC_ABI_BLACK_HOLE_MONSTER",
+    "descTid": "TID_SPEC_ABI_BLACK_HOLE_MONSTER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000093.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000017,
+    "kind": "starPower",
+    "id": 23000160,
+    "tid": "TID_SPEC_ABI_BLACK_HOLE_HEALER",
+    "descTid": "TID_SPEC_ABI_BLACK_HOLE_HEALER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000160.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000017,
+    "kind": "gadget",
+    "id": 23000266,
+    "tid": "TID_ACCESSORY_TARA_VISION",
+    "descTid": "TID_ACCESSORY_TARA_VISION_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000266.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000017,
+    "kind": "gadget",
+    "id": 23000356,
+    "tid": "TID_ACCESSORY_TARA_SHADOWS",
+    "descTid": "TID_ACCESSORY_TARA_SHADOWS_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000356.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000017,
+    "kind": "hypercharge",
+    "id": 23000824,
+    "tid": "TID_BLACK_HOLE_OVERCHARGE",
+    "descTid": "TID_BLACK_HOLE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000018,
+    "kind": "starPower",
+    "id": 23000094,
+    "tid": "TID_SPEC_ABI_BARREL_DEFENSE",
+    "descTid": "TID_SPEC_ABI_BARREL_DEFENSE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000094.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000018,
+    "kind": "starPower",
+    "id": 23000157,
+    "tid": "TID_SPEC_ABI_SUPER_RELOAD",
+    "descTid": "TID_SPEC_ABI_SUPER_RELOAD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000157.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000018,
+    "kind": "gadget",
+    "id": 23000260,
+    "tid": "TID_ACCESSORY_BARREL_SPIN",
+    "descTid": "TID_ACCESSORY_BARREL_SPIN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000260.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000018,
+    "kind": "gadget",
+    "id": 23000313,
+    "tid": "TID_ACCESSORY_BARREL_SLOW",
+    "descTid": "TID_ACCESSORY_BARREL_SLOW_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000313.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000018,
+    "kind": "hypercharge",
+    "id": 23000859,
+    "tid": "TID_BARRELBOT_OVERCHARGE",
+    "descTid": "TID_BARRELBOT_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000019,
+    "kind": "starPower",
+    "id": 23000099,
+    "tid": "TID_SPEC_ABI_ARTILLERY_DUDE_1",
+    "descTid": "TID_SPEC_ABI_ARTILLERY_DUDE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000099.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000019,
+    "kind": "starPower",
+    "id": 23000142,
+    "tid": "TID_SPEC_ABI_ARTILLERY_DUDE_2",
+    "descTid": "TID_SPEC_ABI_ARTILLERY_DUDE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000142.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000019,
+    "kind": "gadget",
+    "id": 23000248,
+    "tid": "TID_ACCESSORY_ARTILLERY_DUDE_GADGET_1",
+    "descTid": "TID_ACCESSORY_ARTILLERY_DUDE_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000248.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000019,
+    "kind": "gadget",
+    "id": 23000287,
+    "tid": "TID_ACCESSORY_ARTILLERY_DUDE_GADGET_2",
+    "descTid": "TID_ACCESSORY_ARTILLERY_DUDE_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000287.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000019,
+    "kind": "hypercharge",
+    "id": 23000861,
+    "tid": "TID_ARTILLERYDUDE_OVERCHARGE",
+    "descTid": "TID_ARTILLERYDUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "starPower",
+    "id": 23000104,
+    "tid": "TID_SPEC_ABI_STEAL_SOULS2",
+    "descTid": "TID_SPEC_ABI_STEAL_SOULS2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000104.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "starPower",
+    "id": 23000153,
+    "tid": "TID_SPEC_ABI_GAIN_HEALTH",
+    "descTid": "TID_SPEC_ABI_GAIN_HEALTH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000153.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "gadget",
+    "id": 23000261,
+    "tid": "TID_ACCESSORY_FRANK_CC_IMMUNITY",
+    "descTid": "TID_ACCESSORY_FRANK_CC_IMMUNITY_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000261.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "gadget",
+    "id": 23000351,
+    "tid": "TID_ACCESSORY_FRANK_PULL",
+    "descTid": "TID_ACCESSORY_FRANK_PULL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000351.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000020,
+    "kind": "hypercharge",
+    "id": 23000758,
+    "tid": "TID_HAMMERDUDE_OVERCHARGE",
+    "descTid": "TID_HAMMERDUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000021,
+    "kind": "starPower",
+    "id": 23000109,
+    "tid": "TID_SPEC_ABI_HOOK",
+    "descTid": "TID_SPEC_ABI_HOOK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000109.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000021,
+    "kind": "starPower",
+    "id": 23000159,
+    "tid": "TID_SPEC_ABI_DAMAGE_ULTI",
+    "descTid": "TID_SPEC_ABI_DAMAGE_ULTI_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000159.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000021,
+    "kind": "gadget",
+    "id": 23000252,
+    "tid": "TID_ACCESSORY_GENE_PUSH",
+    "descTid": "TID_ACCESSORY_GENE_PUSH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000252.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000021,
+    "kind": "gadget",
+    "id": 23000352,
+    "tid": "TID_ACCESSORY_GENE_HOMING",
+    "descTid": "TID_ACCESSORY_GENE_HOMING_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000352.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000021,
+    "kind": "hypercharge",
+    "id": 23000690,
+    "tid": "TID_HOOKDUDE_OVERCHARGE",
+    "descTid": "TID_HOOKDUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000022,
+    "kind": "starPower",
+    "id": 23000114,
+    "tid": "TID_SPEC_ABI_REPAIR_SELF",
+    "descTid": "TID_SPEC_ABI_REPAIR_SELF_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000114.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000022,
+    "kind": "starPower",
+    "id": 23000161,
+    "tid": "TID_SPEC_ABI_RECHARGE",
+    "descTid": "TID_SPEC_ABI_RECHARGE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000161.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000022,
+    "kind": "gadget",
+    "id": 23000253,
+    "tid": "TID_ACCESSORY_TICK_EXTRA_MINES",
+    "descTid": "TID_ACCESSORY_TICK_EXTRA_MINES_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000253.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000022,
+    "kind": "gadget",
+    "id": 23000355,
+    "tid": "TID_ACCESSORY_TICK_EXPLOSION",
+    "descTid": "TID_ACCESSORY_TICK_EXPLOSION_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000355.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000022,
+    "kind": "hypercharge",
+    "id": 23000687,
+    "tid": "TID_CLUSTERBOMBDUDE_OVERCHARGE",
+    "descTid": "TID_CLUSTERBOMBDUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "starPower",
+    "id": 23000119,
+    "tid": "TID_SPEC_ABI_SPEED_INVISIBLE",
+    "descTid": "TID_SPEC_ABI_SPEED_INVISIBLE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000119.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "starPower",
+    "id": 23000141,
+    "tid": "TID_SPEC_ABI_HOT_INVISIBLE",
+    "descTid": "TID_SPEC_ABI_HOT_INVISIBLE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000141.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "gadget",
+    "id": 23000276,
+    "tid": "TID_ACCESSORY_NINJA_FAKE",
+    "descTid": "TID_ACCESSORY_NINJA_FAKE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000276.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "gadget",
+    "id": 23000408,
+    "tid": "TID_ACCESSORY_NINJA_INVISIBLE_AREA",
+    "descTid": "TID_ACCESSORY_NINJA_INVISIBLE_AREA_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000408.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000023,
+    "kind": "hypercharge",
+    "id": 23000651,
+    "tid": "TID_LEON_OVERCHARGE",
+    "descTid": "TID_LEON_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000024,
+    "kind": "starPower",
+    "id": 23000124,
+    "tid": "TID_SPEC_ABI_HEAL_FOREST",
+    "descTid": "TID_SPEC_ABI_HEAL_FOREST_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000124.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000024,
+    "kind": "starPower",
+    "id": 23000147,
+    "tid": "TID_SPEC_ABI_DAMAGE_BUFF_SUPER",
+    "descTid": "TID_SPEC_ABI_DAMAGE_BUFF_SUPER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000147.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000024,
+    "kind": "gadget",
+    "id": 23000242,
+    "tid": "TID_ACCESSORY_GROW_BUSH",
+    "descTid": "TID_ACCESSORY_GROW_BUSH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000242.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000024,
+    "kind": "gadget",
+    "id": 23000348,
+    "tid": "TID_ACCESSORY_ROSA_BUSH_CONTROL",
+    "descTid": "TID_ACCESSORY_ROSA_BUSH_CONTROL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000348.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000024,
+    "kind": "hypercharge",
+    "id": 23000628,
+    "tid": "TID_ROSA_OVERCHARGE",
+    "descTid": "TID_ROSA_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000025,
+    "kind": "starPower",
+    "id": 23000129,
+    "tid": "TID_SPEC_ABI_PROJECTILE_SPEED",
+    "descTid": "TID_SPEC_ABI_PROJECTILE_SPEED_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000129.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000025,
+    "kind": "starPower",
+    "id": 23000145,
+    "tid": "TID_SPEC_ABI_WHIRLWIND_SHIELD",
+    "descTid": "TID_SPEC_ABI_WHIRLWIND_SHIELD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000145.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000025,
+    "kind": "gadget",
+    "id": 23000262,
+    "tid": "TID_ACCESSORY_CARL_TRAIL",
+    "descTid": "TID_ACCESSORY_CARL_TRAIL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000262.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000025,
+    "kind": "gadget",
+    "id": 23000317,
+    "tid": "TID_ACCESSORY_WHIRLWIND_FLY",
+    "descTid": "TID_ACCESSORY_WHIRLWIND_FLY_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000317.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000025,
+    "kind": "hypercharge",
+    "id": 23000910,
+    "tid": "TID_WHIRLWIND_OVERCHARGE",
+    "descTid": "TID_WHIRLWIND_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "starPower",
+    "id": 23000134,
+    "tid": "TID_SPEC_ABI_SPED_FULL_AMMO",
+    "descTid": "TID_SPEC_ABI_SPED_FULL_AMMO_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000134.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "starPower",
+    "id": 23000146,
+    "tid": "TID_SPEC_ABI_SHIELD_HOMERUN",
+    "descTid": "TID_SPEC_ABI_SHIELD_HOMERUN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000146.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "gadget",
+    "id": 23000275,
+    "tid": "TID_ACCESSORY_BASEBALL_HEAL",
+    "descTid": "TID_ACCESSORY_BASEBALL_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000275.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "gadget",
+    "id": 23000458,
+    "tid": "TID_ACCESSORY_BASEBALL_STICKY",
+    "descTid": "TID_ACCESSORY_BASEBALL_STICKY_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000458.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000026,
+    "kind": "hypercharge",
+    "id": 23000683,
+    "tid": "TID_BASEBALL_OVERCHARGE",
+    "descTid": "TID_BASEBALL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "starPower",
+    "id": 23000168,
+    "tid": "TID_SPEC_ABI_LARGER_AREA_ULTI",
+    "descTid": "TID_SPEC_ABI_LARGER_AREA_ULTI_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000168.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "starPower",
+    "id": 23000181,
+    "tid": "TID_SPEC_ABI_PLUGGED_IN",
+    "descTid": "TID_SPEC_ABI_PLUGGED_IN_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000181.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "gadget",
+    "id": 23000259,
+    "tid": "TID_ACCESSORY_TELEPORT_TO_PET",
+    "descTid": "TID_ACCESSORY_TELEPORT_TO_PET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000259.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "gadget",
+    "id": 23000318,
+    "tid": "TID_ACCESSORY_ARCADE_DOUBLE",
+    "descTid": "TID_ACCESSORY_ARCADE_DOUBLE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000318.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000027,
+    "kind": "hypercharge",
+    "id": 23000854,
+    "tid": "TID_ARCADE_OVERCHARGE",
+    "descTid": "TID_ARCADE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000028,
+    "kind": "starPower",
+    "id": 23000186,
+    "tid": "TID_SPEC_ABI_SANDSTORM_DOT",
+    "descTid": "TID_SPEC_ABI_SANDSTORM_DOT_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000186.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000028,
+    "kind": "starPower",
+    "id": 23000187,
+    "tid": "TID_SPEC_ABI_SANDSTORM_HOT",
+    "descTid": "TID_SPEC_ABI_SANDSTORM_HOT_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000187.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000028,
+    "kind": "gadget",
+    "id": 23000270,
+    "tid": "TID_ACCESSORY_SANDY_SLEEP",
+    "descTid": "TID_ACCESSORY_SANDY_SLEEP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000270.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000028,
+    "kind": "gadget",
+    "id": 23000405,
+    "tid": "TID_ACCESSORY_SANDSTORM_STUN_SLEEP",
+    "descTid": "TID_ACCESSORY_SANDSTORM_STUN_SLEEP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000405.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000028,
+    "kind": "hypercharge",
+    "id": 23000685,
+    "tid": "TID_SANDSTORM_OVERCHARGE",
+    "descTid": "TID_SANDSTORM_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000029,
+    "kind": "starPower",
+    "id": 23000192,
+    "tid": "TID_SPEC_ABI_BEE_SNIPER_1",
+    "descTid": "TID_SPEC_ABI_BEE_SNIPER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000192.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000029,
+    "kind": "starPower",
+    "id": 23000193,
+    "tid": "TID_SPEC_ABI_BEE_SNIPER_2",
+    "descTid": "TID_SPEC_ABI_BEE_SNIPER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000193.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000029,
+    "kind": "gadget",
+    "id": 23000271,
+    "tid": "TID_ACCESSORY_BEE_SNIPER_SLOW",
+    "descTid": "TID_ACCESSORY_BEE_SNIPER_SLOW_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000271.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000029,
+    "kind": "gadget",
+    "id": 23000312,
+    "tid": "TID_ACCESSORY_EXTRA_BEE",
+    "descTid": "TID_ACCESSORY_EXTRA_BEE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000312.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000029,
+    "kind": "hypercharge",
+    "id": 23000895,
+    "tid": "TID_BEE_SNIPER_OVERCHARGE",
+    "descTid": "TID_BEE_SNIPER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "starPower",
+    "id": 23000198,
+    "tid": "TID_SPEC_ABI_TICK_DMG_GROW",
+    "descTid": "TID_SPEC_ABI_TICK_DMG_GROW_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000198.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "starPower",
+    "id": 23000199,
+    "tid": "TID_SPEC_ABI_HEAL_SUPER_DMG",
+    "descTid": "TID_SPEC_ABI_HEAL_SUPER_DMG_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000199.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "gadget",
+    "id": 23000274,
+    "tid": "TID_ACCESSORY_MUMMY_PUSH",
+    "descTid": "TID_ACCESSORY_MUMMY_PUSH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000274.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "gadget",
+    "id": 23000459,
+    "tid": "TID_ACCESSORY_MUMMY_ACID",
+    "descTid": "TID_ACCESSORY_MUMMY_ACID_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000459.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000030,
+    "kind": "hypercharge",
+    "id": 23000778,
+    "tid": "TID_MUMMY_OVERCHARGE",
+    "descTid": "TID_MUMMY_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000031,
+    "kind": "starPower",
+    "id": 23000204,
+    "tid": "TID_SPEC_ABI_SPAWNER_DUDE_1",
+    "descTid": "TID_SPEC_ABI_SPAWNER_DUDE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000204.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000031,
+    "kind": "starPower",
+    "id": 23000205,
+    "tid": "TID_SPEC_ABI_SPAWNER_DUDE_2",
+    "descTid": "TID_SPEC_ABI_SPAWNER_DUDE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000205.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000031,
+    "kind": "gadget",
+    "id": 23000269,
+    "tid": "TID_ACCESSORY_SPAWNER_DUDE_PROMOTE",
+    "descTid": "TID_ACCESSORY_SPAWNER_DUDE_PROMOTE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000269.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000031,
+    "kind": "gadget",
+    "id": 23000349,
+    "tid": "TID_ACCESSORY_SPAWNER_DUDE_EXTRA_PORTER",
+    "descTid": "TID_ACCESSORY_SPAWNER_DUDE_EXTRA_PORTER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000349.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000031,
+    "kind": "hypercharge",
+    "id": 23000899,
+    "tid": "TID_SPAWNER_DUDE_OVERCHARGE",
+    "descTid": "TID_SPAWNER_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "starPower",
+    "id": 23000210,
+    "tid": "TID_SPEC_ABI_SPEEDY_1",
+    "descTid": "TID_SPEC_ABI_SPEEDY_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000210.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "starPower",
+    "id": 23000211,
+    "tid": "TID_SPEC_ABI_SPEEDY_2",
+    "descTid": "TID_SPEC_ABI_SPEEDY_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000211.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "gadget",
+    "id": 23000254,
+    "tid": "TID_ACCESSORY_MAX_DASH",
+    "descTid": "TID_ACCESSORY_MAX_DASH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000254.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "gadget",
+    "id": 23000311,
+    "tid": "TID_ACCESSORY_REWIND",
+    "descTid": "TID_ACCESSORY_REWIND_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000311.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000032,
+    "kind": "hypercharge",
+    "id": 23000689,
+    "tid": "TID_SPEEDY_OVERCHARGE",
+    "descTid": "TID_SPEEDY_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000034,
+    "kind": "starPower",
+    "id": 23000222,
+    "tid": "TID_SPEC_ABI_DRILLER_1",
+    "descTid": "TID_SPEC_ABI_DRILLER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000222.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000034,
+    "kind": "starPower",
+    "id": 23000223,
+    "tid": "TID_SPEC_ABI_DRILLER_2",
+    "descTid": "TID_SPEC_ABI_DRILLER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000223.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000034,
+    "kind": "gadget",
+    "id": 23000256,
+    "tid": "TID_ACCESSORY_DRILLER_SPEED_BOOST",
+    "descTid": "TID_ACCESSORY_DRILLER_SPEED_BOOST_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000256.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000034,
+    "kind": "gadget",
+    "id": 23000486,
+    "tid": "TID_ACCESSORY_DRILLER_REBUILD",
+    "descTid": "TID_ACCESSORY_DRILLER_REBUILD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000486.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000034,
+    "kind": "hypercharge",
+    "id": 23000617,
+    "tid": "TID_DRILLER_OVERCHARGE",
+    "descTid": "TID_DRILLER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000035,
+    "kind": "starPower",
+    "id": 23000228,
+    "tid": "TID_SPEC_ABI_BLOWER_1",
+    "descTid": "TID_SPEC_ABI_BLOWER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000228.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000035,
+    "kind": "starPower",
+    "id": 23000229,
+    "tid": "TID_SPEC_ABI_BLOWER_2",
+    "descTid": "TID_SPEC_ABI_BLOWER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000229.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000035,
+    "kind": "gadget",
+    "id": 23000277,
+    "tid": "TID_ACCESSORY_BLOWER_TRAMPOLINE",
+    "descTid": "TID_ACCESSORY_BLOWER_TRAMPOLINE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000277.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000035,
+    "kind": "gadget",
+    "id": 23000407,
+    "tid": "TID_ACCESSORY_BLOWER_STOPPER",
+    "descTid": "TID_ACCESSORY_BLOWER_STOPPER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000407.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000035,
+    "kind": "hypercharge",
+    "id": 23000756,
+    "tid": "TID_BLOWER_OVERCHARGE",
+    "descTid": "TID_BLOWER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000036,
+    "kind": "starPower",
+    "id": 23000234,
+    "tid": "TID_SPEC_ABI_CONTROLLER_1",
+    "descTid": "TID_SPEC_ABI_CONTROLLER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000234.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000036,
+    "kind": "starPower",
+    "id": 23000235,
+    "tid": "TID_SPEC_ABI_CONTROLLER_2",
+    "descTid": "TID_SPEC_ABI_CONTROLLER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000235.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000036,
+    "kind": "gadget",
+    "id": 23000278,
+    "tid": "TID_ACCESSORY_CONTROLLER_EXPLODE",
+    "descTid": "TID_ACCESSORY_CONTROLLER_EXPLODE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000278.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000036,
+    "kind": "gadget",
+    "id": 23000353,
+    "tid": "TID_ACCESSORY_CONTROLLER_BOUNCE_BACK",
+    "descTid": "TID_ACCESSORY_CONTROLLER_BOUNCE_BACK_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000353.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000036,
+    "kind": "hypercharge",
+    "id": 23000825,
+    "tid": "TID_CONTROLLER_OVERCHARGE",
+    "descTid": "TID_CONTROLLER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000037,
+    "kind": "starPower",
+    "id": 23000240,
+    "tid": "TID_SPEC_ABI_WALLY_1",
+    "descTid": "TID_SPEC_ABI_WALLY_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000240.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000037,
+    "kind": "starPower",
+    "id": 23000241,
+    "tid": "TID_SPEC_ABI_WALLY_2",
+    "descTid": "TID_SPEC_ABI_WALLY_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000241.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000037,
+    "kind": "gadget",
+    "id": 23000244,
+    "tid": "TID_ACCESSORY_WALLY_HEAL",
+    "descTid": "TID_ACCESSORY_WALLY_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000244.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000037,
+    "kind": "gadget",
+    "id": 23000315,
+    "tid": "TID_ACCESSORY_WALLY_REPOSITION",
+    "descTid": "TID_ACCESSORY_WALLY_REPOSITION_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000315.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000037,
+    "kind": "hypercharge",
+    "id": 23000681,
+    "tid": "TID_WALLY_OVERCHARGE",
+    "descTid": "TID_WALLY_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "starPower",
+    "id": 23000283,
+    "tid": "TID_SPEC_ABI_POWER_LEVELER_1",
+    "descTid": "TID_SPEC_ABI_POWER_LEVELER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000283.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "starPower",
+    "id": 23000284,
+    "tid": "TID_SPEC_ABI_POWER_LEVELER_2",
+    "descTid": "TID_SPEC_ABI_POWER_LEVELER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000284.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "gadget",
+    "id": 23000285,
+    "tid": "TID_ACCESSORY_POWER_LEVELER_EXTRA_LEVELS",
+    "descTid": "TID_ACCESSORY_POWER_LEVELER_EXTRA_LEVELS_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000285.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "gadget",
+    "id": 23000485,
+    "tid": "TID_ACCESSORY_POWER_LEVELER_SHIELD",
+    "descTid": "TID_ACCESSORY_POWER_LEVELER_SHIELD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000485.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000038,
+    "kind": "hypercharge",
+    "id": 23000826,
+    "tid": "TID_POWER_LEVELER_OVERCHARGE",
+    "descTid": "TID_POWER_LEVELER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "starPower",
+    "id": 23000300,
+    "tid": "TID_SPEC_ABI_PERCENTER_1",
+    "descTid": "TID_SPEC_ABI_PERCENTER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000300.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "starPower",
+    "id": 23000301,
+    "tid": "TID_SPEC_ABI_PERCENTER_2",
+    "descTid": "TID_SPEC_ABI_PERCENTER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000301.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "gadget",
+    "id": 23000302,
+    "tid": "TID_ACCESSORY_PERCENTER_STATIC_DAMAGE",
+    "descTid": "TID_ACCESSORY_PERCENTER_STATIC_DAMAGE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000302.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "gadget",
+    "id": 23000457,
+    "tid": "TID_ACCESSORY_PERCENTER_LIFESTEAL",
+    "descTid": "TID_ACCESSORY_PERCENTER_LIFESTEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000457.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000039,
+    "kind": "hypercharge",
+    "id": 23000632,
+    "tid": "TID_PERCENTER_OVERCHARGE",
+    "descTid": "TID_PERCENTER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "starPower",
+    "id": 23000307,
+    "tid": "TID_SPEC_ABI_FIRE_DUDE_1",
+    "descTid": "TID_SPEC_ABI_FIRE_DUDE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000307.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "starPower",
+    "id": 23000308,
+    "tid": "TID_SPEC_ABI_FIRE_DUDE_2",
+    "descTid": "TID_SPEC_ABI_FIRE_DUDE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000308.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "gadget",
+    "id": 23000309,
+    "tid": "TID_ACCESSORY_FIRE_DUDE_SPILL",
+    "descTid": "TID_ACCESSORY_FIRE_DUDE_SPILL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000309.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "gadget",
+    "id": 23000488,
+    "tid": "TID_ACCESSORY_FIRE_DUDE_FLAME_SHIELD",
+    "descTid": "TID_ACCESSORY_FIRE_DUDE_FLAME_SHIELD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000488.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000040,
+    "kind": "hypercharge",
+    "id": 23000970,
+    "tid": "TID_FIRE_DUDE_OVERCHARGE",
+    "descTid": "TID_FIRE_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000041,
+    "kind": "starPower",
+    "id": 23000324,
+    "tid": "TID_SPEC_ABI_ICE_DUDE_1",
+    "descTid": "TID_SPEC_ABI_ICE_DUDE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000324.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000041,
+    "kind": "starPower",
+    "id": 23000325,
+    "tid": "TID_SPEC_ABI_ICE_DUDE_2",
+    "descTid": "TID_SPEC_ABI_ICE_DUDE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000325.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000041,
+    "kind": "gadget",
+    "id": 23000326,
+    "tid": "TID_ACCESSORY_ICE_DUDE_GADGET",
+    "descTid": "TID_ACCESSORY_ICE_DUDE_GADGET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000326.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000041,
+    "kind": "gadget",
+    "id": 23000400,
+    "tid": "TID_ACCESSORY_ICE_DUDE_AREA_FREEZE",
+    "descTid": "TID_ACCESSORY_ICE_DUDE_AREA_FREEZE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000400.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000041,
+    "kind": "hypercharge",
+    "id": 23000631,
+    "tid": "TID_LOU_OVERCHARGE",
+    "descTid": "TID_LOU_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000042,
+    "kind": "starPower",
+    "id": 23000331,
+    "tid": "TID_SPEC_ABI_SNAKE_OIL_1",
+    "descTid": "TID_SPEC_ABI_SNAKE_OIL_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000331.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000042,
+    "kind": "starPower",
+    "id": 23000332,
+    "tid": "TID_SPEC_ABI_SNAKE_OIL_2",
+    "descTid": "TID_SPEC_ABI_SNAKE_OIL_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000332.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000042,
+    "kind": "gadget",
+    "id": 23000333,
+    "tid": "TID_ACCESSORY_SNAKE_OIL_HEAL",
+    "descTid": "TID_ACCESSORY_SNAKE_OIL_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000333.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000042,
+    "kind": "gadget",
+    "id": 23000461,
+    "tid": "TID_ACCESSORY_SNAKE_OIL_SPREAD",
+    "descTid": "TID_ACCESSORY_SNAKE_OIL_SPREAD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000461.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000042,
+    "kind": "hypercharge",
+    "id": 23001026,
+    "tid": "TID_SNAKEOIL_OVERCHARGE",
+    "descTid": "TID_SNAKEOIL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "starPower",
+    "id": 23000338,
+    "tid": "TID_SPEC_ABI_ENRAGER_1",
+    "descTid": "TID_SPEC_ABI_ENRAGER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000338.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "starPower",
+    "id": 23000339,
+    "tid": "TID_SPEC_ABI_ENRAGER_2",
+    "descTid": "TID_SPEC_ABI_ENRAGER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000339.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "gadget",
+    "id": 23000340,
+    "tid": "TID_ACCESSORY_ENRAGER_SUPER_BOOST",
+    "descTid": "TID_ACCESSORY_ENRAGER_SUPER_BOOST_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000340.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "gadget",
+    "id": 23000403,
+    "tid": "TID_ACCESSORY_ENRAGER_PROTECTION",
+    "descTid": "TID_ACCESSORY_ENRAGER_PROTECTION_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000403.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000043,
+    "kind": "hypercharge",
+    "id": 23000654,
+    "tid": "TID_ENRAGER_OVERCHARGE",
+    "descTid": "TID_ENRAGER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000044,
+    "kind": "starPower",
+    "id": 23000345,
+    "tid": "TID_SPEC_ABI_RUFFS_1",
+    "descTid": "TID_SPEC_ABI_RUFFS_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000345.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000044,
+    "kind": "starPower",
+    "id": 23000346,
+    "tid": "TID_SPEC_ABI_RUFFS_2",
+    "descTid": "TID_SPEC_ABI_RUFFS_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000346.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000044,
+    "kind": "gadget",
+    "id": 23000347,
+    "tid": "TID_ACCESSORY_RUFFS_COVER",
+    "descTid": "TID_ACCESSORY_RUFFS_COVER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000347.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000044,
+    "kind": "gadget",
+    "id": 23000402,
+    "tid": "TID_ACCESSORY_RUFFS_AIR_STRIKE",
+    "descTid": "TID_ACCESSORY_RUFFS_AIR_STRIKE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000402.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000044,
+    "kind": "hypercharge",
+    "id": 23000860,
+    "tid": "TID_RUFFS_OVERCHARGE",
+    "descTid": "TID_RUFFS_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000045,
+    "kind": "starPower",
+    "id": 23000362,
+    "tid": "TID_SPEC_ABI_ROLLER_1",
+    "descTid": "TID_SPEC_ABI_ROLLER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000362.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000045,
+    "kind": "starPower",
+    "id": 23000363,
+    "tid": "TID_SPEC_ABI_ROLLER_2",
+    "descTid": "TID_SPEC_ABI_ROLLER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000363.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000045,
+    "kind": "gadget",
+    "id": 23000364,
+    "tid": "TID_ACCESSORY_ROLLER_SPEED",
+    "descTid": "TID_ACCESSORY_ROLLER_SPEED_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000364.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000045,
+    "kind": "gadget",
+    "id": 23000401,
+    "tid": "TID_ACCESSORY_ROLLER_MEGA_STUNT",
+    "descTid": "TID_ACCESSORY_ROLLER_MEGA_STUNT_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000401.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000045,
+    "kind": "hypercharge",
+    "id": 23000858,
+    "tid": "TID_ROLLER_OVERCHARGE",
+    "descTid": "TID_ROLLER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000046,
+    "kind": "starPower",
+    "id": 23000369,
+    "tid": "TID_SPEC_ABI_ELECTRO_SNIPER_1",
+    "descTid": "TID_SPEC_ABI_ELECTRO_SNIPER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000369.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000046,
+    "kind": "starPower",
+    "id": 23000370,
+    "tid": "TID_SPEC_ABI_ELECTRO_SNIPER_2",
+    "descTid": "TID_SPEC_ABI_ELECTRO_SNIPER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000370.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000046,
+    "kind": "gadget",
+    "id": 23000371,
+    "tid": "TID_ACCESSORY_ELECTRO_SNIPER_TRAP",
+    "descTid": "TID_ACCESSORY_ELECTRO_SNIPER_TRAP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000371.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000046,
+    "kind": "gadget",
+    "id": 23000463,
+    "tid": "TID_ACCESSORY_ELECTRO_SNIPER_BOUNCE",
+    "descTid": "TID_ACCESSORY_ELECTRO_SNIPER_BOUNCE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000463.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000046,
+    "kind": "hypercharge",
+    "id": 23000682,
+    "tid": "TID_ELECTRO_SNIPER_OVERCHARGE",
+    "descTid": "TID_ELECTRO_SNIPER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000047,
+    "kind": "starPower",
+    "id": 23000376,
+    "tid": "TID_SPEC_ABI_STICKY_BOMB_1",
+    "descTid": "TID_SPEC_ABI_STICKY_BOMB_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000376.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000047,
+    "kind": "starPower",
+    "id": 23000377,
+    "tid": "TID_SPEC_ABI_STICKY_BOMB_2",
+    "descTid": "TID_SPEC_ABI_STICKY_BOMB_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000377.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000047,
+    "kind": "gadget",
+    "id": 23000378,
+    "tid": "TID_ACCESSORY_STICKY_BOMB_RANGE",
+    "descTid": "TID_ACCESSORY_STICKY_BOMB_RANGE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000378.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000047,
+    "kind": "gadget",
+    "id": 23000462,
+    "tid": "TID_ACCESSORY_STICKY_BOMB_VISION",
+    "descTid": "TID_ACCESSORY_STICKY_BOMB_VISION_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000462.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000047,
+    "kind": "hypercharge",
+    "id": 23000823,
+    "tid": "TID_STICKY_BOMB_OVERCHARGE",
+    "descTid": "TID_STICKY_BOMB_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000048,
+    "kind": "starPower",
+    "id": 23000383,
+    "tid": "TID_SPEC_ABI_CROSS_BOMBER_1",
+    "descTid": "TID_SPEC_ABI_CROSS_BOMBER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000383.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000048,
+    "kind": "starPower",
+    "id": 23000384,
+    "tid": "TID_SPEC_ABI_CROSS_BOMBER_2",
+    "descTid": "TID_SPEC_ABI_CROSS_BOMBER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000384.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000048,
+    "kind": "gadget",
+    "id": 23000385,
+    "tid": "TID_ACCESSORY_CROSS_BOMBER_WATCHTOWER",
+    "descTid": "TID_ACCESSORY_CROSS_BOMBER_WATCHTOWER_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000385.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000048,
+    "kind": "gadget",
+    "id": 23000460,
+    "tid": "TID_ACCESSORY_CROSS_BOMBER_BURST",
+    "descTid": "TID_ACCESSORY_CROSS_BOMBER_BURST_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000460.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000048,
+    "kind": "hypercharge",
+    "id": 23000920,
+    "tid": "TID_CROSS_BOMBER_OVERCHARGE",
+    "descTid": "TID_CROSS_BOMBER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000049,
+    "kind": "starPower",
+    "id": 23000390,
+    "tid": "TID_SPEC_ABI_ROPE_DUDE_1",
+    "descTid": "TID_SPEC_ABI_ROPE_DUDE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000390.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000049,
+    "kind": "starPower",
+    "id": 23000391,
+    "tid": "TID_SPEC_ABI_ROPE_DUDE_2",
+    "descTid": "TID_SPEC_ABI_ROPE_DUDE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000391.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000049,
+    "kind": "gadget",
+    "id": 23000392,
+    "tid": "TID_ACCESSORY_ROPE_DUDE_WEAK_ULTI",
+    "descTid": "TID_ACCESSORY_ROPE_DUDE_WEAK_ULTI_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000392.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000049,
+    "kind": "gadget",
+    "id": 23000490,
+    "tid": "TID_ACCESSORY_ROPE_DUDE_VISION",
+    "descTid": "TID_ACCESSORY_ROPE_DUDE_VISION_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000490.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000049,
+    "kind": "hypercharge",
+    "id": 23000680,
+    "tid": "TID_ROPE_DUDE_OVERCHARGE",
+    "descTid": "TID_ROPE_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "starPower",
+    "id": 23000397,
+    "tid": "TID_SPEC_ABI_ASSAULT_SHOTGUN_1",
+    "descTid": "TID_SPEC_ABI_ASSAULT_SHOTGUN_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000397.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "starPower",
+    "id": 23000398,
+    "tid": "TID_SPEC_ABI_ASSAULT_SHOTGUN_2",
+    "descTid": "TID_SPEC_ABI_ASSAULT_SHOTGUN_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000398.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "gadget",
+    "id": 23000399,
+    "tid": "TID_ACCESSORY_ASSAULT_SHOTGUN_BOMB",
+    "descTid": "TID_ACCESSORY_ASSAULT_SHOTGUN_BOMB_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000399.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "gadget",
+    "id": 23000487,
+    "tid": "TID_ACCESSORY_ASSAULT_SHOTGUN_PROJECTILES",
+    "descTid": "TID_ACCESSORY_ASSAULT_SHOTGUN_PROJECTILES_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000487.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000050,
+    "kind": "hypercharge",
+    "id": 23000971,
+    "tid": "TID_ASSAULT_SHOTGUN_OVERCHARGE",
+    "descTid": "TID_ASSAULT_SHOTGUN_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000051,
+    "kind": "starPower",
+    "id": 23000414,
+    "tid": "TID_SPEC_ABI_KNIGHT_1",
+    "descTid": "TID_SPEC_ABI_KNIGHT_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000414.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000051,
+    "kind": "starPower",
+    "id": 23000415,
+    "tid": "TID_SPEC_ABI_KNIGHT_2",
+    "descTid": "TID_SPEC_ABI_KNIGHT_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000415.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000051,
+    "kind": "gadget",
+    "id": 23000416,
+    "tid": "TID_ACCESSORY_KNIGHT_HEAL",
+    "descTid": "TID_ACCESSORY_KNIGHT_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000416.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000051,
+    "kind": "gadget",
+    "id": 23000465,
+    "tid": "TID_ACCESSORY_KNIGHT_RAGE",
+    "descTid": "TID_ACCESSORY_KNIGHT_RAGE_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000465.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000051,
+    "kind": "hypercharge",
+    "id": 23000890,
+    "tid": "TID_KNIGHT_OVERCHARGE",
+    "descTid": "TID_KNIGHT_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "starPower",
+    "id": 23000421,
+    "tid": "TID_SPEC_ABI_MECHA_DUDE_1",
+    "descTid": "TID_SPEC_ABI_MECHA_DUDE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000421.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "starPower",
+    "id": 23000422,
+    "tid": "TID_SPEC_ABI_MECHA_DUDE_2",
+    "descTid": "TID_SPEC_ABI_MECHA_DUDE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000422.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "gadget",
+    "id": 23000423,
+    "tid": "TID_ACCESSORY_MECHA_DUDE_HEAL",
+    "descTid": "TID_ACCESSORY_MECHA_DUDE_HEAL_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000423.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "gadget",
+    "id": 23000489,
+    "tid": "TID_ACCESSORY_MECHA_DUDE_TOWER_RELOAD",
+    "descTid": "TID_ACCESSORY_MECHA_DUDE_TOWER_RELOAD_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000489.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000052,
+    "kind": "hypercharge",
+    "id": 23000897,
+    "tid": "TID_MECHA_DUDE_OVERCHARGE",
+    "descTid": "TID_MECHA_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000053,
+    "kind": "starPower",
+    "id": 23000431,
+    "tid": "TID_SPEC_ABI_DUPLICATOR_1",
+    "descTid": "TID_SPEC_ABI_DUPLICATOR_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000431.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000053,
+    "kind": "starPower",
+    "id": 23000432,
+    "tid": "TID_SPEC_ABI_DUPLICATOR_2",
+    "descTid": "TID_SPEC_ABI_DUPLICATOR_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000432.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000053,
+    "kind": "gadget",
+    "id": 23000433,
+    "tid": "TID_ACCESSORY_DUPLICATOR_GADGET",
+    "descTid": "TID_ACCESSORY_DUPLICATOR_GADGET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000433.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000053,
+    "kind": "gadget",
+    "id": 23000456,
+    "tid": "TID_ACCESSORY_DUPLICATOR_SWAP",
+    "descTid": "TID_ACCESSORY_DUPLICATOR_SWAP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000456.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000053,
+    "kind": "hypercharge",
+    "id": 23000909,
+    "tid": "TID_DUPLICATOR_OVERCHARGE",
+    "descTid": "TID_DUPLICATOR_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000054,
+    "kind": "starPower",
+    "id": 23000438,
+    "tid": "TID_SPEC_ABI_KICKER_DUDE_1",
+    "descTid": "TID_SPEC_ABI_KICKER_DUDE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000438.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000054,
+    "kind": "starPower",
+    "id": 23000439,
+    "tid": "TID_SPEC_ABI_KICKER_DUDE_2",
+    "descTid": "TID_SPEC_ABI_KICKER_DUDE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000439.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000054,
+    "kind": "gadget",
+    "id": 23000440,
+    "tid": "TID_ACCESSORY_KICKER_DUDE_GADGET",
+    "descTid": "TID_ACCESSORY_KICKER_DUDE_GADGET_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000440.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000054,
+    "kind": "gadget",
+    "id": 23000464,
+    "tid": "TID_ACCESSORY_KICKER_DUDE_SWEEP",
+    "descTid": "TID_ACCESSORY_KICKER_DUDE_SWEEP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000464.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000054,
+    "kind": "hypercharge",
+    "id": 23000653,
+    "tid": "TID_KICKER_DUDE_OVERCHARGE",
+    "descTid": "TID_KICKER_DUDE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000056,
+    "kind": "starPower",
+    "id": 23000452,
+    "tid": "TID_SPEC_ABI_FLEA_1",
+    "descTid": "TID_SPEC_ABI_FLEA_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000452.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000056,
+    "kind": "starPower",
+    "id": 23000453,
+    "tid": "TID_SPEC_ABI_FLEA_2",
+    "descTid": "TID_SPEC_ABI_FLEA_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000453.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000056,
+    "kind": "gadget",
+    "id": 23000454,
+    "tid": "TID_ACCESSORY_FLEA_JUMP",
+    "descTid": "TID_ACCESSORY_FLEA_JUMP_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000454.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000056,
+    "kind": "gadget",
+    "id": 23000455,
+    "tid": "TID_ACCESSORY_FLEA_SYMBIOSIS",
+    "descTid": "TID_ACCESSORY_FLEA_SYMBIOSIS_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000455.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000056,
+    "kind": "hypercharge",
+    "id": 23000892,
+    "tid": "TID_FLEA_OVERCHARGE",
+    "descTid": "TID_FLEA_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000057,
+    "kind": "starPower",
+    "id": 23000470,
+    "tid": "TID_SPEC_ABI_JETPACK_GIRL_1",
+    "descTid": "TID_SPEC_ABI_JETPACK_GIRL_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000470.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000057,
+    "kind": "starPower",
+    "id": 23000471,
+    "tid": "TID_SPEC_ABI_JETPACK_GIRL_2",
+    "descTid": "TID_SPEC_ABI_JETPACK_GIRL_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000471.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000057,
+    "kind": "gadget",
+    "id": 23000472,
+    "tid": "TID_ACCESSORY_JETPACK_GIRL_GADGET_1",
+    "descTid": "TID_ACCESSORY_JETPACK_GIRL_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000472.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000057,
+    "kind": "gadget",
+    "id": 23000473,
+    "tid": "TID_ACCESSORY_JETPACK_GIRL_GADGET_2",
+    "descTid": "TID_ACCESSORY_JETPACK_GIRL_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000473.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000057,
+    "kind": "hypercharge",
+    "id": 23000888,
+    "tid": "TID_JETPACK_GIRL_OVERCHARGE",
+    "descTid": "TID_JETPACK_GIRL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000058,
+    "kind": "starPower",
+    "id": 23000478,
+    "tid": "TID_SPEC_ABI_CANNON_GIRL_1",
+    "descTid": "TID_SPEC_ABI_CANNON_GIRL_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000478.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000058,
+    "kind": "starPower",
+    "id": 23000479,
+    "tid": "TID_SPEC_ABI_CANNON_GIRL_2",
+    "descTid": "TID_SPEC_ABI_CANNON_GIRL_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000479.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000058,
+    "kind": "gadget",
+    "id": 23000480,
+    "tid": "TID_ACCESSORY_CANNON_GIRL_SPEED",
+    "descTid": "TID_ACCESSORY_CANNON_GIRL_SPEED_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000480.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000058,
+    "kind": "gadget",
+    "id": 23000481,
+    "tid": "TID_ACCESSORY_CANNON_GIRL_DASH",
+    "descTid": "TID_ACCESSORY_CANNON_GIRL_DASH_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000481.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000058,
+    "kind": "hypercharge",
+    "id": 23001003,
+    "tid": "TID_CANNON_GIRL_OVERCHARGE",
+    "descTid": "TID_CANNON_GIRL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000059,
+    "kind": "starPower",
+    "id": 23000495,
+    "tid": "TID_SPEC_ABI_SILENCER_1",
+    "descTid": "TID_SPEC_ABI_SILENCER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000495.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000059,
+    "kind": "starPower",
+    "id": 23000496,
+    "tid": "TID_SPEC_ABI_SILENCER_2",
+    "descTid": "TID_SPEC_ABI_SILENCER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000496.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000059,
+    "kind": "gadget",
+    "id": 23000497,
+    "tid": "TID_ACCESSORY_SILENCER_GADGET_1",
+    "descTid": "TID_ACCESSORY_SILENCER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000497.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000059,
+    "kind": "gadget",
+    "id": 23000498,
+    "tid": "TID_ACCESSORY_SILENCER_GADGET_2",
+    "descTid": "TID_ACCESSORY_SILENCER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000498.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000059,
+    "kind": "hypercharge",
+    "id": 23000857,
+    "tid": "TID_SILENCER_OVERCHARGE",
+    "descTid": "TID_SILENCER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000060,
+    "kind": "starPower",
+    "id": 23000503,
+    "tid": "TID_SPEC_ABI_WEAPON_THROWER_1",
+    "descTid": "TID_SPEC_ABI_WEAPON_THROWER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000503.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000060,
+    "kind": "starPower",
+    "id": 23000504,
+    "tid": "TID_SPEC_ABI_WEAPON_THROWER_2",
+    "descTid": "TID_SPEC_ABI_WEAPON_THROWER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000504.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000060,
+    "kind": "gadget",
+    "id": 23000505,
+    "tid": "TID_ACCESSORY_WEAPON_THROWER_GADGET_1",
+    "descTid": "TID_ACCESSORY_WEAPON_THROWER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000505.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000060,
+    "kind": "gadget",
+    "id": 23000506,
+    "tid": "TID_ACCESSORY_WEAPON_THROWER_GADGET_2",
+    "descTid": "TID_ACCESSORY_WEAPON_THROWER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000506.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000060,
+    "kind": "hypercharge",
+    "id": 23000923,
+    "tid": "TID_WEAPON_THROWER_OVERCHARGE",
+    "descTid": "TID_WEAPON_THROWER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "starPower",
+    "id": 23000511,
+    "tid": "TID_SPEC_ABI_SOUL_COLLECTOR_1",
+    "descTid": "TID_SPEC_ABI_SOUL_COLLECTOR_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000511.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "starPower",
+    "id": 23000512,
+    "tid": "TID_SPEC_ABI_SOUL_COLLECTOR_2",
+    "descTid": "TID_SPEC_ABI_SOUL_COLLECTOR_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000512.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "gadget",
+    "id": 23000513,
+    "tid": "TID_ACCESSORY_SOUL_COLLECTOR_GADGET_1",
+    "descTid": "TID_ACCESSORY_SOUL_COLLECTOR_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000513.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "gadget",
+    "id": 23000514,
+    "tid": "TID_ACCESSORY_SOUL_COLLECTOR_GADGET_2",
+    "descTid": "TID_ACCESSORY_SOUL_COLLECTOR_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000514.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000061,
+    "kind": "hypercharge",
+    "id": 23000919,
+    "tid": "TID_SOUL_COLLECTOR_OVERCHARGE",
+    "descTid": "TID_SOUL_COLLECTOR_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000062,
+    "kind": "starPower",
+    "id": 23000519,
+    "tid": "TID_SPEC_ABI_SHIELD_TANK_1",
+    "descTid": "TID_SPEC_ABI_SHIELD_TANK_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000519.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000062,
+    "kind": "starPower",
+    "id": 23000520,
+    "tid": "TID_SPEC_ABI_SHIELD_TANK_2",
+    "descTid": "TID_SPEC_ABI_SHIELD_TANK_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000520.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000062,
+    "kind": "gadget",
+    "id": 23000521,
+    "tid": "TID_ACCESSORY_SHIELD_TANK_GADGET_1",
+    "descTid": "TID_ACCESSORY_SHIELD_TANK_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000521.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000062,
+    "kind": "gadget",
+    "id": 23000522,
+    "tid": "TID_ACCESSORY_SHIELD_TANK_GADGET_2",
+    "descTid": "TID_ACCESSORY_SHIELD_TANK_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000522.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000062,
+    "kind": "hypercharge",
+    "id": 23000921,
+    "tid": "TID_SHIELD_TANK_OVERCHARGE",
+    "descTid": "TID_SHIELD_TANK_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000063,
+    "kind": "starPower",
+    "id": 23000527,
+    "tid": "TID_SPEC_ABI_JESTER_1",
+    "descTid": "TID_SPEC_ABI_JESTER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000527.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000063,
+    "kind": "starPower",
+    "id": 23000528,
+    "tid": "TID_SPEC_ABI_JESTER_2",
+    "descTid": "TID_SPEC_ABI_JESTER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000528.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000063,
+    "kind": "gadget",
+    "id": 23000529,
+    "tid": "TID_ACCESSORY_JESTER_GADGET_1",
+    "descTid": "TID_ACCESSORY_JESTER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000529.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000063,
+    "kind": "gadget",
+    "id": 23000530,
+    "tid": "TID_ACCESSORY_JESTER_GADGET_2",
+    "descTid": "TID_ACCESSORY_JESTER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000530.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000063,
+    "kind": "hypercharge",
+    "id": 23000900,
+    "tid": "TID_JESTER_OVERCHARGE",
+    "descTid": "TID_JESTER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000064,
+    "kind": "starPower",
+    "id": 23000535,
+    "tid": "TID_SPEC_ABI_DOORMAN_1",
+    "descTid": "TID_SPEC_ABI_DOORMAN_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000535.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000064,
+    "kind": "starPower",
+    "id": 23000536,
+    "tid": "TID_SPEC_ABI_DOORMAN_2",
+    "descTid": "TID_SPEC_ABI_DOORMAN_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000536.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000064,
+    "kind": "gadget",
+    "id": 23000537,
+    "tid": "TID_ACCESSORY_DOORMAN_GADGET_1",
+    "descTid": "TID_ACCESSORY_DOORMAN_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000537.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000064,
+    "kind": "gadget",
+    "id": 23000538,
+    "tid": "TID_ACCESSORY_DOORMAN_GADGET_2",
+    "descTid": "TID_ACCESSORY_DOORMAN_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000538.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000064,
+    "kind": "hypercharge",
+    "id": 23000889,
+    "tid": "TID_DOOR_MAN_OVERCHARGE",
+    "descTid": "TID_DOOR_MAN_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000065,
+    "kind": "starPower",
+    "id": 23000543,
+    "tid": "TID_SPEC_ABI_BEAMER_1",
+    "descTid": "TID_SPEC_ABI_BEAMER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000543.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000065,
+    "kind": "starPower",
+    "id": 23000544,
+    "tid": "TID_SPEC_ABI_BEAMER_2",
+    "descTid": "TID_SPEC_ABI_BEAMER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000544.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000065,
+    "kind": "gadget",
+    "id": 23000545,
+    "tid": "TID_ACCESSORY_BEAMER_GADGET_1",
+    "descTid": "TID_ACCESSORY_BEAMER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000545.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000065,
+    "kind": "gadget",
+    "id": 23000546,
+    "tid": "TID_ACCESSORY_BEAMER_GADGET_2",
+    "descTid": "TID_ACCESSORY_BEAMER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000546.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000065,
+    "kind": "hypercharge",
+    "id": 23000894,
+    "tid": "TID_BEAMER_OVERCHARGE",
+    "descTid": "TID_BEAMER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000066,
+    "kind": "starPower",
+    "id": 23000553,
+    "tid": "TID_SPEC_ABI_SPLITTER_1",
+    "descTid": "TID_SPEC_ABI_SPLITTER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000553.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000066,
+    "kind": "starPower",
+    "id": 23000554,
+    "tid": "TID_SPEC_ABI_SPLITTER_2",
+    "descTid": "TID_SPEC_ABI_SPLITTER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000554.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000066,
+    "kind": "gadget",
+    "id": 23000555,
+    "tid": "TID_ACCESSORY_SPLITTER_GADGET_1",
+    "descTid": "TID_ACCESSORY_SPLITTER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000555.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000066,
+    "kind": "gadget",
+    "id": 23000556,
+    "tid": "TID_ACCESSORY_SPLITTER_GADGET_2",
+    "descTid": "TID_ACCESSORY_SPLITTER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000556.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000066,
+    "kind": "hypercharge",
+    "id": 23001004,
+    "tid": "TID_ARTIE_OVERCHARGE",
+    "descTid": "TID_ARTIE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000067,
+    "kind": "starPower",
+    "id": 23000561,
+    "tid": "TID_SPEC_ABI_PUPPETEER_1",
+    "descTid": "TID_SPEC_ABI_PUPPETEER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000561.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000067,
+    "kind": "starPower",
+    "id": 23000562,
+    "tid": "TID_SPEC_ABI_PUPPETEER_2",
+    "descTid": "TID_SPEC_ABI_PUPPETEER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000562.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000067,
+    "kind": "gadget",
+    "id": 23000563,
+    "tid": "TID_ACCESSORY_PUPPETEER_GADGET_1",
+    "descTid": "TID_ACCESSORY_PUPPETEER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000563.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000067,
+    "kind": "gadget",
+    "id": 23000564,
+    "tid": "TID_ACCESSORY_PUPPETEER_GADGET_2",
+    "descTid": "TID_ACCESSORY_PUPPETEER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000564.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000067,
+    "kind": "hypercharge",
+    "id": 23000922,
+    "tid": "TID_PUPPETEER_OVERCHARGE",
+    "descTid": "TID_PUPPETEER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000068,
+    "kind": "starPower",
+    "id": 23000569,
+    "tid": "TID_SPEC_ABI_MAISIE_1",
+    "descTid": "TID_SPEC_ABI_MAISIE_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000569.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000068,
+    "kind": "starPower",
+    "id": 23000570,
+    "tid": "TID_SPEC_ABI_MAISIE_2",
+    "descTid": "TID_SPEC_ABI_MAISIE_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000570.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000068,
+    "kind": "gadget",
+    "id": 23000571,
+    "tid": "TID_ACCESSORY_MAISIE_GADGET_1",
+    "descTid": "TID_ACCESSORY_MAISIE_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000571.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000068,
+    "kind": "gadget",
+    "id": 23000572,
+    "tid": "TID_ACCESSORY_MAISIE_GADGET_2",
+    "descTid": "TID_ACCESSORY_MAISIE_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000572.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000068,
+    "kind": "hypercharge",
+    "id": 23000629,
+    "tid": "TID_MAISIE_OVERCHARGE",
+    "descTid": "TID_MAISIE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000069,
+    "kind": "starPower",
+    "id": 23000577,
+    "tid": "TID_SPEC_ABI_FISHTANK_1",
+    "descTid": "TID_SPEC_ABI_FISHTANK_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000577.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000069,
+    "kind": "starPower",
+    "id": 23000578,
+    "tid": "TID_SPEC_ABI_FISHTANK_2",
+    "descTid": "TID_SPEC_ABI_FISHTANK_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000578.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000069,
+    "kind": "gadget",
+    "id": 23000579,
+    "tid": "TID_ACCESSORY_FISHTANK_GADGET_1",
+    "descTid": "TID_ACCESSORY_FISHTANK_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000579.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000069,
+    "kind": "gadget",
+    "id": 23000580,
+    "tid": "TID_ACCESSORY_FISHTANK_GADGET_2",
+    "descTid": "TID_ACCESSORY_FISHTANK_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000580.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000069,
+    "kind": "hypercharge",
+    "id": 23000893,
+    "tid": "TID_FISHTANK_OVERCHARGE",
+    "descTid": "TID_FISHTANK_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000070,
+    "kind": "starPower",
+    "id": 23000585,
+    "tid": "TID_SPEC_ABI_DUELIST_1",
+    "descTid": "TID_SPEC_ABI_DUELIST_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000585.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000070,
+    "kind": "starPower",
+    "id": 23000586,
+    "tid": "TID_SPEC_ABI_DUELIST_2",
+    "descTid": "TID_SPEC_ABI_DUELIST_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000586.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000070,
+    "kind": "gadget",
+    "id": 23000587,
+    "tid": "TID_ACCESSORY_DUELIST_GADGET_1",
+    "descTid": "TID_ACCESSORY_DUELIST_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000587.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000070,
+    "kind": "gadget",
+    "id": 23000588,
+    "tid": "TID_ACCESSORY_DUELIST_GADGET_2",
+    "descTid": "TID_ACCESSORY_DUELIST_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000588.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000070,
+    "kind": "hypercharge",
+    "id": 23000684,
+    "tid": "TID_DUELIST_OVERCHARGE",
+    "descTid": "TID_DUELIST_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000071,
+    "kind": "starPower",
+    "id": 23000593,
+    "tid": "TID_SPEC_ABI_REVIVER_1",
+    "descTid": "TID_SPEC_ABI_REVIVER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000593.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000071,
+    "kind": "starPower",
+    "id": 23000594,
+    "tid": "TID_SPEC_ABI_REVIVER_2",
+    "descTid": "TID_SPEC_ABI_REVIVER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000594.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000071,
+    "kind": "gadget",
+    "id": 23000595,
+    "tid": "TID_ACCESSORY_REVIVER_GADGET_1",
+    "descTid": "TID_ACCESSORY_REVIVER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000595.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000071,
+    "kind": "gadget",
+    "id": 23000596,
+    "tid": "TID_ACCESSORY_REVIVER_GADGET_2",
+    "descTid": "TID_ACCESSORY_REVIVER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000596.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000071,
+    "kind": "hypercharge",
+    "id": 23001006,
+    "tid": "TID_REVIVER_OVERCHARGE",
+    "descTid": "TID_REVIVER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000072,
+    "kind": "starPower",
+    "id": 23000601,
+    "tid": "TID_SPEC_ABI_COOKER_1",
+    "descTid": "TID_SPEC_ABI_COOKER_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000601.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000072,
+    "kind": "starPower",
+    "id": 23000602,
+    "tid": "TID_SPEC_ABI_COOKER_2",
+    "descTid": "TID_SPEC_ABI_COOKER_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000602.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000072,
+    "kind": "gadget",
+    "id": 23000603,
+    "tid": "TID_ACCESSORY_COOKER_GADGET_1",
+    "descTid": "TID_ACCESSORY_COOKER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000603.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000072,
+    "kind": "gadget",
+    "id": 23000604,
+    "tid": "TID_ACCESSORY_COOKER_GADGET_2",
+    "descTid": "TID_ACCESSORY_COOKER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000604.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000072,
+    "kind": "hypercharge",
+    "id": 23000618,
+    "tid": "TID_COOKER_OVERCHARGE",
+    "descTid": "TID_COOKER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "starPower",
+    "id": 23000609,
+    "tid": "TID_SPEC_ABI_CONDUCTOR_1",
+    "descTid": "TID_SPEC_ABI_CONDUCTOR_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000609.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "starPower",
+    "id": 23000610,
+    "tid": "TID_SPEC_ABI_CONDUCTOR_2",
+    "descTid": "TID_SPEC_ABI_CONDUCTOR_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000610.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "gadget",
+    "id": 23000611,
+    "tid": "TID_ACCESSORY_CONDUCTOR_GADGET_1",
+    "descTid": "TID_ACCESSORY_CONDUCTOR_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000611.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "gadget",
+    "id": 23000612,
+    "tid": "TID_ACCESSORY_CONDUCTOR_GADGET_2",
+    "descTid": "TID_ACCESSORY_CONDUCTOR_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000612.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000073,
+    "kind": "hypercharge",
+    "id": 23001005,
+    "tid": "TID_CONDUCTOR_OVERCHARGE",
+    "descTid": "TID_CONDUCTOR_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000074,
+    "kind": "starPower",
+    "id": 23000623,
+    "tid": "TID_COCOONER_SP_1",
+    "descTid": "TID_COCOONER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000623.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000074,
+    "kind": "starPower",
+    "id": 23000624,
+    "tid": "TID_COCOONER_SP_2",
+    "descTid": "TID_COCOONER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000624.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000074,
+    "kind": "gadget",
+    "id": 23000625,
+    "tid": "TID_COCOONER_GADGET_1",
+    "descTid": "TID_COCOONER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000625.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000074,
+    "kind": "gadget",
+    "id": 23000626,
+    "tid": "TID_COCOONER_GADGET_2",
+    "descTid": "TID_COCOONER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000626.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000074,
+    "kind": "hypercharge",
+    "id": 23000627,
+    "tid": "TID_COCOONER_OVERCHARGE",
+    "descTid": "TID_COCOONER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000075,
+    "kind": "starPower",
+    "id": 23000637,
+    "tid": "TID_LEAPER_SP_1",
+    "descTid": "TID_LEAPER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000637.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000075,
+    "kind": "starPower",
+    "id": 23000638,
+    "tid": "TID_LEAPER_SP_2",
+    "descTid": "TID_LEAPER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000638.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000075,
+    "kind": "gadget",
+    "id": 23000639,
+    "tid": "TID_LEAPER_GADGET_1",
+    "descTid": "TID_LEAPER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000639.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000075,
+    "kind": "gadget",
+    "id": 23000640,
+    "tid": "TID_LEAPER_GADGET_2",
+    "descTid": "TID_LEAPER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000640.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000075,
+    "kind": "hypercharge",
+    "id": 23000641,
+    "tid": "TID_LEAPER_OVERCHARGE",
+    "descTid": "TID_LEAPER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000076,
+    "kind": "starPower",
+    "id": 23000646,
+    "tid": "TID_ATTACHER_SP_1",
+    "descTid": "TID_ATTACHER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000646.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000076,
+    "kind": "starPower",
+    "id": 23000647,
+    "tid": "TID_ATTACHER_SP_2",
+    "descTid": "TID_ATTACHER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000647.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000076,
+    "kind": "gadget",
+    "id": 23000648,
+    "tid": "TID_ATTACHER_GADGET_1",
+    "descTid": "TID_ATTACHER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000648.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000076,
+    "kind": "gadget",
+    "id": 23000649,
+    "tid": "TID_ATTACHER_GADGET_2",
+    "descTid": "TID_ATTACHER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000649.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000076,
+    "kind": "hypercharge",
+    "id": 23001007,
+    "tid": "TID_ATTACHER_OVERCHARGE",
+    "descTid": "TID_ATTACHER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000077,
+    "kind": "starPower",
+    "id": 23000659,
+    "tid": "TID_TWINS_SP_1",
+    "descTid": "TID_TWINS_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000659.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000077,
+    "kind": "starPower",
+    "id": 23000660,
+    "tid": "TID_TWINS_SP_2",
+    "descTid": "TID_TWINS_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000660.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000077,
+    "kind": "gadget",
+    "id": 23000661,
+    "tid": "TID_TWINS_GADGET_1",
+    "descTid": "TID_TWINS_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000661.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000077,
+    "kind": "gadget",
+    "id": 23000662,
+    "tid": "TID_TWINS_GADGET_2",
+    "descTid": "TID_TWINS_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000662.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000077,
+    "kind": "hypercharge",
+    "id": 23001053,
+    "tid": "TID_TWINS_OVERCHARGE",
+    "descTid": "TID_TWINS_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000078,
+    "kind": "starPower",
+    "id": 23000667,
+    "tid": "TID_AXE_JUGGLER_SP_1",
+    "descTid": "TID_AXE_JUGGLER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000667.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000078,
+    "kind": "starPower",
+    "id": 23000668,
+    "tid": "TID_AXE_JUGGLER_SP_2",
+    "descTid": "TID_AXE_JUGGLER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000668.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000078,
+    "kind": "gadget",
+    "id": 23000669,
+    "tid": "TID_AXE_JUGGLER_GADGET_1",
+    "descTid": "TID_AXE_JUGGLER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000669.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000078,
+    "kind": "gadget",
+    "id": 23000670,
+    "tid": "TID_AXE_JUGGLER_GADGET_2",
+    "descTid": "TID_AXE_JUGGLER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000670.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000078,
+    "kind": "hypercharge",
+    "id": 23000887,
+    "tid": "TID_AXE_JUGGLER_OVERCHARGE",
+    "descTid": "TID_AXE_JUGGLER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000079,
+    "kind": "starPower",
+    "id": 23000675,
+    "tid": "TID_INSECTMAN_SP_1",
+    "descTid": "TID_INSECTMAN_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000675.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000079,
+    "kind": "starPower",
+    "id": 23000676,
+    "tid": "TID_INSECTMAN_SP_2",
+    "descTid": "TID_INSECTMAN_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000676.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000079,
+    "kind": "gadget",
+    "id": 23000677,
+    "tid": "TID_INSECTMAN_GADGET_1",
+    "descTid": "TID_INSECTMAN_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000677.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000079,
+    "kind": "gadget",
+    "id": 23000678,
+    "tid": "TID_INSECTMAN_GADGET_2",
+    "descTid": "TID_INSECTMAN_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000678.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000079,
+    "kind": "hypercharge",
+    "id": 23000759,
+    "tid": "TID_INSECTMAN_OVERCHARGE",
+    "descTid": "TID_INSECTMAN_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000080,
+    "kind": "starPower",
+    "id": 23000734,
+    "tid": "TID_DRAGON_RIDER_SP_1",
+    "descTid": "TID_DRAGON_RIDER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000734.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000080,
+    "kind": "starPower",
+    "id": 23000735,
+    "tid": "TID_DRAGON_RIDER_SP_2",
+    "descTid": "TID_DRAGON_RIDER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000735.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000080,
+    "kind": "gadget",
+    "id": 23000736,
+    "tid": "TID_DRAGON_RIDER_GADGET_1",
+    "descTid": "TID_DRAGON_RIDER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000736.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000080,
+    "kind": "gadget",
+    "id": 23000737,
+    "tid": "TID_DRAGON_RIDER_GADGET_2",
+    "descTid": "TID_DRAGON_RIDER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000737.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000080,
+    "kind": "hypercharge",
+    "id": 23000993,
+    "tid": "TID_DRAGON_RIDER_OVERCHARGE",
+    "descTid": "TID_DRAGON_RIDER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000081,
+    "kind": "starPower",
+    "id": 23000752,
+    "tid": "TID_AMBUSHER_SP_1",
+    "descTid": "TID_AMBUSHER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000752.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000081,
+    "kind": "starPower",
+    "id": 23000753,
+    "tid": "TID_AMBUSHER_SP_2",
+    "descTid": "TID_AMBUSHER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000753.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000081,
+    "kind": "gadget",
+    "id": 23000754,
+    "tid": "TID_AMBUSHER_GADGET_1",
+    "descTid": "TID_AMBUSHER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000754.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000081,
+    "kind": "gadget",
+    "id": 23000755,
+    "tid": "TID_AMBUSHER_GADGET_2",
+    "descTid": "TID_AMBUSHER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000755.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000081,
+    "kind": "hypercharge",
+    "id": 23000924,
+    "tid": "TID_AMBUSHER_OVERCHARGE",
+    "descTid": "TID_AMBUSHER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000082,
+    "kind": "starPower",
+    "id": 23000764,
+    "tid": "TID_PAINTER_SP_1",
+    "descTid": "TID_PAINTER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000764.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000082,
+    "kind": "starPower",
+    "id": 23000765,
+    "tid": "TID_PAINTER_SP_2",
+    "descTid": "TID_PAINTER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000765.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000082,
+    "kind": "gadget",
+    "id": 23000766,
+    "tid": "TID_PAINTER_GADGET_1",
+    "descTid": "TID_PAINTER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000766.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000082,
+    "kind": "gadget",
+    "id": 23000767,
+    "tid": "TID_PAINTER_GADGET_2",
+    "descTid": "TID_PAINTER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000767.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000082,
+    "kind": "hypercharge",
+    "id": 23000891,
+    "tid": "TID_PAINTER_OVERCHARGE",
+    "descTid": "TID_PAINTER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000083,
+    "kind": "starPower",
+    "id": 23000772,
+    "tid": "TID_CRAB_SP_1",
+    "descTid": "TID_CRAB_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000772.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000083,
+    "kind": "starPower",
+    "id": 23000773,
+    "tid": "TID_CRAB_SP_2",
+    "descTid": "TID_CRAB_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000773.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000083,
+    "kind": "gadget",
+    "id": 23000774,
+    "tid": "TID_CRAB_GADGET_1",
+    "descTid": "TID_CRAB_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000774.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000083,
+    "kind": "gadget",
+    "id": 23000775,
+    "tid": "TID_CRAB_GADGET_2",
+    "descTid": "TID_CRAB_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000775.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000083,
+    "kind": "hypercharge",
+    "id": 23000933,
+    "tid": "TID_CRAB_OVERCHARGE",
+    "descTid": "TID_CRAB_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000084,
+    "kind": "starPower",
+    "id": 23000804,
+    "tid": "TID_DIGGER_SP_1",
+    "descTid": "TID_DIGGER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000804.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000084,
+    "kind": "starPower",
+    "id": 23000805,
+    "tid": "TID_DIGGER_SP_2",
+    "descTid": "TID_DIGGER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000805.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000084,
+    "kind": "gadget",
+    "id": 23000806,
+    "tid": "TID_DIGGER_GADGET_1",
+    "descTid": "TID_DIGGER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000806.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000084,
+    "kind": "gadget",
+    "id": 23000807,
+    "tid": "TID_DIGGER_GADGET_2",
+    "descTid": "TID_DIGGER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000807.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000084,
+    "kind": "hypercharge",
+    "id": 23001002,
+    "tid": "TID_DIGGER_OVERCHARGE",
+    "descTid": "TID_DIGGER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000085,
+    "kind": "starPower",
+    "id": 23000815,
+    "tid": "TID_SAMURAI_SP_1",
+    "descTid": "TID_SAMURAI_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000815.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000085,
+    "kind": "starPower",
+    "id": 23000816,
+    "tid": "TID_SAMURAI_SP_2",
+    "descTid": "TID_SAMURAI_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000816.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000085,
+    "kind": "gadget",
+    "id": 23000817,
+    "tid": "TID_SAMURAI_GADGET_1",
+    "descTid": "TID_SAMURAI_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000817.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000085,
+    "kind": "gadget",
+    "id": 23000818,
+    "tid": "TID_SAMURAI_GADGET_2",
+    "descTid": "TID_SAMURAI_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000818.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000085,
+    "kind": "hypercharge",
+    "id": 23000972,
+    "tid": "TID_SAMURAI_OVERCHARGE",
+    "descTid": "TID_SAMURAI_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "starPower",
+    "id": 23000832,
+    "tid": "TID_GHOST_SP_1",
+    "descTid": "TID_GHOST_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000832.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "starPower",
+    "id": 23000833,
+    "tid": "TID_GHOST_SP_2",
+    "descTid": "TID_GHOST_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000833.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "gadget",
+    "id": 23000834,
+    "tid": "TID_GHOST_GADGET_1",
+    "descTid": "TID_GHOST_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000834.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "gadget",
+    "id": 23000835,
+    "tid": "TID_GHOST_GADGET_2",
+    "descTid": "TID_GHOST_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000835.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000086,
+    "kind": "hypercharge",
+    "id": 23000979,
+    "tid": "TID_GHOST_OVERCHARGE",
+    "descTid": "TID_GHOST_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000087,
+    "kind": "starPower",
+    "id": 23000848,
+    "tid": "TID_VOODOO_SP_1",
+    "descTid": "TID_VOODOO_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000848.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000087,
+    "kind": "starPower",
+    "id": 23000849,
+    "tid": "TID_VOODOO_SP_2",
+    "descTid": "TID_VOODOO_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000849.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000087,
+    "kind": "gadget",
+    "id": 23000850,
+    "tid": "TID_VOODOO_GADGET_1",
+    "descTid": "TID_VOODOO_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000850.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000087,
+    "kind": "gadget",
+    "id": 23000851,
+    "tid": "TID_VOODOO_GADGET_2",
+    "descTid": "TID_VOODOO_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000851.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000087,
+    "kind": "hypercharge",
+    "id": 23001034,
+    "tid": "TID_VOODOO_OVERCHARGE",
+    "descTid": "TID_VOODOO_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000089,
+    "kind": "starPower",
+    "id": 23000875,
+    "tid": "TID_MEEPLE_SP_1",
+    "descTid": "TID_MEEPLE_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000875.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000089,
+    "kind": "starPower",
+    "id": 23000876,
+    "tid": "TID_MEEPLE_SP_2",
+    "descTid": "TID_MEEPLE_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000876.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000089,
+    "kind": "gadget",
+    "id": 23000877,
+    "tid": "TID_MEEPLE_GADGET_1",
+    "descTid": "TID_MEEPLE_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000877.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000089,
+    "kind": "gadget",
+    "id": 23000878,
+    "tid": "TID_MEEPLE_GADGET_2",
+    "descTid": "TID_MEEPLE_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000878.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000089,
+    "kind": "hypercharge",
+    "id": 23001055,
+    "tid": "TID_MEEPLE_OVERCHARGE",
+    "descTid": "TID_MEEPLE_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000090,
+    "kind": "starPower",
+    "id": 23000883,
+    "tid": "TID_SKATER_SP_1",
+    "descTid": "TID_SKATER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000883.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000090,
+    "kind": "starPower",
+    "id": 23000884,
+    "tid": "TID_SKATER_SP_2",
+    "descTid": "TID_SKATER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000884.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000090,
+    "kind": "gadget",
+    "id": 23000885,
+    "tid": "TID_SKATER_GADGET_1",
+    "descTid": "TID_SKATER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000885.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000090,
+    "kind": "gadget",
+    "id": 23000886,
+    "tid": "TID_SKATER_GADGET_2",
+    "descTid": "TID_SKATER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000886.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000090,
+    "kind": "hypercharge",
+    "id": 23001033,
+    "tid": "TID_SKATER_OVERCHARGE",
+    "descTid": "TID_SKATER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000091,
+    "kind": "starPower",
+    "id": 23000905,
+    "tid": "TID_MORNINGSTAR_SP_1",
+    "descTid": "TID_MORNINGSTAR_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000905.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000091,
+    "kind": "starPower",
+    "id": 23000906,
+    "tid": "TID_MORNINGSTAR_SP_2",
+    "descTid": "TID_MORNINGSTAR_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000906.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000091,
+    "kind": "gadget",
+    "id": 23000907,
+    "tid": "TID_MORNINGSTAR_GADGET_1",
+    "descTid": "TID_MORNINGSTAR_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000907.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000091,
+    "kind": "gadget",
+    "id": 23000908,
+    "tid": "TID_MORNINGSTAR_GADGET_2",
+    "descTid": "TID_MORNINGSTAR_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000908.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000091,
+    "kind": "hypercharge",
+    "id": 23000980,
+    "tid": "TID_MORNINGSTAR_OVERCHARGE",
+    "descTid": "TID_MORNINGSTAR_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000092,
+    "kind": "starPower",
+    "id": 23000915,
+    "tid": "TID_CHRONOMANCER_SP_1",
+    "descTid": "TID_CHRONOMANCER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000915.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000092,
+    "kind": "starPower",
+    "id": 23000916,
+    "tid": "TID_CHRONOMANCER_SP_2",
+    "descTid": "TID_CHRONOMANCER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000916.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000092,
+    "kind": "gadget",
+    "id": 23000917,
+    "tid": "TID_CHRONOMANCER_GADGET_1",
+    "descTid": "TID_CHRONOMANCER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000917.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000092,
+    "kind": "gadget",
+    "id": 23000918,
+    "tid": "TID_CHRONOMANCER_GADGET_2",
+    "descTid": "TID_CHRONOMANCER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000918.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000092,
+    "kind": "hypercharge",
+    "id": 23001051,
+    "tid": "TID_CHRONOMANCER_OVERCHARGE",
+    "descTid": "TID_CHRONOMANCER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000093,
+    "kind": "starPower",
+    "id": 23000929,
+    "tid": "TID_ALTERNATOR_SP_1",
+    "descTid": "TID_ALTERNATOR_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000929.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000093,
+    "kind": "starPower",
+    "id": 23000930,
+    "tid": "TID_ALTERNATOR_SP_2",
+    "descTid": "TID_ALTERNATOR_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000930.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000093,
+    "kind": "gadget",
+    "id": 23000931,
+    "tid": "TID_ALTERNATOR_GADGET_1",
+    "descTid": "TID_ALTERNATOR_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000931.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000093,
+    "kind": "gadget",
+    "id": 23000932,
+    "tid": "TID_ALTERNATOR_GADGET_2",
+    "descTid": "TID_ALTERNATOR_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000932.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000093,
+    "kind": "hypercharge",
+    "id": 23001054,
+    "tid": "TID_ALTERNATOR_OVERCHARGE",
+    "descTid": "TID_ALTERNATOR_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000094,
+    "kind": "starPower",
+    "id": 23000938,
+    "tid": "TID_GEISHA_SP_1",
+    "descTid": "TID_GEISHA_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000938.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000094,
+    "kind": "starPower",
+    "id": 23000939,
+    "tid": "TID_GEISHA_SP_2",
+    "descTid": "TID_GEISHA_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000939.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000094,
+    "kind": "gadget",
+    "id": 23000940,
+    "tid": "TID_GEISHA_GADGET_1",
+    "descTid": "TID_GEISHA_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000940.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000094,
+    "kind": "gadget",
+    "id": 23000941,
+    "tid": "TID_GEISHA_GADGET_2",
+    "descTid": "TID_GEISHA_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000941.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000094,
+    "kind": "hypercharge",
+    "id": 23000943,
+    "tid": "TID_GEISHA_OVERCHARGE",
+    "descTid": "TID_GEISHA_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000095,
+    "kind": "starPower",
+    "id": 23000989,
+    "tid": "TID_STALKER_SP_1",
+    "descTid": "TID_STALKER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000989.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000095,
+    "kind": "starPower",
+    "id": 23000990,
+    "tid": "TID_STALKER_SP_2",
+    "descTid": "TID_STALKER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000990.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000095,
+    "kind": "gadget",
+    "id": 23000991,
+    "tid": "TID_STALKER_GADGET_1",
+    "descTid": "TID_STALKER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000991.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000095,
+    "kind": "gadget",
+    "id": 23000992,
+    "tid": "TID_STALKER_GADGET_2",
+    "descTid": "TID_STALKER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23000992.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000095,
+    "kind": "hypercharge",
+    "id": 23001139,
+    "tid": "TID_STALKER_OVERCHARGE",
+    "descTid": "TID_STALKER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000096,
+    "kind": "starPower",
+    "id": 23000998,
+    "tid": "TID_DOMAIN_SP_1",
+    "descTid": "TID_DOMAIN_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000998.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000096,
+    "kind": "starPower",
+    "id": 23000999,
+    "tid": "TID_DOMAIN_SP_2",
+    "descTid": "TID_DOMAIN_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23000999.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000096,
+    "kind": "gadget",
+    "id": 23001000,
+    "tid": "TID_DOMAIN_GADGET_1",
+    "descTid": "TID_DOMAIN_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001000.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000096,
+    "kind": "gadget",
+    "id": 23001001,
+    "tid": "TID_DOMAIN_GADGET_2",
+    "descTid": "TID_DOMAIN_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001001.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000096,
+    "kind": "hypercharge",
+    "id": 23001052,
+    "tid": "TID_DOMAIN_OVERCHARGE",
+    "descTid": "TID_DOMAIN_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000097,
+    "kind": "starPower",
+    "id": 23001039,
+    "tid": "TID_DANCER_SP_1",
+    "descTid": "TID_DANCER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001039.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000097,
+    "kind": "starPower",
+    "id": 23001040,
+    "tid": "TID_DANCER_SP_2",
+    "descTid": "TID_DANCER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001040.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000097,
+    "kind": "gadget",
+    "id": 23001041,
+    "tid": "TID_DANCER_GADGET_1",
+    "descTid": "TID_DANCER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001041.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000097,
+    "kind": "gadget",
+    "id": 23001042,
+    "tid": "TID_DANCER_GADGET_2",
+    "descTid": "TID_DANCER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001042.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000097,
+    "kind": "hypercharge",
+    "id": 23001138,
+    "tid": "TID_DANCER_OVERCHARGE",
+    "descTid": "TID_DANCER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000098,
+    "kind": "starPower",
+    "id": 23001047,
+    "tid": "TID_FURY_SP_1",
+    "descTid": "TID_FURY_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001047.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000098,
+    "kind": "starPower",
+    "id": 23001048,
+    "tid": "TID_FURY_SP_2",
+    "descTid": "TID_FURY_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001048.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000098,
+    "kind": "gadget",
+    "id": 23001049,
+    "tid": "TID_FURY_GADGET_1",
+    "descTid": "TID_FURY_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001049.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000098,
+    "kind": "gadget",
+    "id": 23001050,
+    "tid": "TID_FURY_GADGET_2",
+    "descTid": "TID_FURY_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001050.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000098,
+    "kind": "hypercharge",
+    "id": 23001137,
+    "tid": "TID_FURY_OVERCHARGE",
+    "descTid": "TID_FURY_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000099,
+    "kind": "starPower",
+    "id": 23001060,
+    "tid": "TID_BULLETSTORM_SP_1",
+    "descTid": "TID_BULLETSTORM_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001060.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000099,
+    "kind": "starPower",
+    "id": 23001061,
+    "tid": "TID_BULLETSTORM_SP_2",
+    "descTid": "TID_BULLETSTORM_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001061.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000099,
+    "kind": "gadget",
+    "id": 23001062,
+    "tid": "TID_BULLETSTORM_GADGET_1",
+    "descTid": "TID_BULLETSTORM_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001062.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000099,
+    "kind": "gadget",
+    "id": 23001063,
+    "tid": "TID_BULLETSTORM_GADGET_2",
+    "descTid": "TID_BULLETSTORM_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001063.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000099,
+    "kind": "hypercharge",
+    "id": 23001220,
+    "tid": "TID_BULLETSTORM_OVERCHARGE",
+    "descTid": "TID_BULLETSTORM_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000100,
+    "kind": "starPower",
+    "id": 23001068,
+    "tid": "TID_DAREDEVIL_SP_1",
+    "descTid": "TID_DAREDEVIL_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001068.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000100,
+    "kind": "starPower",
+    "id": 23001069,
+    "tid": "TID_DAREDEVIL_SP_2",
+    "descTid": "TID_DAREDEVIL_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001069.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000100,
+    "kind": "gadget",
+    "id": 23001070,
+    "tid": "TID_DAREDEVIL_GADGET_1",
+    "descTid": "TID_DAREDEVIL_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001070.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000100,
+    "kind": "gadget",
+    "id": 23001071,
+    "tid": "TID_DAREDEVIL_GADGET_2",
+    "descTid": "TID_DAREDEVIL_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001071.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000100,
+    "kind": "hypercharge",
+    "id": 23001211,
+    "tid": "TID_DAREDEVIL_OVERCHARGE",
+    "descTid": "TID_DAREDEVIL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000101,
+    "kind": "starPower",
+    "id": 23001181,
+    "tid": "TID_MENDER_SP_1",
+    "descTid": "TID_MENDER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001181.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000101,
+    "kind": "starPower",
+    "id": 23001182,
+    "tid": "TID_MENDER_SP_2",
+    "descTid": "TID_MENDER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001182.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000101,
+    "kind": "gadget",
+    "id": 23001183,
+    "tid": "TID_MENDER_GADGET_1",
+    "descTid": "TID_MENDER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001183.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000101,
+    "kind": "gadget",
+    "id": 23001184,
+    "tid": "TID_MENDER_GADGET_2",
+    "descTid": "TID_MENDER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001184.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000101,
+    "kind": "hypercharge",
+    "id": 23001221,
+    "tid": "TID_MENDER_OVERCHARGE",
+    "descTid": "TID_MENDER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000102,
+    "kind": "starPower",
+    "id": 23001189,
+    "tid": "TID_SHADOWDEMON_SP_1",
+    "descTid": "TID_SHADOWDEMON_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001189.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000102,
+    "kind": "starPower",
+    "id": 23001190,
+    "tid": "TID_SHADOWDEMON_SP_2",
+    "descTid": "TID_SHADOWDEMON_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001190.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000102,
+    "kind": "gadget",
+    "id": 23001191,
+    "tid": "TID_SHADOWDEMON_GADGET_1",
+    "descTid": "TID_SHADOWDEMON_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001191.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000102,
+    "kind": "gadget",
+    "id": 23001192,
+    "tid": "TID_SHADOWDEMON_GADGET_2",
+    "descTid": "TID_SHADOWDEMON_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001192.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000102,
+    "kind": "hypercharge",
+    "id": 23001231,
+    "tid": "TID_SHADOWDEMON_OVERCHARGE",
+    "descTid": "TID_SHADOWDEMON_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000103,
+    "kind": "starPower",
+    "id": 23001216,
+    "tid": "TID_REDIRECTER_SP_1",
+    "descTid": "TID_REDIRECTER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001216.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000103,
+    "kind": "starPower",
+    "id": 23001217,
+    "tid": "TID_REDIRECTER_SP_2",
+    "descTid": "TID_REDIRECTER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001217.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000103,
+    "kind": "gadget",
+    "id": 23001218,
+    "tid": "TID_REDIRECTER_GADGET_1",
+    "descTid": "TID_REDIRECTER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001218.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000103,
+    "kind": "gadget",
+    "id": 23001219,
+    "tid": "TID_REDIRECTER_GADGET_2",
+    "descTid": "TID_REDIRECTER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001219.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000103,
+    "kind": "hypercharge",
+    "id": 23001283,
+    "tid": "TID_REDIRECTER_OVERCHARGE",
+    "descTid": "TID_REDIRECTER_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000104,
+    "kind": "starPower",
+    "id": 23001245,
+    "tid": "TID_GLADIATOR_SP_1",
+    "descTid": "TID_GLADIATOR_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001245.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000104,
+    "kind": "starPower",
+    "id": 23001246,
+    "tid": "TID_GLADIATOR_SP_2",
+    "descTid": "TID_GLADIATOR_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001246.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000104,
+    "kind": "gadget",
+    "id": 23001247,
+    "tid": "TID_GLADIATOR_GADGET_1",
+    "descTid": "TID_GLADIATOR_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001247.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000104,
+    "kind": "gadget",
+    "id": 23001248,
+    "tid": "TID_GLADIATOR_GADGET_2",
+    "descTid": "TID_GLADIATOR_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001248.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000104,
+    "kind": "hypercharge",
+    "id": 23001285,
+    "tid": "TID_GLADIATOR_OVERCHARGE",
+    "descTid": "TID_GLADIATOR_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000105,
+    "kind": "starPower",
+    "id": 23001253,
+    "tid": "TID_MAGICAL_GIRL_SP_1",
+    "descTid": "TID_MAGICAL_GIRL_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001253.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000105,
+    "kind": "starPower",
+    "id": 23001254,
+    "tid": "TID_MAGICAL_GIRL_SP_2",
+    "descTid": "TID_MAGICAL_GIRL_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001254.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000105,
+    "kind": "gadget",
+    "id": 23001255,
+    "tid": "TID_MAGICAL_GIRL_GADGET_1",
+    "descTid": "TID_MAGICAL_GIRL_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001255.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000105,
+    "kind": "gadget",
+    "id": 23001256,
+    "tid": "TID_MAGICAL_GIRL_GADGET_2",
+    "descTid": "TID_MAGICAL_GIRL_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001256.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000105,
+    "kind": "hypercharge",
+    "id": 23001284,
+    "tid": "TID_MAGICAL_GIRL_OVERCHARGE",
+    "descTid": "TID_MAGICAL_GIRL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000106,
+    "kind": "starPower",
+    "id": 23001279,
+    "tid": "TID_ROCK_SP_1",
+    "descTid": "TID_ROCK_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001279.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000106,
+    "kind": "starPower",
+    "id": 23001280,
+    "tid": "TID_ROCK_SP_2",
+    "descTid": "TID_ROCK_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001280.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000106,
+    "kind": "gadget",
+    "id": 23001281,
+    "tid": "TID_ROCK_GADGET_1",
+    "descTid": "TID_ROCK_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001281.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000106,
+    "kind": "gadget",
+    "id": 23001282,
+    "tid": "TID_ROCK_GADGET_2",
+    "descTid": "TID_ROCK_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001282.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000106,
+    "kind": "hypercharge",
+    "id": 23001431,
+    "tid": "TID_ROCK_OVERCHARGE",
+    "descTid": "TID_ROCK_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000107,
+    "kind": "starPower",
+    "id": 23001295,
+    "tid": "TID_KATANA_KID_SP_1",
+    "descTid": "TID_KATANA_KID_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001295.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000107,
+    "kind": "starPower",
+    "id": 23001296,
+    "tid": "TID_KATANA_KID_SP_2",
+    "descTid": "TID_KATANA_KID_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001296.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000107,
+    "kind": "gadget",
+    "id": 23001297,
+    "tid": "TID_KATANA_KID_GADGET_1",
+    "descTid": "TID_KATANA_KID_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001297.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000107,
+    "kind": "gadget",
+    "id": 23001298,
+    "tid": "TID_KATANA_KID_GADGET_2",
+    "descTid": "TID_KATANA_KID_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001298.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000107,
+    "kind": "hypercharge",
+    "id": 23001472,
+    "tid": "TID_KATANA_KID_OVERCHARGE",
+    "descTid": "TID_KATANA_KID_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000108,
+    "kind": "starPower",
+    "id": 23001318,
+    "tid": "TID_FUTURE_GIRL_SP_1",
+    "descTid": "TID_FUTURE_GIRL_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001318.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000108,
+    "kind": "starPower",
+    "id": 23001319,
+    "tid": "TID_FUTURE_GIRL_SP_2",
+    "descTid": "TID_FUTURE_GIRL_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001319.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000108,
+    "kind": "gadget",
+    "id": 23001320,
+    "tid": "TID_FUTURE_GIRL_GADGET_1",
+    "descTid": "TID_FUTURE_GIRL_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001320.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000108,
+    "kind": "gadget",
+    "id": 23001321,
+    "tid": "TID_FUTURE_GIRL_GADGET_2",
+    "descTid": "TID_FUTURE_GIRL_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001321.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000108,
+    "kind": "hypercharge",
+    "id": 23001473,
+    "tid": "TID_FUTURE_GIRL_OVERCHARGE",
+    "descTid": "TID_FUTURE_GIRL_OVERCHARGE_DESC",
+    "imageUrl": null,
+    "coinPrice": 5000
+  },
+  {
+    "brawlerId": 16000109,
+    "kind": "starPower",
+    "id": 23001442,
+    "tid": "TID_ATTRACTOR_SP_1",
+    "descTid": "TID_ATTRACTOR_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001442.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000109,
+    "kind": "starPower",
+    "id": 23001443,
+    "tid": "TID_ATTRACTOR_SP_2",
+    "descTid": "TID_ATTRACTOR_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001443.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000109,
+    "kind": "gadget",
+    "id": 23001444,
+    "tid": "TID_ATTRACTOR_GADGET_1",
+    "descTid": "TID_ATTRACTOR_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001444.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000109,
+    "kind": "gadget",
+    "id": 23001445,
+    "tid": "TID_ATTRACTOR_GADGET_2",
+    "descTid": "TID_ATTRACTOR_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001445.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000110,
+    "kind": "starPower",
+    "id": 23001450,
+    "tid": "TID_STACKER_SP_1",
+    "descTid": "TID_STACKER_SP_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001450.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000110,
+    "kind": "starPower",
+    "id": 23001451,
+    "tid": "TID_STACKER_SP_2",
+    "descTid": "TID_STACKER_SP_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/star-powers/regular/23001451.png",
+    "coinPrice": 2000
+  },
+  {
+    "brawlerId": 16000110,
+    "kind": "gadget",
+    "id": 23001452,
+    "tid": "TID_STACKER_GADGET_1",
+    "descTid": "TID_STACKER_GADGET_1_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001452.png",
+    "coinPrice": 1000
+  },
+  {
+    "brawlerId": 16000110,
+    "kind": "gadget",
+    "id": 23001453,
+    "tid": "TID_STACKER_GADGET_2",
+    "descTid": "TID_STACKER_GADGET_2_DESC",
+    "imageUrl": "https://cdn.brawlify.com/gadgets/regular/23001453.png",
+    "coinPrice": 1000
+  }
+]

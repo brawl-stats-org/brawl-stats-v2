@@ -1,0 +1,16 @@
+# twins
+
+--- Twins_gatget_1 | gadget | TID_TWINS_GADGET_2_DESC
+raw  Dash towards Lawrie while Lawrie dashes towards you, healing both for <VALUE1>% of max health.
+now  Dash towards Lawrie while Lawrie dashes towards you, healing both for <VALUE1>% of max health.
+  VALUE1  -  -> 25
+
+--- Twins_unique | star power | TID_TWINS_SP_1_DESC
+raw  While Lawrie is in range, transfer <VALUE2>% incoming damage to himself instead.
+now  While Lawrie is in range, transfer 30% incoming damage to himself instead.
+  VALUE2  30  -> 30
+
+--- Twins_unique_2 | star power | TID_TWINS_SP_2_DESC
+raw  While Lawrie is in range, reload <VALUE2>% of your ammo whenever he damages an enemy.
+now  While Lawrie is in range, reload 30% of your ammo whenever he damages an enemy.
+  VALUE2  30  -> 30

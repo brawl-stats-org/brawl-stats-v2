@@ -1,0 +1,61 @@
+# spike
+
+--- Cactus_Cover | gadget | TID_ACCESSORY_CACTUS_COVER_DESC
+raw  Spike throws a large cactus with <!card.accessory.skill.summonedCharacter.maxHealth.scaleToLevel> health to give cover to teammates. If destroyed, the cactus bursts, and all nearby teammates recover <!card.accessory.skill.cactusMinionHealing.scaleToLevel> health.
+now  Spike throws a large cactus with 3500 health to give cover to teammates. If destroyed, the cactus bursts, and all nearby teammates recover <!card.accessory.skill.cactusMinionHealing.scaleToLevel> health.
+  card.accessory.skill.summonedCharacter.maxHealth.scaleToLevel  3500  -> 3500
+  card.accessory.skill.cactusMinionHealing.scaleToLevel  -  -> 1800
+
+--- Cactus_Cover | gadget | TID_CACTUS_BUDDY_GADGET_2_DESC
+raw  Spike throws a large cactus with <!card.accessory.skill.summonedCharacter.maxHealth.scaleToLevel> health to give cover to teammates. If destroyed, the cactus bursts, and all nearby teammates recover <!card.accessory.skill.cactusMinionHealing.scaleToLevel> health. When destroyed, the plant also deals <!buddy.accessory.skill.summonedCharacter.autoAttackDamage.scaleToLevel> area damage that pushes enemies back.
+now  Spike throws a large cactus with 3500 health to give cover to teammates. If destroyed, the cactus bursts, and all nearby teammates recover <!card.accessory.skill.cactusMinionHealing.scaleToLevel> health. When destroyed, the plant also deals 1200 area damage that pushes enemies back.
+  card.accessory.skill.summonedCharacter.maxHealth.scaleToLevel  3500  -> 3500
+  card.accessory.skill.cactusMinionHealing.scaleToLevel  -  -> 1800
+  buddy.accessory.skill.summonedCharacter.autoAttackDamage.scaleToLevel  1200  -> 1200
+
+--- Cactus_Cover | gadget | TID_CACTUS_BUDDY_GADGET_2_DIFF
+raw  When destroyed, the plant also deals <!buddy.accessory.skill.summonedCharacter.autoAttackDamage.scaleToLevel> area damage that pushes enemies back.
+now  When destroyed, the plant also deals 1200 area damage that pushes enemies back.
+  buddy.accessory.skill.summonedCharacter.autoAttackDamage.scaleToLevel  1200  -> 1200
+
+--- Cactus_ShootAround | gadget | TID_ACCESSORY_CACTUS_SHOOT_AROUND_DESC
+raw  Spike aims and fires a wave of needles that deal <!card.accessory.skill.damage.scaleToLevel> damage.
+now  Spike aims and fires a wave of needles that deal 1000 damage.
+  card.accessory.skill.damage.scaleToLevel  1000  -> 1000
+
+--- Cactus_ShootAround | gadget | TID_CACTUS_BUDDY_GADGET_1_DESC
+raw  Spike aims and fires a wave of needles that deal <!card.accessory.skill.damage.scaleToLevel> damage. Targets that are hit with 2 needles become rooted for <!buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec.
+now  Spike aims and fires a wave of needles that deal 1000 damage. Targets that are hit with 2 needles become rooted for 1 sec.
+  card.accessory.skill.damage.scaleToLevel  1000  -> 1000
+  buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  1  -> 1
+
+--- Cactus_ShootAround | gadget | TID_CACTUS_BUDDY_GADGET_1_DIFF
+raw  Targets that are hit with 2 needles become rooted for <!buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> seconds.
+now  Targets that are hit with 2 needles become rooted for 1 seconds.
+  buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  1  -> 1
+
+--- Cactus_overcharge | hypercharge | TID_CACTUS_OVERCHARGE_DESC
+raw  Stick Around has <VALUE1>% larger area.
+now  Stick Around has 20% larger area.
+  VALUE1  20  -> 20
+
+--- Cactus_overcharge | hypercharge | TID_CACTUS_BUDDY_OVERCHARGE_DESC
+raw  Spike's Super is <!card.value1>% bigger. Main attack needle grenades detonate twice.
+now  Spike's Super is 20% bigger. Main attack needle grenades detonate twice.
+  card.value1  20  -> 20
+
+--- Cactus_unique | star power | TID_SPEC_ABI_CACTUS_HEAL_DESC
+raw  Super heals for <VALUE1>% of damage dealt.
+now  Super heals for <VALUE1>% of damage dealt.
+  VALUE1  -  -> 75
+
+--- Cactus_unique | star power | TID_CACTUS_BUDDY_STARPOWER_1_DESC
+raw  Super heals for <!card.trait.value>% of damage dealt. Super projectile speed is <!buddy.trait.value>% faster.
+now  Super heals for 75% of damage dealt. Super projectile speed is 30% faster.
+  card.trait.value  75  -> 75
+  buddy.trait.value  30  -> 30
+
+--- Cactus_unique | star power | TID_CACTUS_BUDDY_STARPOWER_1_DIFF
+raw  Super projectile speed is <!buddy.trait.value>% faster.
+now  Super projectile speed is 30% faster.
+  buddy.trait.value  30  -> 30

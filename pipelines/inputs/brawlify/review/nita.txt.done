@@ -1,0 +1,65 @@
+# nita
+
+--- Shaman_PetSlam | gadget | TID_SHAMAN_BUDDY_GADGET_1_DESC
+raw  Nita commands her bear to slam the ground, stunning all enemies within its reach. Her bear gains <!buddy.accessory.value1>% damage for its next attack.
+now  Nita commands her bear to slam the ground, stunning all enemies within its reach. Her bear gains 50% damage for its next attack.
+  buddy.accessory.value1  50  -> 50
+
+--- Shaman_PetSlam | gadget | TID_SHAMAN_BUDDY_GADGET_1_DIFF
+raw  Her bear gains <!buddy.accessory.value1>% damage for its next attack.
+now  Her bear gains 50% damage for its next attack.
+  buddy.accessory.value1  50  -> 50
+
+--- Shaman_Shield | gadget | TID_ACCESSORY_SHAMAN_SHIELD_DESC
+raw  For the next <!card.accessory.activeTime.ticksAsSeconds> seconds, Nita's bear gets a <!card.accessory.value1>% shield against damage.
+now  For the next 3 seconds, Nita's bear gets a 35% shield against damage.
+  card.accessory.activeTime.ticksAsSeconds  3  -> 3
+  card.accessory.value1  35  -> 35
+
+--- Shaman_Shield | gadget | TID_SHAMAN_BUDDY_GADGET_2_DESC
+raw  For the next <!card.accessory.activeTime.ticksAsSeconds> seconds, Nita's bear gets a <!card.accessory.value1>% shield against damage. Nita and her bear become invulnerable for <!buddy.accessory.statusEffectAlly.duration.ticksAsSeconds> sec.
+now  For the next 3 seconds, Nita's bear gets a 35% shield against damage. Nita and her bear become invulnerable for 0.5 sec.
+  card.accessory.activeTime.ticksAsSeconds  3  -> 3
+  card.accessory.value1  35  -> 35
+  buddy.accessory.statusEffectAlly.duration.ticksAsSeconds  0.5  -> 0.5
+
+--- Shaman_Shield | gadget | TID_SHAMAN_BUDDY_GADGET_2_DIFF
+raw  Nita and her bear become invulnerable for <!buddy.accessory.statusEffectAlly.duration.ticksAsSeconds> sec.
+now  Nita and her bear become invulnerable for 0.5 sec.
+  buddy.accessory.statusEffectAlly.duration.ticksAsSeconds  0.5  -> 0.5
+
+--- Shaman_overcharge | hypercharge | TID_SHAMAN_OVERCHARGE_DESC
+raw  Nita Hypercharges Bruce, making him increase in size, giving him <VALUE3>% increased movement speed and <VALUE1>% increased health.
+now  Nita Hypercharges Bruce, making him increase in size, giving him 150% increased movement speed and 20% increased health.
+  VALUE3  150  -> 15
+  VALUE1  20  -> 20
+
+--- Shaman_unique | star power | TID_SPEC_ABI_PET_LIFESTEAL_DESC
+raw  Nita recovers <VALUE1> health whenever her bear hits an enemy Brawler. When Nita deals damage to an enemy Brawler, her bear regains <VALUE2> health.
+now  Nita recovers 137 health whenever her bear hits an enemy Brawler. When Nita deals damage to an enemy Brawler, her bear regains 57 health.
+  VALUE1  137  -> 1096
+  VALUE2  57  -> 1094
+
+--- Shaman_unique | star power | TID_SHAMAN_BUDDY_STARPOWER_1_DESC
+raw  Nita recovers <!card.value1.petdamagepercent> health whenever her bear hits an enemy Brawler. When Nita deals damage to an enemy Brawler, her bear regains <!card.value2.characterdamagepercent> health. This ability can overheal Nita or her bear for 2000 health.
+now  Nita recovers <!card.value1.petdamagepercent> health whenever her bear hits an enemy Brawler. When Nita deals damage to an enemy Brawler, her bear regains <!card.value2.characterdamagepercent> health. This ability can overheal Nita or her bear for 2000 health.
+  card.value1.petdamagepercent  -  -> 1096
+  card.value2.characterdamagepercent  -  -> 1094
+
+--- Shaman_unique_2 | star power | TID_SPEC_ABI_PET_ATTACK_SPEED_DESC
+raw  Nita's bear attacks faster. Time between swipes is reduced by <VALUE1>%.
+now  Nita's bear attacks faster. Time between swipes is reduced by 60%.
+  VALUE1  60  -> 60
+
+--- Shaman_unique_2 | star power | TID_SHAMAN_BUDDY_STARPOWER_2_DESC
+raw  Nita's bear attacks faster. Time between swipes is reduced by <!card.value1>%. Summoning Nita's bear gives her +<!buddy.trait.statusEffect.decreaseReloadTimePercent>% reload speed for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Nita's bear attacks faster. Time between swipes is reduced by 60%. Summoning Nita's bear gives her +25% reload speed for 3 sec.
+  card.value1  60  -> 60
+  buddy.trait.statusEffect.decreaseReloadTimePercent  25  -> 25
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3
+
+--- Shaman_unique_2 | star power | TID_SHAMAN_BUDDY_STARPOWER_2_DIFF
+raw  Summoning Nita's bear gives her +<!buddy.trait.statusEffect.decreaseReloadTimePercent>% reload speed for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Summoning Nita's bear gives her +25% reload speed for 3 sec.
+  buddy.trait.statusEffect.decreaseReloadTimePercent  25  -> 25
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3

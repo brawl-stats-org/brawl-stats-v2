@@ -1,0 +1,16 @@
+# buzz
+
+--- RopeDude_Vision | gadget | TID_ACCESSORY_ROPE_DUDE_VISION_DESC
+raw  Buzz can see into all bushes in his Super charging area for <VALUE1> seconds.
+now  Buzz can see into all bushes in his Super charging area for <VALUE1> seconds.
+  VALUE1  -  -> 12
+
+--- RopeDude_unique | star power | TID_SPEC_ABI_ROPE_DUDE_1_DESC
+raw  The minimum duration of Buzz's Super stun is increased by <VALUE1> seconds.
+now  The minimum duration of Buzz's Super stun is increased by 10 seconds.
+  VALUE1  10  -> 0.5
+
+--- RopeDude_unique_2 | star power | TID_SPEC_ABI_ROPE_DUDE_2_DESC
+raw  Buzz's Super charging area is increased by <VALUE1>%.
+now  Buzz's Super charging area is increased by 1%.
+  VALUE1  1  -> 33

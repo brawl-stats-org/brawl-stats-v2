@@ -1,0 +1,11 @@
+# redirecter
+
+--- Redirecter_gadget | gadget | TID_REDIRECTER_GADGET_1_DESC
+raw  All enemies currently poisoned by Najia will create poisonous puddles for the next <!card.character.component.statusEffect[3].duration.ticksAsSeconds> sec.
+now  All enemies currently poisoned by Najia will create poisonous puddles for the next 2 sec.
+  card.character.component.statusEffect[3].duration.ticksAsSeconds  2  -> 2
+
+--- Redirecter_unique_2 | star power | TID_REDIRECTER_SP_2_DESC
+raw  Poison damage scales with the target Brawler's current percent health, dealing up to an extra <!card.character.component.trait[1].statusEffect.damage.scaleToLevel> damage when a target is at 100% health.
+now  Poison damage scales with the target Brawler's current percent health, dealing up to an extra 200 damage when a target is at 100% health.
+  card.character.component.trait[1].statusEffect.damage.scaleToLevel  200  -> 200

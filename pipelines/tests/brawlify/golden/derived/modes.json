@@ -1,0 +1,682 @@
+[
+  {
+    "id": 48000000,
+    "modeId": 0,
+    "tid": "TID_GAME_MODE_0",
+    "disabled": false,
+    "color": "#d852ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000000.png"
+  },
+  {
+    "id": 48000001,
+    "modeId": 1,
+    "tid": null,
+    "disabled": true,
+    "color": null,
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000001.png"
+  },
+  {
+    "id": 48000002,
+    "modeId": 2,
+    "tid": "TID_GAME_MODE_2",
+    "disabled": false,
+    "color": "#d852ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000002.png"
+  },
+  {
+    "id": 48000003,
+    "modeId": 3,
+    "tid": "TID_GAME_MODE_3",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000003.png"
+  },
+  {
+    "id": 48000004,
+    "modeId": 4,
+    "tid": null,
+    "disabled": true,
+    "color": null,
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000004.png"
+  },
+  {
+    "id": 48000005,
+    "modeId": 5,
+    "tid": "TID_GAME_MODE_5",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000005.png"
+  },
+  {
+    "id": 48000006,
+    "modeId": 6,
+    "tid": "TID_GAME_MODE_6",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000006.png"
+  },
+  {
+    "id": 48000007,
+    "modeId": 7,
+    "tid": "TID_GAME_MODE_7",
+    "disabled": false,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000007.png"
+  },
+  {
+    "id": 48000008,
+    "modeId": 8,
+    "tid": "TID_GAME_MODE_8",
+    "disabled": false,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000008.png"
+  },
+  {
+    "id": 48000009,
+    "modeId": 9,
+    "tid": "TID_GAME_MODE_9",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000009.png"
+  },
+  {
+    "id": 48000010,
+    "modeId": 10,
+    "tid": "TID_GAME_MODE_10",
+    "disabled": false,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000010.png"
+  },
+  {
+    "id": 48000011,
+    "modeId": 11,
+    "tid": "TID_GAME_MODE_11",
+    "disabled": false,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000011.png"
+  },
+  {
+    "id": 48000012,
+    "modeId": 12,
+    "tid": null,
+    "disabled": false,
+    "color": null,
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000012.png"
+  },
+  {
+    "id": 48000013,
+    "modeId": 13,
+    "tid": null,
+    "disabled": false,
+    "color": null,
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000013.png"
+  },
+  {
+    "id": 48000014,
+    "modeId": 14,
+    "tid": "TID_GAME_MODE_14",
+    "disabled": false,
+    "color": "#3891ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000014.png"
+  },
+  {
+    "id": 48000015,
+    "modeId": 15,
+    "tid": "TID_GAME_MODE_15",
+    "disabled": true,
+    "color": "#e24e5a",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000015.png"
+  },
+  {
+    "id": 48000016,
+    "modeId": 16,
+    "tid": "TID_GAME_MODE_16",
+    "disabled": false,
+    "color": "#2ef3e0",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000016.png"
+  },
+  {
+    "id": 48000017,
+    "modeId": 17,
+    "tid": "TID_GAME_MODE_17",
+    "disabled": false,
+    "color": "#ff4343",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000017.png"
+  },
+  {
+    "id": 48000018,
+    "modeId": 18,
+    "tid": "TID_GAME_MODE_18",
+    "disabled": true,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000018.png"
+  },
+  {
+    "id": 48000019,
+    "modeId": 19,
+    "tid": "TID_GAME_MODE_19",
+    "disabled": true,
+    "color": "#d852ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000019.png"
+  },
+  {
+    "id": 48000020,
+    "modeId": 20,
+    "tid": "TID_GAME_MODE_20",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000020.png"
+  },
+  {
+    "id": 48000021,
+    "modeId": 21,
+    "tid": "TID_GAME_MODE_21",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000021.png"
+  },
+  {
+    "id": 48000022,
+    "modeId": 22,
+    "tid": "TID_GAME_MODE_22",
+    "disabled": false,
+    "color": "#2fc4f9",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000022.png"
+  },
+  {
+    "id": 48000023,
+    "modeId": 23,
+    "tid": "TID_GAME_MODE_23",
+    "disabled": false,
+    "color": "#c2ed00",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000023.png"
+  },
+  {
+    "id": 48000024,
+    "modeId": 24,
+    "tid": "TID_GAME_MODE_24",
+    "disabled": false,
+    "color": "#c2ed00",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000024.png"
+  },
+  {
+    "id": 48000025,
+    "modeId": 25,
+    "tid": "TID_GAME_MODE_25",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000025.png"
+  },
+  {
+    "id": 48000026,
+    "modeId": 26,
+    "tid": "TID_GAME_MODE_26",
+    "disabled": false,
+    "color": "#ff4343",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000026.png"
+  },
+  {
+    "id": 48000027,
+    "modeId": 27,
+    "tid": "TID_GAME_MODE_27",
+    "disabled": false,
+    "color": "#ff4343",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000027.png"
+  },
+  {
+    "id": 48000028,
+    "modeId": 28,
+    "tid": "TID_GAME_MODE_28",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000028.png"
+  },
+  {
+    "id": 48000029,
+    "modeId": 29,
+    "tid": "TID_GAME_MODE_29",
+    "disabled": true,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000029.png"
+  },
+  {
+    "id": 48000030,
+    "modeId": 30,
+    "tid": "TID_GAME_MODE_29",
+    "disabled": true,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000030.png"
+  },
+  {
+    "id": 48000031,
+    "modeId": 31,
+    "tid": "TID_GAME_MODE_31",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000031.png"
+  },
+  {
+    "id": 48000032,
+    "modeId": 32,
+    "tid": "TID_GAME_MODE_32",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000032.png"
+  },
+  {
+    "id": 48000033,
+    "modeId": 33,
+    "tid": "TID_GAME_MODE_33",
+    "disabled": false,
+    "color": "#d852ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000033.png"
+  },
+  {
+    "id": 48000034,
+    "modeId": 34,
+    "tid": "TID_GAME_MODE_34",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000034.png"
+  },
+  {
+    "id": 48000035,
+    "modeId": 35,
+    "tid": "TID_GAME_MODE_35",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000035.png"
+  },
+  {
+    "id": 48000036,
+    "modeId": 36,
+    "tid": "TID_GAME_MODE_36",
+    "disabled": true,
+    "color": "#ff6847",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000036.png"
+  },
+  {
+    "id": 48000037,
+    "modeId": 37,
+    "tid": "TID_GAME_MODE_37",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000037.png"
+  },
+  {
+    "id": 48000038,
+    "modeId": 38,
+    "tid": "TID_GAME_MODE_38",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000038.png"
+  },
+  {
+    "id": 48000039,
+    "modeId": 39,
+    "tid": "TID_GAME_MODE_39",
+    "disabled": true,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000039.png"
+  },
+  {
+    "id": 48000040,
+    "modeId": 40,
+    "tid": "TID_GAME_MODE_40",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000040.png"
+  },
+  {
+    "id": 48000041,
+    "modeId": 41,
+    "tid": "TID_GAME_MODE_41",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000041.png"
+  },
+  {
+    "id": 48000042,
+    "modeId": 42,
+    "tid": "TID_GAME_MODE_42",
+    "disabled": true,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000042.png"
+  },
+  {
+    "id": 48000043,
+    "modeId": 43,
+    "tid": "TID_GAME_MODE_43",
+    "disabled": true,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000043.png"
+  },
+  {
+    "id": 48000044,
+    "modeId": 44,
+    "tid": "TID_GAME_MODE_38",
+    "disabled": true,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000044.png"
+  },
+  {
+    "id": 48000045,
+    "modeId": 45,
+    "tid": "TID_GAME_MODE_45",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000045.png"
+  },
+  {
+    "id": 48000046,
+    "modeId": 46,
+    "tid": "TID_GAME_MODE_46",
+    "disabled": false,
+    "color": "#d852ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000046.png"
+  },
+  {
+    "id": 48000047,
+    "modeId": 47,
+    "tid": "TID_GAME_MODE_47",
+    "disabled": false,
+    "color": "#ff4343",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000047.png"
+  },
+  {
+    "id": 48000048,
+    "modeId": 48,
+    "tid": "TID_GAME_MODE_48",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000048.png"
+  },
+  {
+    "id": 48000049,
+    "modeId": 49,
+    "tid": "TID_GAME_MODE_49",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000049.png"
+  },
+  {
+    "id": 48000050,
+    "modeId": 50,
+    "tid": "TID_GAME_MODE_50",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000050.png"
+  },
+  {
+    "id": 48000051,
+    "modeId": 51,
+    "tid": "TID_GAME_MODE_51",
+    "disabled": false,
+    "color": "#ff4343",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000051.png"
+  },
+  {
+    "id": 48000052,
+    "modeId": 52,
+    "tid": "TID_GAME_MODE_52",
+    "disabled": false,
+    "color": "#2fc4f9",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000052.png"
+  },
+  {
+    "id": 48000053,
+    "modeId": 53,
+    "tid": "TID_GAME_MODE_53",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000053.png"
+  },
+  {
+    "id": 48000054,
+    "modeId": 54,
+    "tid": "TID_GAME_MODE_54",
+    "disabled": false,
+    "color": "#ff4343",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000054.png"
+  },
+  {
+    "id": 48000055,
+    "modeId": 55,
+    "tid": "TID_GAME_MODE_55",
+    "disabled": false,
+    "color": "#2ef3e0",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000055.png"
+  },
+  {
+    "id": 48000056,
+    "modeId": 56,
+    "tid": "TID_GAME_MODE_56",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000056.png"
+  },
+  {
+    "id": 48000057,
+    "modeId": 57,
+    "tid": "TID_GAME_MODE_57",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000057.png"
+  },
+  {
+    "id": 48000058,
+    "modeId": 58,
+    "tid": "TID_GAME_MODE_59",
+    "disabled": true,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000058.png"
+  },
+  {
+    "id": 48000059,
+    "modeId": 59,
+    "tid": "TID_GAME_MODE_59",
+    "disabled": true,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000059.png"
+  },
+  {
+    "id": 48000060,
+    "modeId": 60,
+    "tid": "TID_GAME_MODE_60",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000060.png"
+  },
+  {
+    "id": 48000061,
+    "modeId": 61,
+    "tid": "TID_GAME_MODE_61",
+    "disabled": false,
+    "color": "#7ffb50",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000061.png"
+  },
+  {
+    "id": 48000062,
+    "modeId": 62,
+    "tid": "TID_GAME_MODE_60",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000062.png"
+  },
+  {
+    "id": 48000063,
+    "modeId": 63,
+    "tid": "TID_GAME_MODE_63",
+    "disabled": false,
+    "color": "#2ef3e0",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000063.png"
+  },
+  {
+    "id": 48000064,
+    "modeId": 64,
+    "tid": "TID_GAME_MODE_64",
+    "disabled": false,
+    "color": "#2ef3e0",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000064.png"
+  },
+  {
+    "id": 48000065,
+    "modeId": 65,
+    "tid": "TID_GAME_MODE_65",
+    "disabled": false,
+    "color": "#d852ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000065.png"
+  },
+  {
+    "id": 48000066,
+    "modeId": 66,
+    "tid": "TID_GAME_MODE_66",
+    "disabled": false,
+    "color": "#24d6ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000066.png"
+  },
+  {
+    "id": 48000067,
+    "modeId": 67,
+    "tid": "TID_GAME_MODE_67",
+    "disabled": false,
+    "color": "#33ffff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000067.png"
+  },
+  {
+    "id": 48000068,
+    "modeId": 68,
+    "tid": "TID_GAME_MODE_68",
+    "disabled": false,
+    "color": "#2ef3e0",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000068.png"
+  },
+  {
+    "id": 48000069,
+    "modeId": 69,
+    "tid": "TID_GAME_MODE_69",
+    "disabled": false,
+    "color": "#7ffb50",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000069.png"
+  },
+  {
+    "id": 48000070,
+    "modeId": 70,
+    "tid": "TID_GAME_MODE_70",
+    "disabled": false,
+    "color": "#d852ff",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000070.png"
+  },
+  {
+    "id": 48000071,
+    "modeId": 71,
+    "tid": "TID_GAME_MODE_71",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000071.png"
+  },
+  {
+    "id": 48000072,
+    "modeId": 72,
+    "tid": "TID_GAME_MODE_72",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000072.png"
+  },
+  {
+    "id": 48000073,
+    "modeId": 73,
+    "tid": "TID_GAME_MODE_73",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000073.png"
+  },
+  {
+    "id": 48000074,
+    "modeId": 74,
+    "tid": "TID_GAME_MODE_74",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000074.png"
+  },
+  {
+    "id": 48000075,
+    "modeId": 75,
+    "tid": "TID_GAME_MODE_75",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000075.png"
+  },
+  {
+    "id": 48000076,
+    "modeId": 76,
+    "tid": "TID_GAME_MODE_76",
+    "disabled": false,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000076.png"
+  },
+  {
+    "id": 48000077,
+    "modeId": 77,
+    "tid": "TID_GAME_MODE_77",
+    "disabled": false,
+    "color": "#7ffb50",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000077.png"
+  },
+  {
+    "id": 48000078,
+    "modeId": 78,
+    "tid": "TID_GAME_MODE_78",
+    "disabled": false,
+    "color": "#91e136",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000078.png"
+  },
+  {
+    "id": 48000079,
+    "modeId": 79,
+    "tid": "TID_GAME_MODE_79",
+    "disabled": true,
+    "color": "#9ab1fd",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000079.png"
+  },
+  {
+    "id": 48000080,
+    "modeId": 80,
+    "tid": "TID_GAME_MODE_80",
+    "disabled": false,
+    "color": "#2ef3e0",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000080.png"
+  },
+  {
+    "id": 48000081,
+    "modeId": 81,
+    "tid": "TID_GAME_MODE_81",
+    "disabled": false,
+    "color": "#f98f12",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000081.png"
+  },
+  {
+    "id": 48000082,
+    "modeId": 82,
+    "tid": "TID_GAME_MODE_82",
+    "disabled": false,
+    "color": "#2ef3e0",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000082.png"
+  },
+  {
+    "id": 48000083,
+    "modeId": 83,
+    "tid": "TID_GAME_MODE_83",
+    "disabled": false,
+    "color": "#fd9b0e",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000083.png"
+  },
+  {
+    "id": 48000084,
+    "modeId": 84,
+    "tid": "TID_GAME_MODE_84",
+    "disabled": false,
+    "color": "#7ffb50",
+    "imageUrl": "https://cdn.brawlify.com/game-modes/regular/48000084.png"
+  }
+]

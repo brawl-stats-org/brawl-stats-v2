@@ -1,0 +1,57 @@
+# ricochet
+
+--- TrickshotDude_BounceHeal | gadget | TID_ACCESSORY_TRICKSHOT_DUDE_BOUNCE_HEAL_DESC
+raw  Rico fires a big bullet that, on hitting a wall or Brawler, splits into <!card.accessory.skill.projectile.chainbullets> smaller bullets.
+now  Rico fires a big bullet that, on hitting a wall or Brawler, splits into 3 smaller bullets.
+  card.accessory.skill.projectile.chainbullets  3  -> 3
+
+--- TrickshotDude_BounceHeal | gadget | TID_TRICKSHOTDUDE_BUDDY_GADGET_2_DESC
+raw  Rico fires a big bullet that splits into <!buddy.accessory.skill.projectile.chainbullets> smaller bullets when hitting a wall or enemy Brawlers.\nProjectiles also slow enemies.
+now  Rico fires a big bullet that splits into 3 smaller bullets when hitting a wall or enemy Brawlers.\nProjectiles also slow enemies.
+  buddy.accessory.skill.projectile.chainbullets  3  -> 3
+
+--- TrickshotDude_ShootAround | gadget | TID_ACCESSORY_RICO_SHOOT_AROUND_DESC
+raw  Rico Deploys a vending machine that has <!card.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel> health - when destroyed fires bouncing projectiles in all directions.
+now  Rico Deploys a vending machine that has 4000 health - when destroyed fires bouncing projectiles in all directions.
+  card.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel  4000  -> 4000
+
+--- TrickshotDude_ShootAround | gadget | TID_TRICKSHOTDUDE_BUDDY_GADGET_1_DESC
+raw  Rico deploys a vending machine with <!buddy.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel> health. Rico can bounce attacks off the vending machine until it explodes, firing bouncing projectiles in all directions. When Rico bounces bullets off the vending machine, extra bullets are added to it when it explodes
+now  Rico deploys a vending machine with 4000 health. Rico can bounce attacks off the vending machine until it explodes, firing bouncing projectiles in all directions. When Rico bounces bullets off the vending machine, extra bullets are added to it when it explodes
+  buddy.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel  4000  -> 4000
+
+--- TrickshotDude_unique | star power | TID_SPEC_BOUNCED_BULLETS_STRONGER_DESC
+raw  Rico's bullets, from attack and Super alike, get Supercharged by their first bounce and deal +<VALUE1> damage!
+now  Rico's bullets, from attack and Super alike, get Supercharged by their first bounce and deal +40 damage!
+  VALUE1  40  -> 240
+
+--- TrickshotDude_unique | star power | TID_TRICKSHOTDUDE_BUDDY_STARPOWER_1_DESC
+raw  After their first bounce, bullets from Rico's Main Attack and Super deal +<!card.value1.scaleweapondamagelevel.scaleStatToLevel> damage and give <!buddy.trait.value>% Super charge on hit.
+now  After their first bounce, bullets from Rico's Main Attack and Super deal +240 damage and give 10% Super charge on hit.
+  card.value1.scaleweapondamagelevel.scaleStatToLevel  240  -> 240
+  buddy.trait.value  10  -> 10
+
+--- TrickshotDude_unique | star power | TID_TRICKSHOTDUDE_BUDDY_STARPOWER_1_DIFF
+raw  Bounced bullets also give <!buddy.trait.value>% Super charge on hit.
+now  Bounced bullets also give 10% Super charge on hit.
+  buddy.trait.value  10  -> 10
+
+--- TrickshotDude_unique_2 | star power | TID_SPEC_ABI_SPEED_LOW_HEALTH_DESC
+raw  Rico runs <!card.component[0].values[2]>% faster when his health falls below <!card.component[0].values[0]>%.
+now  Rico runs 35% faster when his health falls below 40%.
+  card.component[0].values[2]  35  -> 35
+  card.component[0].values[0]  40  -> 40
+
+--- TrickshotDude_unique_2 | star power | TID_TRICKSHOTDUDE_BUDDY_STARPOWER_2_DESC
+raw  Rico moves <!card.component[0].values[2]>% faster when his health falls below <!card.component[0].values[0]>%. Movement speed increases up to <!card.component[0].values[3]>% at <!card.component[0].values[1]>% health.
+now  Rico moves 35% faster when his health falls below 40%. Movement speed increases up to 50% at 10% health.
+  card.component[0].values[2]  35  -> 35
+  card.component[0].values[0]  40  -> 40
+  card.component[0].values[3]  50  -> 50
+  card.component[0].values[1]  10  -> 10
+
+--- TrickshotDude_unique_2 | star power | TID_TRICKSHOTDUDE_BUDDY_STARPOWER_2_DIFF
+raw  Increase movement speed by up to <!card.component[0].values[3]>% when Rico is at <!card.component[0].values[1]>% health.
+now  Increase movement speed by up to 50% when Rico is at 10% health.
+  card.component[0].values[3]  50  -> 50
+  card.component[0].values[1]  10  -> 10

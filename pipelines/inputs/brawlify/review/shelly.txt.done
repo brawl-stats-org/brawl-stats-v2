@@ -1,0 +1,53 @@
+# shelly
+
+--- ShotgunGirl_Focus | gadget | TID_ACCESSORY_SHELLY_FOCUS_DESC
+raw  Shelly focuses her fire to a smaller area with an increased range. Can be used <!card.accessory.skill.maxAmmo> times per activation.
+now  Shelly focuses her fire to a smaller area with an increased range. Can be used 3 times per activation.
+  card.accessory.skill.maxAmmo  3  -> 3
+
+--- ShotgunGirl_Focus | gadget | TID_SHOTGUNGIRL_BUDDY_GADGET_2_DESC
+raw  Shelly focuses her fire to a smaller area with an increased range. Can be used <!card.accessory.skill.maxAmmo> times per activation.\nAttacks slow enemies, slow duration increases with each hit.
+now  Shelly focuses her fire to a smaller area with an increased range. Can be used 3 times per activation.\nAttacks slow enemies, slow duration increases with each hit.
+  card.accessory.skill.maxAmmo  3  -> 3
+
+--- ShotgunGirl_overcharge | hypercharge | TID_SHOTGUNGIRL_OVERCHARGE_DESC
+raw  Super Shell is <VALUE1>% larger.
+now  Super Shell is 33% larger.
+  VALUE1  33  -> 33
+
+--- ShotgunGirl_overcharge | hypercharge | TID_SHOTGUNGIRL_BUDDY_OVERCHARGE_DESC
+raw  Super Shell is <!card.value1>% larger. Main attack projectile speed is greatly increased during Hypercharge.
+now  Super Shell is 33% larger. Main attack projectile speed is greatly increased during Hypercharge.
+  card.value1  33  -> 33
+
+--- ShotgunGirl_unique | star power | TID_SPEC_ABI_FREEZE_DESC
+raw  Shelly's Super shells slow down enemies for <!card.value1.ticksasseconds> sec!
+now  Shelly's Super shells slow down enemies for 2 sec!
+  card.value1.ticksasseconds  2  -> 2
+
+--- ShotgunGirl_unique | star power | TID_SHOTGUNGIRL_BUDDY_STARPOWER_1_DESC
+raw  Shelly's Super shells slow down enemies for <!card.value1.ticksAsSeconds> sec and leave a burning area!
+now  Shelly's Super shells slow down enemies for 2 sec and leave a burning area!
+  card.value1.ticksAsSeconds  2  -> 2
+
+--- ShotgunGirl_unique_2 | star power | TID_SPEC_ABI_MEDIKIT_DESC
+raw  When Shelly falls below <VALUE1>% health, she instantly heals for <VALUE2> health. Band-Aid recharges in <VALUE3> sec.
+now  When Shelly falls below 40% health, she instantly heals for 30 health. Band-Aid recharges in 15000 sec.
+  VALUE1  40  -> 40
+  VALUE2  30  -> 2340
+  VALUE3  15000  -> 15
+
+--- ShotgunGirl_unique_2 | star power | TID_SHOTGUNGIRL_BUDDY_STARPOWER_2_DESC
+raw  When Shelly falls below <!card.value1>% health, she instantly heals for <!card.character.maxHealth.scaleCardValue2.scaleToLevel> and gains <!buddy.trait.statusEffect.speedBoostPercent>% movement speed for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec. Band-Aid recharges in <!card.value3.msAsSeconds> sec.
+now  When Shelly falls below 40% health, she instantly heals for 2340 and gains 15% movement speed for 3 sec. Band-Aid recharges in 15 sec.
+  card.value1  40  -> 40
+  card.character.maxHealth.scaleCardValue2.scaleToLevel  2340  -> 2340
+  buddy.trait.statusEffect.speedBoostPercent  15  -> 15
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3
+  card.value3.msAsSeconds  15  -> 15
+
+--- ShotgunGirl_unique_2 | star power | TID_SHOTGUNGIRL_BUDDY_STARPOWER_2_DIFF
+raw  Gain <!buddy.trait.statusEffect.speedBoostPercent>% movement speed for <!buddy.trait.statusEffect.duration.ticksAsSeconds> secs.
+now  Gain 15% movement speed for 3 secs.
+  buddy.trait.statusEffect.speedBoostPercent  15  -> 15
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3

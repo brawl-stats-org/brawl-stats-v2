@@ -1,0 +1,16 @@
+# carl
+
+--- Whirlwind_Trail | gadget | TID_ACCESSORY_CARL_TRAIL_DESC
+raw  The next pickaxe Carl throws will drop a trail of hot rocks behind it! Opponents that touch them are set on fire and receive <VALUE1> damage per second.
+now  The next pickaxe Carl throws will drop a trail of hot rocks behind it! Opponents that touch them are set on fire and receive <VALUE1> damage per second.
+  VALUE1  -  -> 600
+
+--- Whirlwind_unique | star power | TID_SPEC_ABI_PROJECTILE_SPEED_DESC
+raw  Carl throws his Pickaxe with <VALUE1>% more speed, allowing it to travel and return faster.
+now  Carl throws his Pickaxe with 312% more speed, allowing it to travel and return faster.
+  VALUE1  312  -> 10
+
+--- Whirlwind_unique_2 | star power | TID_SPEC_ABI_WHIRLWIND_SHIELD_DESC
+raw  During Carl's Super, all damage he receives is reduced by <VALUE2>%.
+now  During Carl's Super, all damage he receives is reduced by 35%.
+  VALUE2  35  -> 35

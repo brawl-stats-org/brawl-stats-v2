@@ -1,0 +1,22 @@
+# lolla
+
+--- Duplicator_StaticDuplicate | gadget | TID_ACCESSORY_DUPLICATOR_GADGET_DESC
+raw  Lola's Ego stops moving to strike a pose! Gaining a <VALUE1>% shield for <VALUE2> seconds.
+now  Lola's Ego stops moving to strike a pose! Gaining a <VALUE1>% shield for <VALUE2> seconds.
+  VALUE1  -  -> 50
+  VALUE2  -  -> 4
+
+--- Duplicator_Swap | gadget | TID_ACCESSORY_DUPLICATOR_SWAP_DESC
+raw  Lola and her Ego switch locations, both recovering <VALUE1> health.
+now  Lola and her Ego switch locations, both recovering <VALUE1> health.
+  VALUE1  -  -> 1600
+
+--- Duplicator_unique | star power | TID_SPEC_ABI_DUPLICATOR_1_DESC
+raw  When down to her last round, Lola deals an extra <VALUE2>% damage.
+now  When down to her last round, Lola deals an extra 30% damage.
+  VALUE2  30  -> 30
+
+--- Duplicator_unique_2 | star power | TID_SPEC_ABI_DUPLICATOR_2_DESC
+raw  Projectiles from Lola's Ego will heal allies that are caught in its path by <VALUE1> health.
+now  Projectiles from Lola's Ego will heal allies that are caught in its path by 40 health.
+  VALUE1  40  -> 224

@@ -1,0 +1,16 @@
+# tara
+
+--- BlackHole_Shadows | gadget | TID_ACCESSORY_TARA_SHADOWS_DESC
+raw  Tara surrounds herself with three weak Shadows that attack opponents and disappear after <VALUE1> seconds.
+now  Tara surrounds herself with three weak Shadows that attack opponents and disappear after <VALUE1> seconds.
+  VALUE1  -  -> 6
+
+--- BlackHole_Vision | gadget | TID_ACCESSORY_TARA_VISION_DESC
+raw  Tara and her allies are able to see all enemies, even inside bushes, for <VALUE1> seconds.
+now  Tara and her allies are able to see all enemies, even inside bushes, for <VALUE1> seconds.
+  VALUE1  -  -> 4
+
+--- BlackHole_overcharge | hypercharge | TID_BLACK_HOLE_OVERCHARGE_DESC
+raw  Gravity has <VALUE1>% larger area.
+now  Gravity has 20% larger area.
+  VALUE1  20  -> 20

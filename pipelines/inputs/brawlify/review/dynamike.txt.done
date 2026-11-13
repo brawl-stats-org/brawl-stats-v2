@@ -1,0 +1,17 @@
+# dynamike
+
+--- TntDude_Spin | gadget | TID_ACCESSORY_TNT_SPIN_DESC
+raw  Dynamike spins furiously with <!card.accessory.statuseffectself.speedboostpercent>% increased movement speed and throws multiple sticks of dynamite around himself. Each dynamite deals <!card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue3> damage to enemies.
+now  Dynamike spins furiously with 20% increased movement speed and throws multiple sticks of dynamite around himself. Each dynamite deals <!card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue3> damage to enemies.
+  card.accessory.statuseffectself.speedboostpercent  20  -> 20
+  card.character.weaponskill.damage.scaletolevel.scaleaccessoryvalue3  -  -> 2800
+
+--- TntDude_Stun | gadget | TID_ACCESSORY_TNT_STUN_DESC
+raw  Once activated, the next main attack also stuns enemies for <VALUE1> seconds.
+now  Once activated, the next main attack also stuns enemies for <VALUE1> seconds.
+  VALUE1  -  -> 1.5
+
+--- TntDude_unique_2 | star power | TID_SPEC_ABI_SUPER_DAMAGE_DESC
+raw  Adds +<VALUE1> damage to Mike's Super.
+now  Adds +100 damage to Mike's Super.
+  VALUE1  100  -> 1600

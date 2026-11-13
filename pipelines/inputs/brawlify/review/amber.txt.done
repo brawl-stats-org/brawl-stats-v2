@@ -1,0 +1,70 @@
+# amber
+
+--- FireDude_FlameShield | gadget | TID_ACCESSORY_FIRE_DUDE_FLAME_SHIELD_DESC
+raw  Amber creates <!card.accessory.value3> orbiting flames around her for <!card.accessory.customObjectProjectile.steerLifeTime.ticksAsSeconds> seconds, dealing <!card.accessory.value2.scaleStatToLevel> damage on hit.
+now  Amber creates 3 orbiting flames around her for <!card.accessory.customObjectProjectile.steerLifeTime.ticksAsSeconds> seconds, dealing 1900 damage on hit.
+  card.accessory.value3  3  -> 3
+  card.accessory.customObjectProjectile.steerLifeTime.ticksAsSeconds  -  -> 5
+  card.accessory.value2.scaleStatToLevel  1900  -> 1900
+
+--- FireDude_FlameShield | gadget | TID_FIREDUDE_BUDDY_GADGET_2_DESC
+raw  Amber creates <!buddy.accessory.value3> orbiting flames around her for <!buddy.accessory.customObjectProjectile.steerLifeTime.ticksAsSeconds> sec, dealing <!buddy.accessory.value2.scaleStatToLevel> damage on hit. She also covers herself in flames, gaining <!buddy.accessory.statusEffectSelf.speedBoostPercent>% movement speed and dealing <!buddy.accessory.statusEffectSelf.component[0].values[0].scaleStatToLevel> damage to enemies she touches.
+now  Amber creates 3 orbiting flames around her for <!buddy.accessory.customObjectProjectile.steerLifeTime.ticksAsSeconds> sec, dealing 1900 damage on hit. She also covers herself in flames, gaining 20% movement speed and dealing 400 damage to enemies she touches.
+  buddy.accessory.value3  3  -> 3
+  buddy.accessory.customObjectProjectile.steerLifeTime.ticksAsSeconds  -  -> 5
+  buddy.accessory.value2.scaleStatToLevel  1900  -> 1900
+  buddy.accessory.statusEffectSelf.speedBoostPercent  20  -> 20
+  buddy.accessory.statusEffectSelf.component[0].values[0].scaleStatToLevel  400  -> 400
+
+--- FireDude_FlameShield | gadget | TID_FIREDUDE_BUDDY_GADGET_2_DIFF
+raw  Amber covers herself in flames, gaining <!buddy.accessory.statusEffectSelf.speedBoostPercent>% movement speed and dealing <!buddy.accessory.statusEffectSelf.component[0].values[0].scaleStatToLevel> damage to enemies she touches.
+now  Amber covers herself in flames, gaining 20% movement speed and dealing 400 damage to enemies she touches.
+  buddy.accessory.statusEffectSelf.speedBoostPercent  20  -> 20
+  buddy.accessory.statusEffectSelf.component[0].values[0].scaleStatToLevel  400  -> 400
+
+--- FireDude_Spill | gadget | TID_ACCESSORY_FIRE_DUDE_SPILL_DESC
+raw  Amber summons an Oil barrel with <!card.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel> health, spilling oil when destroyed.
+now  Amber summons an Oil barrel with 3500 health, spilling oil when destroyed.
+  card.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel  3500  -> 2600
+
+--- FireDude_Spill | gadget | TID_FIREDUDE_BUDDY_GADGET_1_DESC
+raw  Amber places up to <!buddy.accessory.skill.MaxSpawns> barrels with <!card.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel> health, spilling oil when destroyed.
+now  Amber places up to 2 barrels with 3500 health, spilling oil when destroyed.
+  buddy.accessory.skill.MaxSpawns  2  -> 2
+  card.accessory.skill.summonedcharacter.maxhealth.scaleStatToLevel  3500  -> 2600
+
+--- FireDude_Spill | gadget | TID_FIREDUDE_BUDDY_GADGET_1_DIFF
+raw  Amber can place up to <!buddy.accessory.skill.MaxSpawns> barrels!
+now  Amber can place up to 2 barrels!
+  buddy.accessory.skill.MaxSpawns  2  -> 2
+
+--- FireDude_overcharge | hypercharge | TID_FIRE_DUDE_OVERCHARGE_DESC
+raw  Super's oil spill area is increased. Oil keeps burning for <!areaEffect[FireDudePetrolFireOvercharged].timeMs.msAsSeconds> seconds after being lit on fire.
+now  Super's oil spill area is increased. Oil keeps burning for <!areaEffect[FireDudePetrolFireOvercharged].timeMs.msAsSeconds> seconds after being lit on fire.
+  areaEffect[FireDudePetrolFireOvercharged].timeMs.msAsSeconds  -  -> 3
+
+--- FireDude_unique | star power | TID_FIREDUDE_BUDDY_STARPOWER_1_DESC
+raw  Amber's Fire Fluid becomes sticky, attaching to Brawlers, leaving a trail of oil while they move. Amber gains <!buddy.trait.statuseffect.speedboostpercent>% increased movement speed when near oil.
+now  Amber's Fire Fluid becomes sticky, attaching to Brawlers, leaving a trail of oil while they move. Amber gains 10% increased movement speed when near oil.
+  buddy.trait.statuseffect.speedboostpercent  10  -> 10
+
+--- FireDude_unique | star power | TID_FIREDUDE_BUDDY_STARPOWER_1_DIFF
+raw  Amber gains <!buddy.trait.statuseffect.speedboostpercent>% increased movement speed when near oil.
+now  Amber gains 10% increased movement speed when near oil.
+  buddy.trait.statuseffect.speedboostpercent  10  -> 
+
+--- FireDude_unique_2 | star power | TID_SPEC_ABI_FIRE_DUDE_2_DESC
+raw  Amber reloads <!card.component.values[0].asAmmoReloadPercent>% of her fire-breathing when an enemy takes fire damage.
+now  Amber reloads <!card.component.values[0].asAmmoReloadPercent>% of her fire-breathing when an enemy takes fire damage.
+  card.component.values[0].asAmmoReloadPercent  -  -> 7
+
+--- FireDude_unique_2 | star power | TID_FIREDUDE_BUDDY_STARPOWER_2_DESC
+raw  Amber reloads <!card.component.values[0].asAmmoReloadPercent>% of her firebreathing when an enemy takes fire damage and duration of burns are increased by <!buddy.trait.value.ticksAsSeconds> sec.
+now  Amber reloads <!card.component.values[0].asAmmoReloadPercent>% of her firebreathing when an enemy takes fire damage and duration of burns are increased by 1 sec.
+  card.component.values[0].asAmmoReloadPercent  -  -> 7
+  buddy.trait.value.ticksAsSeconds  1  -> 1
+
+--- FireDude_unique_2 | star power | TID_FIREDUDE_BUDDY_STARPOWER_2_DIFF
+raw  Duration of burns are increased by <!buddy.trait.value.ticksAsSeconds> sec.
+now  Duration of burns are increased by 1 sec.
+  buddy.trait.value.ticksAsSeconds  1  -> 1

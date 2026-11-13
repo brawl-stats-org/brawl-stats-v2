@@ -1,0 +1,27 @@
+# alli
+
+--- Stalker_gadget_1 | gadget | TID_STALKER_GADGET_1_DESC
+raw  The next main attack heals Alli for <VALUE1>% of damage dealt.
+now  The next main attack heals Alli for <VALUE1>% of damage dealt.
+  VALUE1  -  -> 100
+
+--- Stalker_gadget_2 | gadget | TID_STALKER_GADGET_2_DESC
+raw  Alli becomes enraged for the next <VALUE2> secs. Can only be activated when an enemy is visible.
+now  Alli becomes enraged for the next <VALUE2> secs. Can only be activated when an enemy is visible.
+  VALUE2  -  -> 4
+
+--- Stalker_overcharge | hypercharge | TID_STALKER_OVERCHARGE_DESC
+raw  Alli's Super damages for <VALUE1>% of enemies max health. Damaging enemies heals Alli for <VALUE2>% of damage dealt.
+now  Alli's Super damages for 25% of enemies max health. Damaging enemies heals Alli for 20% of damage dealt.
+  VALUE1  25  -> 
+  VALUE2  20  -> 
+
+--- Stalker_unique_1 | star power | TID_STALKER_SP_1_DESC
+raw  While enraged Alli regenerates health faster out of combat after only <VALUE1> seconds.
+now  While enraged Alli regenerates health faster out of combat after only 30 seconds.
+  VALUE1  30  -> 1.5
+
+--- Stalker_unique_2 | star power | TID_STALKER_SP_2_DESC
+raw  Alli reloads <VALUE1>% faster while enraged.
+now  Alli reloads 25% faster while enraged.
+  VALUE1  25  -> 25

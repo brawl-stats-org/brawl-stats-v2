@@ -1,0 +1,71 @@
+# bull
+
+--- BullDude_Heal | gadget | TID_ACCESSORY_BULL_HEAL_DESC
+raw  Bull throws a projectile at the target Brawler, dealing <!card.accessory.skill.damage.scaleToLevel> damage and healing for <!card.accessory.skill.projectile.statusEffectSelfOnHit.healing> if he hits.
+now  Bull throws a projectile at the target Brawler, dealing 1600 damage and healing for <!card.accessory.skill.projectile.statusEffectSelfOnHit.healing> if he hits.
+  card.accessory.skill.damage.scaleToLevel  1600  -> 1600
+  card.accessory.skill.projectile.statusEffectSelfOnHit.healing  -  -> 1600
+
+--- BullDude_Heal | gadget | TID_BULL_DUDE_BUDDY_GADGET_1_DESC
+raw  Bull throws a projectile at the target Brawler, dealing <!card.accessory.skill.damage.scaleToLevel> damage and healing for <!card.accessory.skill.projectile.statusEffectSelfOnHit.healing> if he hits. Also marks the target for <!buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec, gaining <!buddy.accessory.skill.projectile.statusEffectEnemy.SourceLifeSteal>% damage against the target as health.
+now  Bull throws a projectile at the target Brawler, dealing 1600 damage and healing for <!card.accessory.skill.projectile.statusEffectSelfOnHit.healing> if he hits. Also marks the target for 5 sec, gaining 25% damage against the target as health.
+  card.accessory.skill.damage.scaleToLevel  1600  -> 1600
+  card.accessory.skill.projectile.statusEffectSelfOnHit.healing  -  -> 1600
+  buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  5  -> 5
+  buddy.accessory.skill.projectile.statusEffectEnemy.SourceLifeSteal  25  -> 25
+
+--- BullDude_Heal | gadget | TID_BULL_DUDE_BUDDY_GADGET_1_DIFF
+raw  Mark the target for <!buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec, gaining <!buddy.accessory.skill.projectile.statusEffectEnemy.SourceLifeSteal>% damage against the target as health.
+now  Mark the target for 5 sec, gaining 25% damage against the target as health.
+  buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  5  -> 5
+  buddy.accessory.skill.projectile.statusEffectEnemy.SourceLifeSteal  25  -> 25
+
+--- BullDude_Stomp | gadget | TID_BULL_DUDE_BUDDY_GADGET_2_DESC
+raw  Bull stomps the ground, slowing nearby enemies. If a target is already slowed, they are stunned! Stunning an enemy grants +<!buddy.trait.statusEffect.speedBoostPercent>% movement speed for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Bull stomps the ground, slowing nearby enemies. If a target is already slowed, they are stunned! Stunning an enemy grants +30% movement speed for 3 sec.
+  buddy.trait.statusEffect.speedBoostPercent  30  -> 30
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3
+
+--- BullDude_Stomp | gadget | TID_BULL_DUDE_BUDDY_GADGET_2_DIFF
+raw  Stunning an enemy grants +<!buddy.trait.statusEffect.speedBoostPercent>% movement speed for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Stunning an enemy grants +30% movement speed for 3 sec.
+  buddy.trait.statusEffect.speedBoostPercent  30  -> 30
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3
+
+--- BullDude_overcharge | hypercharge | TID_BULLDUDE_OVERCHARGE_DESC
+raw  Bulldozer reduces damage taken by <VALUE1>%.
+now  Bulldozer reduces damage taken by 80%.
+  VALUE1  80  -> 80
+
+--- BullDude_overcharge | hypercharge | TID_BULL_DUDE_BUDDY_OVERCHARGE_DESC
+raw  Bulldozer reduces damage taken by <!card.character.overchargeShieldPercent>%. Bull's Main Attack deals less damage at long range but pierces all enemies.
+now  Bulldozer reduces damage taken by 5%. Bull's Main Attack deals less damage at long range but pierces all enemies.
+  card.character.overchargeShieldPercent  5  -> 80
+
+--- BullDude_unique | star power | TID_SPEC_ABI_BERSERKER_DESC
+raw  When Bull falls below <VALUE1>% health, his reload speed doubles!
+now  When Bull falls below 60% health, his reload speed doubles!
+  VALUE1  60  -> 60
+
+--- BullDude_unique | star power | TID_BULL_DUDE_BUDDY_STARPOWER_1_DESC
+raw  When Bull falls below <!card.value1>% health, his reload speed doubles! Defeating a Brawler while this effect is active instantly charges Bull's Super.
+now  When Bull falls below 60% health, his reload speed doubles! Defeating a Brawler while this effect is active instantly charges Bull's Super.
+  card.value1  60  -> 60
+
+--- BullDude_unique_2 | star power | TID_SPEC_ABI_LOW_HEALTH_SHIELD_DESC
+raw  When Bull falls below <VALUE1>% health, he gains a shield that reduces all damage he takes by <VALUE2>%.
+now  When Bull falls below 30% health, he gains a shield that reduces all damage he takes by 30%.
+  VALUE1  30  -> 30
+  VALUE2  30  -> 30
+
+--- BullDude_unique_2 | star power | TID_BULL_DUDE_BUDDY_STARPOWER_2_DESC
+raw  When Bull falls below <!card.value1>% health, he gains a shield that reduces all damage he takes by <!card.value2>%. Defeating a Brawler while this effect is active makes Bull immune to damage for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  When Bull falls below 30% health, he gains a shield that reduces all damage he takes by 30%. Defeating a Brawler while this effect is active makes Bull immune to damage for 0.5 sec.
+  card.value1  30  -> 30
+  card.value2  30  -> 30
+  buddy.trait.statusEffect.duration.ticksAsSeconds  0.5  -> 
+
+--- BullDude_unique_2 | star power | TID_BULL_DUDE_BUDDY_STARPOWER_2_DIFF
+raw  Defeating a Brawler while this effect is active makes Bull immune to damage for <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Defeating a Brawler while this effect is active makes Bull immune to damage for 0.5 sec.
+  buddy.trait.statusEffect.duration.ticksAsSeconds  0.5  -> 0.5

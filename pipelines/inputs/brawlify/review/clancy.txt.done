@@ -1,0 +1,16 @@
+# clancy
+
+--- Crab_gadget | gadget | TID_CRAB_GADGET_1_DESC
+raw  Clancy gains double tokens for <VALUE1> seconds.
+now  Clancy gains double tokens for <VALUE1> seconds.
+  VALUE1  -  -> 5
+
+--- Crab_gadget_2 | gadget | TID_CRAB_GADGET_2_DESC
+raw  Clancy dashes and reloads <VALUE1> ammo
+now  Clancy dashes and reloads <VALUE1> ammo
+  VALUE1  -  -> 1
+
+--- Crab_unique | star power | TID_CRAB_SP_1_DESC
+raw  Clancy starts the match with <VALUE1> tokens.
+now  Clancy starts the match with 2 tokens.
+  VALUE1  2  -> 2

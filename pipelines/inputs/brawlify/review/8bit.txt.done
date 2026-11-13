@@ -1,0 +1,65 @@
+# 8bit
+
+--- Arcade_Double | gadget | TID_ACCESSORY_ARCADE_DOUBLE_DESC
+raw  8-Bit fires <!card.accessory.skill.areaEffect.bulletExplosionTriggerCount> projectiles. Consumes ammo.
+now  8-Bit fires <!card.accessory.skill.areaEffect.bulletExplosionTriggerCount> projectiles. Consumes ammo.
+  card.accessory.skill.areaEffect.bulletExplosionTriggerCount  -  -> 18
+
+--- Arcade_Double | gadget | TID_ARCADE_BUDDY_GADGET_2_DESC
+raw  8-Bit fires <!buddy.accessory.skill.areaEffect.bulletExplosionTriggerCount> projectiles that bounce to nearby enemies. Bouncing projectiles deal <!buddy.accessory.skill.areaEffect.bulletExplosionBullet.chainBullet.damagePercentStart>% damage. Consumes ammo.
+now  8-Bit fires <!buddy.accessory.skill.areaEffect.bulletExplosionTriggerCount> projectiles that bounce to nearby enemies. Bouncing projectiles deal <!buddy.accessory.skill.areaEffect.bulletExplosionBullet.chainBullet.damagePercentStart>% damage. Consumes ammo.
+  buddy.accessory.skill.areaEffect.bulletExplosionTriggerCount  -  -> 18
+  buddy.accessory.skill.areaEffect.bulletExplosionBullet.chainBullet.damagePercentStart  -  -> 60
+
+--- Arcade_Teleport | gadget | TID_ARCADE_BUDDY_GADGET_1_DESC
+raw  8-Bit teleports to his Damage booster, healing himself for <!buddy.trait.value.scaleToLevel> and repairing the booster by <!buddy.trait[1].value>%.
+now  8-Bit teleports to his Damage booster, healing himself for 3600 and repairing the booster by 100%.
+  buddy.trait.value.scaleToLevel  3600  -> 3600
+  buddy.trait[1].value  100  -> 100
+
+--- Arcade_Teleport | gadget | TID_ARCADE_BUDDY_GADGET_1_DIFF
+raw  Heals himself for <!buddy.trait.value.scaleToLevel>, and repairs the booster by <!buddy.trait[1].value>%.
+now  Heals himself for 3600, and repairs the booster by 100%.
+  buddy.trait.value.scaleToLevel  3600  -> 3600
+  buddy.trait[1].value  100  -> 100
+
+--- Arcade_overcharge | hypercharge | TID_ARCADE_OVERCHARGE_DESC
+raw  8-Bit's turret now has a laser that shoots nearby enemies. Shots do <!card.character.ultiSkill.overchargedSummonedCharacter.autoAttackDamage> damage.
+now  8-Bit's turret now has a laser that shoots nearby enemies. Shots do <!card.character.ultiSkill.overchargedSummonedCharacter.autoAttackDamage> damage.
+  card.character.ultiSkill.overchargedSummonedCharacter.autoAttackDamage  -  -> 230
+
+--- Arcade_unique | star power | TID_SPEC_ABI_LARGER_AREA_ULTI_DESC
+raw  Increases the Damage Booster's range by <!arcade.largerAreaUlti.rangePercent>% and boosts damage by an additional <!arcade.largerAreaUlti.damageDelta>%.
+now  Increases the Damage Booster's range by <!arcade.largerAreaUlti.rangePercent>% and boosts damage by an additional <!arcade.largerAreaUlti.damageDelta>%.
+  arcade.largerAreaUlti.rangePercent  -  -> 50
+  arcade.largerAreaUlti.damageDelta  -  -> 15
+
+--- Arcade_unique | star power | TID_ARCADE_BUDDY_STARPOWER_1_DESC
+raw  Increase the Damage Booster's range by <!arcade.largerAreaUlti.rangePercent>% and damage by an additional <!arcade.largerAreaUlti.damageDelta>%. Every <!buddy.trait.component.value.ticksAsSeconds> sec the Damage Booster spawns ammo lasting <!buddy.trait.component.projectile.spawnItem.lifetime.ticksAsSeconds> sec and reloading 1 ammo.
+now  Increase the Damage Booster's range by <!arcade.largerAreaUlti.rangePercent>% and damage by an additional <!arcade.largerAreaUlti.damageDelta>%. Every 5 sec the Damage Booster spawns ammo lasting <!buddy.trait.component.projectile.spawnItem.lifetime.ticksAsSeconds> sec and reloading 1 ammo.
+  arcade.largerAreaUlti.rangePercent  -  -> 50
+  arcade.largerAreaUlti.damageDelta  -  -> 15
+  buddy.trait.component.value.ticksAsSeconds  5  -> 
+  buddy.trait.component.projectile.spawnItem.lifetime.ticksAsSeconds  -  -> 8
+
+--- Arcade_unique | star power | TID_ARCADE_BUDDY_STARPOWER_1_DIFF
+raw  Every <!buddy.trait.component.value.ticksAsSeconds> sec the Damage Booster spawns an ammo clip lasting <!buddy.trait.component.projectile.spawnItem.lifetime.ticksAsSeconds> sec and reloading 1 ammo.
+now  Every 5 sec the Damage Booster spawns an ammo clip lasting <!buddy.trait.component.projectile.spawnItem.lifetime.ticksAsSeconds> sec and reloading 1 ammo.
+  buddy.trait.component.value.ticksAsSeconds  5  -> 5
+  buddy.trait.component.projectile.spawnItem.lifetime.ticksAsSeconds  -  -> 8
+
+--- Arcade_unique_2 | star power | TID_SPEC_ABI_PLUGGED_IN_DESC
+raw  While near the Damage Booster 8-Bit gains +<!card.projectile.statusEffectAlly.speedBoostPercent>% Movement Speed.
+now  While near the Damage Booster 8-Bit gains +25% Movement Speed.
+  card.projectile.statusEffectAlly.speedBoostPercent  25  -> 25
+
+--- Arcade_unique_2 | star power | TID_ARCADE_BUDDY_STARPOWER_2_DESC
+raw  While near the Damage Booster 8-Bit gains a <!card.projectile.statusEffectAlly.speedBoostPercent>% Speed Boost and teammates get a <!buddy.trait.projectile.statusEffectAlly.baseSpeedIncreasePercent>% Speed Boost.
+now  While near the Damage Booster 8-Bit gains a 25% Speed Boost and teammates get a 10% Speed Boost.
+  card.projectile.statusEffectAlly.speedBoostPercent  25  -> 25
+  buddy.trait.projectile.statusEffectAlly.baseSpeedIncreasePercent  10  -> 10
+
+--- Arcade_unique_2 | star power | TID_ARCADE_BUDDY_STARPOWER_2_DIFF
+raw  Teammates get a <!buddy.trait.projectile.statusEffectAlly.baseSpeedIncreasePercent>% Speed Boost.
+now  Teammates get a 10% Speed Boost.
+  buddy.trait.projectile.statusEffectAlly.baseSpeedIncreasePercent  10  -> 10

@@ -1,0 +1,812 @@
+[
+  {
+    "id": 66000000,
+    "cardId": 23000255,
+    "descTid": "TID_SHOTGUNGIRL_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_SHOTGUNGIRL_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000001,
+    "cardId": 23000288,
+    "descTid": "TID_SHOTGUNGIRL_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_SHOTGUNGIRL_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000002,
+    "cardId": 23000076,
+    "descTid": "TID_SHOTGUNGIRL_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_SHOTGUNGIRL_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000003,
+    "cardId": 23000135,
+    "descTid": "TID_SHOTGUNGIRL_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_SHOTGUNGIRL_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000004,
+    "cardId": 23000613,
+    "descTid": "TID_SHOTGUNGIRL_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_SHOTGUNGIRL_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000005,
+    "cardId": 23000273,
+    "descTid": "TID_GUNSLINGER_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_GUNSLINGER_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000006,
+    "cardId": 23000319,
+    "descTid": "TID_GUNSLINGER_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_GUNSLINGER_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000007,
+    "cardId": 23000077,
+    "descTid": "TID_GUNSLINGER_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_GUNSLINGER_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000008,
+    "cardId": 23000138,
+    "descTid": "TID_GUNSLINGER_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_GUNSLINGER_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000009,
+    "cardId": 23000614,
+    "descTid": "TID_GUNSLINGER_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_GUNSLINGER_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000010,
+    "cardId": 23000247,
+    "descTid": "TID_CACTUS_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_CACTUS_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000011,
+    "cardId": 23000406,
+    "descTid": "TID_CACTUS_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_CACTUS_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000012,
+    "cardId": 23000081,
+    "descTid": "TID_CACTUS_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_CACTUS_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000013,
+    "cardId": 23000151,
+    "descTid": "TID_CACTUS_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_CACTUS_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000014,
+    "cardId": 23000615,
+    "descTid": "TID_CACTUS_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_CACTUS_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000015,
+    "cardId": 23000274,
+    "descTid": "TID_MUMMY_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_MUMMY_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000016,
+    "cardId": 23000459,
+    "descTid": "TID_MUMMY_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_MUMMY_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000017,
+    "cardId": 23000198,
+    "descTid": "TID_MUMMY_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_MUMMY_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000018,
+    "cardId": 23000199,
+    "descTid": "TID_MUMMY_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_MUMMY_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000019,
+    "cardId": 23000778,
+    "descTid": "TID_MUMMY_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_MUMMY_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000020,
+    "cardId": 23000261,
+    "descTid": "TID_HAMMERDUDE_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_HAMMERDUDE_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000021,
+    "cardId": 23000351,
+    "descTid": "TID_HAMMERDUDE_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_HAMMERDUDE_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000022,
+    "cardId": 23000104,
+    "descTid": "TID_HAMMERDUDE_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_HAMMERDUDE_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000023,
+    "cardId": 23000153,
+    "descTid": "TID_HAMMERDUDE_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_HAMMERDUDE_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000024,
+    "cardId": 23000758,
+    "descTid": "TID_HAMMERDUDE_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_HAMMERDUDE_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000025,
+    "cardId": 23000265,
+    "descTid": "TID_UNDERTAKER_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_UNDERTAKER_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000026,
+    "cardId": 23000290,
+    "descTid": "TID_UNDERTAKER_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_UNDERTAKER_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000027,
+    "cardId": 23000087,
+    "descTid": "TID_UNDERTAKER_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_UNDERTAKER_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000028,
+    "cardId": 23000154,
+    "descTid": "TID_UNDERTAKER_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_UNDERTAKER_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000029,
+    "cardId": 23000819,
+    "descTid": "TID_UNDERTAKER_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_UNDERTAKER_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000030,
+    "cardId": 23000249,
+    "descTid": "TID_SHAMAN_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_SHAMAN_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000031,
+    "cardId": 23000314,
+    "descTid": "TID_SHAMAN_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_SHAMAN_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000032,
+    "cardId": 23000084,
+    "descTid": "TID_SHAMAN_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_SHAMAN_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000033,
+    "cardId": 23000136,
+    "descTid": "TID_SHAMAN_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_SHAMAN_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000034,
+    "cardId": 23000686,
+    "descTid": "TID_SHAMAN_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_SHAMAN_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000035,
+    "cardId": 23000243,
+    "descTid": "TID_CROW_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_CROW_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000036,
+    "cardId": 23000286,
+    "descTid": "TID_CROW_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_CROW_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000037,
+    "cardId": 23000088,
+    "descTid": "TID_CROW_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_CROW_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000038,
+    "cardId": 23000143,
+    "descTid": "TID_CROW_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_CROW_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000039,
+    "cardId": 23000650,
+    "descTid": "TID_CROW_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_CROW_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000040,
+    "cardId": 23000272,
+    "descTid": "TID_BULL_DUDE_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_BULL_DUDE_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000041,
+    "cardId": 23000310,
+    "descTid": "TID_BULL_DUDE_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_BULL_DUDE_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000042,
+    "cardId": 23000078,
+    "descTid": "TID_BULL_DUDE_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_BULL_DUDE_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000043,
+    "cardId": 23000137,
+    "descTid": "TID_BULL_DUDE_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_BULL_DUDE_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000044,
+    "cardId": 23000616,
+    "descTid": "TID_BULL_DUDE_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_BULL_DUDE_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000045,
+    "cardId": 23000263,
+    "descTid": "TID_BOWDUDE_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_BOWDUDE_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000046,
+    "cardId": 23000289,
+    "descTid": "TID_BOWDUDE_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_BOWDUDE_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000047,
+    "cardId": 23000275,
+    "descTid": "TID_BASEBALL_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_BASEBALL_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000048,
+    "cardId": 23000458,
+    "descTid": "TID_BASEBALL_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_BASEBALL_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000049,
+    "cardId": 23000276,
+    "descTid": "TID_NINJA_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_NINJA_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000050,
+    "cardId": 23000408,
+    "descTid": "TID_NINJA_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_NINJA_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000051,
+    "cardId": 23000651,
+    "descTid": "TID_NINJA_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_NINJA_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000052,
+    "cardId": 23000896,
+    "descTid": "TID_BOW_DUDE_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_BOW_DUDE_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000053,
+    "cardId": 23000119,
+    "descTid": "TID_NINJA_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_NINJA_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000054,
+    "cardId": 23000141,
+    "descTid": "TID_NINJA_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_NINJA_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000055,
+    "cardId": 23000134,
+    "descTid": "TID_BASEBALL_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_BASEBALL_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000056,
+    "cardId": 23000146,
+    "descTid": "TID_BASEBALL_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_BASEBALL_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000057,
+    "cardId": 23000683,
+    "descTid": "TID_BASEBALL_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_BASEBALL_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000058,
+    "cardId": 23000090,
+    "descTid": "TID_BOWDUDE_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_BOWDUDE_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000059,
+    "cardId": 23000148,
+    "descTid": "TID_BOWDUDE_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_BOWDUDE_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000060,
+    "cardId": 23000397,
+    "descTid": "TID_ASSAULT_SHOTGUN_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_ASSAULT_SHOTGUN_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000061,
+    "cardId": 23000398,
+    "descTid": "TID_ASSAULT_SHOTGUN_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_ASSAULT_SHOTGUN_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000062,
+    "cardId": 23000971,
+    "descTid": "TID_ASSAULT_SHOTGUN_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_ASSAULT_SHOTGUN_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000063,
+    "cardId": 23000399,
+    "descTid": "TID_ASSAULT_SHOTGUN_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_ASSAULT_SHOTGUN_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000064,
+    "cardId": 23000487,
+    "descTid": "TID_ASSAULT_SHOTGUN_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_ASSAULT_SHOTGUN_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000065,
+    "cardId": 23000340,
+    "descTid": "TID_ENRAGER_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_ENRAGER_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000066,
+    "cardId": 23000403,
+    "descTid": "TID_ENRAGER_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_ENRAGER_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000067,
+    "cardId": 23000338,
+    "descTid": "TID_ENRAGER_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_ENRAGER_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000068,
+    "cardId": 23000339,
+    "descTid": "TID_ENRAGER_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_ENRAGER_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000069,
+    "cardId": 23000654,
+    "descTid": "TID_ENRAGER_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_ENRAGER_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000070,
+    "cardId": 23000632,
+    "descTid": "TID_PERCENTER_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_PERCENTER_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000071,
+    "cardId": 23000302,
+    "descTid": "TID_PERCENTER_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_PERCENTER_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000072,
+    "cardId": 23000457,
+    "descTid": "TID_PERCENTER_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_PERCENTER_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000073,
+    "cardId": 23000300,
+    "descTid": "TID_PERCENTER_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_PERCENTER_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000074,
+    "cardId": 23000301,
+    "descTid": "TID_PERCENTER_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_PERCENTER_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000075,
+    "cardId": 23000423,
+    "descTid": "TID_MECHADUDE_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_MECHADUDE_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000076,
+    "cardId": 23000489,
+    "descTid": "TID_MECHADUDE_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_MECHADUDE_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000077,
+    "cardId": 23000421,
+    "descTid": "TID_MECHADUDE_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_MECHADUDE_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000078,
+    "cardId": 23000422,
+    "descTid": "TID_MECHADUDE_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_MECHADUDE_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000079,
+    "cardId": 23000897,
+    "descTid": "TID_MECHADUDE_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_MECHADUDE_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000080,
+    "cardId": 23000259,
+    "descTid": "TID_ARCADE_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_ARCADE_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000081,
+    "cardId": 23000318,
+    "descTid": "TID_ARCADE_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_ARCADE_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000082,
+    "cardId": 23000168,
+    "descTid": "TID_ARCADE_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_ARCADE_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000083,
+    "cardId": 23000181,
+    "descTid": "TID_ARCADE_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_ARCADE_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000084,
+    "cardId": 23000854,
+    "descTid": "TID_ARCADE_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_ARCADE_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000085,
+    "cardId": 23000246,
+    "descTid": "TID_TRICKSHOTDUDE_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_TRICKSHOTDUDE_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000086,
+    "cardId": 23000409,
+    "descTid": "TID_TRICKSHOTDUDE_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_TRICKSHOTDUDE_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000087,
+    "cardId": 23000080,
+    "descTid": "TID_TRICKSHOTDUDE_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_TRICKSHOTDUDE_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000088,
+    "cardId": 23000156,
+    "descTid": "TID_TRICKSHOTDUDE_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_TRICKSHOTDUDE_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000089,
+    "cardId": 23000776,
+    "descTid": "TID_TRICKSHOTDUDE_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_TRICKSHOTDUDE_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000090,
+    "cardId": 23000254,
+    "descTid": "TID_SPEEDY_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_SPEEDY_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000091,
+    "cardId": 23000311,
+    "descTid": "TID_SPEEDY_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_SPEEDY_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000092,
+    "cardId": 23000210,
+    "descTid": "TID_SPEEDY_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_SPEEDY_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000093,
+    "cardId": 23000211,
+    "descTid": "TID_SPEEDY_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_SPEEDY_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000094,
+    "cardId": 23000689,
+    "descTid": "TID_SPEEDY_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_SPEEDY_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000095,
+    "cardId": 23000285,
+    "descTid": "TID_POWER_LEVELER_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_POWER_LEVELER_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000096,
+    "cardId": 23000485,
+    "descTid": "TID_POWER_LEVELER_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_POWER_LEVELER_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000097,
+    "cardId": 23000283,
+    "descTid": "TID_POWER_LEVELER_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_POWER_LEVELER_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000098,
+    "cardId": 23000284,
+    "descTid": "TID_POWER_LEVELER_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_POWER_LEVELER_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000099,
+    "cardId": 23000826,
+    "descTid": "TID_POWER_LEVELER_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_POWER_LEVELER_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000100,
+    "cardId": 23000245,
+    "descTid": "TID_ROCKETGIRL_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_ROCKETGIRL_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000101,
+    "cardId": 23000316,
+    "descTid": "TID_ROCKETGIRL_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_ROCKETGIRL_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000102,
+    "cardId": 23000079,
+    "descTid": "TID_ROCKETGIRL_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_ROCKETGIRL_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000103,
+    "cardId": 23000150,
+    "descTid": "TID_ROCKETGIRL_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_ROCKETGIRL_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000104,
+    "cardId": 23000688,
+    "descTid": "TID_ROCKETGIRL_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_ROCKETGIRL_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000105,
+    "cardId": 23000267,
+    "descTid": "TID_DEAD_MARIACHI_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_DEAD_MARIACHI_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000106,
+    "cardId": 23000350,
+    "descTid": "TID_DEAD_MARIACHI_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_DEAD_MARIACHI_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000107,
+    "cardId": 23000089,
+    "descTid": "TID_DEAD_MARIACHI_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_DEAD_MARIACHI_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000108,
+    "cardId": 23000144,
+    "descTid": "TID_DEAD_MARIACHI_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_DEAD_MARIACHI_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000109,
+    "cardId": 23000822,
+    "descTid": "TID_DEAD_MARIACHI_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_DEAD_MARIACHI_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000110,
+    "cardId": 23000264,
+    "descTid": "TID_LUCHADOR_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_LUCHADOR_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000111,
+    "cardId": 23000292,
+    "descTid": "TID_LUCHADOR_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_LUCHADOR_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000112,
+    "cardId": 23000086,
+    "descTid": "TID_LUCHADOR_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_LUCHADOR_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000113,
+    "cardId": 23000140,
+    "descTid": "TID_LUCHADOR_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_LUCHADOR_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000114,
+    "cardId": 23000679,
+    "descTid": "TID_LUCHADOR_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_LUCHADOR_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000115,
+    "cardId": 23000513,
+    "descTid": "TID_SOUL_COLLECTOR_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_SOUL_COLLECTOR_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000116,
+    "cardId": 23000514,
+    "descTid": "TID_SOUL_COLLECTOR_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_SOUL_COLLECTOR_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000117,
+    "cardId": 23000511,
+    "descTid": "TID_SOUL_COLLECTOR_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_SOUL_COLLECTOR_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000118,
+    "cardId": 23000512,
+    "descTid": "TID_SOUL_COLLECTOR_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_SOUL_COLLECTOR_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000119,
+    "cardId": 23000919,
+    "descTid": "TID_SOUL_COLLECTOR_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_SOUL_COLLECTOR_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000120,
+    "cardId": 23000611,
+    "descTid": "TID_CONDUCTOR_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_CONDUCTOR_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000121,
+    "cardId": 23000612,
+    "descTid": "TID_CONDUCTOR_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_CONDUCTOR_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000122,
+    "cardId": 23000609,
+    "descTid": "TID_CONDUCTOR_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_CONDUCTOR_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000123,
+    "cardId": 23000610,
+    "descTid": "TID_CONDUCTOR_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_CONDUCTOR_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000124,
+    "cardId": 23001005,
+    "descTid": "TID_CONDUCTOR_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_CONDUCTOR_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000125,
+    "cardId": 23000834,
+    "descTid": "TID_GHOST_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_GHOST_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000126,
+    "cardId": 23000835,
+    "descTid": "TID_GHOST_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_GHOST_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000127,
+    "cardId": 23000832,
+    "descTid": "TID_GHOST_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_GHOST_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000128,
+    "cardId": 23000833,
+    "descTid": "TID_GHOST_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_GHOST_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000129,
+    "cardId": 23000979,
+    "descTid": "TID_GHOST_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_GHOST_BUDDY_OVERCHARGE_DIFF"
+  },
+  {
+    "id": 66000130,
+    "cardId": 23000309,
+    "descTid": "TID_FIREDUDE_BUDDY_GADGET_1_DESC",
+    "differenceTid": "TID_FIREDUDE_BUDDY_GADGET_1_DIFF"
+  },
+  {
+    "id": 66000131,
+    "cardId": 23000488,
+    "descTid": "TID_FIREDUDE_BUDDY_GADGET_2_DESC",
+    "differenceTid": "TID_FIREDUDE_BUDDY_GADGET_2_DIFF"
+  },
+  {
+    "id": 66000132,
+    "cardId": 23000307,
+    "descTid": "TID_FIREDUDE_BUDDY_STARPOWER_1_DESC",
+    "differenceTid": "TID_FIREDUDE_BUDDY_STARPOWER_1_DIFF"
+  },
+  {
+    "id": 66000133,
+    "cardId": 23000308,
+    "descTid": "TID_FIREDUDE_BUDDY_STARPOWER_2_DESC",
+    "differenceTid": "TID_FIREDUDE_BUDDY_STARPOWER_2_DIFF"
+  },
+  {
+    "id": 66000134,
+    "cardId": 23000970,
+    "descTid": "TID_FIREDUDE_BUDDY_OVERCHARGE_DESC",
+    "differenceTid": "TID_FIREDUDE_BUDDY_OVERCHARGE_DIFF"
+  }
+]

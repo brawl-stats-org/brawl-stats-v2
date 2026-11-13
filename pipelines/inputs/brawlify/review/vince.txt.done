@@ -1,0 +1,6 @@
+# vince
+
+--- Stacker_unique_2 | star power | TID_STACKER_SP_2_DESC
+raw  Turning a caterpillar into a moth heals Vince for <!card.value1.scaleStatToLevel>.
+now  Turning a caterpillar into a moth heals Vince for 1200.
+  card.value1.scaleStatToLevel  1200  -> 1200

@@ -1,0 +1,6 @@
+# sam
+
+--- WeaponThrower_unique | star power | TID_SPEC_ABI_WEAPON_THROWER_1_DESC
+raw  Upon recalling his Knuckle Busters, Sam instantly recovers <VALUE1>% of his missing health.
+now  Upon recalling his Knuckle Busters, Sam instantly recovers 20% of his missing health.
+  VALUE1  20  -> 20

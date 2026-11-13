@@ -1,0 +1,69 @@
+# frank
+
+--- HammerDude_Immunity | gadget | TID_ACCESSORY_FRANK_CC_IMMUNITY_DESC
+raw  Fires a soundwave in a target direction, dealing <!card.accessory.skill.damage.scaleToLevel> damage to Brawlers. Frank becomes immune to Crowd Control for <!card.accessory.skill.activationSelfStatusEffect.duration.ticksAsSeconds> secs.
+now  Fires a soundwave in a target direction, dealing 1200 damage to Brawlers. Frank becomes immune to Crowd Control for <!card.accessory.skill.activationSelfStatusEffect.duration.ticksAsSeconds> secs.
+  card.accessory.skill.damage.scaleToLevel  1200  -> 1200
+  card.accessory.skill.activationSelfStatusEffect.duration.ticksAsSeconds  -  -> 3.5
+
+--- HammerDude_Immunity | gadget | TID_HAMMERDUDE_BUDDY_GADGET_1_DESC
+raw  Fires a soundwave in a target direction, dealing <!card.accessory.skill.damage.scaleToLevel> damage to Brawlers. Frank becomes immune to Crowd Control for <!card.accessory.skill.activationSelfStatusEffect.duration.ticksAsSeconds> secs. Soundwave also destroys enemy projectiles.
+now  Fires a soundwave in a target direction, dealing 1200 damage to Brawlers. Frank becomes immune to Crowd Control for <!card.accessory.skill.activationSelfStatusEffect.duration.ticksAsSeconds> secs. Soundwave also destroys enemy projectiles.
+  card.accessory.skill.damage.scaleToLevel  1200  -> 1200
+  card.accessory.skill.activationSelfStatusEffect.duration.ticksAsSeconds  -  -> 3.5
+
+--- HammerDude_Pull | gadget | TID_ACCESSORY_FRANK_PULL_DESC
+raw  Frank aims a long-range attack that pulls enemies towards him. Consumes ammo. Does <!card.accessory.skill.damage.scaleToLevel> damage.
+now  Frank aims a long-range attack that pulls enemies towards him. Consumes ammo. Does 2480 damage.
+  card.accessory.skill.damage.scaleToLevel  2480  -> 2480
+
+--- HammerDude_Pull | gadget | TID_HAMMERDUDE_BUDDY_GADGET_2_DESC
+raw  Frank aims a long range attack that pulls enemies towards him. Consumes ammo. Does <!card.accessory.skill.damage.scaleToLevel> damage. Slows enemies for <!buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec.
+now  Frank aims a long range attack that pulls enemies towards him. Consumes ammo. Does 2480 damage. Slows enemies for 2 sec.
+  card.accessory.skill.damage.scaleToLevel  2480  -> 2480
+  buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  2  -> 2
+
+--- HammerDude_Pull | gadget | TID_HAMMERDUDE_BUDDY_GADGET_2_DIFF
+raw  Enemies are slowed for <!buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec when hit.
+now  Enemies are slowed for 2 sec when hit.
+  buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  2  -> 2
+
+--- HammerDude_unique | star power | TID_SPEC_ABI_STEAL_SOULS2_DESC
+raw  Frank steals the power of a Brawler he defeats, increasing his damage by <VALUE1>% for <VALUE2> seconds!
+now  Frank steals the power of a Brawler he defeats, increasing his damage by 15% for 12 seconds!
+  VALUE1  15  -> 15
+  VALUE2  12  -> 12
+
+--- HammerDude_unique | star power | TID_HAMMERDUDE_BUDDY_STARPOWER_1_DESC
+raw  Frank steals the power of a Brawler he defeats, increasing his damage by <!card.value1>% for <!card.value2> sec and healing for <!buddy.trait.statusEffect.healingTotal.scaleToLevel>  health over <!buddy.trait.statusEffect.duration.ticksAsSeconds> sec.
+now  Frank steals the power of a Brawler he defeats, increasing his damage by 15% for 12 sec and healing for <!buddy.trait.statusEffect.healingTotal.scaleToLevel>  health over 3 sec.
+  card.value1  15  -> 15
+  card.value2  12  -> 12
+  buddy.trait.statusEffect.healingTotal.scaleToLevel  -  -> 4480
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3
+
+--- HammerDude_unique | star power | TID_HAMMERDUDE_BUDDY_STARPOWER_1_DIFF
+raw  Defeating a Brawler increases attack damage by <!card.value1>% for <!card.value2> secs. Heal for <!buddy.trait.statusEffect.healingTotal.scaleToLevel>  health over <!buddy.trait.statusEffect.duration.ticksAsSeconds> secs.
+now  Defeating a Brawler increases attack damage by 15% for 12 secs. Heal for <!buddy.trait.statusEffect.healingTotal.scaleToLevel>  health over 3 secs.
+  card.value1  15  -> 15
+  card.value2  12  -> 12
+  buddy.trait.statusEffect.healingTotal.scaleToLevel  -  -> 4480
+  buddy.trait.statusEffect.duration.ticksAsSeconds  3  -> 3
+
+--- HammerDude_unique_2 | star power | TID_SPEC_ABI_GAIN_HEALTH_DESC
+raw  Frank gains +<VALUE1> health.
+now  Frank gains +10 health.
+  VALUE1  10  -> 1360
+
+--- HammerDude_unique_2 | star power | TID_HAMMERDUDE_BUDDY_STARPOWER_2_DESC
+raw  Frank gains +<!card.character.maxHealth.scaleToLevel.scaleCardValue1> health and takes <!buddy.component.statusEffect.shieldPercent>% less damage when above <!buddy.component.value>% health.
+now  Frank gains +<!card.character.maxHealth.scaleToLevel.scaleCardValue1> health and takes 10% less damage when above 50% health.
+  card.character.maxHealth.scaleToLevel.scaleCardValue1  -  -> 1360
+  buddy.component.statusEffect.shieldPercent  10  -> 10
+  buddy.component.value  50  -> 50
+
+--- HammerDude_unique_2 | star power | TID_HAMMERDUDE_BUDDY_STARPOWER_2_DIFF
+raw  Take <!buddy.component.statusEffect.shieldPercent>% less damage when above <!buddy.component.value>% health.
+now  Take 10% less damage when above 50% health.
+  buddy.component.statusEffect.shieldPercent  10  -> 10
+  buddy.component.value  50  -> 50

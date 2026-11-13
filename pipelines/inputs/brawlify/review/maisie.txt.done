@@ -1,0 +1,22 @@
+# maisie
+
+--- Maisie_Dash | gadget | TID_ACCESSORY_MAISIE_GADGET_1_DESC
+raw  Maisie blasts the ground, stunning enemies for <VALUE1> seconds while dashing forward.
+now  Maisie blasts the ground, stunning enemies for <VALUE1> seconds while dashing forward.
+  VALUE1  -  -> 0.5
+
+--- Maisie_ReloadAndDamage | gadget | TID_ACCESSORY_MAISIE_GADGET_2_DESC
+raw  Maisie instantly reloads <VALUE1> ammo and increases the next Pressure Rocket damage by <VALUE2>% of the target's missing HP.
+now  Maisie instantly reloads <VALUE1> ammo and increases the next Pressure Rocket damage by <VALUE2>% of the target's missing HP.
+  VALUE1  -  -> 1
+  VALUE2  -  -> 30
+
+--- Maisie_unique | star power | TID_SPEC_ABI_MAISIE_1_DESC
+raw  Pressure rocket deals <VALUE1>% more damage at max distance.
+now  Pressure rocket deals 25% more damage at max distance.
+  VALUE1  25  -> 25
+
+--- Maisie_unique_2 | star power | TID_SPEC_ABI_MAISIE_2_DESC
+raw  Enemies hit by Shockwave are also slowed down for <VALUE2> seconds.
+now  Enemies hit by Shockwave are also slowed down for <VALUE2> seconds.
+  VALUE2  -  -> 2

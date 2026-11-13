@@ -1,0 +1,22 @@
+# squeak
+
+--- StickyBomb_Range | gadget | TID_ACCESSORY_STICKY_BOMB_RANGE_DESC
+raw  Squeak's next Sticky Blomb deals <VALUE2>% more damage and has <VALUE1>% longer range.
+now  Squeak's next Sticky Blomb deals <VALUE2>% more damage and has <VALUE1>% longer range.
+  VALUE2  -  -> 50
+  VALUE1  -  -> 100
+
+--- StickyBomb_Vision | gadget | TID_ACCESSORY_STICKY_BOMB_VISION_DESC
+raw  Squeak's next Sticky Blomb leaves a residue area behind after exploding, slowing down enemies and giving allies sight into bushes for <VALUE1> seconds.
+now  Squeak's next Sticky Blomb leaves a residue area behind after exploding, slowing down enemies and giving allies sight into bushes for <VALUE1> seconds.
+  VALUE1  -  -> 6
+
+--- StickyBomb_unique | star power | TID_SPEC_ABI_STICKY_BOMB_1_DESC
+raw  Each opponent within the area of a Sticky Blomb's explosion increases the Blomb's damage by <VALUE1>%.
+now  Each opponent within the area of a Sticky Blomb's explosion increases the Blomb's damage by 15%.
+  VALUE1  15  -> 15
+
+--- StickyBomb_unique_2 | star power | TID_SPEC_ABI_STICKY_BOMB_2_DESC
+raw  Secondary Sticky Blomb explosions from Squeak's Super also slow down opponents for <VALUE2> seconds.
+now  Secondary Sticky Blomb explosions from Squeak's Super also slow down opponents for <VALUE2> seconds.
+  VALUE2  -  -> 4

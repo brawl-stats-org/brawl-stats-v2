@@ -1,0 +1,65 @@
+# crow
+
+--- Crow_PoisonDagger | gadget | TID_ACCESSORY_CROW_POISON_DAGGER_DESC
+raw  Throw a kunai that damages, slows and poisons the first enemy hit for <!card.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec.
+now  Throw a kunai that damages, slows and poisons the first enemy hit for 2 sec.
+  card.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  2  -> 2
+
+--- Crow_PoisonDagger | gadget | TID_CROW_BUDDY_GADGET_2_DESC
+raw  Throw a kunai that damages, slows, and poisons the first enemy hit for <!buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds> sec. The kunai also bounces to nearby targets, causing the same effect.
+now  Throw a kunai that damages, slows, and poisons the first enemy hit for 2 sec. The kunai also bounces to nearby targets, causing the same effect.
+  buddy.accessory.skill.projectile.statusEffectEnemy.duration.ticksAsSeconds  2  -> 2
+
+--- Crow_Shield | gadget | TID_ACCESSORY_CROW_INSTADOT_DESC
+raw  Crow instantly deals remaining poison damage to all Crow-poisoned enemies and gains a shield for <!card.accessory.customValue2>% of the value.
+now  Crow instantly deals remaining poison damage to all Crow-poisoned enemies and gains a shield for 150% of the value.
+  card.accessory.customValue2  150  -> 150
+
+--- Crow_Shield | gadget | TID_CROW_BUDDY_GADGET_1_DESC
+raw  Crow instantly deals remaining poison damage to all Crow-poisoned enemies and gains a shield for <!buddy.accessory.value2>% of the value. Poison duration is also refreshed.
+now  Crow instantly deals remaining poison damage to all Crow-poisoned enemies and gains a shield for 150% of the value. Poison duration is also refreshed.
+  buddy.accessory.value2  150  -> 150
+
+--- Crow_overcharge | hypercharge | TID_CROW_BUDDY_OVERCHARGE_DESC
+raw  Crow's Super knives are piercing and return like a boomerang. Main Attacks pierce and return after reaching max distance, dealing <!card.character.weaponSkill.overchargedVersion.projectile.chainBullet.damageReduction>% less damage when returning.
+now  Crow's Super knives are piercing and return like a boomerang. Main Attacks pierce and return after reaching max distance, dealing <!card.character.weaponSkill.overchargedVersion.projectile.chainBullet.damageReduction>% less damage when returning.
+  card.character.weaponSkill.overchargedVersion.projectile.chainBullet.damageReduction  -  -> 30
+
+--- Crow_overcharge | hypercharge | TID_CROW_BUDDY_OVERCHARGE_DIFF
+raw  Main attacks also pierce and return after reaching max distance, dealing <!card.character.weaponSkill.overchargedVersion.projectile.chainBullet.damageReduction>% less damage when returning.
+now  Main attacks also pierce and return after reaching max distance, dealing <!card.character.weaponSkill.overchargedVersion.projectile.chainBullet.damageReduction>% less damage when returning.
+  card.character.weaponSkill.overchargedVersion.projectile.chainBullet.damageReduction  -  -> 30
+
+--- Crow_unique | star power | TID_SPEC_CRIPPLE_DESC
+raw  Crow's poison saps the strength of enemies, who deal <VALUE1>% less damage while poisoned.
+now  Crow's poison saps the strength of enemies, who deal 15% less damage while poisoned.
+  VALUE1  15  -> 15
+
+--- Crow_unique | star power | TID_CROW_BUDDY_STARPOWER_1_DESC
+raw  Crow's poison saps the strength of enemies, who deal <!card.value1>% less damage while poisoned, and deals <!buddy.trait.statusEffect.DamageBoostPercent>% more damage for each poisoned enemy.
+now  Crow's poison saps the strength of enemies, who deal 15% less damage while poisoned, and deals 5% more damage for each poisoned enemy.
+  card.value1  15  -> 15
+  buddy.trait.statusEffect.DamageBoostPercent  5  -> 5
+
+--- Crow_unique | star power | TID_CROW_BUDDY_STARPOWER_1_DIFF
+raw  Crow deals <!buddy.trait.statusEffect.DamageBoostPercent>% more damage for each poisoned enemy.
+now  Crow deals 5% more damage for each poisoned enemy.
+  buddy.trait.statusEffect.DamageBoostPercent  5  -> 5
+
+--- Crow_unique_2 | star power | TID_SPEC_ABI_PREY_ON_THE_WEAK_DESC
+raw  Crow deals +<VALUE1>% damage with his attack and Super to targets with <VALUE2>% or less health.
+now  Crow deals +50% damage with his attack and Super to targets with 30% or less health.
+  VALUE1  50  -> 30
+  VALUE2  30  -> 50
+
+--- Crow_unique_2 | star power | TID_CROW_BUDDY_STARPOWER_2_DESC
+raw  Crow deals +<!card.value2>% damage with his attack and Super to targets with <!card.value1>% or less health and poison duration increases by <!buddy.trait.value.ticksAsSeconds> sec.
+now  Crow deals +30% damage with his attack and Super to targets with 50% or less health and poison duration increases by 1 sec.
+  card.value2  30  -> 30
+  card.value1  50  -> 50
+  buddy.trait.value.ticksAsSeconds  1  -> 1
+
+--- Crow_unique_2 | star power | TID_CROW_BUDDY_STARPOWER_2_DIFF
+raw  Crow's poison duration is increased by <!buddy.trait.value.ticksAsSeconds> sec.
+now  Crow's poison duration is increased by 1 sec.
+  buddy.trait.value.ticksAsSeconds  1  -> 1

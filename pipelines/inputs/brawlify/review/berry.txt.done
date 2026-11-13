@@ -1,0 +1,21 @@
+# berry
+
+--- Painter_gatget | gadget | TID_PAINTER_GADGET_1_DESC
+raw  Berry swipes his tail, knocking back enemies and healing nearby allies for <VALUE1> health.
+now  Berry swipes his tail, knocking back enemies and healing nearby allies for <VALUE1> health.
+  VALUE1  -  -> 1040
+
+--- Painter_gatget_2 | gadget | TID_PAINTER_GADGET_2_DESC
+raw  Berry's next main attack area lasts for <VALUE1>% longer.
+now  Berry's next main attack area lasts for <VALUE1>% longer.
+  VALUE1  -  -> 100
+
+--- Painter_unique | star power | TID_PAINTER_SP_1_DESC
+raw  Berry gains <VALUE1>% increased reload speed when standing on his own melted ice cream.
+now  Berry gains 50% increased reload speed when standing on his own melted ice cream.
+  VALUE1  50  -> 50
+
+--- Painter_unique_2 | star power | TID_PAINTER_SP_2_DESC
+raw  Berry's basic attack gains <VALUE1>% extra damage on impact in areas with no ice cream.
+now  Berry's basic attack gains 20% extra damage on impact in areas with no ice cream.
+  VALUE1  20  -> 20

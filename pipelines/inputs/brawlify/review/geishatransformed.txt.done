@@ -1,0 +1,6 @@
+# GeishaTransformed
+
+--- GeishaTransformed_ulti | super | TID_GEISHA_TRANSFORMED_ULTI_DESC
+raw  Kaze dashes a long distance and marks enemies she passes through. Marks explode after <VALUE1> seconds.
+now  Kaze dashes a long distance and marks enemies she passes through. Marks explode after <VALUE1> seconds.
+  VALUE1  -  -> 2.5

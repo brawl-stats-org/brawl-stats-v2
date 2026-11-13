@@ -1,0 +1,27 @@
+# mender
+
+--- Mender_gadget | gadget | TID_MENDER_GADGET_1_DESC
+raw  Glowy dashes in a target direction, healing himself and teammates for <!card.accessory.skill.areaEffectObject2.statusEffect.healingTotal.scaleToLevel> on arrival.
+now  Glowy dashes in a target direction, healing himself and teammates for <!card.accessory.skill.areaEffectObject2.statusEffect.healingTotal.scaleToLevel> on arrival.
+  card.accessory.skill.areaEffectObject2.statusEffect.healingTotal.scaleToLevel  -  -> 2500
+
+--- Mender_gadget_1 | gadget | TID_MENDER_GADGET_2_DESC
+raw  Glowy supercharges his glowbeam tethers, doubling the damage/healing rate for <VALUE1> secs.
+now  Glowy supercharges his glowbeam tethers, doubling the damage/healing rate for <VALUE1> secs.
+  VALUE1  -  -> 2.5
+
+--- Mender_overcharge | hypercharge | TID_MENDER_OVERCHARGE_DESC
+raw  Super now surrounds Glowy, and any enemies hit will be feared! Feared targets now take <VALUE1>% extra damage from all sources.
+now  Super now surrounds Glowy, and any enemies hit will be feared! Feared targets now take 19% extra damage from all sources.
+  VALUE1  19  -> 25
+
+--- Mender_unique | star power | TID_MENDER_SP_1_DESC
+raw  If Glowy is tethered to an enemy and a teammate at the same time, it will reduce the enemy damage by <VALUE1>% and increase the teammate's damage by <VALUE2>%.
+now  If Glowy is tethered to an enemy and a teammate at the same time, it will reduce the enemy damage by 1% and increase the teammate's damage by <VALUE2>%.
+  VALUE1  1  -> 20
+  VALUE2  -  -> 20
+
+--- Mender_unique_2 | star power | TID_MENDER_SP_2_DESC
+raw  Tethering to an enemy also heals Glowy for <VALUE1>% of the damage dealt.
+now  Tethering to an enemy also heals Glowy for 50% of the damage dealt.
+  VALUE1  50  -> 50

@@ -1,0 +1,22 @@
+# jessie
+
+--- Mechanic_TurretBuff | gadget | TID_ACCESSORY_MECHANIC_TURRET_BUFF_DESC
+raw  Scrappy's attack speed is doubled for <VALUE1> seconds.
+now  Scrappy's attack speed is doubled for <VALUE1> seconds.
+  VALUE1  -  -> 5
+
+--- Mechanic_overcharge | hypercharge | TID_MECHANIC_OVERCHARGE_DESC
+raw  Jessie's turret has <VALUE1>% more health and deals <VALUE2>% more damage.
+now  Jessie's turret has 50% more health and deals 20% more damage.
+  VALUE1  50  -> 50
+  VALUE2  20  -> 20
+
+--- Mechanic_unique | star power | TID_SPEC_ABI_REPAIR_TURRET_DESC
+raw  Jessie can repair her gun turret for <VALUE1> of its missing health by zapping it with her attack.
+now  Jessie can repair her gun turret for 50 of its missing health by zapping it with her attack.
+  VALUE1  50  -> 1060
+
+--- Mechanic_unique_2 | star power | TID_SPEC_ABI_TURRET_ELECTRICITY_DESC
+raw  Scrappy the Turret now shoots energy orbs that bounce between enemies. The orbs' range after a bounce is <VALUE1>% of normal range.
+now  Scrappy the Turret now shoots energy orbs that bounce between enemies. The orbs' range after a bounce is 1% of normal range.
+  VALUE1  1  -> 51

@@ -1,0 +1,16 @@
+# buster
+
+--- ShieldTank_Heal | gadget | TID_ACCESSORY_SHIELD_TANK_GADGET_1_DESC
+raw  Buster heals himself and all nearby allies for <VALUE1> health for each ally in his Super's charge area.
+now  Buster heals himself and all nearby allies for <VALUE1> health for each ally in his Super's charge area.
+  VALUE1  -  -> 1200
+
+--- ShieldTank_unique | star power | TID_SPEC_ABI_SHIELD_TANK_1_DESC
+raw  Buster's Lens Flare deals <VALUE1>% more damage for each ally in his Super's charge area.
+now  Buster's Lens Flare deals 20% more damage for each ally in his Super's charge area.
+  VALUE1  20  -> 20
+
+--- ShieldTank_unique_2 | star power | TID_SPEC_ABI_SHIELD_TANK_2_DESC
+raw  While Montage is active Buster takes <VALUE1>% less damage and is immune to knockbacks, slows and stuns.
+now  While Montage is active Buster takes 10% less damage and is immune to knockbacks, slows and stuns.
+  VALUE1  10  -> 10

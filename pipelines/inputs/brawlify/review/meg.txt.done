@@ -1,0 +1,93 @@
+# meg
+
+--- MechaDude_Heal | gadget | TID_ACCESSORY_MECHA_DUDE_HEAL_DESC
+raw  Heal the Mecha by <VALUE1> health per second for <VALUE2> seconds. Can only be used in mecha form.
+now  Heal the Mecha by <VALUE1> health per second for <VALUE2> seconds. Can only be used in mecha form.
+  VALUE1  -  -> 518
+  VALUE2  -  -> 5
+
+--- MechaDude_Heal | gadget | TID_MECHADUDE_BUDDY_GADGET_1_DESC
+raw  Can only be used in Mecha form. The Mecha and nearby teammates heal for <!buddy.accessory.value1>% each sec for <!buddy.accessory.activetime.ticksasseconds> sec.
+now  Can only be used in Mecha form. The Mecha and nearby teammates heal for 11% each sec for <!buddy.accessory.activetime.ticksasseconds> sec.
+  buddy.accessory.value1  11  -> 11
+  buddy.accessory.activetime.ticksasseconds  -  -> 6
+
+--- MechaDude_Heal | gadget | TID_MECHADUDE_BUDDY_GADGET_1_DIFF
+raw  Jolting Volts heals for +<!buddy.accessory.additionalactivetime.ticksasseconds> sec.
+now  Jolting Volts heals for +<!buddy.accessory.additionalactivetime.ticksasseconds> sec.
+  buddy.accessory.additionalactivetime.ticksasseconds  -  -> 6
+
+--- MechaDude_ReloadTower | gadget | TID_ACCESSORY_MECHA_DUDE_TOWER_RELOAD_DESC
+raw  Meg ejects from the Mecha, launching it forward, dealing <!card.accessory.skill.damage.scaleStatToLevel> damage on the way. Charges Super after during the next <!card.character.component[0].values[1].ticksasseconds>  seconds.
+now  Meg ejects from the Mecha, launching it forward, dealing 1600 damage on the way. Charges Super after during the next 6  seconds.
+  card.accessory.skill.damage.scaleStatToLevel  1600  -> 1600
+  card.character.component[0].values[1].ticksasseconds  6  -> 6
+
+--- MechaDude_ReloadTower | gadget | TID_MECHADUDE_BUDDY_GADGET_2_DESC
+raw  Meg ejects, launching her Mecha forward, dealing <!buddy.accessory.skill.damage.scaleStatToLevel> damage and leaving a trail of fire dealing <!areaeffect[MechaDudeGadgetBuddyFire].damage>% of the damage for <!areaeffect[MechaDudeGadgetBuddyFire].timems.msasseconds> seconds.\nAfter ejecting, Meg fully charges her super over <!card.character.component[0].values[1].ticksasseconds> sec.
+now  Meg ejects, launching her Mecha forward, dealing 1600 damage and leaving a trail of fire dealing 30% of the damage for 3 seconds.\nAfter ejecting, Meg fully charges her super over 6 sec.
+  buddy.accessory.skill.damage.scaleStatToLevel  1600  -> 1600
+  areaeffect[MechaDudeGadgetBuddyFire].damage  30  -> 30
+  areaeffect[MechaDudeGadgetBuddyFire].timems.msasseconds  3  -> 3
+  card.character.component[0].values[1].ticksasseconds  6  -> 6
+
+--- MechaDude_ReloadTower | gadget | TID_MECHADUDE_BUDDY_GADGET_2_DIFF
+raw  The Mecha leaves a trail of fire dealing <!areaeffect[MechaDudeGadgetBuddyFire].damage>% of the launched Mecha damage for <!areaeffect[MechaDudeGadgetBuddyFire].timems.msasseconds> sec.
+now  The Mecha leaves a trail of fire dealing 30% of the launched Mecha damage for 3 sec.
+  areaeffect[MechaDudeGadgetBuddyFire].damage  30  -> 30
+  areaeffect[MechaDudeGadgetBuddyFire].timems.msasseconds  3  -> 3
+
+--- MechaDude_overcharge | hypercharge | TID_MECHA_DUDE_OVERCHARGE_DESC
+raw  Feel the Steel has increased range, and enemies hit when Meg deploys the Mecha are slowed for <!card.character.component[0].areaeffect[2].statuseffectenemy.duration.ticksasseconds> sec.
+now  Feel the Steel has increased range, and enemies hit when Meg deploys the Mecha are slowed for 1 sec.
+  card.character.component[0].areaeffect[2].statuseffectenemy.duration.ticksasseconds  1  -> 1
+
+--- MechaDude_overcharge | hypercharge | TID_MECHADUDE_BUDDY_OVERCHARGE_DESC
+raw  Feel the Steel has increased range. Entering the Mecha slows nearby enemies for <!card.character.component[0].areaeffect[2].statuseffectenemy.duration.ticksasseconds> sec. The Mecha's Main Attack explodes, dealing <!card.character.pet.weaponskill.overchargedversion.overchargedprojectile.onenemyhitaction.areaeffect.damage.scaleStatToLevel> area damage. Outside her Mecha, Meg's Main attack homes in on enemies and fires an extra projectile.
+now  Feel the Steel has increased range. Entering the Mecha slows nearby enemies for 1 sec. The Mecha's Main Attack explodes, dealing <!card.character.pet.weaponskill.overchargedversion.overchargedprojectile.onenemyhitaction.areaeffect.damage.scaleStatToLevel> area damage. Outside her Mecha, Meg's Main attack homes in on enemies and fires an extra projectile.
+  card.character.component[0].areaeffect[2].statuseffectenemy.duration.ticksasseconds  1  -> 1
+  card.character.pet.weaponskill.overchargedversion.overchargedprojectile.onenemyhitaction.areaeffect.damage.scaleStatToLevel  -  -> 400
+
+--- MechaDude_overcharge | hypercharge | TID_MECHADUDE_BUDDY_OVERCHARGE_DIFF
+raw  The Mecha's Main Attack explodes, dealing <!card.character.pet.weaponskill.overchargedversion.overchargedprojectile.onenemyhitaction.areaeffect.damage.scaleStatToLevel> area damage. Outside her Mecha, Meg's Main Attack homes to enemies and fires an extra projectile.
+now  The Mecha's Main Attack explodes, dealing <!card.character.pet.weaponskill.overchargedversion.overchargedprojectile.onenemyhitaction.areaeffect.damage.scaleStatToLevel> area damage. Outside her Mecha, Meg's Main Attack homes to enemies and fires an extra projectile.
+  card.character.pet.weaponskill.overchargedversion.overchargedprojectile.onenemyhitaction.areaeffect.damage.scaleStatToLevel  -  -> 400
+
+--- MechaDude_unique | star power | TID_SPEC_ABI_MECHA_DUDE_1_DESC
+raw  Meg is protected by a <VALUE1>% shield for <VALUE2> seconds when her Mecha is destroyed.
+now  Meg is protected by a 30% shield for 100 seconds when her Mecha is destroyed.
+  VALUE1  30  -> 30
+  VALUE2  100  -> 5
+
+--- MechaDude_unique | star power | TID_MECHADUDE_BUDDY_STARPOWER_1_DESC
+raw  When exiting the Mecha, Meg gains <!card.value1>% shield and +<!buddy.trait.value>% movement speed for <!card.value2.ticksasseconds> sec.
+now  When exiting the Mecha, Meg gains 30% shield and +20% movement speed for 5 sec.
+  card.value1  30  -> 30
+  buddy.trait.value  20  -> 20
+  card.value2.ticksasseconds  5  -> 5
+
+--- MechaDude_unique | star power | TID_MECHADUDE_BUDDY_STARPOWER_1_DIFF
+raw  Meg gains +<!buddy.trait.value>% movement speed while the shield is active.
+now  Meg gains +20% movement speed while the shield is active.
+  buddy.trait.value  20  -> 20
+
+--- MechaDude_unique_2 | star power | TID_SPEC_ABI_MECHA_DUDE_2_DESC
+raw  The Mecha recovers <!card.value1.scaleStatToLevel> health for each enemy hit with Feel the Steel (Super in Mech).
+now  The Mecha recovers 1200 health for each enemy hit with Feel the Steel (Super in Mech).
+  card.value1.scaleStatToLevel  1200  -> 1200
+
+--- MechaDude_unique_2 | star power | TID_MECHADUDE_BUDDY_STARPOWER_2_DESC
+raw  The Mecha recovers <!card.value1.scaleStatToLevel> health for each enemy hit with Meg's Super. Feel the Steel also steals <!buddy.component.values[0].aspercentagefrom100steal> Ammo from enemy Brawlers.
+now  The Mecha recovers 1200 health for each enemy hit with Meg's Super. Feel the Steel also steals <!buddy.component.values[0].aspercentagefrom100steal> Ammo from enemy Brawlers.
+  card.value1.scaleStatToLevel  1200  -> 1200
+  buddy.component.values[0].aspercentagefrom100steal  -  -> 1
+
+--- MechaDude_unique_2 | star power | TID_MECHADUDE_BUDDY_STARPOWER_2_DIFF
+raw  Feel the Steel also steals <!buddy.component.values[0].aspercentagefrom100steal> Ammo from enemy Brawlers. More like Feel the Steal, right??
+now  Feel the Steel also steals <!buddy.component.values[0].aspercentagefrom100steal> Ammo from enemy Brawlers. More like Feel the Steal, right??
+  buddy.component.values[0].aspercentagefrom100steal  -  -> 1
+
+--- MechaDude_ulti | super | TID_MECHA_DUDE_ULTI_DESC
+raw  Meg jumps into her Mecha suit for some colossal carnage! On landing, mecha damages nearby opponents by <!card.skill.summonedcharacter.component[0].areaeffect[0].damage.scaleStatToLevel>
+now  Meg jumps into her Mecha suit for some colossal carnage! On landing, mecha damages nearby opponents by 3000
+  card.skill.summonedcharacter.component[0].areaeffect[0].damage.scaleStatToLevel  3000  -> 3000
