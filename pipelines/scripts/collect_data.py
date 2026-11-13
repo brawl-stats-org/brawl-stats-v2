@@ -51,7 +51,7 @@ def get_all_tracked_tags(verbose: bool = False, monitor: PipelineMonitor = None)
             all_tags.update(member_tags)
             if verbose:
                 print(f"  Added {len(member_tags)} members")
-        except ApiMaintenanceError as e:
+        except ApiMaintenanceError:
             raise  # propagate immediately — all endpoints affected
         except Exception as e:
             club_failures += 1
@@ -331,7 +331,7 @@ def main():
 
         return 0
 
-    except ApiMaintenanceError as e:
+    except ApiMaintenanceError:
         msg = "Brawl API in maintenance — skipping data collection"
         print(f"\n{msg}")
         if monitor:
