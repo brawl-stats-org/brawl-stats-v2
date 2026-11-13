@@ -69,7 +69,7 @@ def convert_file(input_path: str, output_path: str = None, verbose: bool = False
     # Check if already v2 format (dict with "players" key)
     if isinstance(v1_data, dict) and 'players' in v1_data and 'timestamp' in v1_data:
         if verbose:
-            print(f"  Already v2 format, skipping")
+            print("  Already v2 format, skipping")
         return True
 
     if verbose:
@@ -135,7 +135,7 @@ def convert_directory(dir_path: str, verbose: bool = False):
             print(f"[ERROR] {file_path.name}: {e}")
             errors += 1
 
-    print(f"\nConversion complete:")
+    print("\nConversion complete:")
     print(f"  Converted: {converted}")
     print(f"  Skipped: {skipped}")
     print(f"  Errors: {errors}")

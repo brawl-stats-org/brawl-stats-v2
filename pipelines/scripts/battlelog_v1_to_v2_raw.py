@@ -88,7 +88,7 @@ def convert_v1_to_v2(input_dir: str, output_dir: str, dry_run: bool = True, verb
                 print(f"[WARNING] {tag}: Failed to parse battleTime '{battle_time}': {e}")
 
     # Summary
-    print(f"\nConversion summary:")
+    print("\nConversion summary:")
     print(f"  v1 player files: {len(player_files)}")
     print(f"  v2 date files: {len(battles_by_date)}")
 
@@ -101,7 +101,7 @@ def convert_v1_to_v2(input_dir: str, output_dir: str, dry_run: bool = True, verb
 
     # Show sample
     sample_dates = sorted(battles_by_date.keys())[-5:]
-    print(f"\nSample dates (last 5):")
+    print("\nSample dates (last 5):")
     for date in sample_dates:
         player_count = len(battles_by_date[date])
         battle_count = sum(len(battles) for battles in battles_by_date[date].values())
