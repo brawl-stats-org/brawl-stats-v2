@@ -158,63 +158,70 @@ class PlayerSnapshotDetail(BaseModel):
         Returns:
             PlayerSnapshotDetail instance
         """
-        brawler_data: dict[str, BrawlerDetail] = {}
-
+        result = cls(player_tag=player_tag)
         for snapshot in raw_snapshots:
-            timestamp_iso = snapshot['timestamp']
-            timestamp = datetime.fromisoformat(timestamp_iso)
+            timestamp = int(datetime.fromisoformat(snapshot['timestamp']).timestamp())
+            result.add_raw_snapshot(timestamp, snapshot['brawlers'])
+        return result
 
-            for brawler_raw in snapshot['brawlers']:
-                name = brawler_raw['name']
+    def add_raw_snapshot(self, timestamp: int, brawlers_raw: list[dict]) -> None:
+        """Append one snapshot of this player's brawlers (raw API format)
 
-                # Initialize brawler detail if first time seeing this brawler
-                if name not in brawler_data:
-                    brawler_data[name] = BrawlerDetail()
+        Snapshots must be added in chronological order: each brawler's arrays are time series.
 
-                detail = brawler_data[name]
-                detail.n += 1
-                detail.timestamp.append(int(timestamp.timestamp()))
-                detail.trophies.append(brawler_raw['trophies'])
-                detail.power.append(brawler_raw['power'])
+        Args:
+            timestamp: Snapshot unix timestamp
+            brawlers_raw: The player's 'brawlers' list from a raw snapshot
+        """
+        for brawler_raw in brawlers_raw:
+            name = brawler_raw['name']
 
-                # Parse gadgets
-                gadgets_raw = brawler_raw.get('gadgets', [])
-                detail.has_gadget1.append(True if len(gadgets_raw) > 0 else None)
-                detail.has_gadget2.append(True if len(gadgets_raw) > 1 else None)
+            # Initialize brawler detail if first time seeing this brawler
+            if name not in self.brawlers:
+                self.brawlers[name] = BrawlerDetail()
 
-                # Parse star powers
-                sp_raw = brawler_raw.get('starPowers', [])
-                detail.has_sp1.append(True if len(sp_raw) > 0 else None)
-                detail.has_sp2.append(True if len(sp_raw) > 1 else None)
+            detail = self.brawlers[name]
+            detail.n += 1
+            detail.timestamp.append(timestamp)
+            detail.trophies.append(brawler_raw['trophies'])
+            detail.power.append(brawler_raw['power'])
 
-                # Parse hypercharge
-                hc_raw = brawler_raw.get('hyperCharges', [])
-                detail.has_hc.append(True if len(hc_raw) > 0 else None)
+            # Parse gadgets
+            gadgets_raw = brawler_raw.get('gadgets', [])
+            detail.has_gadget1.append(True if len(gadgets_raw) > 0 else None)
+            detail.has_gadget2.append(True if len(gadgets_raw) > 1 else None)
 
-                # Parse gears
-                gears_raw = brawler_raw.get('gears', [])
-                gear_names = {g['name'] for g in gears_raw}
-                base_gears = {'SPEED', 'HEALTH', 'DAMAGE', 'VISION', 'SHIELD', 'GADGET COOLDOWN'}
-                other_gears = [name for name in gear_names if name not in base_gears]
+            # Parse star powers
+            sp_raw = brawler_raw.get('starPowers', [])
+            detail.has_sp1.append(True if len(sp_raw) > 0 else None)
+            detail.has_sp2.append(True if len(sp_raw) > 1 else None)
 
-                gear_count = sum([
-                    1 if 'SPEED' in gear_names else 0,
-                    1 if 'HEALTH' in gear_names else 0,
-                    1 if 'DAMAGE' in gear_names else 0,
-                    1 if 'VISION' in gear_names else 0,
-                    1 if 'SHIELD' in gear_names else 0,
-                    1 if 'GADGET COOLDOWN' in gear_names else 0,
-                    len(other_gears)
-                ])
-                detail.gear_count.append(gear_count)
+            # Parse hypercharge
+            hc_raw = brawler_raw.get('hyperCharges', [])
+            detail.has_hc.append(True if len(hc_raw) > 0 else None)
 
-                # Parse buffies
-                buffies_raw = brawler_raw.get('buffies', {})
-                detail.buffie_gadget.append(True if buffies_raw.get('gadget') else None)
-                detail.buffie_sp.append(True if buffies_raw.get('starPower') else None)
-                detail.buffie_hc.append(True if buffies_raw.get('hyperCharge') else None)
+            # Parse gears
+            gears_raw = brawler_raw.get('gears', [])
+            gear_names = {g['name'] for g in gears_raw}
+            base_gears = {'SPEED', 'HEALTH', 'DAMAGE', 'VISION', 'SHIELD', 'GADGET COOLDOWN'}
+            other_gears = [name for name in gear_names if name not in base_gears]
 
-        return cls(player_tag=player_tag, brawlers=brawler_data)
+            gear_count = sum([
+                1 if 'SPEED' in gear_names else 0,
+                1 if 'HEALTH' in gear_names else 0,
+                1 if 'DAMAGE' in gear_names else 0,
+                1 if 'VISION' in gear_names else 0,
+                1 if 'SHIELD' in gear_names else 0,
+                1 if 'GADGET COOLDOWN' in gear_names else 0,
+                len(other_gears)
+            ])
+            detail.gear_count.append(gear_count)
+
+            # Parse buffies
+            buffies_raw = brawler_raw.get('buffies', {})
+            detail.buffie_gadget.append(True if buffies_raw.get('gadget') else None)
+            detail.buffie_sp.append(True if buffies_raw.get('starPower') else None)
+            detail.buffie_hc.append(True if buffies_raw.get('hyperCharge') else None)
 
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization"""
