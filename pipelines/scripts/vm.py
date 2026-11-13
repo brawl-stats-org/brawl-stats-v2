@@ -232,6 +232,8 @@ def run_brawlify(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
         cmd = ["uv", "run", "brawlify", command]
         if args.notify_errors:
             cmd.append("--notify-errors")
+        if args.notify_success:
+            cmd.append("--notify-success")
         if not run_command(cmd, f"Brawlify {command}", monitor, args.verbose):
             # Subscript already notified error (if --notify-errors passed)
             return 1
