@@ -281,9 +281,9 @@ def upload_artifacts_clean(client: R2Client, verbose: bool, dry_run: bool, monit
         # Attempt to restore backup
         try:
             restore_backup(client, backup_prefix, verbose, monitor)
-            raise RuntimeError(f"Upload failed but backup restored successfully: {e}")
         except Exception as restore_e:
-            raise RuntimeError(f"Upload failed AND backup restoration failed: {restore_e}")
+            raise RuntimeError(f"Upload failed AND backup restoration failed: {restore_e}") from restore_e
+        raise RuntimeError(f"Upload failed but backup restored successfully: {e}") from e
 
 
 def main():
