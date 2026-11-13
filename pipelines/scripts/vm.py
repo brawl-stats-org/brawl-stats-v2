@@ -61,26 +61,8 @@ def run_command(cmd: list[str], description: str, monitor: PipelineMonitor, verb
         return False
 
 
-def main():
-    parser = argparse.ArgumentParser(description="VM orchestrator for Brawl Stars data pipeline")
-    parser.add_argument("--battlelogs", action="store_true", help="Collect battlelogs")
-    parser.add_argument("--snapshots", action="store_true", help="Collect snapshots")
-    parser.add_argument("-v", "--verbose", action="store_true", help="Verbose output")
-    parser.add_argument("--notify-errors", action="store_true", help="Send ntfy notifications on errors")
-    parser.add_argument("--notify-success", action="store_true", help="Send ntfy notifications on success")
-    parser.add_argument("--upload-r2", action="store_true", help="Upload raw files and artifacts to R2 (off by default to prevent accidental overwrites)")
-    args = parser.parse_args()
-
-    # Validate at least one mode specified
-    if not args.battlelogs and not args.snapshots:
-        print("Error: Specify --battlelogs and/or --snapshots")
-        parser.print_help()
-        return 1
-
-    # Initialize monitor
-    ntfy_topic = os.getenv("NTFY_TOPIC") if args.notify_errors or args.notify_success else None
-    monitor = PipelineMonitor(ntfy_topic=ntfy_topic)
-
+def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
+    """Collect, upload and generate artifacts. Returns the exit code."""
     try:
         monitor.log_info("VM orchestrator started")
         t0 = time.perf_counter()
@@ -238,6 +220,49 @@ def main():
             )
 
         return 1
+
+
+def run_brawlify(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
+    """Fetch the Brawlify dump, then derive the reference data. Returns the exit code.
+
+    Independent of collection: runs even if collection failed.
+    """
+    print("\n=== Brawlify reference data ===")
+    for command in ("fetch", "derive"):
+        cmd = ["uv", "run", "brawlify", command]
+        if args.notify_errors:
+            cmd.append("--notify-errors")
+        if not run_command(cmd, f"Brawlify {command}", monitor, args.verbose):
+            # Subscript already notified error (if --notify-errors passed)
+            return 1
+    return 0
+
+
+def main():
+    parser = argparse.ArgumentParser(description="VM orchestrator for Brawl Stars data pipeline")
+    parser.add_argument("--battlelogs", action="store_true", help="Collect battlelogs")
+    parser.add_argument("--snapshots", action="store_true", help="Collect snapshots")
+    parser.add_argument("--brawlify", action="store_true", help="Fetch and derive the Brawlify reference data, even if collection failed")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Verbose output")
+    parser.add_argument("--notify-errors", action="store_true", help="Send ntfy notifications on errors")
+    parser.add_argument("--notify-success", action="store_true", help="Send ntfy notifications on success")
+    parser.add_argument("--upload-r2", action="store_true", help="Upload raw files and artifacts to R2 (off by default to prevent accidental overwrites)")
+    args = parser.parse_args()
+
+    # Validate at least one mode specified
+    if not args.battlelogs and not args.snapshots and not args.brawlify:
+        print("Error: Specify --battlelogs, --snapshots and/or --brawlify")
+        parser.print_help()
+        return 1
+
+    # Initialize monitor
+    ntfy_topic = os.getenv("NTFY_TOPIC") if args.notify_errors or args.notify_success else None
+    monitor = PipelineMonitor(ntfy_topic=ntfy_topic)
+
+    exit_code = run_collection(args, monitor) if args.battlelogs or args.snapshots else 0
+    if args.brawlify:
+        exit_code = max(exit_code, run_brawlify(args, monitor))
+    return exit_code
 
 
 if __name__ == "__main__":
