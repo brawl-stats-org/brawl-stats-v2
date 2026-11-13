@@ -1,8 +1,9 @@
 """Verify gen_artifacts.py produces byte-identical output across runs.
 
 Runs gen_artifacts twice in separate processes with different PYTHONHASHSEED
-values (so set/dict ordering bugs on str keys surface), each writing to its
-own temp dir, then compares the two output trees byte-for-byte.
+values (so set/dict ordering bugs on str keys surface) and different TZ values
+(so naive datetimes read as local time surface), each writing to its own temp
+dir, then compares the two output trees byte-for-byte.
 
 Usage (from repo root): uv run pipelines/scripts/verify_determinism.py [--keep]
 """
@@ -17,7 +18,8 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS_DIR = Path(__file__).resolve().parent
-HASH_SEEDS = ("1", "2")
+# (PYTHONHASHSEED, TZ) per run. Kathmandu's +05:45 offset is unlikely to cancel out by accident
+RUN_ENVS = (("1", "UTC"), ("2", "Asia/Kathmandu"))
 
 
 def worker(out_dir: str) -> int:
@@ -32,16 +34,16 @@ def worker(out_dir: str) -> int:
     return gen_artifacts.main()
 
 
-def run_once(out_dir: Path, seed: str) -> None:
+def run_once(out_dir: Path, seed: str, tz: str) -> None:
     """Spawn a fresh interpreter running the worker; raise on failure."""
-    env = {**os.environ, "PYTHONHASHSEED": seed}
+    env = {**os.environ, "PYTHONHASHSEED": seed, "TZ": tz}
     proc = subprocess.run(
         [sys.executable, __file__, "--_worker", str(out_dir)],
         cwd=REPO_ROOT, env=env, capture_output=True, text=True,
     )
     if proc.returncode != 0:
         print(proc.stdout, proc.stderr, sep="\n")
-        raise RuntimeError(f"gen_artifacts failed (PYTHONHASHSEED={seed})")
+        raise RuntimeError(f"gen_artifacts failed (PYTHONHASHSEED={seed}, TZ={tz})")
 
 
 def list_files(root: Path) -> set[str]:
@@ -50,7 +52,7 @@ def list_files(root: Path) -> set[str]:
 
 def first_diff_offset(a: Path, b: Path) -> int:
     da, db = a.read_bytes(), b.read_bytes()
-    return next((i for i, (x, y) in enumerate(zip(da, db)) if x != y), min(len(da), len(db)))
+    return next((i for i, (x, y) in enumerate(zip(da, db, strict=False)) if x != y), min(len(da), len(db)))
 
 
 def compare(a: Path, b: Path) -> bool:
@@ -86,11 +88,11 @@ def main() -> int:
         return worker(args._worker)
 
     tmp = Path(tempfile.mkdtemp(prefix="determinism_"))
-    runs = [tmp / f"run{i + 1}" for i in range(len(HASH_SEEDS))]
+    runs = [tmp / f"run{i + 1}" for i in range(len(RUN_ENVS))]
     try:
-        for out_dir, seed in zip(runs, HASH_SEEDS):
-            print(f"Running gen_artifacts -> {out_dir} (PYTHONHASHSEED={seed})")
-            run_once(out_dir, seed)
+        for out_dir, (seed, tz) in zip(runs, RUN_ENVS, strict=True):
+            print(f"Running gen_artifacts -> {out_dir} (PYTHONHASHSEED={seed}, TZ={tz})")
+            run_once(out_dir, seed, tz)
 
         identical = compare(*runs)
         print("PASS: outputs byte-identical" if identical else "FAIL: outputs differ")
