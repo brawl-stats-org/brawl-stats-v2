@@ -8,6 +8,7 @@ from brawl_stats.config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ART
 import os
 import json
 import time
+from datetime import datetime
 import argparse
 
 
@@ -249,7 +250,8 @@ def gen_snapshots_core_artifact(verbose: bool = False, monitor: PipelineMonitor 
 def gen_snapshots_detail_artifacts(tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor = None):
     """Generate snapshot detail artifacts (per-player brawler histories)
 
-    Memory optimized: generates artifacts per player, writing and releasing immediately
+    Single pass over raw files: each file is read once and fed into per-player builders,
+    so only the (compact) columnar details stay in memory, never raw data.
     """
     if monitor:
         monitor.log_info("Starting snapshot detail generation")
@@ -262,48 +264,31 @@ def gen_snapshots_detail_artifacts(tracked_tags: list[str], verbose: bool = Fals
         if f.endswith('.json.gz')
     ])
 
-    # Process one player at a time to minimize memory
-    # First pass: discover all player tags
-    all_player_tags = set()
-    for file_path in file_paths:
+    details: dict[str, PlayerSnapshotDetail] = {}
+    for file_path in file_paths:  # sorted by date, so each brawler's series stays chronological
         raw_data = read_gzip_json_file(file_path)
+        timestamp = int(datetime.fromisoformat(raw_data['timestamp']).timestamp())
+
+        seen_in_file = set()  # a duplicated player in one file only counts once (first occurrence)
         for player in raw_data['players']:
-            all_player_tags.add(player['tag'])
+            tag = player['tag']
+            if tag in seen_in_file:
+                continue
+            seen_in_file.add(tag)
+            if tag not in details:
+                details[tag] = PlayerSnapshotDetail(player_tag=tag)
+            details[tag].add_raw_snapshot(timestamp, player['brawlers'])
 
     if verbose:
-        print(f"{SNAPSHOTS} Found {len(all_player_tags)} unique players")
+        print(f"{SNAPSHOTS} Read {len(file_paths)} files, found {len(details)} unique players")
 
-    # Second pass: generate detail for each player
-    player_count = 0
-    for player_tag in all_player_tags:
-        # Collect snapshots for this player only
-        player_snapshots = []
-
-        for file_path in file_paths:
-            raw_data = read_gzip_json_file(file_path)
-            timestamp = raw_data['timestamp']
-
-            for player in raw_data['players']:
-                if player['tag'] == player_tag:
-                    player_snapshots.append({
-                        'timestamp': timestamp,
-                        'brawlers': player['brawlers']
-                    })
-                    break
-
-        # Generate detail for this player
-        detail = PlayerSnapshotDetail.from_raw_snapshots(player_tag, player_snapshots)
-
-        # Write immediately and release
-        safe_tag = player_tag.lstrip('#')
-        path = os.path.join(PATH_ARTIFACTS_SNAPSHOT_DETAIL, f"{safe_tag}.json")
+    player_count = len(details)
+    # pop() releases each detail once written
+    for player_tag in sorted(details):
+        detail = details.pop(player_tag)
+        path = os.path.join(PATH_ARTIFACTS_SNAPSHOT_DETAIL, f"{player_tag.lstrip('#')}.json")
         with open(path, "w") as f:
             f.write(detail.to_json())
-
-        player_count += 1
-
-        if verbose and player_count % 5 == 0:
-            print(f"{SNAPSHOTS} Processed {player_count}/{len(all_player_tags)} players")
 
     if verbose:
         print(f"{SNAPSHOTS} Generated {player_count} player detail artifacts")
