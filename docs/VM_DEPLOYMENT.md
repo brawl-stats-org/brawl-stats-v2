@@ -80,7 +80,8 @@ progress. The next `:00`/`:30` run uses the new code; `uv run` syncs dependencie
   fast-forward (a local commit on the VM) logs git's error and changes nothing.
 - The repo is public: the VM pulls over HTTPS with no credentials.
 - The gate only covers what `pytest` covers: today that is brawlify (golden tests skip
-  in CI, the dump is not versioned), not collection or artifact generation.
+  in CI, the dump is not versioned) and `upload_to_r2.py`, not collection or artifact
+  generation.
 
 ### Viewing Current Schedule
 

@@ -1,5 +1,28 @@
 # Development Guidelines
 
+## Repository Map
+
+Two pipelines feed one site. Both follow the RAW -> DERIVED -> FRONTEND layering of
+`docs/ARCHITECTURE.md`.
+
+| | player data | reference data |
+|---|---|---|
+| source | official Brawl Stars API (`docs/BRAWL_API_DOC.md`) | BrawlAPI dump (Brawlify) |
+| code | `pipelines/src/brawl_stats/` + `pipelines/scripts/` | `pipelines/src/brawlify/`, one CLI: `uv run brawlify` |
+| raw | `data/raw/{battlelogs,snapshots}/` | `data/raw/brawlify/` |
+| derived | `data/artifacts/` (`gen_artifacts.py`) | `data/reference/` (`brawlify derive`) |
+| R2 | `raw/`, `artifacts/` | `raw/brawlify/history/`, `reference/` |
+| docs | `docs/ARCHITECTURE.md` | `docs/brawlify/`, rules in `pipelines/src/brawlify/CLAUDE.md` |
+
+- Shared: one installed package (`pyproject.toml`, `uv.lock`), `uv run pytest`,
+  `uv run ruff check .`, CI (`.github/workflows/ci.yml`) gating the VM deploy.
+- Glue: `pipelines/scripts/vm.py` runs both pipelines; `upload_to_r2.py` uploads both;
+  brawlify reuses `brawl_stats.pipeline_monitor`.
+- The two do not join in code yet: reference data is keyed by id, player artifacts keep
+  names only. See "Joining Player Data to Reference Data" in `docs/ARCHITECTURE.md`.
+- `data/` is git-ignored; R2 is its backup. `web/` is the frontend (not started).
+- VM: `docs/VM_DEPLOYMENT.md` (deploy, cron, recovery), `docs/ORACLE_CLOUD_VM.md` (host).
+
 ## Git Workflow
 
 ### Commits
@@ -52,13 +75,46 @@ Use `gh` CLI for all issue and PR operations.
 
 ### Issues
 
-Treat issues as tasks/tickets.
+Treat issues as tasks/tickets. Repo: `brawl-stats-org/brawl-stats-v2`.
 
 **Creation**:
-- Add appropriate labels
-- Add appropriate milestone
-- Add assignee
-- Ask what to do those for all of the above if unclear
+- Type: `Task`, `Bug`, `Feature` or `Epic` (org-level issue types, `gh issue edit <n> --type Bug`)
+- Label: the area (`pipeline`, `reference-data`, `web`, `documentation`, `security`, ...)
+- `Size` and `Estimate (d)` (see below)
+- Assignee
+- Project status (see below)
+- No milestones: not used anymore
+- Ask about any of the above if unclear
+
+**Epics**: an issue with type `Epic` and sub-issues under it (both are needed: the type
+does not create the link). Body: 1-2 lines of scope. Epics get no size or estimate.
+Link a sub-issue: `gh api -X POST repos/brawl-stats-org/brawl-stats-v2/issues/<epic>/sub_issues -F sub_issue_id=<id>`,
+where `<id>` is the child's `id` (`gh api repos/brawl-stats-org/brawl-stats-v2/issues/<n> --jq .id`).
+
+**Size and estimate** are org **issue fields**, shown under "Fields" in the issue sidebar.
+Every Task, Feature and Bug gets both, on a fixed scale:
+`S`=0.5, `M`=1, `M++`=1.5, `L`=2.5, `XL`=6 days. Ongoing buckets get `Size=Ongoing` and
+no estimate. `Priority` (Urgent/High/Medium/Low) is optional and rarely set.
+`gh issue edit` cannot set them; use GraphQL (no `project` scope needed):
+
+```bash
+id=$(gh api repos/brawl-stats-org/brawl-stats-v2/issues/<n> --jq .node_id)
+gh api graphql -f query="mutation{setIssueFieldValue(input:{issueId:\"$id\",issueFields:[
+  {fieldId:\"IFSS_kgDOAvQXmg\",singleSelectOptionId:\"<size option>\"},
+  {fieldId:\"IFN_kgDOAvQXmw\",numberValue:<estimate>}]}){clientMutationId}}"
+```
+
+Size options: `S` `IFSSO_kgDOBSvDRA`, `M` `IFSSO_kgDOBSvDRQ`, `M++` `IFSSO_kgDOBSvDRg`,
+`L` `IFSSO_kgDOBSvDRw`, `XL` `IFSSO_kgDOBSvDSA`, `Ongoing` `IFSSO_kgDOBSvDSQ`. List the
+fields again with `organization(login:"brawl-stats-org"){issueFields(first:20){...}}`.
+
+**Project board** "Brawl Stats" (`gh project ... --owner brawl-stats-org`, project 1;
+`gh` needs the `project` scope: `gh auth refresh -s project`). New repo issues land on it
+automatically; set their `Status`: `Backlog` (known, not refined), `Ready` (refined, can
+start), `In progress`, `In review`, `Done`. `.github/workflows/project-board.yml` moves
+`Ready` to `In progress` when a branch linked to the issue is pushed; the board's built-in
+workflows handle `In review` and `Done`. The project also has its own `Size`,
+`Estimate (d)` and `Priority` fields: they are empty and unused, ignore them.
 
 **Bug reports**:
 - Expected behavior
@@ -104,7 +160,7 @@ All pipeline operations log to `data/pipeline.log` via PipelineMonitor.
 ### Brawlify (reference data)
 
 `pipelines/src/brawlify/` has its own rules: `pipelines/src/brawlify/CLAUDE.md`.
-Docs: `docs/brawlify/`.
+Its pipeline commands (`fetch`, `derive`) follow the pattern above.
 
 ## Tooling
 
@@ -123,7 +179,8 @@ Use `uv` commands instead of `pip`, `python -m venv`, etc.
 ### Structure
 
 - `docs/` at root: High-level architectural/domain knowledge per system component
-- Examples: `VM.md`, `DATA_COLLECTION.md`, `ARTIFACTS.md`, API integration docs
+- Today: `ARCHITECTURE.md`, `BRAWL_API_DOC.md`, `VM_DEPLOYMENT.md`, `ORACLE_CLOUD_VM.md`,
+  and `brawlify/` (its own index: `docs/brawlify/README.md`)
 - Purpose: Explain concepts/architecture needed to work in each section
 
 ### When to Update

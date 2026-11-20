@@ -2,21 +2,29 @@
 
 ## Overview
 
-The brawl-stats-v2 pipeline follows a **3-layer architecture** that separates concerns between data collection, artifact generation, and frontend consumption:
+brawl-stats-v2 has two data sources, each with its own pipeline. Both follow the same **3-layer architecture** that separates concerns between data collection, derivation, and frontend consumption:
 
 ```
-[1] RAW (immutable source of truth)
+                 player data                          reference data
+                 (official Brawl Stars API)           (BrawlAPI dump, "Brawlify")
+
+[1] RAW          data/raw/{battlelogs,snapshots}/     data/raw/brawlify/
+  ↓              gen_artifacts.py                     brawlify derive
+[2] DERIVED      data/artifacts/                      data/reference/
   ↓
-[2] DERIVED (artifacts - generated from RAW)
-  ↓
-[3] FRONTEND (consumes artifacts)
+[3] FRONTEND     loads both from R2 (artifacts/, reference/)
 ```
 
-**Critical invariant**: Must be able to regenerate all [2] from [1] via a single command (`gen_artifacts.py`). This ensures artifacts are deterministic and can always be rebuilt.
+- **Player data** (`pipelines/src/brawl_stats/`, `pipelines/scripts/`): what tracked players own and play. Most of this document covers it.
+- **Reference data** (`pipelines/src/brawlify/`): static game data (brawler stats, kits, texts, prices, maps). Summarised in [Reference Data (Brawlify)](#reference-data-brawlify), detailed in `docs/brawlify/`.
+
+**Critical invariant**: Must be able to regenerate each [2] from its [1] via a single command (`gen_artifacts.py`, `brawlify derive`). This ensures derived data is deterministic and can always be rebuilt.
 
 ---
 
 ## Layer 1: RAW Data (Immutable)
+
+Player data. Reference data has its own raw layer: [Reference Data (Brawlify)](#reference-data-brawlify).
 
 ### Storage Location
 ```
@@ -82,6 +90,8 @@ Orchestrated by `vm.py` → calls `collect_data.py`:
 
 ### Storage Efficiency Techniques
 
+All of these encode **names**, not official API ids: see [Joining Player Data to Reference Data](#joining-player-data-to-reference-data).
+
 **1. Optional[bool] encoding**
 ```python
 class BuffieList(BaseModel):
@@ -122,11 +132,32 @@ player_indices = [0, 0, 1, 0, 1, ...]  # Reference by integer ID
 
 ---
 
+## Reference Data (Brawlify)
+
+Static game data from the BrawlAPI dump, which Brawlify builds from the game files. Same layering, own pipeline:
+
+- **[1] `data/raw/brawlify/`**: the dump, written by `brawlify fetch` only. Every changed file is also archived in `data/raw/brawlify/history/`: BrawlAPI only serves the current dump, so the archive exists nowhere else (backed up to R2 `raw/brawlify/history/`, add-only).
+- **[2] `data/reference/`**: what the front receives, built by `brawlify derive` (intermediates in `data/build/brawlify/`, never served). Mirrored to R2 `reference/`.
+- **Hand-written inputs**: `pipelines/inputs/brawlify/` (in-game measurements, literals). Versioned, never regenerated.
+- **Schedule**: `vm.py --brawlify`, in the daily 21:00 UTC run, after collection and even if collection failed.
+
+Details: `docs/brawlify/architecture.md` (layers, package map), `docs/brawlify/commands.md` (CLI), `docs/brawlify/README.md` (index).
+
+---
+
+## Joining Player Data to Reference Data
+
+Reference data is keyed by **id**. Rule: the official API id equals the `id` Brawlify puts on each csv row (`fileId × 1 000 000 + row index`, the prefix names the table). The mapping per API field, and its traps (join modes on `event.modeId`, never on the `mode` string), are in `docs/brawlify/data/brawlapi.md`.
+
+**Known gap**: nothing joins the two yet. Player models and artifacts keep **names only** (`Brawler.name`, `GadgetList.gadget1`, `brawler_dict`, ...); the ids survive only in `data/raw/{battlelogs,snapshots}/`. Using the official ids to link player data to reference data is planned with the web POC (#52); the served artifact format is #64.
+
+---
+
 ## Data Models
 
 ### BrawlAccount (Snapshots)
 
-**Pydantic model** (`src/brawl_account.py`):
+**Pydantic model** (`pipelines/src/brawl_stats/brawl_account.py`):
 ```python
 class BrawlAccount(BaseModel):
     timestamp: datetime
@@ -159,7 +190,7 @@ class Brawler(BaseModel):
 
 ### BattleLog (Battlelogs)
 
-**Pydantic model** (`src/brawl_battlelog.py`):
+**Pydantic model** (`pipelines/src/brawl_stats/brawl_battlelog.py`):
 ```python
 class BattleLogEntry(BaseModel):
     battle_time: datetime
@@ -228,11 +259,14 @@ class BattleLogEntry(BaseModel):
 
 ## Regeneration Invariant
 
-**Rule**: Given only `data/raw/`, must be able to regenerate all `data/artifacts/` via:
+**Rule**: Given only `data/raw/`, must be able to regenerate all `data/artifacts/` and `data/reference/` via:
 
 ```bash
-uv run pipelines/scripts/gen_artifacts.py
+uv run pipelines/scripts/gen_artifacts.py   # data/raw/{battlelogs,snapshots}/ -> data/artifacts/
+uv run brawlify derive                      # data/raw/brawlify/ -> data/reference/
 ```
+
+The rest of this section is about `gen_artifacts.py`. `brawlify derive` has its own guarantees (golden tests, byte for byte): `docs/brawlify/architecture.md`.
 
 **Guarantees**:
 1. Artifacts are deterministic (sorted file processing order)
@@ -243,11 +277,12 @@ uv run pipelines/scripts/gen_artifacts.py
 **Validation**:
 - All columnar models have `validate()` method checking column length consistency
 - Artifact generation aborts on validation failure (prevents corrupted uploads to R2)
+- `pipelines/scripts/verify_determinism.py` runs it twice with different `PYTHONHASHSEED`s and diffs the outputs byte for byte
 
-**Memory optimization**:
-- Batched processing (20 files at a time)
-- Incremental merging (convert batch → columnar, merge columnar chunks, release batch)
-- Reduces peak memory from ~2GB to ~500MB for 180+ days of data
+**Memory optimization** (one raw file in memory at a time, #34):
+- Battlelog core: each file is converted to columnar, then merged into the result (#89). Output must not depend on how files are grouped: `BattleLog.merge` and `BattleLogColumnar.merge` have to dedup the same way.
+- Snapshot core: rows are appended straight from the raw dicts, no `BrawlAccount` objects (#86).
+- Snapshot detail: each file is read once and feeds per-player builders (#87).
 
 ---
 
@@ -255,10 +290,16 @@ uv run pipelines/scripts/gen_artifacts.py
 
 ### Local (VM)
 ```
-data/
+data/                  # Git-ignored; R2 is the backup
   ├── raw/
   │   ├── battlelogs/  # Daily files, 48h filtered
-  │   └── snapshots/   # Daily files
+  │   ├── snapshots/   # Daily files
+  │   └── brawlify/    # BrawlAPI dump (brawlify fetch)
+  │       ├── csv/ ... # Current dump
+  │       ├── etags.json
+  │       └── history/ # Archived dumps, irreplaceable
+  ├── build/brawlify/  # Intermediates of brawlify derive, never served
+  ├── reference/       # Reference data (brawlify derive), served
   ├── artifacts/       # Generated from raw
   │   ├── battlelog_core.json
   │   ├── battlelog_duels_detail.json
@@ -304,41 +345,44 @@ brawl-stats-v2/
 
 ## Performance Characteristics
 
-### Artifact Sizes (180 days of data, ~50 players)
+Player data only. Dataset on 2026-11-20: 13 players, 247 battlelog and 251 snapshot files (2026-03-14 to 2026-11-19).
+
+### Artifact Sizes
 
 | Artifact | Size | Rows | Notes |
 |----------|------|------|-------|
-| battlelog_core.json | ~15 MB | ~80k | Dictionary encoded player tags |
-| battlelog_duels_detail.json | ~2 MB | ~15k | Per-brawler duels breakdown |
-| snapshots_core.json | ~8 MB | ~9k | Daily snapshots × players |
-| snapshot_detail/{TAG}.json | ~150 KB | ~180 | Per-player brawler history |
+| battlelog_core.json | 3.0 MB | ~41k | Dictionary encoded tags, brawlers, modes, maps |
+| battlelog_duels_detail.json | 32 KB | ~500 | Per-brawler duels breakdown |
+| snapshots_core.json | 408 KB | ~2.8k | Daily snapshots × players |
+| snapshot_detail/{TAG}.json | ~3.2 MB each, 42 MB total | — | Per-player brawler history |
 
-### Generation Time (VM: 1 vCPU, 1 GB RAM)
+### Generation Time and Memory
 
-- Battlelog core: ~12s (batched processing, 20 files/batch)
-- Battlelog duels detail: ~3s
-- Snapshots core: ~5s
-- Snapshot detail (all players): ~8s
+Measured with the per-stage profiler (`StageProfiler`, kernel RSS high-water mark) on the full dataset of the time (239 battlelog / 243 snapshot files). Sources: #80 (baseline), #86, #87, #89.
 
-**Total**: ~28s to regenerate all artifacts from 180 days of raw data
+| Stage | Time | Peak RSS (delta) |
+|-------|------|------------------|
+| battlelog_core | — | 83.9 MB (+33.7) |
+| battlelog_duels_detail | ~0s | +0 |
+| snapshots_core | 0.95s | no growth |
+| snapshots_detail | 1.86s | +26.7 MB |
+| **Total** | **6.5s** | **104.2 MB** |
 
-### Memory Usage
-
-- Peak: ~500 MB (batched processing)
-- Without batching: ~2 GB (loads all raw data at once)
-- Optimization: 4x reduction in peak memory
+Before #34: 24.5s and 165 MB peak (#80). The VM has 1 GB RAM; the target is ≤ 300 MB. Python keeps freed memory, so a ~120 MB baseline sits between stages: read the delta column for per-stage cost.
 
 ---
 
 ## Adding New Artifact Types
 
 **Process**:
-1. Define Pydantic model in `src/` (row-oriented or columnar)
+1. Define Pydantic model in `pipelines/src/brawl_stats/` (row-oriented or columnar)
 2. Add `from_raw()` classmethod to parse from raw data
 3. Add `validate()` method (if columnar)
 4. Add generation logic to `gen_artifacts.py`
 5. Test locally: `uv run pipelines/scripts/gen_artifacts.py -v`
-6. Deploy: git push, VM pulls changes, next cron run generates new artifacts
+6. Deploy: merge to `main`; once CI is green the VM fast-forwards to it and the next cron run generates the new artifacts (`docs/VM_DEPLOYMENT.md`)
+
+For reference data, see "Adding things" in `docs/brawlify/architecture.md`.
 
 **No re-collection needed**: All new artifacts generated from existing `data/raw/`.
 
@@ -346,15 +390,17 @@ brawl-stats-v2/
 
 ## Summary
 
-**3-layer architecture**:
-- [1] RAW: Immutable source of truth (battlelogs, snapshots)
-- [2] DERIVED: Generated artifacts (core + detail, columnar format)
-- [3] FRONTEND: Consumes artifacts (loads core for global queries, detail for per-player views)
+**3-layer architecture**, two sources:
+- [1] RAW: Immutable source of truth (battlelogs, snapshots; BrawlAPI dump)
+- [2] DERIVED: Generated artifacts (core + detail, columnar format); reference data
+- [3] FRONTEND: Consumes both (core for global queries, detail for per-player views, reference for game data)
 
-**Key invariant**: Regenerate all [2] from [1] via single command
+**Key invariant**: Regenerate each [2] from its [1] via a single command
 
-**Optimization techniques**: Optional[bool] encoding, dictionary encoding, columnar format, batched processing
+**Known gap**: player artifacts keep names, reference data is keyed by id; no join yet
 
-**Storage efficiency**: ~25 MB total artifacts for 180 days × 50 players
+**Optimization techniques**: Optional[bool] encoding, dictionary encoding, columnar format, one raw file in memory at a time
+
+**Storage**: ~46 MB of artifacts for 8 months × 13 players (42 MB of it per-player detail)
 
 **Deterministic**: Sorted file processing, validation on generation, automatic recovery from corruption
