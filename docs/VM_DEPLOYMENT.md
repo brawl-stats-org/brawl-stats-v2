@@ -29,6 +29,7 @@ vm.py (orchestrator)
 2. Upload raw data to R2 (optional, via `--upload-r2`)
 3. Generate artifacts from all local data
 4. Upload artifacts to R2 (optional, via `--upload-r2`)
+5. With `--brawlify`: `brawlify fetch` + `brawlify derive`, then mirror `data/reference/` to `reference/` and back up new dump archives to `raw/brawlify/history/` (optional, via `--upload-r2`). Runs last, even if collection failed.
 
 ### R2 Preflight & Degraded Mode
 
@@ -64,7 +65,7 @@ The checkout is `/home/ubuntu/brawl-stats-v2-git` (a git clone of `main`; the cr
 ```
 
 The v1 collection (`collect-battlelogs.sh`, `collect-snapshots.sh`) runs from the same
-crontab and is unrelated.
+crontab and is unrelated. Everything else in `/home/ubuntu`: `docs/ORACLE_CLOUD_VM.md`.
 
 ### Deployment
 
@@ -79,6 +80,8 @@ progress. The next `:00`/`:30` run uses the new code; `uv run` syncs dependencie
 - Each deploy logs `deploy: <commit> (was <commit>)` to `cron-v2.log`. A failed
   fast-forward (a local commit on the VM) logs git's error and changes nothing.
 - The repo is public: the VM pulls over HTTPS with no credentials.
+- The checkout stays on its local `main` branch, fast-forwarded to `origin/deploy`. Only
+  `deploy` is fetched, so `git status` reports "ahead of origin/main": that is expected.
 - The gate only covers what `pytest` covers: today that is brawlify (golden tests skip
   in CI, the dump is not versioned) and `upload_to_r2.py`, not collection or artifact
   generation.
@@ -95,14 +98,15 @@ ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'crontab -l'
 
 ### Required Environment Variables
 
-Create `/home/ubuntu/brawl-stats-v2/.env`:
+`/home/ubuntu/brawl-stats-v2-git/.env` (git-ignored: recreating the checkout means copying it over). Template: `.env.template`.
 
 ```bash
-# Brawl Stars API
-BRAWL_STARS_API_TOKEN=your_token_here
+# Brawl Stars API: one of the two
+BRAWL_STARS_PROXY_URL=http://...      # production: the proxy on the VM (see below)
+# BRAWL_STARS_API_TOKEN=your_token    # direct API access, used only without a proxy URL
 
 # R2 Storage (Cloudflare)
-R2_ACCOUNT_ID=your_account_id
+R2_ENDPOINT=https://<account_id>.r2.cloudflarestorage.com
 R2_ACCESS_KEY_ID=your_access_key
 R2_SECRET_ACCESS_KEY=your_secret_key
 R2_BUCKET_NAME=brawl-stats-v2
@@ -116,17 +120,19 @@ NTFY_TOPIC=your_topic_name
 - R2: Cloudflare dashboard → R2 → Manage R2 API Tokens
 - ntfy: https://ntfy.sh (create topic for notifications)
 
+### Proxy Dependency
+
+v2 does not call the Brawl Stars API directly: its `.env` has `BRAWL_STARS_PROXY_URL` and no token. The proxy is the v1-era Flask app at the home root (`/home/ubuntu/main.py`, systemd unit `brawl-proxy.service`, gunicorn on port 8080), which adds the whitelisted token to each request. Its token comes from `/home/ubuntu/.env` (the unit's `EnvironmentFile`). **It must keep running when v1 is removed.** Locking it down and the v1 cleanup are tracked in #68 and #98.
+
 ### PATH Configuration for Cron
 
-Cron runs with minimal PATH. Must specify full path to `uv`:
+Cron runs with a minimal PATH. The crontab sets it on its first line, so the entries call plain `uv`:
 
 ```bash
-# Find uv location
-which uv
-# Output: /home/ubuntu/.local/bin/uv
+PATH=/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
-Use full path in crontab (see examples above).
+Over a non-interactive `ssh` the PATH is minimal too: the commands below use the full `/home/ubuntu/.local/bin/uv`.
 
 ---
 
@@ -161,15 +167,15 @@ uv run pipelines/scripts/vm.py --battlelogs -v
 uv run pipelines/scripts/vm.py --battlelogs --upload-r2 --notify-errors
 ```
 
-**Full pipeline (snapshots + battlelogs):**
+**Full pipeline (snapshots + battlelogs + Brawlify), as the daily run:**
 ```bash
-uv run pipelines/scripts/vm.py --battlelogs --snapshots --upload-r2 --notify-errors
+uv run pipelines/scripts/vm.py --battlelogs --snapshots --brawlify --upload-r2 --notify-errors
 ```
 
 **Manual trigger from local machine:**
 ```bash
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 \
-  "cd /home/ubuntu/brawl-stats-v2 && /home/ubuntu/.local/bin/uv run pipelines/scripts/vm.py --battlelogs --upload-r2"
+  "cd /home/ubuntu/brawl-stats-v2-git && /home/ubuntu/.local/bin/uv run pipelines/scripts/vm.py --battlelogs --upload-r2"
 ```
 
 ---
@@ -180,14 +186,14 @@ ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 \
 
 **Cron execution log:**
 ```bash
-/home/ubuntu/cron.log
+/home/ubuntu/cron-v2.log
 ```
 - Contains orchestrator output (start/stop, duration)
 - Errors from vm.py orchestration layer
 
 **Pipeline operations log:**
 ```bash
-/home/ubuntu/brawl-stats-v2/data/pipeline.log
+/home/ubuntu/brawl-stats-v2-git/data/pipeline.log
 ```
 - Detailed logs from collection, artifact generation, uploads
 - All subscript operations logged here
@@ -195,10 +201,10 @@ ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 \
 **Viewing logs remotely:**
 ```bash
 # Cron log (last 50 lines)
-ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -50 /home/ubuntu/cron.log'
+ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -50 /home/ubuntu/cron-v2.log'
 
 # Pipeline log (last 100 lines)
-ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -100 /home/ubuntu/brawl-stats-v2/data/pipeline.log'
+ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -100 /home/ubuntu/brawl-stats-v2-git/data/pipeline.log'
 ```
 
 ### ntfy Notifications
@@ -254,7 +260,7 @@ https://ntfy.sh/your_topic_name
 # Snapshots: Can be collected any time (represents current state)
 
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132
-cd /home/ubuntu/brawl-stats-v2
+cd /home/ubuntu/brawl-stats-v2-git
 /home/ubuntu/.local/bin/uv run pipelines/scripts/vm.py --battlelogs --snapshots --upload-r2
 ```
 
@@ -262,16 +268,19 @@ cd /home/ubuntu/brawl-stats-v2
 ```bash
 # Regenerate from local raw data
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132
-cd /home/ubuntu/brawl-stats-v2
+cd /home/ubuntu/brawl-stats-v2-git
 /home/ubuntu/.local/bin/uv run pipelines/scripts/gen_artifacts.py
 /home/ubuntu/.local/bin/uv run pipelines/scripts/upload_to_r2.py --artifacts --execute
 ```
 
 **If local data lost (VM crash):**
+
+> `sync_from_r2.py` does not restore Brawlify data (`raw/brawlify/history/`, `reference/`) and only lists the first 1000 R2 keys: #99. Until it is fixed, download `raw/brawlify/history/` by hand.
+
 ```bash
 # Download from R2
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132
-cd /home/ubuntu/brawl-stats-v2
+cd /home/ubuntu/brawl-stats-v2-git
 /home/ubuntu/.local/bin/uv run pipelines/scripts/sync_from_r2.py --execute
 
 # Regenerate artifacts
@@ -285,13 +294,13 @@ cd /home/ubuntu/brawl-stats-v2
 
 ### Collection failing with 403/401 errors
 
-API token expired or IP not whitelisted:
+API token expired or IP not whitelisted. The token lives in the **proxy's** env file, not in the v2 checkout (see [Proxy Dependency](#proxy-dependency)):
 1. Create new API key at https://developer.brawlstars.com with IP `129.151.245.132`
-2. Update `.env` file on VM:
+2. Update the proxy's env file and restart it:
    ```bash
    ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132
-   cd /home/ubuntu/brawl-stats-v2
-   nano .env  # Update BRAWL_STARS_API_TOKEN
+   nano /home/ubuntu/.env  # Update BRAWL_STARS_API_TOKEN (EnvironmentFile of brawl-proxy.service)
+   sudo systemctl restart brawl-proxy
    ```
 
 ### R2 upload failing
@@ -299,7 +308,7 @@ API token expired or IP not whitelisted:
 Check R2 credentials:
 ```bash
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132
-cd /home/ubuntu/brawl-stats-v2
+cd /home/ubuntu/brawl-stats-v2-git
 cat .env | grep R2_
 ```
 
@@ -354,20 +363,20 @@ Use full path in crontab:
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'crontab -l'
 
 # View recent cron executions
-ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -50 /home/ubuntu/cron.log'
+ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -50 /home/ubuntu/cron-v2.log'
 
 # View pipeline logs
-ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -100 /home/ubuntu/brawl-stats-v2/data/pipeline.log'
+ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 'tail -100 /home/ubuntu/brawl-stats-v2-git/data/pipeline.log'
 
 # Manual collection trigger
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 \
-  "cd /home/ubuntu/brawl-stats-v2 && /home/ubuntu/.local/bin/uv run pipelines/scripts/vm.py --battlelogs --upload-r2"
+  "cd /home/ubuntu/brawl-stats-v2-git && /home/ubuntu/.local/bin/uv run pipelines/scripts/vm.py --battlelogs --upload-r2"
 
 # Check R2 sync status
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 \
-  "cd /home/ubuntu/brawl-stats-v2 && /home/ubuntu/.local/bin/uv run pipelines/scripts/sync_from_r2.py"
+  "cd /home/ubuntu/brawl-stats-v2-git && /home/ubuntu/.local/bin/uv run pipelines/scripts/sync_from_r2.py"
 
 # Regenerate artifacts
 ssh -i ~/Downloads/ssh-key-2026-03-14.key ubuntu@129.151.245.132 \
-  "cd /home/ubuntu/brawl-stats-v2 && /home/ubuntu/.local/bin/uv run pipelines/scripts/gen_artifacts.py"
+  "cd /home/ubuntu/brawl-stats-v2-git && /home/ubuntu/.local/bin/uv run pipelines/scripts/gen_artifacts.py"
 ```
