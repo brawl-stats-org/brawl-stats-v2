@@ -7,7 +7,8 @@
   gave 3500 with the 09-01 dump, 2600 in game, and the 10-03 dump caught up. Check
   `generatedAt` and `docs/brawlify/tokens/balance-changes.md` before blaming a recipe.
 - **The 2026-09-01 dump is lost**: overwritten by the 10-03 one on the first archived run.
-- **History has no backup yet.** `data/raw/brawlify/history/` is git-ignored; its R2 backup is #78.
+- **History lives on the VM and R2 only.** `data/raw/brawlify/history/` is git-ignored;
+  R2 `raw/brawlify/history/` is its add-only backup: a local deletion is never mirrored.
 - A table removed upstream stays on disk and is not reported (7 since 2026-10-03).
 - **BrawlAPI's ETag is not the body's MD5** (checked 2026-10-29); we do not know what it
   hashes. If it stayed the same while the content changed, a 304 would hide the change:

@@ -50,4 +50,4 @@ maps) the rest of brawl-stats joins against. Imported from the `brawlify-api` sa
 - `pipelines/inputs/brawlify/review/*.done` (in-game measurements) and
   `pipelines/inputs/brawlify/literals.json`: versioned, never regenerated.
 - `data/raw/brawlify/history/`: archived dumps, exist nowhere upstream. Git-ignored;
-  R2 backup is #78.
+  backed up to R2 `raw/brawlify/history/` (add-only) by `vm.py --brawlify --upload-r2`.

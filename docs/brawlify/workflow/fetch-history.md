@@ -34,6 +34,10 @@ A file is archived (gzip, `mtime=0` so identical bytes give identical archives) 
 dates seen. A past dump is rebuilt by taking, for each file, its latest copy archived
 at or before that run. A full dump is ~15 MB gzipped; a run without changes costs 0.
 
+On the VM, `vm.py --brawlify --upload-r2` backs the archive up to R2 `raw/brawlify/history/`
+(`upload_to_r2.py --brawlify-history`): only new archives are uploaded, then `index.json`
+(last, so it never lists an archive R2 lacks), and nothing is ever deleted there.
+
 ## Crash safety
 
 Three things record a change: the archived copy, `index.json`, the data file. They
