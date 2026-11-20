@@ -1,14 +1,13 @@
-from pathlib import Path
-# Add parent (pipelines/) to path so script can run standalone from scripts/ dir
-
 """
-Compare local data/ with R2 and optionally sync missing/different files.
+Compare local data/ with R2 and optionally download what R2 has and local lacks or differs.
 
-Local structure:  data/raw/{snapshots,battlelogs}/, data/artifacts/
-R2 structure:     raw/{snapshots,battlelogs}/, artifacts/
+R2 is the source of truth. Every synced R2 key maps to the same path under data/:
+`raw/battlelogs/2026-09-01.json.gz` <-> `data/raw/battlelogs/2026-09-01.json.gz`.
+Only the prefixes in SYNCED_PREFIXES are synced; any other key (e.g. a leftover
+`artifacts-backup-*/`) is skipped and reported.
 
-Comparison: Size + ETag (MD5)
-Output: Grouped by type (battlelogs → snapshots → artifacts), then status (MISSING → EXTRA → DIFFERENT → EQUAL)
+Comparison: size for .gz files (their R2 ETag never matches a local hash), size + MD5 otherwise.
+Output: grouped by prefix, then status (MISSING -> EXTRA -> DIFFERENT -> EQUAL).
 """
 
 import argparse
@@ -16,38 +15,47 @@ import hashlib
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
+from pathlib import Path
+
 from brawl_stats import R2Client
 
+DATA_ROOT = Path("data")
 
-class FileType(Enum):
-    BATTLELOG = "battlelogs"
-    SNAPSHOT = "snapshots"
-    ARTIFACT = "artifacts"
+SYNCED_PREFIXES = (
+    "raw/battlelogs/",
+    "raw/snapshots/",
+    "artifacts/",
+)
+"""R2 prefixes mirrored under data/, in display order."""
 
 
 class DiffStatus(Enum):
-    MISSING = "MISSING"  # In R2, not local
-    EXTRA = "EXTRA"      # In local, not R2
+    MISSING = "MISSING"      # In R2, not local
+    EXTRA = "EXTRA"          # In local, not R2
     DIFFERENT = "DIFFERENT"  # Different size or ETag
-    EQUAL = "EQUAL"      # Same size and ETag
+    EQUAL = "EQUAL"          # Same size and ETag
 
 
 @dataclass
 class FileInfo:
-    """Metadata for a single file."""
-    path: str  # Relative path (e.g., "snapshots/2026-09-01.json.gz")
-    size: int | None = None   # Bytes
-    etag: str | None = None   # MD5 hash from R2
+    """Metadata for a single file, keyed by its R2 key."""
+    path: str  # R2 key, also the path relative to data/ (e.g. "raw/snapshots/2026-09-01.json.gz")
+    size: int
+    etag: str | None = None   # MD5; None for local .gz files (never compared)
     mtime: str | None = None  # ISO timestamp (for display only)
 
 
 @dataclass
 class ComparisonResult:
     """Result of comparing a single file."""
-    file_type: FileType
+    prefix: str
     status: DiffStatus
     local: FileInfo | None
     r2: FileInfo | None
+
+    @property
+    def path(self) -> str:
+        return self.local.path if self.local else self.r2.path
 
 
 def format_size(size_bytes: int) -> str:
@@ -60,59 +68,38 @@ def format_size(size_bytes: int) -> str:
         return f"{size_bytes}B"
 
 
-def compute_local_etag(file_path: Path) -> str:
-    """
-    Compute MD5 hash matching R2 ETag.
+def synced_prefix(key: str) -> str | None:
+    """The SYNCED_PREFIXES entry `key` falls under, or None if it is not synced."""
+    return next((prefix for prefix in SYNCED_PREFIXES if key.startswith(prefix)), None)
 
-    For .gz files: hash decompressed content (gzip headers include timestamp).
-    Speed impact: ~2-3x slower than raw file hash due to decompression overhead.
-    """
-    import gzip
 
+def compute_local_md5(file_path: Path) -> str:
+    """MD5 of the file bytes, as R2 computes the ETag of a single-part upload."""
     md5 = hashlib.md5()
-
-    if file_path.suffix == '.gz':
-        with gzip.open(file_path, 'rb') as f:
-            for chunk in iter(lambda: f.read(8192), b''):
-                md5.update(chunk)
-    else:
-        with open(file_path, 'rb') as f:
-            for chunk in iter(lambda: f.read(8192), b''):
-                md5.update(chunk)
-
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            md5.update(chunk)
     return md5.hexdigest()
 
 
-def list_local_files(verbose: bool = False) -> dict[str, FileInfo]:
-    """
-    List all files under data/ recursively.
-
-    Returns:
-        Dict mapping relative path to FileInfo.
-        Example: {"raw/battlelogs/2026-09-01.json.gz": FileInfo(...)}
-    """
+def list_local_files(data_root: Path = DATA_ROOT, verbose: bool = False) -> dict[str, FileInfo]:
+    """Every local file under a synced prefix, keyed by its R2 key."""
     results: dict[str, FileInfo] = {}
-
-    # Only scan specific directories
-    scan_paths = [
-        Path("data/raw/snapshots"),
-        Path("data/raw/battlelogs"),
-        Path("data/artifacts"),
-    ]
-
-    for base_path in scan_paths:
-        if not base_path.exists():
+    for prefix in SYNCED_PREFIXES:
+        base_path = data_root / prefix
+        if not base_path.is_dir():
             continue
-
         for path in base_path.rglob("*"):
             if not path.is_file():
                 continue
-
-            rel_path = str(path.relative_to("data"))
-            size = path.stat().st_size
-            mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).isoformat()
-            etag = compute_local_etag(path)
-            results[rel_path] = FileInfo(path=rel_path, size=size, etag=etag, mtime=mtime)
+            key = path.relative_to(data_root).as_posix()
+            stat = path.stat()
+            results[key] = FileInfo(
+                path=key,
+                size=stat.st_size,
+                etag=None if path.suffix == ".gz" else compute_local_md5(path),
+                mtime=datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc).isoformat(),
+            )
 
     if verbose:
         print(f"Found {len(results)} local files.")
@@ -120,109 +107,90 @@ def list_local_files(verbose: bool = False) -> dict[str, FileInfo]:
 
 
 def list_r2_files(client: R2Client, verbose: bool = False) -> dict[str, FileInfo]:
-    """
-    List all files in R2 bucket.
-
-    Returns:
-        Dict mapping relative path to FileInfo.
-        Example: {"raw/battlelogs/2026-09-01.json.gz": FileInfo(...)}
-    """
-    response = client.get_client().list_objects_v2(Bucket=client.get_bucket())
+    """Every R2 key in the bucket (paginated: one list call returns at most 1000 keys)."""
+    pages = client.get_client().get_paginator("list_objects_v2").paginate(Bucket=client.get_bucket())
     results: dict[str, FileInfo] = {}
-    for obj in response.get('Contents', []):
-        rel_path = obj['Key']
-        size = obj['Size']
-        etag = obj['ETag'].strip('"')
-        mtime = obj['LastModified'].isoformat()
-        results[rel_path] = FileInfo(path=rel_path, size=size, etag=etag, mtime=mtime)
+    for page in pages:
+        for obj in page.get("Contents", []):
+            key = obj["Key"]
+            results[key] = FileInfo(
+                path=key,
+                size=obj["Size"],
+                etag=obj["ETag"].strip('"'),
+                mtime=obj["LastModified"].isoformat(),
+            )
 
     if verbose:
         print(f"Found {len(results)} R2 files.")
     return results
 
 
-def classify_file_type(rel_path: str) -> FileType | None:
-    """Determine file type from relative path."""
-    if "artifacts" in rel_path:
-        return FileType.ARTIFACT
-    elif "battlelogs" in rel_path:
-        return FileType.BATTLELOG
-    elif "snapshots" in rel_path:
-        return FileType.SNAPSHOT
-    else:
-        print(f"Warning: Skipping unknown file type: {rel_path}")
-        return None
+def is_different(local: FileInfo, r2: FileInfo) -> bool:
+    """Size for .gz files, size + MD5 otherwise.
+
+    .gz files are compared by size only, as before: their ETag is not reliably an MD5
+    (boto switches to multipart uploads above 8 MB, whose ETag is `<md5 of parts>-<n>`).
+    """
+    if local.size != r2.size:
+        return True
+    return not local.path.endswith(".gz") and local.etag != r2.etag
 
 
 def compare_files(
     local_files: dict[str, FileInfo],
-    r2_files: dict[str, FileInfo]
-) -> list[ComparisonResult]:
-    """
-    Compare local and R2 files.
+    r2_files: dict[str, FileInfo],
+) -> tuple[list[ComparisonResult], list[str]]:
+    """Compare local and R2 files under the synced prefixes.
 
     Returns:
-        List of ComparisonResult, one per unique file path.
+        One ComparisonResult per synced path, and the sorted keys that were skipped.
     """
-    all_paths = set(local_files.keys()).union(r2_files.keys())
     results: list[ComparisonResult] = []
-    for path in all_paths:
+    skipped: list[str] = []
+    for path in sorted(set(local_files) | set(r2_files)):
+        prefix = synced_prefix(path)
+        if prefix is None:
+            skipped.append(path)
+            continue
+
         local_info = local_files.get(path)
         r2_info = r2_files.get(path)
-        file_type = classify_file_type(path)
-
-        if file_type is None:
-            continue
-
-        status = None
-        if local_info and not r2_info:
-            status = DiffStatus.EXTRA
-        elif r2_info and not local_info:
+        if local_info and r2_info:
+            status = DiffStatus.DIFFERENT if is_different(local_info, r2_info) else DiffStatus.EQUAL
+        elif r2_info:
             status = DiffStatus.MISSING
-        elif local_info and r2_info:
-            # For .gz files: size-only (gzip timestamps cause hash mismatch)
-            # For others: size + etag
-            is_gzip = local_info.path.endswith('.gz')
-            if is_gzip:
-                different = local_info.size != r2_info.size
-            else:
-                different = local_info.size != r2_info.size or local_info.etag != r2_info.etag
+        else:
+            status = DiffStatus.EXTRA
+        results.append(ComparisonResult(prefix=prefix, status=status, local=local_info, r2=r2_info))
 
-            status = DiffStatus.DIFFERENT if different else DiffStatus.EQUAL
-
-        if status is not None:
-            results.append(ComparisonResult(
-                local=local_info,
-                r2=r2_info,
-                file_type=file_type,
-                status=status
-            ))
-
-    return results
+    return results, skipped
 
 
-def print_results(results: list[ComparisonResult], verbose: bool = False):
+def files_to_download(results: list[ComparisonResult]) -> list[FileInfo]:
+    """The R2 side of every MISSING and DIFFERENT file, in download order."""
+    return [res.r2 for res in results if res.status in (DiffStatus.MISSING, DiffStatus.DIFFERENT)]
+
+
+def print_results(results: list[ComparisonResult], skipped: list[str], verbose: bool = False):
     """
-    Print comparison results grouped by type, then status.
+    Print comparison results grouped by prefix, then status.
 
-    Order: battlelogs → snapshots → artifacts
-    Within each type: MISSING → EXTRA → DIFFERENT → EQUAL (if verbose)
+    Within each prefix: MISSING -> EXTRA -> DIFFERENT -> EQUAL (if verbose)
     """
-    groups: dict[FileType, list[ComparisonResult]] = {}
+    groups: dict[str, list[ComparisonResult]] = {}
     for result in results:
-        groups.setdefault(result.file_type, []).append(result)
+        groups.setdefault(result.prefix, []).append(result)
 
-    for file_type in [FileType.BATTLELOG, FileType.SNAPSHOT, FileType.ARTIFACT]:
-        type_results = groups.get(file_type, [])
-        if not type_results:
+    for prefix in SYNCED_PREFIXES:
+        prefix_results = groups.get(prefix, [])
+        if not prefix_results:
             continue
 
-        print(f"\n===== {file_type.value.upper()} =====")
+        print(f"\n===== {prefix.rstrip('/').upper()} =====")
         status_groups: dict[DiffStatus, list[ComparisonResult]] = {}
-        for result in type_results:
+        for result in prefix_results:
             status_groups.setdefault(result.status, []).append(result)
 
-        # Check if this section has differences
         has_differences = any(
             s in status_groups for s in [DiffStatus.MISSING, DiffStatus.EXTRA, DiffStatus.DIFFERENT]
         )
@@ -236,38 +204,35 @@ def print_results(results: list[ComparisonResult], verbose: bool = False):
                 continue
 
             print(f"\n{status.value} ({len(status_results)}):")
-            status_results.sort(key=lambda x: x.local.path if x.local else x.r2.path)
-            max_path_len = max(len(res.local.path if res.local else res.r2.path) for res in status_results)
-            max_size_fmt_len = max(len(format_size(res.local.size if res.local else res.r2.size)) for res in status_results)
+            max_path_len = max(len(res.path) for res in status_results)
+            max_size_fmt_len = max(len(format_size((res.local or res.r2).size)) for res in status_results)
             for res in status_results:
                 if status == DiffStatus.MISSING:
-                    print(f"    {res.r2.path:<{max_path_len}}  R2: {format_size(res.r2.size):<{max_size_fmt_len}} ({res.r2.mtime})")
+                    print(f"    {res.path:<{max_path_len}}  R2: {format_size(res.r2.size):<{max_size_fmt_len}} ({res.r2.mtime})")
                 elif status == DiffStatus.EXTRA:
-                    print(f"    {res.local.path:<{max_path_len}}  Local: {format_size(res.local.size):<{max_size_fmt_len}} ({res.local.mtime})")
+                    print(f"    {res.path:<{max_path_len}}  Local: {format_size(res.local.size):<{max_size_fmt_len}} ({res.local.mtime})")
                 elif status == DiffStatus.DIFFERENT:
-                    print(f"    {res.local.path:<{max_path_len}}  Local: {format_size(res.local.size):<{max_size_fmt_len}} | R2: {format_size(res.r2.size)}")
+                    print(f"    {res.path:<{max_path_len}}  Local: {format_size(res.local.size):<{max_size_fmt_len}} | R2: {format_size(res.r2.size)}")
                 elif status == DiffStatus.EQUAL:
-                    print(f"    {res.local.path}")
+                    print(f"    {res.path}")
+
+    if skipped:
+        print(f"\nSkipped {len(skipped)} R2 keys outside the synced prefixes")
+        if verbose:
+            for key in skipped:
+                print(f"    {key}")
 
 
-def download_files(client: R2Client, results: list[ComparisonResult]):
-    """
-    Download MISSING and DIFFERENT files from R2.
-
-    Args:
-        client: R2 client
-        results: Comparison results
-    """
-    to_download = [res for res in results if res.status in (DiffStatus.MISSING, DiffStatus.DIFFERENT)]
+def download_files(client: R2Client, to_download: list[FileInfo], data_root: Path = DATA_ROOT):
+    """Download each file from R2 to the same path under data_root."""
     if not to_download:
         print("No files to download.")
         return
-    
-    for res in to_download:
-        local_path = Path("data") / res.r2.path
-        local_path.parent.mkdir(parents=True, exist_ok=True)
-        client.download_file(res.r2.path, local_path, verbose=True)
-        print(f"Downloaded {res.r2.path} → {local_path} ({format_size(res.r2.size)})")
+
+    for info in to_download:
+        local_path = data_root / info.path
+        client.download_file(info.path, str(local_path), verbose=True)
+        print(f"Downloaded {info.path} -> {local_path} ({format_size(info.size)})")
 
 
 def main():
@@ -284,7 +249,7 @@ def main():
     parser.add_argument(
         "-v", "--verbose",
         action="store_true",
-        help="Show EQUAL files in output"
+        help="Show EQUAL files and skipped R2 keys in output"
     )
 
     args = parser.parse_args()
@@ -303,15 +268,15 @@ def main():
 
     if verbose:
         print("Comparing files...")
-    results = compare_files(local_files, r2_files)
+    results, skipped = compare_files(local_files, r2_files)
 
-    print_results(results, verbose=verbose)
+    print_results(results, skipped, verbose=verbose)
 
     if dry_run:
         print("\n[DRY RUN] Use --execute to actually download files")
     else:
         print("\nDownloading files...")
-        download_files(client, results)
+        download_files(client, files_to_download(results))
 
 
 if __name__ == "__main__":
