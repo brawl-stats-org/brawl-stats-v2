@@ -18,6 +18,7 @@ from enum import Enum
 from pathlib import Path
 
 from brawl_stats import R2Client
+from upload_to_r2 import HISTORY_INDEX_KEY, HISTORY_PREFIX, REFERENCE_PREFIX
 
 DATA_ROOT = Path("data")
 
@@ -25,6 +26,8 @@ SYNCED_PREFIXES = (
     "raw/battlelogs/",
     "raw/snapshots/",
     "artifacts/",
+    HISTORY_PREFIX,
+    REFERENCE_PREFIX,
 )
 """R2 prefixes mirrored under data/, in display order."""
 
@@ -167,8 +170,13 @@ def compare_files(
 
 
 def files_to_download(results: list[ComparisonResult]) -> list[FileInfo]:
-    """The R2 side of every MISSING and DIFFERENT file, in download order."""
-    return [res.r2 for res in results if res.status in (DiffStatus.MISSING, DiffStatus.DIFFERENT)]
+    """The R2 side of every MISSING and DIFFERENT file, in download order.
+
+    The Brawlify history index goes last, as on upload: an interrupted sync must never
+    leave a local index listing an archive that is not on disk.
+    """
+    files = [res.r2 for res in results if res.status in (DiffStatus.MISSING, DiffStatus.DIFFERENT)]
+    return sorted(files, key=lambda f: f.path == HISTORY_INDEX_KEY)
 
 
 def print_results(results: list[ComparisonResult], skipped: list[str], verbose: bool = False):

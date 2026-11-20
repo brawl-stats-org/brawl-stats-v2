@@ -11,10 +11,13 @@ from sync_from_r2 import (
     list_r2_files,
     synced_prefix,
 )
+from upload_to_r2 import HISTORY_INDEX_KEY, HISTORY_PREFIX, REFERENCE_PREFIX
 
 BATTLELOG = "raw/battlelogs/2026-11-20.json.gz"
 SNAPSHOT = "raw/snapshots/2026-11-20.json.gz"
 ARTIFACT = "artifacts/battlelog_core.json"
+ARCHIVE = f"{HISTORY_PREFIX}2026-11-20T210113Z/csv_logic/cards.json.gz"
+REFERENCE = f"{REFERENCE_PREFIX}brawler_stats.json"
 
 
 def info(key: str, size: int = 10, etag: str | None = "md5") -> FileInfo:
@@ -81,6 +84,29 @@ def test_local_files_keyed_like_r2(tmp_path):
     assert set(files) == {BATTLELOG, "artifacts/snapshot_detail/TAG.json"}
     assert files[BATTLELOG].etag is None
     assert files["artifacts/snapshot_detail/TAG.json"].etag == "99914b932bd37a50b983c5e7c90ae93b"
+
+
+def test_brawlify_history_and_reference_are_synced():
+    assert synced_prefix(ARCHIVE) == HISTORY_PREFIX
+    assert synced_prefix(HISTORY_INDEX_KEY) == HISTORY_PREFIX
+    assert synced_prefix(REFERENCE) == REFERENCE_PREFIX
+
+
+def test_brawlify_local_files_keyed_like_r2(tmp_path):
+    archive = tmp_path / ARCHIVE
+    archive.parent.mkdir(parents=True)
+    archive.write_bytes(b"gz")
+    (tmp_path / REFERENCE).parent.mkdir(parents=True)
+    (tmp_path / REFERENCE).write_text("{}")
+    assert set(list_local_files(tmp_path)) == {ARCHIVE, REFERENCE}
+
+
+def test_history_index_downloaded_last():
+    r2 = {key: info(key) for key in (HISTORY_INDEX_KEY, ARCHIVE, BATTLELOG, REFERENCE)}
+    results, _ = compare_files({}, r2)
+    paths = [f.path for f in files_to_download(results)]
+    assert paths[-1] == HISTORY_INDEX_KEY
+    assert set(paths) == set(r2)
 
 
 class FakeR2:

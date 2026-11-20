@@ -275,7 +275,9 @@ cd /home/ubuntu/brawl-stats-v2-git
 
 **If local data lost (VM crash):**
 
-> `sync_from_r2.py` does not restore Brawlify data (`raw/brawlify/history/`, `reference/`) and only lists the first 1000 R2 keys: #99. Until it is fixed, download `raw/brawlify/history/` by hand.
+`sync_from_r2.py` restores every synced prefix to the same path under `data/`: `raw/battlelogs/`, `raw/snapshots/`, `artifacts/`, `raw/brawlify/history/`, `reference/`. Other keys (e.g. a leftover `artifacts-backup-*/`) are skipped and counted. R2 is the source of truth: `--execute` downloads files missing locally **and** files that differ.
+
+The current Brawlify dump (`data/raw/brawlify/` outside `history/`) is not on R2. The next `brawlify fetch` downloads it again and, finding no local copy, archives the whole dump once more (~15 MB, a duplicate run in `history/index.json`). Harmless.
 
 ```bash
 # Download from R2
