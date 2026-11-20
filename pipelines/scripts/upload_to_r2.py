@@ -9,8 +9,13 @@ from datetime import datetime
 from dotenv import load_dotenv
 from brawl_stats.config import PATH_ARTIFACTS
 from brawl_stats import R2Client, PipelineMonitor
+from brawlify.core import paths as brawlify_paths
 
 load_dotenv()
+
+REFERENCE_PREFIX = "reference/"
+HISTORY_PREFIX = "raw/brawlify/history/"
+HISTORY_INDEX_KEY = f"{HISTORY_PREFIX}index.json"
 
 
 def upload_raw_file(client: R2Client, filepath: str, verbose: bool, dry_run: bool, monitor: PipelineMonitor = None) -> bool:
@@ -286,10 +291,105 @@ def upload_artifacts_clean(client: R2Client, verbose: bool, dry_run: bool, monit
         raise RuntimeError(f"Upload failed but backup restored successfully: {e}") from e
 
 
+def local_keys(root: Path, prefix: str) -> dict[str, Path]:
+    """Map every file under `root` to its R2 key: `prefix` + path relative to `root`."""
+    return {f"{prefix}{path.relative_to(root).as_posix()}": path for path in root.rglob("*") if path.is_file()}
+
+
+def remote_keys(client: R2Client, prefix: str) -> set[str]:
+    """Every R2 key under `prefix`."""
+    pages = client.get_client().get_paginator("list_objects_v2").paginate(Bucket=client.get_bucket(), Prefix=prefix)
+    return {obj["Key"] for page in pages for obj in page.get("Contents", [])}
+
+
+def stale_keys(local: set[str], remote: set[str]) -> set[str]:
+    """Keys on R2 that no longer exist locally."""
+    return remote - local
+
+
+def history_keys_to_upload(local: set[str], remote: set[str]) -> set[str]:
+    """Archived files never change once written, so only the ones R2 lacks are uploaded.
+
+    The index is the exception: it gains an entry on every archiving run.
+    """
+    return {key for key in local if key not in remote or key == HISTORY_INDEX_KEY}
+
+
+def local_files_or_raise(root: Path, prefix: str, monitor: PipelineMonitor = None) -> dict[str, Path]:
+    """`local_keys`, raising if `root` is missing or empty."""
+    files = local_keys(root, prefix) if root.is_dir() else {}
+    if not files:
+        error_msg = f"Nothing to upload: {root} is missing or empty"
+        print(error_msg)
+        if monitor:
+            monitor.log_error(error_msg)
+        raise FileNotFoundError(error_msg)
+    return files
+
+
+def upload_reference(client: R2Client, verbose: bool, dry_run: bool, monitor: PipelineMonitor = None) -> int:
+    """Mirror data/reference/ to reference/: upload every file, then delete the ones gone locally.
+
+    Uploading before deleting means no moment where a served file is missing.
+
+    Returns:
+        Number of files uploaded
+    """
+    files = local_files_or_raise(brawlify_paths.DERIVED, REFERENCE_PREFIX, monitor)
+    stale = stale_keys(set(files), remote_keys(client, REFERENCE_PREFIX))
+
+    if dry_run:
+        msg = f"[DRY-RUN] Would upload {len(files)} reference files, delete {len(stale)} stale: {sorted(stale)}"
+        print(msg)
+        if monitor:
+            monitor.log_info(msg)
+        return len(files)
+
+    for key, path in sorted(files.items()):
+        client.upload_file(str(path), key, verbose=verbose)
+    for key in sorted(stale):
+        client.get_client().delete_object(Bucket=client.get_bucket(), Key=key)
+
+    msg = f"Uploaded {len(files)} reference files, deleted {len(stale)} stale"
+    print(msg)
+    if monitor:
+        monitor.log_info(msg)
+    return len(files)
+
+
+def upload_brawlify_history(client: R2Client, verbose: bool, dry_run: bool, monitor: PipelineMonitor = None) -> int:
+    """Back up data/raw/brawlify/history/ to raw/brawlify/history/. Add-only: never deletes.
+
+    Returns:
+        Number of files uploaded
+    """
+    files = local_files_or_raise(brawlify_paths.HISTORY, HISTORY_PREFIX, monitor)
+    to_upload = history_keys_to_upload(set(files), remote_keys(client, HISTORY_PREFIX))
+
+    if dry_run:
+        msg = f"[DRY-RUN] Would upload {len(to_upload)} of {len(files)} history files"
+        print(msg)
+        if monitor:
+            monitor.log_info(msg)
+        return len(to_upload)
+
+    # The index goes last: it must never list an archive that is not on R2 yet.
+    for key in sorted(to_upload, key=lambda key: (key == HISTORY_INDEX_KEY, key)):
+        client.upload_file(str(files[key]), key, verbose=verbose)
+
+    msg = f"Uploaded {len(to_upload)} of {len(files)} history files"
+    print(msg)
+    if monitor:
+        monitor.log_info(msg)
+    return len(to_upload)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Upload data to R2 storage")
     parser.add_argument("--raw", action="append", help="Upload single raw file (can specify multiple)")
     parser.add_argument("--artifacts", action="store_true", help="Upload all artifacts with clean")
+    parser.add_argument("--reference", action="store_true", help="Mirror data/reference/ to reference/")
+    parser.add_argument("--brawlify-history", action="store_true", help="Back up new archives of data/raw/brawlify/history/")
     parser.add_argument("--execute", action="store_true", help="Actually execute (default is dry-run)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Verbose output")
     parser.add_argument("--notify-errors", action="store_true", help="Send ntfy notifications on errors")
@@ -297,8 +397,8 @@ def main():
     args = parser.parse_args()
 
     # Validate at least one flag specified
-    if not args.raw and not args.artifacts:
-        print("Error: Specify --raw and/or --artifacts")
+    if not (args.raw or args.artifacts or args.reference or args.brawlify_history):
+        print("Error: Specify --raw, --artifacts, --reference and/or --brawlify-history")
         parser.print_help()
         return 1
 
@@ -313,6 +413,8 @@ def main():
 
     client = R2Client()
     raw_files = []
+    reference_count = 0
+    history_count = 0
 
     try:
         t0 = time.perf_counter()
@@ -333,6 +435,12 @@ def main():
         if args.artifacts:
             upload_artifacts_clean(client, verbose=args.verbose, dry_run=dry_run, monitor=monitor)
 
+        if args.reference:
+            reference_count = upload_reference(client, verbose=args.verbose, dry_run=dry_run, monitor=monitor)
+
+        if args.brawlify_history:
+            history_count = upload_brawlify_history(client, verbose=args.verbose, dry_run=dry_run, monitor=monitor)
+
         duration = time.perf_counter() - t0
 
         if dry_run:
@@ -347,7 +455,9 @@ def main():
                 stats = {
                     "Duration": f"{duration:.2f}s",
                     "Raw files": len(raw_files) if raw_files else 0,
-                    "Artifacts": "Yes" if args.artifacts else "No"
+                    "Artifacts": "Yes" if args.artifacts else "No",
+                    "Reference files": reference_count,
+                    "History files": history_count,
                 }
                 monitor.notify_success(stats)
 
@@ -364,6 +474,10 @@ def main():
                 operation.append(f"{len(raw_files)} raw files")
             if args.artifacts:
                 operation.append("artifacts")
+            if args.reference:
+                operation.append("reference")
+            if args.brawlify_history:
+                operation.append("brawlify history")
 
             context = f"Script: upload_to_r2.py\nOperation: {', '.join(operation)}\nError: {str(e)}"
             monitor.send_ntfy(

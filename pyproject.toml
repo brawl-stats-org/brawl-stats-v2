@@ -48,5 +48,5 @@ ignore = ["E402", "E501"]
 
 [tool.pytest.ini_options]
 testpaths = ["pipelines/tests"]
-# regenerate_golden.py imports test_golden.py.
-pythonpath = ["pipelines/tests/brawlify"]
+# regenerate_golden.py imports test_golden.py; tests import the scripts.
+pythonpath = ["pipelines/tests/brawlify", "pipelines/scripts"]
