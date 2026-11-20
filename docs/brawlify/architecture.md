@@ -5,7 +5,8 @@
 ```
 data/raw/brawlify/      [1] raw BrawlAPI dump. Written by `brawlify fetch` only. Git-ignored.
 data/build/brawlify/    intermediates read by other steps, never served. Git-ignored.
-data/reference/         [2] what the front receives, and only that. Git-ignored, served from R2.
+data/reference/         [2] what the front receives, and only that. Git-ignored, served from R2
+                        (`reference/`).
 pipelines/inputs/brawlify/   hand-written inputs: review/*.done, literals.json. Versioned.
 ```
 

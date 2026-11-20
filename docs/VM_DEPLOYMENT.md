@@ -21,6 +21,7 @@ vm.py (orchestrator)
   ├─> gen_artifacts.py     # Generate columnar artifacts
   ├─> upload_to_r2.py      # Upload artifacts (with backup recovery)
   └─> brawlify fetch/derive  # Reference data (--brawlify), runs even if collection failed
+        └─> upload_to_r2.py --reference --brawlify-history  # (--upload-r2)
 ```
 
 **Data flow:**

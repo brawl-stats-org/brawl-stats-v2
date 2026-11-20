@@ -23,6 +23,11 @@ scripts: they log to `data/pipeline.log`, take `--notify-errors` / `--notify-suc
 result from the exit code. The other commands are interactive tools: their exceptions
 surface as plain tracebacks.
 
+On the VM, `vm.py --brawlify --upload-r2` then runs
+`upload_to_r2.py --reference --brawlify-history`: `data/reference/` is mirrored to
+`reference/`, and new archives of `data/raw/brawlify/history/` are copied to
+`raw/brawlify/history/` (add-only, the index last). Without `--execute` it is a dry run.
+
 `uv run pytest` runs the tests. The golden tests need `data/raw/brawlify/` (they skip without it).
 
 ## Where the numbers stand (2026-11-12)

@@ -277,9 +277,13 @@ brawl-stats-v2/
   │   ├── battlelogs/
   │   │   ├── 2026-09-20.json.gz
   │   │   └── ...
-  │   └── snapshots/
-  │       ├── 2026-09-20.json.gz
-  │       └── ...
+  │   ├── snapshots/
+  │   │   ├── 2026-09-20.json.gz
+  │   │   └── ...
+  │   └── brawlify/history/   # Archived BrawlAPI dumps, add-only (exist nowhere else)
+  │       ├── index.json
+  │       └── <run>/...
+  ├── reference/          # Mirror of data/reference/ (brawlify derive), served to the front
   └── artifacts/
       ├── battlelog_core.json
       ├── battlelog_duels_detail.json
@@ -293,6 +297,8 @@ brawl-stats-v2/
 - Artifact uploads create timestamped backup (`artifacts-backup-{timestamp}/`) before deleting old files
 - On upload failure, automatically restores from backup
 - Backup deleted only after successful upload
+- `reference/` is a separate prefix: the clean upload wipes `artifacts/*`, it would delete
+  anything else stored there. It is mirrored in place (upload all, then delete stale files).
 
 ---
 

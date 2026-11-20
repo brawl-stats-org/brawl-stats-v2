@@ -223,18 +223,25 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
 
 
 def run_brawlify(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
-    """Fetch the Brawlify dump, then derive the reference data. Returns the exit code.
+    """Fetch the Brawlify dump, derive the reference data, then upload both. Returns the exit code.
 
-    Independent of collection: runs even if collection failed.
+    Independent of collection: runs even if collection failed. With --upload-r2, uploads
+    data/reference/ and the new dump archives.
     """
     print("\n=== Brawlify reference data ===")
-    for command in ("fetch", "derive"):
-        cmd = ["uv", "run", "brawlify", command]
+    steps = [(["uv", "run", "brawlify", command], f"Brawlify {command}") for command in ("fetch", "derive")]
+    if args.upload_r2:
+        upload = ["uv", "run", "pipelines/scripts/upload_to_r2.py", "--reference", "--brawlify-history", "--execute"]
+        if args.verbose:
+            upload.append("-v")
+        steps.append((upload, "Brawlify upload"))
+
+    for cmd, description in steps:
         if args.notify_errors:
             cmd.append("--notify-errors")
         if args.notify_success:
             cmd.append("--notify-success")
-        if not run_command(cmd, f"Brawlify {command}", monitor, args.verbose):
+        if not run_command(cmd, description, monitor, args.verbose):
             # Subscript already notified error (if --notify-errors passed)
             return 1
     return 0
