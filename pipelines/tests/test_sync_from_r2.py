@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from sync_from_r2 import (
     DiffStatus,
     FileInfo,
+    all_in_sync,
     compare_files,
     files_to_download,
     list_local_files,
@@ -62,6 +63,14 @@ def test_keys_outside_synced_prefixes_are_skipped_not_compared():
     results, skipped = compare_files({}, {backup: info(backup), ARTIFACT: info(ARTIFACT)})
     assert [res.path for res in results] == [ARTIFACT]
     assert skipped == [backup]
+
+
+def test_all_in_sync_only_when_every_file_is_equal():
+    both = {BATTLELOG: info(BATTLELOG), ARTIFACT: info(ARTIFACT)}
+    backup = "artifacts-backup-20261120T210000/battlelog_core.json"
+    assert all_in_sync(compare_files(both, {**both, backup: info(backup)})[0])
+    assert not all_in_sync(compare_files(both, {BATTLELOG: info(BATTLELOG)})[0])
+    assert not all_in_sync(compare_files({BATTLELOG: info(BATTLELOG)}, both)[0])
 
 
 def test_downloads_missing_and_different_from_r2():

@@ -179,6 +179,15 @@ def files_to_download(results: list[ComparisonResult]) -> list[FileInfo]:
     return sorted(files, key=lambda f: f.path == HISTORY_INDEX_KEY)
 
 
+def all_in_sync(results: list[ComparisonResult]) -> bool:
+    """True when every synced file exists on both sides and matches."""
+    return all(res.status == DiffStatus.EQUAL for res in results)
+
+
+def skipped_summary(skipped: list[str]) -> str:
+    return f"skipped {len(skipped)} R2 keys outside the synced prefixes"
+
+
 def print_results(results: list[ComparisonResult], skipped: list[str], verbose: bool = False):
     """
     Print comparison results grouped by prefix, then status.
@@ -225,7 +234,8 @@ def print_results(results: list[ComparisonResult], skipped: list[str], verbose: 
                     print(f"    {res.path}")
 
     if skipped:
-        print(f"\nSkipped {len(skipped)} R2 keys outside the synced prefixes")
+        summary = skipped_summary(skipped)
+        print(f"\n{summary[0].upper()}{summary[1:]}")
         if verbose:
             for key in skipped:
                 print(f"    {key}")
@@ -277,6 +287,11 @@ def main():
     if verbose:
         print("Comparing files...")
     results, skipped = compare_files(local_files, r2_files)
+
+    if all_in_sync(results) and not verbose:
+        line = f"All {len(results)} files in sync with R2"
+        print(f"{line} ({skipped_summary(skipped)})" if skipped else line)
+        return
 
     print_results(results, skipped, verbose=verbose)
 
