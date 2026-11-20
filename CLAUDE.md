@@ -109,12 +109,21 @@ Size options: `S` `IFSSO_kgDOBSvDRA`, `M` `IFSSO_kgDOBSvDRQ`, `M++` `IFSSO_kgDOB
 fields again with `organization(login:"brawl-stats-org"){issueFields(first:20){...}}`.
 
 **Project board** "Brawl Stats" (`gh project ... --owner brawl-stats-org`, project 1;
-`gh` needs the `project` scope: `gh auth refresh -s project`). New repo issues land on it
-automatically; set their `Status`: `Backlog` (known, not refined), `Ready` (refined, can
+`gh` needs the `project` scope: `gh auth refresh -s project`). A new issue is not always
+on it right away: add it (`gh project item-add 1 --owner brawl-stats-org --url <issue url>`,
+which prints the item id), then set its `Status`: `Backlog` (known, not refined), `Ready` (refined, can
 start), `In progress`, `In review`, `Done`. `.github/workflows/project-board.yml` moves
 `Ready` to `In progress` when a branch linked to the issue is pushed; the board's built-in
 workflows handle `In review` and `Done`. The project also has its own `Size`,
 `Estimate (d)` and `Priority` fields: they are empty and unused, ignore them.
+
+```bash
+gh project item-edit --project-id PVT_kwDOFQ7XNs4Bqfix --id <item id> \
+  --field-id PVTSSF_lADOFQ7XNs4Bqfixzho2cco --single-select-option-id <status>
+```
+
+Status options: `Backlog` `026efafa`, `Ready` `5977e4e3`, `In progress` `7fdf173c`,
+`In review` `01c34acd`, `Done` `ddea6525`.
 
 **Bug reports**:
 - Expected behavior
