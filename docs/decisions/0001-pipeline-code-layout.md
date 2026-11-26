@@ -46,7 +46,7 @@ effects on the other.
 
 | package | holds |
 |---|---|
-| `common` | what both sides need: `PipelineMonitor`, the R2 client and its helpers, gzip helpers, the memory profiler, the repo paths and shared strings |
+| `common` | what both sides need: `PipelineMonitor`, remote storage (R2 today), gzip helpers, the memory profiler, the repo paths and shared strings |
 | player package (today `brawl_stats`) | everything about player data: API client, collection, models, artifact generation (today's `gen_artifacts.py`) |
 | reference package (today `brawlify`) | everything about reference data: fetch, derive, tokens, review tools |
 
@@ -120,13 +120,18 @@ The names on disk and in R2 do not change. Raw data stays named by source
 (`data/raw/brawlify/`, R2 `raw/brawlify/history/`): a raw dump is a copy of one source.
 Derived data stays named by domain.
 
-### 6. Each package writes its own upload
+### 6. Each package writes its own upload, storage stays in `common`
 
-`common` knows *how* to talk to R2; each package says *what* it uploads.
+`common` knows *how* to talk to the remote storage; each package says *what* it uploads.
 
-`common` provides the R2 client and plain helper functions: the basic operations (upload a
-file, list keys, delete keys) and the few ways of syncing a directory that the pipelines
-use today:
+The packages do not know the storage is R2. They never import boto3 or the R2 client, and
+never handle an R2 type: they call `common` functions that take local paths and key
+prefixes. R2 is an implementation detail of `common`, so moving to another storage only
+changes `common`. Until a second backend actually exists, there is one implementation and
+no abstract interface around it.
+
+`common` provides plain functions: the basic operations (upload or download a file, list
+keys, delete keys) and the few ways of syncing a directory that the pipelines use today:
 
 | helper | behavior | used today by |
 |---|---|---|
