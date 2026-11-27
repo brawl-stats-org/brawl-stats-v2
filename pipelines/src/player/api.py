@@ -6,24 +6,30 @@ Handles all HTTP requests and caching.
 import os
 import time
 import requests
+from functools import cache
 from urllib.parse import quote
 from dotenv import load_dotenv
 
-load_dotenv()
+OFFICIAL_URL = "https://api.brawlstars.com/v1"
 
-# Determine API configuration from environment
-PROXY_URL = os.getenv("BRAWL_STARS_PROXY_URL")
-if PROXY_URL:
-    BASE_URL = PROXY_URL
-    API_TOKEN = None
-else:
-    BASE_URL = "https://api.brawlstars.com/v1"
-    API_TOKEN = os.getenv("BRAWL_STARS_API_TOKEN")
-    if not API_TOKEN:
+
+@cache
+def _config() -> tuple[str, str | None]:
+    """Base URL and token, read from the environment on the first API call, never at import.
+
+    With BRAWL_STARS_PROXY_URL set, calls go through the proxy, which adds the token itself.
+    """
+    load_dotenv()
+    proxy_url = os.getenv("BRAWL_STARS_PROXY_URL")
+    if proxy_url:
+        return proxy_url, None
+    token = os.getenv("BRAWL_STARS_API_TOKEN")
+    if not token:
         raise ValueError(
             "BRAWL_STARS_API_TOKEN not found. "
             "Either set BRAWL_STARS_API_TOKEN or BRAWL_STARS_PROXY_URL in .env"
         )
+    return OFFICIAL_URL, token
 
 
 class ApiMaintenanceError(Exception):
@@ -46,12 +52,13 @@ _RETRY_STATUS = {429, 500, 502, 503, 504}
 
 def api_call(endpoint, monitor=None):
     """Make an API call to Brawl Stars API (or proxy), with retry on transient errors."""
+    base_url, token = _config()
     headers = {"Accept": "application/json"}
 
-    if API_TOKEN:
-        headers["Authorization"] = f"Bearer {API_TOKEN}"
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
 
-    url = f"{BASE_URL}/{endpoint}"
+    url = f"{base_url}/{endpoint}"
     last_exc = None
 
     for attempt in range(1, _RETRY_COUNT + 1):
