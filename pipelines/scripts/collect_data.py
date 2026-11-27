@@ -6,7 +6,8 @@ import time
 import argparse
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
-from player.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
+from player.paths import RAW_SNAPSHOTS, RAW_BATTLELOGS
+from player.tracked import load_tracked
 from common import storage
 from common.gzip_helpers import write_gzip_json, read_gzip_json
 from common.pipeline_monitor import PipelineMonitor
@@ -33,13 +34,14 @@ def get_all_tracked_tags(verbose: bool = False, monitor: PipelineMonitor = None)
     Raises:
         Exception if all club fetches fail
     """
-    all_tags = set(TRACKED_PLAYERS)
+    tracked = load_tracked()
+    all_tags = set(tracked.players)
 
     if monitor:
-        monitor.log_info(f"Fetching tracked tags: {len(TRACKED_CLUBS)} clubs, {len(TRACKED_PLAYERS)} individuals")
+        monitor.log_info(f"Fetching tracked tags: {len(tracked.clubs)} clubs, {len(tracked.players)} individuals")
 
     club_failures = 0
-    for club_tag in TRACKED_CLUBS:
+    for club_tag in tracked.clubs:
         if verbose:
             print(f"Fetching members from club {club_tag}")
         try:
@@ -58,8 +60,8 @@ def get_all_tracked_tags(verbose: bool = False, monitor: PipelineMonitor = None)
                 monitor.log_error(msg, e)
 
     # If ALL clubs failed but we have individual players, continue
-    if club_failures == len(TRACKED_CLUBS) and len(TRACKED_CLUBS) > 0 and len(all_tags) == len(TRACKED_PLAYERS):
-        error_msg = f"All {len(TRACKED_CLUBS)} club fetch(es) failed: {', '.join(TRACKED_CLUBS)}"
+    if club_failures == len(tracked.clubs) and len(tracked.clubs) > 0 and len(all_tags) == len(tracked.players):
+        error_msg = f"All {len(tracked.clubs)} club fetch(es) failed: {', '.join(tracked.clubs)}"
         if monitor:
             monitor.log_error(error_msg)
         raise Exception(error_msg)
@@ -101,7 +103,7 @@ def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, mon
 
     # Get today's date
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-    local_path = os.path.join(PATH_RAW_BATTLELOGS, f"{today}.json.gz")
+    local_path = os.path.join(RAW_BATTLELOGS, f"{today}.json.gz")
     r2_key = f"raw/battlelogs/{today}.json.gz"
 
     # Try to load existing data (local first, then R2)
@@ -258,7 +260,7 @@ def collect_snapshots_with_tags(all_tags: list[str], verbose: bool = False, moni
     # Write to local (v2 format with timestamp)
     now = datetime.now(timezone.utc)
     today = now.strftime('%Y-%m-%d')
-    local_path = os.path.join(PATH_RAW_SNAPSHOTS, f"{today}.json.gz")
+    local_path = os.path.join(RAW_SNAPSHOTS, f"{today}.json.gz")
 
     snapshot_data = {
         "timestamp": now.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
