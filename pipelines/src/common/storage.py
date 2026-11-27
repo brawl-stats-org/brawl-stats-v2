@@ -222,8 +222,8 @@ def replace_with_backup(root: Path, prefix: str, *, dry_run: bool = False, verbo
     """Replaces everything under `prefix` with the files of `root`, restoring the old ones on failure.
 
     Flow: copy `prefix` to a timestamped backup prefix, delete `prefix`, upload `root`,
-    delete the backup. If any step fails, the backup is copied back and removed, then
-    the error is raised again.
+    delete the backup. If any step fails, `prefix` is emptied, the backup is copied back
+    and removed, then the error is raised again: `prefix` holds exactly the old files.
     """
     files = _local_keys_or_raise(root, prefix)
     if dry_run:
@@ -246,6 +246,7 @@ def replace_with_backup(root: Path, prefix: str, *, dry_run: bool = False, verbo
             raise
         try:
             backed_up = list_keys(backup)
+            delete_keys(list_keys(prefix))  # the partial upload, new files included
             _copy_prefix(backed_up, backup, prefix)
             delete_keys(backed_up)
         except Exception as restore_error:
