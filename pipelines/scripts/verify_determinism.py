@@ -28,8 +28,8 @@ def worker(out_dir: str) -> int:
     import gen_artifacts
 
     # Functions read these module globals at call time, so patching them redirects all writes
-    gen_artifacts.PATH_ARTIFACTS = out_dir
-    gen_artifacts.PATH_ARTIFACTS_SNAPSHOT_DETAIL = f"{out_dir}/snapshot_detail"
+    gen_artifacts.ARTIFACTS = Path(out_dir)
+    gen_artifacts.ARTIFACTS_SNAPSHOT_DETAIL = Path(out_dir) / "snapshot_detail"
     sys.argv = ["gen_artifacts.py"]
     return gen_artifacts.main()
 

@@ -5,7 +5,7 @@ from player import BattleLog, BattleLogColumnar, BattleLogDuelsDetail
 from player import BrawlAccountColumnar, PlayerSnapshotDetail
 from common.pipeline_monitor import PipelineMonitor
 from common.mem_profiling import StageProfiler
-from player.config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ARTIFACTS, PATH_ARTIFACTS_SNAPSHOT_DETAIL
+from player.paths import RAW_BATTLELOGS, RAW_SNAPSHOTS, ARTIFACTS, ARTIFACTS_SNAPSHOT_DETAIL
 import os
 import json
 import time
@@ -18,21 +18,21 @@ SNAPSHOTS = "[SNAPSHOTS]"
 
 def create_artfacts_dirs_if_not_exists(verbose: bool = False):
     """Create the artifacts directory if it does not exist"""
-    if not os.path.exists(PATH_ARTIFACTS):
-        os.makedirs(PATH_ARTIFACTS)
+    if not os.path.exists(ARTIFACTS):
+        os.makedirs(ARTIFACTS)
         if verbose:
-            print(f"{BATTLELOGS} Created artifacts directory at {PATH_ARTIFACTS}/")
+            print(f"{BATTLELOGS} Created artifacts directory at {ARTIFACTS}/")
     else:
         if verbose:
-            print(f"{BATTLELOGS} Artifacts directory already exists at {PATH_ARTIFACTS}/")
+            print(f"{BATTLELOGS} Artifacts directory already exists at {ARTIFACTS}/")
 
-    if not os.path.exists(PATH_ARTIFACTS_SNAPSHOT_DETAIL):
-        os.makedirs(PATH_ARTIFACTS_SNAPSHOT_DETAIL)
+    if not os.path.exists(ARTIFACTS_SNAPSHOT_DETAIL):
+        os.makedirs(ARTIFACTS_SNAPSHOT_DETAIL)
         if verbose:
-            print(f"{SNAPSHOTS} Created snapshot detail artifacts directory at {PATH_ARTIFACTS_SNAPSHOT_DETAIL}/")
+            print(f"{SNAPSHOTS} Created snapshot detail artifacts directory at {ARTIFACTS_SNAPSHOT_DETAIL}/")
     else:
         if verbose:
-            print(f"{SNAPSHOTS} Snapshot detail artifacts directory already exists at {PATH_ARTIFACTS_SNAPSHOT_DETAIL}/")
+            print(f"{SNAPSHOTS} Snapshot detail artifacts directory already exists at {ARTIFACTS_SNAPSHOT_DETAIL}/")
 
 def read_gzip_json_file(file_path: str) -> dict:
     """Read a gzip-compressed JSON file and return its contents as a dictionary"""
@@ -68,8 +68,8 @@ def gen_battlelog_core_artifact(tracked_tags: list[str], verbose: bool = False, 
     t0 = time.perf_counter()
 
     file_paths = sorted([ # Discover all .json.gz files in battlelogs directory
-        os.path.join(PATH_RAW_BATTLELOGS, f)
-        for f in os.listdir(PATH_RAW_BATTLELOGS)
+        os.path.join(RAW_BATTLELOGS, f)
+        for f in os.listdir(RAW_BATTLELOGS)
         if f.endswith('.json.gz')
     ])
 
@@ -98,7 +98,7 @@ def gen_battlelog_core_artifact(tracked_tags: list[str], verbose: bool = False, 
             print(f"{BATTLELOGS} Processed {file_idx}/{len(file_paths)} files")
 
     if bl_columnar is None:
-        warn_stage_skipped(monitor, "Battlelog core", f"no battlelog files found in {PATH_RAW_BATTLELOGS}")
+        warn_stage_skipped(monitor, "Battlelog core", f"no battlelog files found in {RAW_BATTLELOGS}")
         return None
 
     # Validate (aborts on failure if monitor enabled)
@@ -117,7 +117,7 @@ def gen_battlelog_core_artifact(tracked_tags: list[str], verbose: bool = False, 
 
     print(f"{BATTLELOGS} Battlelog core artifact generated in {time.perf_counter() - t0:.2f} seconds")
 
-    battlelog_artifact_path = os.path.join(PATH_ARTIFACTS, "battlelog_core.json")
+    battlelog_artifact_path = os.path.join(ARTIFACTS, "battlelog_core.json")
     with open(battlelog_artifact_path, "w") as f:
         f.write(bl_columnar.to_json())
     if verbose:
@@ -155,7 +155,7 @@ def gen_battlelog_duels_detail_artifact(duels_battlelog: BattleLog | None, track
 
     print(f"{BATTLELOGS} Battlelog duels detail artifact generated in {time.perf_counter() - t1:.2f} seconds")
 
-    duels_detail_artifact_path = os.path.join(PATH_ARTIFACTS, "battlelog_duels_detail.json")
+    duels_detail_artifact_path = os.path.join(ARTIFACTS, "battlelog_duels_detail.json")
     with open(duels_detail_artifact_path, "w") as f:
         f.write(duels_details.to_json())
     if verbose:
@@ -172,13 +172,13 @@ def gen_snapshots_core_artifact(verbose: bool = False, monitor: PipelineMonitor 
     t0 = time.perf_counter()
 
     file_paths = sorted([
-        os.path.join(PATH_RAW_SNAPSHOTS, f)
-        for f in os.listdir(PATH_RAW_SNAPSHOTS)
+        os.path.join(RAW_SNAPSHOTS, f)
+        for f in os.listdir(RAW_SNAPSHOTS)
         if f.endswith('.json.gz')
     ])
 
     if not file_paths:
-        warn_stage_skipped(monitor, "Snapshots core", f"no snapshot files found in {PATH_RAW_SNAPSHOTS}")
+        warn_stage_skipped(monitor, "Snapshots core", f"no snapshot files found in {RAW_SNAPSHOTS}")
         return
 
     # One raw file in memory at a time, rows appended straight into the columnar
@@ -205,7 +205,7 @@ def gen_snapshots_core_artifact(verbose: bool = False, monitor: PipelineMonitor 
 
     print(f"{SNAPSHOTS} Snapshot core artifact generated in {time.perf_counter() - t0:.2f} seconds")
 
-    snapshot_artifact_path = os.path.join(PATH_ARTIFACTS, "snapshots_core.json")
+    snapshot_artifact_path = os.path.join(ARTIFACTS, "snapshots_core.json")
     with open(snapshot_artifact_path, "w") as f:
         f.write(snapshot_columnar.to_json())
     if verbose:
@@ -223,8 +223,8 @@ def gen_snapshots_detail_artifacts(tracked_tags: list[str], verbose: bool = Fals
     t0 = time.perf_counter()
 
     file_paths = sorted([
-        os.path.join(PATH_RAW_SNAPSHOTS, f)
-        for f in os.listdir(PATH_RAW_SNAPSHOTS)
+        os.path.join(RAW_SNAPSHOTS, f)
+        for f in os.listdir(RAW_SNAPSHOTS)
         if f.endswith('.json.gz')
     ])
 
@@ -250,7 +250,7 @@ def gen_snapshots_detail_artifacts(tracked_tags: list[str], verbose: bool = Fals
     # pop() releases each detail once written
     for player_tag in sorted(details):
         detail = details.pop(player_tag)
-        path = os.path.join(PATH_ARTIFACTS_SNAPSHOT_DETAIL, f"{player_tag.lstrip('#')}.json")
+        path = os.path.join(ARTIFACTS_SNAPSHOT_DETAIL, f"{player_tag.lstrip('#')}.json")
         with open(path, "w") as f:
             f.write(detail.to_json())
 
@@ -259,7 +259,7 @@ def gen_snapshots_detail_artifacts(tracked_tags: list[str], verbose: bool = Fals
 
     print(f"{SNAPSHOTS} Snapshot detail artifacts generated in {time.perf_counter() - t0:.2f} seconds")
     if verbose:
-        print(f"{SNAPSHOTS} Player detail artifacts written to {PATH_ARTIFACTS_SNAPSHOT_DETAIL}/{{TAG}}.json")
+        print(f"{SNAPSHOTS} Player detail artifacts written to {ARTIFACTS_SNAPSHOT_DETAIL}/{{TAG}}.json")
 
 def main():
     parser = argparse.ArgumentParser(description="Generate Brawl Stars data artifacts")
