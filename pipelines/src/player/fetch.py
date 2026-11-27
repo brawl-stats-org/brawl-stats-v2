@@ -67,7 +67,7 @@ def get_all_tracked_tags(verbose: bool = False, monitor: PipelineMonitor | None 
     return list(all_tags)
 
 
-def collect_battlelogs(all_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None, use_remote: bool = True):
+def collect_battlelogs(all_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None, remote_fallback: bool = False):
     """
     Collect battlelogs from Brawl Stars API and write to local storage.
 
@@ -75,11 +75,11 @@ def collect_battlelogs(all_tags: list[str], verbose: bool = False, monitor: Pipe
         all_tags: List of player tags to collect
         verbose: Verbose output
         monitor: Pipeline monitor for logging/notifications
-        use_remote: Fall back to remote storage for today's existing file when missing locally
+        remote_fallback: Read today's existing file from remote storage when missing locally
 
     Flow:
     1. Fetch battlelogs from API (all tracked players)
-    2. Load existing today's file (local, then remote storage if use_remote)
+    2. Load existing today's file (local, then remote storage if remote_fallback)
     3. Merge + dedup by battleTime
     4. Write to local
 
@@ -103,9 +103,9 @@ def collect_battlelogs(all_tags: list[str], verbose: bool = False, monitor: Pipe
         if verbose:
             print(f"{BATTLELOGS} Loading existing from local: {local_path}")
         existing = read_gzip_json(local_path)
-    elif not use_remote:
+    elif not remote_fallback:
         # TODO: if the remote storage has today's file, the next upload overwrites it with this partial one
-        msg = f"Remote storage disabled and no local {local_path}, starting empty"
+        msg = f"No local {local_path} and no remote fallback, starting empty"
         print(f"{BATTLELOGS} Warning: {msg}")
         if monitor:
             monitor.log_warning(msg)
@@ -265,7 +265,7 @@ def collect_snapshots(all_tags: list[str], verbose: bool = False, monitor: Pipel
 def run(
     battlelogs: bool,
     snapshots: bool,
-    use_remote: bool = True,
+    remote_fallback: bool = False,
     verbose: bool = False,
     monitor: PipelineMonitor | None = None,
 ) -> dict[str, str | int]:
@@ -277,7 +277,7 @@ def run(
     all_tags = get_all_tracked_tags(verbose=verbose, monitor=monitor)  # once, shared by both modes
 
     if battlelogs:
-        collect_battlelogs(all_tags, verbose=verbose, monitor=monitor, use_remote=use_remote)
+        collect_battlelogs(all_tags, verbose=verbose, monitor=monitor, remote_fallback=remote_fallback)
     if snapshots:
         collect_snapshots(all_tags, verbose=verbose, monitor=monitor)
 

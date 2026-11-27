@@ -12,7 +12,7 @@ def cmd_fetch(args: argparse.Namespace, monitor: PipelineMonitor) -> dict[str, s
     from player.api import ApiMaintenanceError
 
     try:
-        return fetch.run(args.battlelogs, args.snapshots, use_remote=not args.no_remote, verbose=args.verbose, monitor=monitor)
+        return fetch.run(args.battlelogs, args.snapshots, remote_fallback=args.remote_fallback, verbose=args.verbose, monitor=monitor)
     except ApiMaintenanceError:
         # Not a failure: nothing to collect, every endpoint is down until maintenance ends
         msg = "Brawl API in maintenance, skipping data collection"
@@ -37,9 +37,9 @@ def parser() -> argparse.ArgumentParser:
     fetch.add_argument("--battlelogs", action="store_true", help="collect today's battlelogs")
     fetch.add_argument("--snapshots", action="store_true", help="collect today's snapshots")
     fetch.add_argument(
-        "--no-remote",
+        "--remote-fallback",
         action="store_true",
-        help="don't read today's battlelogs from remote storage when missing locally (storage unreachable)",
+        help="read today's battlelogs from remote storage when missing locally",
     )
     fetch.set_defaults(run=cmd_fetch)
 

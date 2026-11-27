@@ -99,8 +99,8 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
 
             # 1. Collect data
             cmd = ["uv", "run", "player", "fetch", "--battlelogs"]
-            if not r2_available:
-                cmd.append("--no-remote")
+            if r2_available:
+                cmd.append("--remote-fallback")
             if args.notify_errors:
                 cmd.append("--notify-errors")
             if args.verbose:
@@ -135,8 +135,6 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
 
             # 1. Collect data
             cmd = ["uv", "run", "player", "fetch", "--snapshots"]
-            if not r2_available:
-                cmd.append("--no-remote")
             if args.notify_errors:
                 cmd.append("--notify-errors")
             if args.verbose:
