@@ -1,6 +1,6 @@
 # 0001: Pipeline code layout
 
-- **Status**: Proposed
+- **Status**: Accepted
 - **Date**: 2026-11-26
 - **Deciders**: Louis, Lucas
 - **Implemented by**: #102
