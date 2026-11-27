@@ -1,6 +1,6 @@
-"""Verify gen_artifacts.py produces byte-identical output across runs.
+"""Verify `player derive` produces byte-identical output across runs.
 
-Runs gen_artifacts twice in separate processes with different PYTHONHASHSEED
+Runs the artifact generation twice in separate processes with different PYTHONHASHSEED
 values (so set/dict ordering bugs on str keys surface) and different TZ values
 (so naive datetimes read as local time surface), each writing to its own temp
 dir, then compares the two output trees byte-for-byte.
@@ -17,21 +17,16 @@ import tempfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SCRIPTS_DIR = Path(__file__).resolve().parent
 # (PYTHONHASHSEED, TZ) per run. Kathmandu's +05:45 offset is unlikely to cancel out by accident
 RUN_ENVS = (("1", "UTC"), ("2", "Asia/Kathmandu"))
 
 
 def worker(out_dir: str) -> int:
-    """Run gen_artifacts.main() with its output paths redirected to out_dir."""
-    sys.path.insert(0, str(SCRIPTS_DIR))
-    import gen_artifacts
+    """Run the artifact generation into out_dir."""
+    from player import derive
 
-    # Functions read these module globals at call time, so patching them redirects all writes
-    gen_artifacts.ARTIFACTS = Path(out_dir)
-    gen_artifacts.ARTIFACTS_SNAPSHOT_DETAIL = Path(out_dir) / "snapshot_detail"
-    sys.argv = ["gen_artifacts.py"]
-    return gen_artifacts.main()
+    derive.run(out_dir=Path(out_dir))
+    return 0
 
 
 def run_once(out_dir: Path, seed: str, tz: str) -> None:
@@ -43,7 +38,7 @@ def run_once(out_dir: Path, seed: str, tz: str) -> None:
     )
     if proc.returncode != 0:
         print(proc.stdout, proc.stderr, sep="\n")
-        raise RuntimeError(f"gen_artifacts failed (PYTHONHASHSEED={seed}, TZ={tz})")
+        raise RuntimeError(f"player derive failed (PYTHONHASHSEED={seed}, TZ={tz})")
 
 
 def list_files(root: Path) -> set[str]:
@@ -79,7 +74,7 @@ def compare(a: Path, b: Path) -> bool:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Check gen_artifacts.py output is deterministic")
+    parser = argparse.ArgumentParser(description="Check `player derive` output is deterministic")
     parser.add_argument("--keep", action="store_true", help="Keep output dirs for inspection")
     parser.add_argument("--_worker", metavar="OUT_DIR", help=argparse.SUPPRESS)
     args = parser.parse_args()
@@ -91,7 +86,7 @@ def main() -> int:
     runs = [tmp / f"run{i + 1}" for i in range(len(RUN_ENVS))]
     try:
         for out_dir, (seed, tz) in zip(runs, RUN_ENVS, strict=True):
-            print(f"Running gen_artifacts -> {out_dir} (PYTHONHASHSEED={seed}, TZ={tz})")
+            print(f"Running player derive -> {out_dir} (PYTHONHASHSEED={seed}, TZ={tz})")
             run_once(out_dir, seed, tz)
 
         identical = compare(*runs)
