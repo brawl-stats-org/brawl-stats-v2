@@ -16,7 +16,4 @@ class Tracked:
 
 def load_tracked() -> Tracked:
     data = json.loads(paths.TRACKED.read_text(encoding="utf-8"))
-    return Tracked(
-        clubs=[club["tag"] for club in data["clubs"]],
-        players=[player["tag"] for player in data["players"]],
-    )
+    return Tracked(clubs=data["clubs"], players=data["players"])

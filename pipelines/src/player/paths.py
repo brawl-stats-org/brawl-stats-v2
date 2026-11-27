@@ -10,4 +10,4 @@ ARTIFACTS_SNAPSHOT_DETAIL = ARTIFACTS / "snapshot_detail"
 
 INPUTS = paths.INPUTS / "player"
 TRACKED = INPUTS / "tracked.json"
-"""Clubs (every member is tracked) and individual players. Names are for humans only."""
+"""Clubs (every member is tracked) and individual players."""

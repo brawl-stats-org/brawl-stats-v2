@@ -1,13 +1,4 @@
 {
-  "clubs": [
-    {"tag": "#80QPP8V8P", "name": "JOEL Club"}
-  ],
-  "players": [
-    {"tag": "#2LGCLLPU2", "name": "EL Cactus"},
-    {"tag": "#Q0CQLYCVL", "name": "JOEL | Nexlein"},
-    {"tag": "#PPYVYGRGV", "name": "spiky"},
-    {"tag": "#ROGYOJUY2", "name": "Pololitos"},
-    {"tag": "#8URYQO2P9", "name": "Famasito"},
-    {"tag": "#2QG9PPQQR", "name": "@nubis"}
-  ]
+  "clubs": ["#80QPP8V8P"],
+  "players": ["#2LGCLLPU2", "#Q0CQLYCVL", "#PPYVYGRGV", "#ROGYOJUY2", "#8URYQO2P9", "#2QG9PPQQR"]
 }
