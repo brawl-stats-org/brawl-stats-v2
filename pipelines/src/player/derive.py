@@ -20,8 +20,10 @@ from .brawl_snapshot_detail import PlayerSnapshotDetail
 BATTLELOGS = "[BATTLELOGS]"
 SNAPSHOTS = "[SNAPSHOTS]"
 
-# TODO: not the same list as pipelines/inputs/player/tracked.json (no #PPYVYGRGV, no players
-# added since). Decides which players the artifacts mark as tracked.
+# TODO (end of #102, own commit, outputs change): take the tags present in the raw snapshots
+# instead. Derive builds from what is in data/raw/, whatever fetch tracked. This hardcoded list
+# is not tracked.json (no #PPYVYGRGV, no players added since). Decides which players the
+# artifacts mark as tracked.
 TRACKED_TAGS = [
     "#98QG0VCJ2",
     "#LLJGJQVY",
