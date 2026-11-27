@@ -1,4 +1,4 @@
-# What the Brawlify dump files allow (notes, untracked)
+# What the Brawlify dump files allow (notes)
 
 Source: `data/raw/brawlify/` (dump of 2026-10-03, 128 files in `csv/csv_logic`).
 Built from column names and a few sample rows: meanings are likely, not verified,
