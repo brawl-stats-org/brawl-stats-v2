@@ -10,6 +10,7 @@ import os
 from collections.abc import Callable, Mapping
 
 from common.paths import ENV
+from common.pipeline_monitor import PipelineMonitor
 
 
 def pipeline_flags() -> argparse.ArgumentParser:
@@ -22,7 +23,7 @@ def pipeline_flags() -> argparse.ArgumentParser:
 
 def run_pipeline(
     name: str,
-    run: Callable[[], Mapping[str, object]],
+    run: Callable[[PipelineMonitor], Mapping[str, object]],
     notify_errors: bool = False,
     notify_success: bool = False,
 ) -> int:
@@ -30,18 +31,17 @@ def run_pipeline(
 
     Args:
         name: shown in logs and notifications, e.g. "player derive"
-        run: does the work, raises on failure, returns stats for the success log/notification
+        run: does the work with the command's monitor, raises on failure, returns stats for
+            the success log/notification
     """
     from dotenv import load_dotenv
-
-    from common.pipeline_monitor import PipelineMonitor
 
     load_dotenv(ENV)
     notify = notify_errors or notify_success
     monitor = PipelineMonitor(ntfy_topic=os.getenv("NTFY_TOPIC") if notify else None)
     monitor.log_info(f"{name} started")
     try:
-        stats = run()
+        stats = run(monitor)
     except Exception as error:
         monitor.log_error(f"{name} failed: {error}", error)
         if notify_errors:
