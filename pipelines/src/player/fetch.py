@@ -93,8 +93,7 @@ def collect_battlelogs(all_tags: list[str], verbose: bool = False, monitor: Pipe
     if verbose:
         print(f"{BATTLELOGS} Collection started")
 
-    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-    local_path = paths.RAW_BATTLELOGS / f"{today}.json.gz"
+    local_path = paths.battlelogs_file(paths.utc_day())
     remote_key = common_paths.remote_key(local_path)
 
     # Try to load existing data (local first, then remote storage)
@@ -242,8 +241,7 @@ def collect_snapshots(all_tags: list[str], verbose: bool = False, monitor: Pipel
 
     # Write to local (v2 format with timestamp)
     now = datetime.now(timezone.utc)
-    today = now.strftime('%Y-%m-%d')
-    local_path = paths.RAW_SNAPSHOTS / f"{today}.json.gz"
+    local_path = paths.snapshots_file(paths.utc_day(now))
 
     snapshot_data = {
         "timestamp": now.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
