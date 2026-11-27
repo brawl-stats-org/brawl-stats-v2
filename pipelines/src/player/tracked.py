@@ -17,6 +17,9 @@ class Tracked:
 def normalize_tag(tag: str) -> str:
     """Uppercase, letter O read as zero: tags only use 0289PYLQGRJCUV.
 
+    Checked on 146,455 distinct tags from the raw battlelogs (2026-11-27): exactly those 14
+    characters, never an O.
+
     The API accepts a tag typed with O and echoes it back in the profile, but battles list
     the real tag, so the player would never match their own battles.
     """
