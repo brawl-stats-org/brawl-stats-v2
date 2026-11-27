@@ -98,9 +98,9 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
             print("=== Collecting battlelogs ===")
 
             # 1. Collect data
-            cmd = ["uv", "run", "pipelines/scripts/collect_data.py", "--battlelogs"]
+            cmd = ["uv", "run", "player", "fetch", "--battlelogs"]
             if not r2_available:
-                cmd.append("--no-r2")
+                cmd.append("--no-remote")
             if args.notify_errors:
                 cmd.append("--notify-errors")
             if args.verbose:
@@ -134,9 +134,9 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
             print("\n=== Collecting snapshots ===")
 
             # 1. Collect data
-            cmd = ["uv", "run", "pipelines/scripts/collect_data.py", "--snapshots"]
+            cmd = ["uv", "run", "player", "fetch", "--snapshots"]
             if not r2_available:
-                cmd.append("--no-r2")
+                cmd.append("--no-remote")
             if args.notify_errors:
                 cmd.append("--notify-errors")
             if args.verbose:
@@ -169,7 +169,7 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
         if collected:
             print("\n=== Generating artifacts ===")
 
-            cmd = ["uv", "run", "pipelines/scripts/gen_artifacts.py"]
+            cmd = ["uv", "run", "player", "derive"]
             if args.notify_errors:
                 cmd.append("--notify-errors")
             if args.verbose:

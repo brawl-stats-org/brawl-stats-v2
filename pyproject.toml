@@ -14,6 +14,7 @@ dependencies = [
 
 [project.scripts]
 brawlify = "brawlify.cli:main"
+player = "player.cli:main"
 
 [dependency-groups]
 dev = [
@@ -34,7 +35,7 @@ typeCheckingMode = "standard"
 pythonVersion = "3.12"
 venvPath = "."
 venv = ".venv"
-# verify_determinism.py imports gen_artifacts.py, regenerate_golden.py imports test_golden.py.
+# Tests import the scripts, regenerate_golden.py imports test_golden.py.
 extraPaths = ["pipelines/scripts", "pipelines/tests/brawlify"]
 strictParameterNoneValue = false
 reportOptionalMemberAccess = "warning"
