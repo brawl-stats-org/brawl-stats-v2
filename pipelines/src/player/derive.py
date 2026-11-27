@@ -20,28 +20,24 @@ from .brawl_snapshot_detail import PlayerSnapshotDetail
 BATTLELOGS = "[BATTLELOGS]"
 SNAPSHOTS = "[SNAPSHOTS]"
 
-# TODO (end of #102, own commit, outputs change): take the tags present in the raw snapshots
-# instead. Derive builds from what is in data/raw/, whatever fetch tracked. This hardcoded list
-# is not tracked.json (no #PPYVYGRGV, no players added since). Decides which players the
-# artifacts mark as tracked.
-TRACKED_TAGS = [
-    "#98QG0VCJ2",
-    "#LLJGJQVY",
-    "#R0CUY9PR",
-    "#2L0U0PGRL",
-    "#YR8L09PRC",
-    "#VQ9GJGL2",
-    "#Y9G0QL9GL",
-    "#JJ8P8URQC",
-    "#Y808UYR2",
-    "#2LGCLLPU2",
-    "#Q0CQLYCVL",
-]
 
 
 def raw_files(directory: Path) -> list[str]:
     """Every `.json.gz` file of `directory`, sorted (by date, since files are named by day)."""
     return sorted(os.path.join(directory, f) for f in os.listdir(directory) if f.endswith(".json.gz"))
+
+
+def snapshot_tags() -> set[str]:
+    """Every player of the raw snapshots: the tracked players, as fetch tracked them over time.
+
+    Derive builds from what is in data/raw/, never from the fetch settings. A player added to
+    the tracked list gets battlelog rows once their first snapshot exists (daily), for every
+    battle collected before it too.
+    """
+    tags = set()
+    for file_path in raw_files(paths.RAW_SNAPSHOTS):
+        tags.update(player["tag"] for player in read_gzip_json_file(file_path)["players"])
+    return tags
 
 
 def read_gzip_json_file(file_path: str) -> dict:
@@ -63,7 +59,7 @@ def warn_stage_skipped(monitor: PipelineMonitor | None, stage: str, reason: str)
         print(f"WARNING: {message}")
 
 
-def gen_battlelog_core_artifact(out_dir: Path, tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None) -> BattleLog | None:
+def gen_battlelog_core_artifact(out_dir: Path, tracked_tags: set[str], verbose: bool = False, monitor: PipelineMonitor | None = None) -> BattleLog | None:
     """Generate battlelog core artifact by loading and merging all available battlelog files
 
     Memory optimized: converts one file at a time to columnar, merges columnar chunks
@@ -81,7 +77,6 @@ def gen_battlelog_core_artifact(out_dir: Path, tracked_tags: list[str], verbose:
 
     bl_columnar = None
     duels_battlelog = BattleLog()  # Keep only duels battles for duels detail generation (may stay empty)
-    tracked_tags_set = set(tracked_tags)
 
     # One file at a time: BattleLog objects are the memory hog (~1.5x raw size), so only one
     # file's worth is alive at once. Cross-file duplicates (a battle collected on two days) are
@@ -94,7 +89,7 @@ def gen_battlelog_core_artifact(out_dir: Path, tracked_tags: list[str], verbose:
         if duels_entries:
             duels_battlelog.merge(BattleLog(entries=duels_entries))
 
-        file_columnar = BattleLogColumnar.from_battlelog(file_battlelog, tracked_tags_set)
+        file_columnar = BattleLogColumnar.from_battlelog(file_battlelog, tracked_tags)
         if bl_columnar is None:
             bl_columnar = file_columnar
         else:
@@ -132,7 +127,7 @@ def gen_battlelog_core_artifact(out_dir: Path, tracked_tags: list[str], verbose:
     return duels_battlelog
 
 
-def gen_battlelog_duels_detail_artifact(out_dir: Path, duels_battlelog: BattleLog | None, tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None):
+def gen_battlelog_duels_detail_artifact(out_dir: Path, duels_battlelog: BattleLog | None, tracked_tags: set[str], verbose: bool = False, monitor: PipelineMonitor | None = None):
     """Generate battlelog duels detail artifact from the duels battles collected by gen_battlelog_core_artifact
 
     Skipped when duels_battlelog is None (battlelog core was skipped), keeping it consistent with core.
@@ -145,7 +140,7 @@ def gen_battlelog_duels_detail_artifact(out_dir: Path, duels_battlelog: BattleLo
         monitor.log_info("Starting battlelog duels detail generation")
 
     t1 = time.perf_counter()
-    duels_details = BattleLogDuelsDetail.from_battlelog(duels_battlelog, set(tracked_tags))
+    duels_details = BattleLogDuelsDetail.from_battlelog(duels_battlelog, tracked_tags)
 
     # Validate (aborts on failure if monitor enabled)
     if monitor:
@@ -216,7 +211,7 @@ def gen_snapshots_core_artifact(out_dir: Path, verbose: bool = False, monitor: P
         print(f"{SNAPSHOTS} Columnar Snapshots artifact written to {snapshot_artifact_path}")
 
 
-def gen_snapshots_detail_artifacts(out_dir: Path, tracked_tags: list[str], verbose: bool = False, monitor: PipelineMonitor | None = None):
+def gen_snapshots_detail_artifacts(out_dir: Path, verbose: bool = False, monitor: PipelineMonitor | None = None):
     """Generate snapshot detail artifacts (per-player brawler histories)
 
     Single pass over raw files: each file is read once and fed into per-player builders,
@@ -273,15 +268,19 @@ def run(out_dir: Path = paths.ARTIFACTS, verbose: bool = False, monitor: Pipelin
     t0 = time.perf_counter()
     (out_dir / "snapshot_detail").mkdir(parents=True, exist_ok=True)
 
+    with profiler.stage("tracked_tags"):
+        tracked_tags = snapshot_tags()
+    if verbose:
+        print(f"{BATTLELOGS} {len(tracked_tags)} tracked players in the raw snapshots")
     with profiler.stage("battlelog_core"):
-        duels_battlelog = gen_battlelog_core_artifact(out_dir, TRACKED_TAGS, verbose=verbose, monitor=monitor)
+        duels_battlelog = gen_battlelog_core_artifact(out_dir, tracked_tags, verbose=verbose, monitor=monitor)
     with profiler.stage("battlelog_duels_detail"):
-        gen_battlelog_duels_detail_artifact(out_dir, duels_battlelog, TRACKED_TAGS, verbose=verbose, monitor=monitor)
+        gen_battlelog_duels_detail_artifact(out_dir, duels_battlelog, tracked_tags, verbose=verbose, monitor=monitor)
     del duels_battlelog  # Don't carry it into the snapshot stages
     with profiler.stage("snapshots_core"):
         gen_snapshots_core_artifact(out_dir, verbose=verbose, monitor=monitor)
     with profiler.stage("snapshots_detail"):
-        gen_snapshots_detail_artifacts(out_dir, TRACKED_TAGS, verbose=verbose, monitor=monitor)
+        gen_snapshots_detail_artifacts(out_dir, verbose=verbose, monitor=monitor)
 
     duration = time.perf_counter() - t0
     print(f"\n=> Artifacts generation complete in {duration:.2f}s")
