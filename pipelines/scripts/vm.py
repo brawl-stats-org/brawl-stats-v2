@@ -4,7 +4,6 @@ import os
 import time
 import argparse
 import subprocess
-from datetime import datetime, timezone
 from dotenv import load_dotenv
 from common.paths import ENV
 from common import storage
@@ -69,9 +68,6 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
         monitor.log_info("VM orchestrator started")
         t0 = time.perf_counter()
 
-        # Get today's date for file paths
-        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-
         # Track what was collected
         collected = []
 
@@ -113,8 +109,7 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
             # 2. Upload raw battlelog
             if upload_r2:
                 print("\n=== Uploading raw battlelogs ===")
-                battlelog_file = f"data/raw/battlelogs/{today}.json.gz"
-                cmd = ["uv", "run", "pipelines/scripts/upload_to_r2.py", "--raw", battlelog_file, "--execute"]
+                cmd = ["uv", "run", "player", "upload", "--battlelogs", "--execute"]
                 if args.notify_errors:
                     cmd.append("--notify-errors")
                 if args.verbose:
@@ -147,8 +142,7 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
             # 2. Upload raw snapshot
             if upload_r2:
                 print("\n=== Uploading raw snapshots ===")
-                snapshot_file = f"data/raw/snapshots/{today}.json.gz"
-                cmd = ["uv", "run", "pipelines/scripts/upload_to_r2.py", "--raw", snapshot_file, "--execute"]
+                cmd = ["uv", "run", "player", "upload", "--snapshots", "--execute"]
                 if args.notify_errors:
                     cmd.append("--notify-errors")
                 if args.verbose:
@@ -180,7 +174,7 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
             # --- Upload artifacts ---
             if upload_r2:
                 print("\n=== Uploading artifacts ===")
-                cmd = ["uv", "run", "pipelines/scripts/upload_to_r2.py", "--artifacts", "--execute"]
+                cmd = ["uv", "run", "player", "upload", "--artifacts", "--execute"]
                 if args.notify_errors:
                     cmd.append("--notify-errors")
                 if args.verbose:

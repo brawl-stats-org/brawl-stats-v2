@@ -27,6 +27,16 @@ def cmd_derive(args: argparse.Namespace, monitor: PipelineMonitor) -> dict[str, 
     return derive.run(verbose=args.verbose, monitor=monitor)
 
 
+def cmd_upload(args: argparse.Namespace, monitor: PipelineMonitor) -> dict[str, str | int]:
+    from player import upload
+
+    if not args.execute:
+        print("[DRY-RUN MODE] Use --execute to actually upload\n")
+    return upload.run(
+        args.battlelogs, args.snapshots, args.artifacts, dry_run=not args.execute, verbose=args.verbose, monitor=monitor
+    )
+
+
 def parser() -> argparse.ArgumentParser:
     root = argparse.ArgumentParser(prog="player", description="Player data pipeline (official Brawl Stars API).")
     commands = root.add_subparsers(dest="command", required=True)
@@ -45,6 +55,13 @@ def parser() -> argparse.ArgumentParser:
 
     derive = commands.add_parser("derive", parents=[flags], help="build data/artifacts/ from data/raw/")
     derive.set_defaults(run=cmd_derive)
+
+    upload = commands.add_parser("upload", parents=[flags], help="send player data to remote storage (dry run by default)")
+    upload.add_argument("--battlelogs", action="store_true", help="upload today's raw battlelogs")
+    upload.add_argument("--snapshots", action="store_true", help="upload today's raw snapshots")
+    upload.add_argument("--artifacts", action="store_true", help="replace the remote artifacts with data/artifacts/")
+    upload.add_argument("--execute", action="store_true", help="actually upload")
+    upload.set_defaults(run=cmd_upload)
     return root
 
 
@@ -53,6 +70,8 @@ def main() -> int:
     args = cli.parse_args()
     if args.command == "fetch" and not (args.battlelogs or args.snapshots):
         cli.error("fetch: pass --battlelogs and/or --snapshots")
+    if args.command == "upload" and not (args.battlelogs or args.snapshots or args.artifacts):
+        cli.error("upload: pass --battlelogs, --snapshots and/or --artifacts")
     return run_pipeline(
         f"player {args.command}",
         lambda monitor: args.run(args, monitor),
