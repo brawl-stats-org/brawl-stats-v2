@@ -6,10 +6,11 @@ import argparse
 import subprocess
 from datetime import datetime, timezone
 from dotenv import load_dotenv
+from common.paths import ENV
 from common import storage
 from common.pipeline_monitor import PipelineMonitor
 
-load_dotenv()
+load_dotenv(ENV)
 
 
 def run_command(cmd: list[str], description: str, monitor: PipelineMonitor, verbose: bool, timeout: int = 600) -> bool:

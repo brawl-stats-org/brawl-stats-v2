@@ -9,6 +9,7 @@ import requests
 from functools import cache
 from urllib.parse import quote
 from dotenv import load_dotenv
+from common.paths import ENV
 
 OFFICIAL_URL = "https://api.brawlstars.com/v1"
 
@@ -19,7 +20,7 @@ def _config() -> tuple[str, str | None]:
 
     With BRAWL_STARS_PROXY_URL set, calls go through the proxy, which adds the token itself.
     """
-    load_dotenv()
+    load_dotenv(ENV)
     proxy_url = os.getenv("BRAWL_STARS_PROXY_URL")
     if proxy_url:
         return proxy_url, None

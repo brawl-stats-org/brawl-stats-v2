@@ -17,6 +17,8 @@ from functools import cache
 from pathlib import Path
 from typing import Any
 
+from .paths import ENV
+
 DELETE_BATCH = 1000
 """Most keys one delete call accepts."""
 
@@ -47,7 +49,7 @@ def _bucket() -> _Bucket:
     from botocore.config import Config
     from dotenv import load_dotenv
 
-    load_dotenv()
+    load_dotenv(ENV)
     client = boto3.client(
         "s3",
         endpoint_url=os.getenv("R2_ENDPOINT"),

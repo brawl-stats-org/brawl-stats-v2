@@ -19,6 +19,9 @@ BUILD = DATA / "build"
 """Intermediates read by other steps, never served."""
 PIPELINE_LOG = DATA / "pipeline.log"
 
+ENV = ROOT / ".env"
+"""Credentials and settings, loaded with `load_dotenv(ENV)` so the current directory never matters."""
+
 INPUTS = ROOT / "pipelines" / "inputs"
 """Hand-written, versioned inputs, one directory per package."""
 

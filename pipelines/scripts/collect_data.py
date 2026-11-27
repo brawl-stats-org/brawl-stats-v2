@@ -6,6 +6,7 @@ import time
 import argparse
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
+from common.paths import ENV
 from player.paths import RAW_SNAPSHOTS, RAW_BATTLELOGS
 from player.tracked import load_tracked
 from common import storage
@@ -19,7 +20,7 @@ from player.api import (
     ApiMaintenanceError,
 )
 
-load_dotenv()
+load_dotenv(ENV)
 
 BATTLELOGS = "[BATTLELOGS]"
 SNAPSHOTS = "[SNAPSHOTS]"

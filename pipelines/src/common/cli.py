@@ -9,6 +9,8 @@ import argparse
 import os
 from collections.abc import Callable, Mapping
 
+from common.paths import ENV
+
 
 def pipeline_flags() -> argparse.ArgumentParser:
     """The flags every pipeline command takes, as a parent parser for `add_parser(parents=...)`."""
@@ -34,7 +36,7 @@ def run_pipeline(
 
     from common.pipeline_monitor import PipelineMonitor
 
-    load_dotenv()
+    load_dotenv(ENV)
     notify = notify_errors or notify_success
     monitor = PipelineMonitor(ntfy_topic=os.getenv("NTFY_TOPIC") if notify else None)
     monitor.log_info(f"{name} started")

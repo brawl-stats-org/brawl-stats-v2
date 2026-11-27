@@ -4,11 +4,12 @@ import time
 import argparse
 from pathlib import Path
 from dotenv import load_dotenv
+from common.paths import ENV
 from common import paths, storage
 from common.pipeline_monitor import PipelineMonitor
 from brawlify.core import paths as brawlify_paths
 
-load_dotenv()
+load_dotenv(ENV)
 
 ARTIFACTS_PREFIX = paths.remote_prefix(paths.ARTIFACTS)
 REFERENCE_PREFIX = "reference/"
