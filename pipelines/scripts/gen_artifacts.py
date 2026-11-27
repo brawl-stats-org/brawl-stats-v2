@@ -1,11 +1,11 @@
 import sys
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
 
-from brawl_stats import BattleLog, BattleLogColumnar, BattleLogDuelsDetail
-from brawl_stats import BrawlAccountColumnar, PlayerSnapshotDetail
+from player import BattleLog, BattleLogColumnar, BattleLogDuelsDetail
+from player import BrawlAccountColumnar, PlayerSnapshotDetail
 from common.pipeline_monitor import PipelineMonitor
 from common.mem_profiling import StageProfiler
-from brawl_stats.config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ARTIFACTS, PATH_ARTIFACTS_SNAPSHOT_DETAIL
+from player.config import PATH_RAW_BATTLELOGS, PATH_RAW_SNAPSHOTS, PATH_ARTIFACTS, PATH_ARTIFACTS_SNAPSHOT_DETAIL
 import os
 import json
 import time

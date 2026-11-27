@@ -6,11 +6,11 @@ import time
 import argparse
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
-from brawl_stats.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
+from player.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
 from common import storage
 from common.gzip_helpers import write_gzip_json, read_gzip_json
 from common.pipeline_monitor import PipelineMonitor
-from brawl_stats.api import (
+from player.api import (
     fetch_player_data,
     fetch_battlelog,
     fetch_club_data,

@@ -26,7 +26,7 @@ requires = ["uv_build>=0.8,<0.14"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = ["common", "brawl_stats", "brawlify"]
+module-name = ["common", "player", "brawlify"]
 module-root = "pipelines/src"
 
 [tool.basedpyright]
