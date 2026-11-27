@@ -3,7 +3,7 @@ from pathlib import Path
 # Add parent (pipelines/) to path so script can run standalone from scripts/ dir
 
 import argparse
-from brawl_stats import read_gzip_json, write_gzip_json
+from common.gzip_helpers import read_gzip_json, write_gzip_json
 
 
 def convert_v1_to_v2(v1_data: dict) -> dict:

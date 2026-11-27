@@ -1,5 +1,6 @@
 """Which keys the sync helpers upload and delete, without touching the storage."""
 
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
@@ -45,3 +46,27 @@ def test_mirror_dir_deletes_only_keys_gone_locally(tmp_path: Path, monkeypatch: 
 def test_sync_helpers_refuse_an_empty_directory(tmp_path: Path):
     with pytest.raises(FileNotFoundError):
         storage.mirror_dir(tmp_path, "reference/", dry_run=True)
+
+
+class FakePaginator:
+    """A list_objects_v2 paginator over fixed pages of keys."""
+
+    def __init__(self, pages: list[list[str]]):
+        self.pages = pages
+
+    def get_paginator(self, operation: str):
+        assert operation == "list_objects_v2"
+        return self
+
+    def paginate(self, Bucket: str, Prefix: str):
+        stamp = datetime(2026, 11, 20, tzinfo=timezone.utc)
+        for keys in self.pages:
+            yield {"Contents": [{"Key": k, "Size": 1, "ETag": '"e"', "LastModified": stamp} for k in keys]}
+
+
+def test_listing_reads_every_page(monkeypatch: pytest.MonkeyPatch):
+    pages = [[f"raw/snapshots/{i}.json.gz" for i in range(1000)], ["raw/snapshots/last.json.gz"]]
+    monkeypatch.setattr(storage, "_bucket", lambda: storage._Bucket(FakePaginator(pages), "bucket"))
+    files = storage.list_files()
+    assert len(files) == 1001
+    assert files[0].etag == "e"

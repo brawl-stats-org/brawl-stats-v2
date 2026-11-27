@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from enum import Enum
 from pathlib import Path
 
-from brawl_stats import R2Client
+from common import storage
 from upload_to_r2 import HISTORY_INDEX_KEY, HISTORY_PREFIX, REFERENCE_PREFIX
 
 DATA_ROOT = Path("data")
@@ -109,19 +109,12 @@ def list_local_files(data_root: Path = DATA_ROOT, verbose: bool = False) -> dict
     return results
 
 
-def list_r2_files(client: R2Client, verbose: bool = False) -> dict[str, FileInfo]:
-    """Every R2 key in the bucket (paginated: one list call returns at most 1000 keys)."""
-    pages = client.get_client().get_paginator("list_objects_v2").paginate(Bucket=client.get_bucket())
-    results: dict[str, FileInfo] = {}
-    for page in pages:
-        for obj in page.get("Contents", []):
-            key = obj["Key"]
-            results[key] = FileInfo(
-                path=key,
-                size=obj["Size"],
-                etag=obj["ETag"].strip('"'),
-                mtime=obj["LastModified"].isoformat(),
-            )
+def list_r2_files(verbose: bool = False) -> dict[str, FileInfo]:
+    """Every R2 key in the bucket."""
+    results = {
+        file.key: FileInfo(path=file.key, size=file.size, etag=file.etag, mtime=file.last_modified.isoformat())
+        for file in storage.list_files()
+    }
 
     if verbose:
         print(f"Found {len(results)} R2 files.")
@@ -241,7 +234,7 @@ def print_results(results: list[ComparisonResult], skipped: list[str], verbose: 
                 print(f"    {key}")
 
 
-def download_files(client: R2Client, to_download: list[FileInfo], data_root: Path = DATA_ROOT):
+def download_files(to_download: list[FileInfo], data_root: Path = DATA_ROOT):
     """Download each file from R2 to the same path under data_root."""
     if not to_download:
         print("No files to download.")
@@ -249,7 +242,7 @@ def download_files(client: R2Client, to_download: list[FileInfo], data_root: Pat
 
     for info in to_download:
         local_path = data_root / info.path
-        client.download_file(info.path, str(local_path), verbose=True)
+        storage.download_file(info.path, local_path, verbose=True)
         print(f"Downloaded {info.path} -> {local_path} ({format_size(info.size)})")
 
 
@@ -274,15 +267,13 @@ def main():
     dry_run = not args.execute
     verbose = args.verbose
 
-    client = R2Client()
-
     if verbose:
         print("Listing local files...")
     local_files = list_local_files(verbose=verbose)
 
     if verbose:
         print("Listing R2 files...")
-    r2_files = list_r2_files(client, verbose=verbose)
+    r2_files = list_r2_files(verbose=verbose)
 
     if verbose:
         print("Comparing files...")
@@ -299,7 +290,7 @@ def main():
         print("\n[DRY RUN] Use --execute to actually download files")
     else:
         print("\nDownloading files...")
-        download_files(client, files_to_download(results))
+        download_files(files_to_download(results))
 
 
 if __name__ == "__main__":

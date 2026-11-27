@@ -1,7 +1,5 @@
 """What sync_from_r2 compares, skips and downloads."""
 
-from datetime import datetime, timezone
-
 from sync_from_r2 import (
     DiffStatus,
     FileInfo,
@@ -9,7 +7,6 @@ from sync_from_r2 import (
     compare_files,
     files_to_download,
     list_local_files,
-    list_r2_files,
     synced_prefix,
 )
 from upload_to_r2 import HISTORY_INDEX_KEY, HISTORY_PREFIX, REFERENCE_PREFIX
@@ -117,29 +114,3 @@ def test_history_index_downloaded_last():
     assert paths[-1] == HISTORY_INDEX_KEY
     assert set(paths) == set(r2)
 
-
-class FakeR2:
-    """Just enough of R2Client for list_r2_files: a paginator over fixed pages."""
-
-    def __init__(self, pages: list[list[str]]):
-        self.pages = pages
-
-    def get_bucket(self):
-        return "bucket"
-
-    def get_client(self):
-        return self
-
-    def get_paginator(self, operation):
-        assert operation == "list_objects_v2"
-        return self
-
-    def paginate(self, Bucket):
-        stamp = datetime(2026, 11, 20, tzinfo=timezone.utc)
-        for keys in self.pages:
-            yield {"Contents": [{"Key": k, "Size": 1, "ETag": '"e"', "LastModified": stamp} for k in keys]}
-
-
-def test_r2_listing_reads_every_page():
-    pages = [[f"raw/snapshots/{i}.json.gz" for i in range(1000)], [SNAPSHOT]]
-    assert len(list_r2_files(FakeR2(pages))) == 1001

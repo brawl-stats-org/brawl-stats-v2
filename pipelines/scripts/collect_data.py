@@ -7,12 +7,9 @@ import argparse
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 from brawl_stats.config import TRACKED_CLUBS, TRACKED_PLAYERS, PATH_RAW_SNAPSHOTS, PATH_RAW_BATTLELOGS
-from brawl_stats import (
-    R2Client,
-    PipelineMonitor,
-    write_gzip_json,
-    read_gzip_json,
-)
+from common import storage
+from common.gzip_helpers import write_gzip_json, read_gzip_json
+from common.pipeline_monitor import PipelineMonitor
 from brawl_stats.api import (
     fetch_player_data,
     fetch_battlelog,
@@ -120,11 +117,10 @@ def collect_battlelogs_with_tags(all_tags: list[str], verbose: bool = False, mon
         if monitor:
             monitor.log_warning(msg)
     else:
-        r2_client = R2Client()
-        if r2_client.file_exists(r2_key):
+        if storage.exists(r2_key):
             if verbose:
                 print(f"[BATTLELOGS] Loading existing from R2: {r2_key}")
-            existing = r2_client.download_gzip_json(r2_key, verbose=verbose)
+            existing = storage.read_gzip_json(r2_key, verbose=verbose)
 
     # Start with existing or empty dict
     battlelog_data = existing if existing else {}

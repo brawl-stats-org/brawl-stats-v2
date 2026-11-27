@@ -6,7 +6,8 @@ import argparse
 import subprocess
 from datetime import datetime, timezone
 from dotenv import load_dotenv
-from brawl_stats import PipelineMonitor, R2Client
+from common import storage
+from common.pipeline_monitor import PipelineMonitor
 
 load_dotenv()
 
@@ -78,7 +79,7 @@ def run_collection(args: argparse.Namespace, monitor: PipelineMonitor) -> int:
         # so degrade to local-only: no R2 fallback in collection, no uploads
         r2_available = True
         try:
-            R2Client().check_connection()
+            storage.check_connection()
         except Exception as e:
             r2_available = False
             msg = f"R2 unreachable, running local-only (no R2 fallback, no uploads): {e}"
